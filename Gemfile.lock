@@ -1,6 +1,6 @@
 GIT
   remote: https://github.com/rails/rails.git
-  revision: b113b7fc4a26419efe52a4946d2c07bd1bd38d0c
+  revision: 2815cb96207172f675a49860666f26167757f93c
   branch: main
   specs:
     actioncable (7.1.0.alpha)
@@ -160,6 +160,8 @@ GEM
     nio4r (2.5.9)
     nokogiri (1.14.2-arm64-darwin)
       racc (~> 1.4)
+    nokogiri (1.14.2-x86_64-linux)
+      racc (~> 1.4)
     parallel (1.22.1)
     parser (3.2.2.0)
       ast (~> 2.4.1)
@@ -201,6 +203,7 @@ GEM
       sorbet-static (= 0.5.10761)
     sorbet-runtime (0.5.10761)
     sorbet-static (0.5.10761-universal-darwin-21)
+    sorbet-static (0.5.10761-x86_64-linux)
     sorbet-static-and-runtime (0.5.10761)
       sorbet (= 0.5.10761)
       sorbet-runtime (= 0.5.10761)
@@ -261,6 +264,7 @@ GEM
 
 PLATFORMS
   arm64-darwin-21
+  x86_64-linux
 
 DEPENDENCIES
   bootsnap
