@@ -20,19 +20,19 @@ module ActionText
     # source://actiontext//lib/action_text/gem_version.rb#5
     def gem_version; end
 
-    # source://railties/7.1.0.alpha-b113b7fc4a26419efe52a4946d2c07bd1bd38d0c/lib/rails/engine.rb#405
+    # source://railties/7.1.0.alpha-2815cb96207172f675a49860666f26167757f93c/lib/rails/engine.rb#405
     def railtie_helpers_paths; end
 
-    # source://railties/7.1.0.alpha-b113b7fc4a26419efe52a4946d2c07bd1bd38d0c/lib/rails/engine.rb#394
+    # source://railties/7.1.0.alpha-2815cb96207172f675a49860666f26167757f93c/lib/rails/engine.rb#394
     def railtie_namespace; end
 
-    # source://railties/7.1.0.alpha-b113b7fc4a26419efe52a4946d2c07bd1bd38d0c/lib/rails/engine.rb#409
+    # source://railties/7.1.0.alpha-2815cb96207172f675a49860666f26167757f93c/lib/rails/engine.rb#409
     def railtie_routes_url_helpers(include_path_helpers = T.unsafe(nil)); end
 
-    # source://railties/7.1.0.alpha-b113b7fc4a26419efe52a4946d2c07bd1bd38d0c/lib/rails/engine.rb#397
+    # source://railties/7.1.0.alpha-2815cb96207172f675a49860666f26167757f93c/lib/rails/engine.rb#397
     def table_name_prefix; end
 
-    # source://railties/7.1.0.alpha-b113b7fc4a26419efe52a4946d2c07bd1bd38d0c/lib/rails/engine.rb#401
+    # source://railties/7.1.0.alpha-2815cb96207172f675a49860666f26167757f93c/lib/rails/engine.rb#401
     def use_relative_model_naming?; end
 
     # Returns the currently loaded version of Action Text as a <tt>Gem::Version</tt>.
@@ -131,22 +131,22 @@ class ActionText::Attachables::ContentAttachment
   extend ::ActiveModel::Validations::HelperMethods
   extend ::ActiveModel::Conversion::ClassMethods
 
-  # source://activesupport/7.1.0.alpha-b113b7fc4a26419efe52a4946d2c07bd1bd38d0c/lib/active_support/callbacks.rb#68
+  # source://activesupport/7.1.0.alpha-2815cb96207172f675a49860666f26167757f93c/lib/active_support/callbacks.rb#68
   def __callbacks; end
 
-  # source://activesupport/7.1.0.alpha-b113b7fc4a26419efe52a4946d2c07bd1bd38d0c/lib/active_support/callbacks.rb#68
+  # source://activesupport/7.1.0.alpha-2815cb96207172f675a49860666f26167757f93c/lib/active_support/callbacks.rb#68
   def __callbacks?; end
 
-  # source://activesupport/7.1.0.alpha-b113b7fc4a26419efe52a4946d2c07bd1bd38d0c/lib/active_support/callbacks.rb#946
+  # source://activesupport/7.1.0.alpha-2815cb96207172f675a49860666f26167757f93c/lib/active_support/callbacks.rb#946
   def _run_validate_callbacks(&block); end
 
-  # source://activesupport/7.1.0.alpha-b113b7fc4a26419efe52a4946d2c07bd1bd38d0c/lib/active_support/callbacks.rb#958
+  # source://activesupport/7.1.0.alpha-2815cb96207172f675a49860666f26167757f93c/lib/active_support/callbacks.rb#958
   def _validate_callbacks; end
 
-  # source://activemodel/7.1.0.alpha-b113b7fc4a26419efe52a4946d2c07bd1bd38d0c/lib/active_model/validations.rb#71
+  # source://activemodel/7.1.0.alpha-2815cb96207172f675a49860666f26167757f93c/lib/active_model/validations.rb#71
   def _validators; end
 
-  # source://activemodel/7.1.0.alpha-b113b7fc4a26419efe52a4946d2c07bd1bd38d0c/lib/active_model/validations.rb#71
+  # source://activemodel/7.1.0.alpha-2815cb96207172f675a49860666f26167757f93c/lib/active_model/validations.rb#71
   def _validators?; end
 
   # source://actiontext//lib/action_text/attachables/content_attachment.rb#18
@@ -176,7 +176,7 @@ class ActionText::Attachables::ContentAttachment
   # source://actiontext//lib/action_text/attachables/content_attachment.rb#13
   def content_type=(_arg0); end
 
-  # source://activemodel/7.1.0.alpha-b113b7fc4a26419efe52a4946d2c07bd1bd38d0c/lib/active_model/naming.rb#255
+  # source://activemodel/7.1.0.alpha-2815cb96207172f675a49860666f26167757f93c/lib/active_model/naming.rb#255
   def model_name; end
 
   # source://actiontext//lib/action_text/attachables/content_attachment.rb#22
@@ -188,7 +188,7 @@ class ActionText::Attachables::ContentAttachment
   # source://actiontext//lib/action_text/attachables/content_attachment.rb#26
   def to_s; end
 
-  # source://activemodel/7.1.0.alpha-b113b7fc4a26419efe52a4946d2c07bd1bd38d0c/lib/active_model/validations.rb#67
+  # source://activemodel/7.1.0.alpha-2815cb96207172f675a49860666f26167757f93c/lib/active_model/validations.rb#67
   def validation_context; end
 
   private
@@ -196,32 +196,32 @@ class ActionText::Attachables::ContentAttachment
   # source://actiontext//lib/action_text/attachables/content_attachment.rb#35
   def content_instance; end
 
-  # source://activemodel/7.1.0.alpha-b113b7fc4a26419efe52a4946d2c07bd1bd38d0c/lib/active_model/validations.rb#67
+  # source://activemodel/7.1.0.alpha-2815cb96207172f675a49860666f26167757f93c/lib/active_model/validations.rb#67
   def validation_context=(_arg0); end
 
   class << self
-    # source://activesupport/7.1.0.alpha-b113b7fc4a26419efe52a4946d2c07bd1bd38d0c/lib/active_support/callbacks.rb#68
+    # source://activesupport/7.1.0.alpha-2815cb96207172f675a49860666f26167757f93c/lib/active_support/callbacks.rb#68
     def __callbacks; end
 
-    # source://activesupport/7.1.0.alpha-b113b7fc4a26419efe52a4946d2c07bd1bd38d0c/lib/active_support/callbacks.rb#68
+    # source://activesupport/7.1.0.alpha-2815cb96207172f675a49860666f26167757f93c/lib/active_support/callbacks.rb#68
     def __callbacks=(value); end
 
-    # source://activesupport/7.1.0.alpha-b113b7fc4a26419efe52a4946d2c07bd1bd38d0c/lib/active_support/callbacks.rb#68
+    # source://activesupport/7.1.0.alpha-2815cb96207172f675a49860666f26167757f93c/lib/active_support/callbacks.rb#68
     def __callbacks?; end
 
-    # source://activesupport/7.1.0.alpha-b113b7fc4a26419efe52a4946d2c07bd1bd38d0c/lib/active_support/callbacks.rb#950
+    # source://activesupport/7.1.0.alpha-2815cb96207172f675a49860666f26167757f93c/lib/active_support/callbacks.rb#950
     def _validate_callbacks; end
 
-    # source://activesupport/7.1.0.alpha-b113b7fc4a26419efe52a4946d2c07bd1bd38d0c/lib/active_support/callbacks.rb#954
+    # source://activesupport/7.1.0.alpha-2815cb96207172f675a49860666f26167757f93c/lib/active_support/callbacks.rb#954
     def _validate_callbacks=(value); end
 
-    # source://activemodel/7.1.0.alpha-b113b7fc4a26419efe52a4946d2c07bd1bd38d0c/lib/active_model/validations.rb#71
+    # source://activemodel/7.1.0.alpha-2815cb96207172f675a49860666f26167757f93c/lib/active_model/validations.rb#71
     def _validators; end
 
-    # source://activemodel/7.1.0.alpha-b113b7fc4a26419efe52a4946d2c07bd1bd38d0c/lib/active_model/validations.rb#71
+    # source://activemodel/7.1.0.alpha-2815cb96207172f675a49860666f26167757f93c/lib/active_model/validations.rb#71
     def _validators=(value); end
 
-    # source://activemodel/7.1.0.alpha-b113b7fc4a26419efe52a4946d2c07bd1bd38d0c/lib/active_model/validations.rb#71
+    # source://activemodel/7.1.0.alpha-2815cb96207172f675a49860666f26167757f93c/lib/active_model/validations.rb#71
     def _validators?; end
 
     # source://actiontext//lib/action_text/attachables/content_attachment.rb#8
@@ -241,7 +241,7 @@ class ActionText::Attachables::MissingAttachable
   # source://actiontext//lib/action_text/attachables/missing_attachable.rb#22
   def model; end
 
-  # source://activemodel/7.1.0.alpha-b113b7fc4a26419efe52a4946d2c07bd1bd38d0c/lib/active_model/naming.rb#255
+  # source://activemodel/7.1.0.alpha-2815cb96207172f675a49860666f26167757f93c/lib/active_model/naming.rb#255
   def model_name; end
 
   # source://actiontext//lib/action_text/attachables/missing_attachable.rb#14
@@ -273,7 +273,7 @@ class ActionText::Attachables::RemoteImage
   # source://actiontext//lib/action_text/attachables/remote_image.rb#28
   def height; end
 
-  # source://activemodel/7.1.0.alpha-b113b7fc4a26419efe52a4946d2c07bd1bd38d0c/lib/active_model/naming.rb#255
+  # source://activemodel/7.1.0.alpha-2815cb96207172f675a49860666f26167757f93c/lib/active_model/naming.rb#255
   def model_name; end
 
   # source://actiontext//lib/action_text/attachables/remote_image.rb#41
@@ -332,7 +332,7 @@ class ActionText::Attachment
   # source://actiontext//lib/action_text/attachment.rb#88
   def inspect; end
 
-  # source://activesupport/7.1.0.alpha-b113b7fc4a26419efe52a4946d2c07bd1bd38d0c/lib/active_support/core_ext/module/delegation.rb#330
+  # source://activesupport/7.1.0.alpha-2815cb96207172f675a49860666f26167757f93c/lib/active_support/core_ext/module/delegation.rb#330
   def method_missing(method, *args, **_arg2, &block); end
 
   # Returns the value of attribute node.
@@ -369,7 +369,7 @@ class ActionText::Attachment
   # source://actiontext//lib/action_text/attachment.rb#93
   def node_attributes; end
 
-  # source://activesupport/7.1.0.alpha-b113b7fc4a26419efe52a4946d2c07bd1bd38d0c/lib/active_support/core_ext/module/delegation.rb#322
+  # source://activesupport/7.1.0.alpha-2815cb96207172f675a49860666f26167757f93c/lib/active_support/core_ext/module/delegation.rb#322
   def respond_to_missing?(name, include_private = T.unsafe(nil)); end
 
   # source://actiontext//lib/action_text/attachment.rb#101
@@ -435,22 +435,22 @@ class ActionText::AttachmentGallery
   # source://actiontext//lib/action_text/attachment_gallery.rb#52
   def initialize(node); end
 
-  # source://activesupport/7.1.0.alpha-b113b7fc4a26419efe52a4946d2c07bd1bd38d0c/lib/active_support/callbacks.rb#68
+  # source://activesupport/7.1.0.alpha-2815cb96207172f675a49860666f26167757f93c/lib/active_support/callbacks.rb#68
   def __callbacks; end
 
-  # source://activesupport/7.1.0.alpha-b113b7fc4a26419efe52a4946d2c07bd1bd38d0c/lib/active_support/callbacks.rb#68
+  # source://activesupport/7.1.0.alpha-2815cb96207172f675a49860666f26167757f93c/lib/active_support/callbacks.rb#68
   def __callbacks?; end
 
-  # source://activesupport/7.1.0.alpha-b113b7fc4a26419efe52a4946d2c07bd1bd38d0c/lib/active_support/callbacks.rb#946
+  # source://activesupport/7.1.0.alpha-2815cb96207172f675a49860666f26167757f93c/lib/active_support/callbacks.rb#946
   def _run_validate_callbacks(&block); end
 
-  # source://activesupport/7.1.0.alpha-b113b7fc4a26419efe52a4946d2c07bd1bd38d0c/lib/active_support/callbacks.rb#958
+  # source://activesupport/7.1.0.alpha-2815cb96207172f675a49860666f26167757f93c/lib/active_support/callbacks.rb#958
   def _validate_callbacks; end
 
-  # source://activemodel/7.1.0.alpha-b113b7fc4a26419efe52a4946d2c07bd1bd38d0c/lib/active_model/validations.rb#71
+  # source://activemodel/7.1.0.alpha-2815cb96207172f675a49860666f26167757f93c/lib/active_model/validations.rb#71
   def _validators; end
 
-  # source://activemodel/7.1.0.alpha-b113b7fc4a26419efe52a4946d2c07bd1bd38d0c/lib/active_model/validations.rb#71
+  # source://activemodel/7.1.0.alpha-2815cb96207172f675a49860666f26167757f93c/lib/active_model/validations.rb#71
   def _validators?; end
 
   # source://actiontext//lib/action_text/attachment_gallery.rb#56
@@ -459,7 +459,7 @@ class ActionText::AttachmentGallery
   # source://actiontext//lib/action_text/attachment_gallery.rb#66
   def inspect; end
 
-  # source://activemodel/7.1.0.alpha-b113b7fc4a26419efe52a4946d2c07bd1bd38d0c/lib/active_model/naming.rb#255
+  # source://activemodel/7.1.0.alpha-2815cb96207172f675a49860666f26167757f93c/lib/active_model/naming.rb#255
   def model_name; end
 
   # Returns the value of attribute node.
@@ -470,37 +470,37 @@ class ActionText::AttachmentGallery
   # source://actiontext//lib/action_text/attachment_gallery.rb#62
   def size; end
 
-  # source://activemodel/7.1.0.alpha-b113b7fc4a26419efe52a4946d2c07bd1bd38d0c/lib/active_model/validations.rb#67
+  # source://activemodel/7.1.0.alpha-2815cb96207172f675a49860666f26167757f93c/lib/active_model/validations.rb#67
   def validation_context; end
 
   private
 
-  # source://activemodel/7.1.0.alpha-b113b7fc4a26419efe52a4946d2c07bd1bd38d0c/lib/active_model/validations.rb#67
+  # source://activemodel/7.1.0.alpha-2815cb96207172f675a49860666f26167757f93c/lib/active_model/validations.rb#67
   def validation_context=(_arg0); end
 
   class << self
-    # source://activesupport/7.1.0.alpha-b113b7fc4a26419efe52a4946d2c07bd1bd38d0c/lib/active_support/callbacks.rb#68
+    # source://activesupport/7.1.0.alpha-2815cb96207172f675a49860666f26167757f93c/lib/active_support/callbacks.rb#68
     def __callbacks; end
 
-    # source://activesupport/7.1.0.alpha-b113b7fc4a26419efe52a4946d2c07bd1bd38d0c/lib/active_support/callbacks.rb#68
+    # source://activesupport/7.1.0.alpha-2815cb96207172f675a49860666f26167757f93c/lib/active_support/callbacks.rb#68
     def __callbacks=(value); end
 
-    # source://activesupport/7.1.0.alpha-b113b7fc4a26419efe52a4946d2c07bd1bd38d0c/lib/active_support/callbacks.rb#68
+    # source://activesupport/7.1.0.alpha-2815cb96207172f675a49860666f26167757f93c/lib/active_support/callbacks.rb#68
     def __callbacks?; end
 
-    # source://activesupport/7.1.0.alpha-b113b7fc4a26419efe52a4946d2c07bd1bd38d0c/lib/active_support/callbacks.rb#950
+    # source://activesupport/7.1.0.alpha-2815cb96207172f675a49860666f26167757f93c/lib/active_support/callbacks.rb#950
     def _validate_callbacks; end
 
-    # source://activesupport/7.1.0.alpha-b113b7fc4a26419efe52a4946d2c07bd1bd38d0c/lib/active_support/callbacks.rb#954
+    # source://activesupport/7.1.0.alpha-2815cb96207172f675a49860666f26167757f93c/lib/active_support/callbacks.rb#954
     def _validate_callbacks=(value); end
 
-    # source://activemodel/7.1.0.alpha-b113b7fc4a26419efe52a4946d2c07bd1bd38d0c/lib/active_model/validations.rb#71
+    # source://activemodel/7.1.0.alpha-2815cb96207172f675a49860666f26167757f93c/lib/active_model/validations.rb#71
     def _validators; end
 
-    # source://activemodel/7.1.0.alpha-b113b7fc4a26419efe52a4946d2c07bd1bd38d0c/lib/active_model/validations.rb#71
+    # source://activemodel/7.1.0.alpha-2815cb96207172f675a49860666f26167757f93c/lib/active_model/validations.rb#71
     def _validators=(value); end
 
-    # source://activemodel/7.1.0.alpha-b113b7fc4a26419efe52a4946d2c07bd1bd38d0c/lib/active_model/validations.rb#71
+    # source://activemodel/7.1.0.alpha-2815cb96207172f675a49860666f26167757f93c/lib/active_model/validations.rb#71
     def _validators?; end
 
     # source://actiontext//lib/action_text/attachment_gallery.rb#41
@@ -699,10 +699,10 @@ class ActionText::Content
     # source://actiontext//lib/action_text/content.rb#12
     def fragment_by_canonicalizing_content(content); end
 
-    # source://activesupport/7.1.0.alpha-b113b7fc4a26419efe52a4946d2c07bd1bd38d0c/lib/active_support/core_ext/module/attribute_accessors_per_thread.rb#49
+    # source://activesupport/7.1.0.alpha-2815cb96207172f675a49860666f26167757f93c/lib/active_support/core_ext/module/attribute_accessors_per_thread.rb#49
     def renderer; end
 
-    # source://activesupport/7.1.0.alpha-b113b7fc4a26419efe52a4946d2c07bd1bd38d0c/lib/active_support/core_ext/module/attribute_accessors_per_thread.rb#108
+    # source://activesupport/7.1.0.alpha-2815cb96207172f675a49860666f26167757f93c/lib/active_support/core_ext/module/attribute_accessors_per_thread.rb#108
     def renderer=(obj); end
   end
 end
@@ -738,16 +738,16 @@ class ActionText::EncryptedRichText < ::ActionText::RichText
   include ::ActionText::EncryptedRichText::GeneratedAssociationMethods
 
   class << self
-    # source://activemodel/7.1.0.alpha-b113b7fc4a26419efe52a4946d2c07bd1bd38d0c/lib/active_model/validations.rb#71
+    # source://activemodel/7.1.0.alpha-2815cb96207172f675a49860666f26167757f93c/lib/active_model/validations.rb#71
     def _validators; end
 
-    # source://activerecord/7.1.0.alpha-b113b7fc4a26419efe52a4946d2c07bd1bd38d0c/lib/active_record/attributes.rb#11
+    # source://activerecord/7.1.0.alpha-2815cb96207172f675a49860666f26167757f93c/lib/active_record/attributes.rb#11
     def attributes_to_define_after_schema_loads; end
 
-    # source://activerecord/7.1.0.alpha-b113b7fc4a26419efe52a4946d2c07bd1bd38d0c/lib/active_record/enum.rb#123
+    # source://activerecord/7.1.0.alpha-2815cb96207172f675a49860666f26167757f93c/lib/active_record/enum.rb#123
     def defined_enums; end
 
-    # source://activerecord/7.1.0.alpha-b113b7fc4a26419efe52a4946d2c07bd1bd38d0c/lib/active_record/encryption/encryptable_record.rb#11
+    # source://activerecord/7.1.0.alpha-2815cb96207172f675a49860666f26167757f93c/lib/active_record/encryption/encryptable_record.rb#11
     def encrypted_attributes; end
   end
 end
@@ -783,11 +783,13 @@ end
 # source://actiontext//lib/action_text/engine.rb#11
 class ActionText::Engine < ::Rails::Engine
   class << self
-    # source://activesupport/7.1.0.alpha-b113b7fc4a26419efe52a4946d2c07bd1bd38d0c/lib/active_support/callbacks.rb#68
+    # source://activesupport/7.1.0.alpha-2815cb96207172f675a49860666f26167757f93c/lib/active_support/callbacks.rb#68
     def __callbacks; end
   end
 end
 
+# = Action Text \FixtureSet
+#
 # Fixtures are a way of organizing data that you want to test against; in
 # short, sample data.
 #
@@ -823,7 +825,7 @@ end
 # When processed, Active Record will insert database records for each fixture
 # entry and will ensure the Action Text relationship is intact.
 #
-# source://actiontext//lib/action_text/fixture_set.rb#38
+# source://actiontext//lib/action_text/fixture_set.rb#40
 class ActionText::FixtureSet
   class << self
     # Fixtures support Action Text attachments as part of their <tt>body</tt>
@@ -846,7 +848,7 @@ class ActionText::FixtureSet
     #     name: content
     #     body: <div>Hello, <%= ActionText::FixtureSet.attachment("articles", :first) %></div>
     #
-    # source://actiontext//lib/action_text/fixture_set.rb#59
+    # source://actiontext//lib/action_text/fixture_set.rb#61
     def attachment(fixture_set_name, label, column_type: T.unsafe(nil)); end
   end
 end
@@ -989,10 +991,10 @@ class ActionText::Record < ::ActiveRecord::Base
   include ::ActionText::Record::GeneratedAssociationMethods
 
   class << self
-    # source://activemodel/7.1.0.alpha-b113b7fc4a26419efe52a4946d2c07bd1bd38d0c/lib/active_model/validations.rb#71
+    # source://activemodel/7.1.0.alpha-2815cb96207172f675a49860666f26167757f93c/lib/active_model/validations.rb#71
     def _validators; end
 
-    # source://activerecord/7.1.0.alpha-b113b7fc4a26419efe52a4946d2c07bd1bd38d0c/lib/active_record/enum.rb#123
+    # source://activerecord/7.1.0.alpha-2815cb96207172f675a49860666f26167757f93c/lib/active_record/enum.rb#123
     def defined_enums; end
   end
 end
@@ -1023,13 +1025,13 @@ class ActionText::RichText < ::ActionText::Record
   include ::ActionText::RichText::GeneratedAttributeMethods
   include ::ActionText::RichText::GeneratedAssociationMethods
 
-  # source://activerecord/7.1.0.alpha-b113b7fc4a26419efe52a4946d2c07bd1bd38d0c/lib/active_record/autosave_association.rb#160
+  # source://activerecord/7.1.0.alpha-2815cb96207172f675a49860666f26167757f93c/lib/active_record/autosave_association.rb#160
   def autosave_associated_records_for_embeds_attachments(*args); end
 
-  # source://activerecord/7.1.0.alpha-b113b7fc4a26419efe52a4946d2c07bd1bd38d0c/lib/active_record/autosave_association.rb#160
+  # source://activerecord/7.1.0.alpha-2815cb96207172f675a49860666f26167757f93c/lib/active_record/autosave_association.rb#160
   def autosave_associated_records_for_embeds_blobs(*args); end
 
-  # source://activerecord/7.1.0.alpha-b113b7fc4a26419efe52a4946d2c07bd1bd38d0c/lib/active_record/autosave_association.rb#160
+  # source://activerecord/7.1.0.alpha-2815cb96207172f675a49860666f26167757f93c/lib/active_record/autosave_association.rb#160
   def autosave_associated_records_for_record(*args); end
 
   def blank?(*_arg0, **_arg1, &_arg2); end
@@ -1040,83 +1042,83 @@ class ActionText::RichText < ::ActionText::Record
   def to_s(*_arg0, **_arg1, &_arg2); end
   def to_trix_html; end
 
-  # source://activerecord/7.1.0.alpha-b113b7fc4a26419efe52a4946d2c07bd1bd38d0c/lib/active_record/autosave_association.rb#160
+  # source://activerecord/7.1.0.alpha-2815cb96207172f675a49860666f26167757f93c/lib/active_record/autosave_association.rb#160
   def validate_associated_records_for_embeds_attachments(*args); end
 
-  # source://activerecord/7.1.0.alpha-b113b7fc4a26419efe52a4946d2c07bd1bd38d0c/lib/active_record/autosave_association.rb#160
+  # source://activerecord/7.1.0.alpha-2815cb96207172f675a49860666f26167757f93c/lib/active_record/autosave_association.rb#160
   def validate_associated_records_for_embeds_blobs(*args); end
 
   class << self
-    # source://activesupport/7.1.0.alpha-b113b7fc4a26419efe52a4946d2c07bd1bd38d0c/lib/active_support/callbacks.rb#68
+    # source://activesupport/7.1.0.alpha-2815cb96207172f675a49860666f26167757f93c/lib/active_support/callbacks.rb#68
     def __callbacks; end
 
-    # source://activerecord/7.1.0.alpha-b113b7fc4a26419efe52a4946d2c07bd1bd38d0c/lib/active_record/reflection.rb#11
+    # source://activerecord/7.1.0.alpha-2815cb96207172f675a49860666f26167757f93c/lib/active_record/reflection.rb#11
     def _reflections; end
 
-    # source://activemodel/7.1.0.alpha-b113b7fc4a26419efe52a4946d2c07bd1bd38d0c/lib/active_model/validations.rb#71
+    # source://activemodel/7.1.0.alpha-2815cb96207172f675a49860666f26167757f93c/lib/active_model/validations.rb#71
     def _validators; end
 
-    # source://activestorage/7.1.0.alpha-b113b7fc4a26419efe52a4946d2c07bd1bd38d0c/lib/active_storage/reflection.rb#53
+    # source://activestorage/7.1.0.alpha-2815cb96207172f675a49860666f26167757f93c/lib/active_storage/reflection.rb#53
     def attachment_reflections; end
 
-    # source://activerecord/7.1.0.alpha-b113b7fc4a26419efe52a4946d2c07bd1bd38d0c/lib/active_record/attributes.rb#11
+    # source://activerecord/7.1.0.alpha-2815cb96207172f675a49860666f26167757f93c/lib/active_record/attributes.rb#11
     def attributes_to_define_after_schema_loads; end
 
-    # source://activerecord/7.1.0.alpha-b113b7fc4a26419efe52a4946d2c07bd1bd38d0c/lib/active_record/enum.rb#123
+    # source://activerecord/7.1.0.alpha-2815cb96207172f675a49860666f26167757f93c/lib/active_record/enum.rb#123
     def defined_enums; end
 
-    # source://activerecord/7.1.0.alpha-b113b7fc4a26419efe52a4946d2c07bd1bd38d0c/lib/active_record/scoping/named.rb#174
+    # source://activerecord/7.1.0.alpha-2815cb96207172f675a49860666f26167757f93c/lib/active_record/scoping/named.rb#174
     def with_attached_embeds(*args, **_arg1); end
   end
 end
 
 module ActionText::RichText::GeneratedAssociationMethods
-  # source://activestorage/7.1.0.alpha-b113b7fc4a26419efe52a4946d2c07bd1bd38d0c/lib/active_storage/attached/model.rb#134
+  # source://activestorage/7.1.0.alpha-2815cb96207172f675a49860666f26167757f93c/lib/active_storage/attached/model.rb#136
   def embeds; end
 
-  # source://activestorage/7.1.0.alpha-b113b7fc4a26419efe52a4946d2c07bd1bd38d0c/lib/active_storage/attached/model.rb#139
+  # source://activestorage/7.1.0.alpha-2815cb96207172f675a49860666f26167757f93c/lib/active_storage/attached/model.rb#141
   def embeds=(attachables); end
 
-  # source://activerecord/7.1.0.alpha-b113b7fc4a26419efe52a4946d2c07bd1bd38d0c/lib/active_record/associations/builder/collection_association.rb#62
+  # source://activerecord/7.1.0.alpha-2815cb96207172f675a49860666f26167757f93c/lib/active_record/associations/builder/collection_association.rb#62
   def embeds_attachment_ids; end
 
-  # source://activerecord/7.1.0.alpha-b113b7fc4a26419efe52a4946d2c07bd1bd38d0c/lib/active_record/associations/builder/collection_association.rb#72
+  # source://activerecord/7.1.0.alpha-2815cb96207172f675a49860666f26167757f93c/lib/active_record/associations/builder/collection_association.rb#72
   def embeds_attachment_ids=(ids); end
 
-  # source://activerecord/7.1.0.alpha-b113b7fc4a26419efe52a4946d2c07bd1bd38d0c/lib/active_record/associations/builder/association.rb#103
+  # source://activerecord/7.1.0.alpha-2815cb96207172f675a49860666f26167757f93c/lib/active_record/associations/builder/association.rb#103
   def embeds_attachments; end
 
-  # source://activerecord/7.1.0.alpha-b113b7fc4a26419efe52a4946d2c07bd1bd38d0c/lib/active_record/associations/builder/association.rb#111
+  # source://activerecord/7.1.0.alpha-2815cb96207172f675a49860666f26167757f93c/lib/active_record/associations/builder/association.rb#111
   def embeds_attachments=(value); end
 
-  # source://activerecord/7.1.0.alpha-b113b7fc4a26419efe52a4946d2c07bd1bd38d0c/lib/active_record/associations/builder/collection_association.rb#62
+  # source://activerecord/7.1.0.alpha-2815cb96207172f675a49860666f26167757f93c/lib/active_record/associations/builder/collection_association.rb#62
   def embeds_blob_ids; end
 
-  # source://activerecord/7.1.0.alpha-b113b7fc4a26419efe52a4946d2c07bd1bd38d0c/lib/active_record/associations/builder/collection_association.rb#72
+  # source://activerecord/7.1.0.alpha-2815cb96207172f675a49860666f26167757f93c/lib/active_record/associations/builder/collection_association.rb#72
   def embeds_blob_ids=(ids); end
 
-  # source://activerecord/7.1.0.alpha-b113b7fc4a26419efe52a4946d2c07bd1bd38d0c/lib/active_record/associations/builder/association.rb#103
+  # source://activerecord/7.1.0.alpha-2815cb96207172f675a49860666f26167757f93c/lib/active_record/associations/builder/association.rb#103
   def embeds_blobs; end
 
-  # source://activerecord/7.1.0.alpha-b113b7fc4a26419efe52a4946d2c07bd1bd38d0c/lib/active_record/associations/builder/association.rb#111
+  # source://activerecord/7.1.0.alpha-2815cb96207172f675a49860666f26167757f93c/lib/active_record/associations/builder/association.rb#111
   def embeds_blobs=(value); end
 
-  # source://activerecord/7.1.0.alpha-b113b7fc4a26419efe52a4946d2c07bd1bd38d0c/lib/active_record/associations/builder/association.rb#103
+  # source://activerecord/7.1.0.alpha-2815cb96207172f675a49860666f26167757f93c/lib/active_record/associations/builder/association.rb#103
   def record; end
 
-  # source://activerecord/7.1.0.alpha-b113b7fc4a26419efe52a4946d2c07bd1bd38d0c/lib/active_record/associations/builder/association.rb#111
+  # source://activerecord/7.1.0.alpha-2815cb96207172f675a49860666f26167757f93c/lib/active_record/associations/builder/association.rb#111
   def record=(value); end
 
-  # source://activerecord/7.1.0.alpha-b113b7fc4a26419efe52a4946d2c07bd1bd38d0c/lib/active_record/associations/builder/belongs_to.rb#145
+  # source://activerecord/7.1.0.alpha-2815cb96207172f675a49860666f26167757f93c/lib/active_record/associations/builder/belongs_to.rb#145
   def record_changed?; end
 
-  # source://activerecord/7.1.0.alpha-b113b7fc4a26419efe52a4946d2c07bd1bd38d0c/lib/active_record/associations/builder/belongs_to.rb#149
+  # source://activerecord/7.1.0.alpha-2815cb96207172f675a49860666f26167757f93c/lib/active_record/associations/builder/belongs_to.rb#149
   def record_previously_changed?; end
 
-  # source://activerecord/7.1.0.alpha-b113b7fc4a26419efe52a4946d2c07bd1bd38d0c/lib/active_record/associations/builder/singular_association.rb#19
+  # source://activerecord/7.1.0.alpha-2815cb96207172f675a49860666f26167757f93c/lib/active_record/associations/builder/singular_association.rb#19
   def reload_record; end
 
-  # source://activerecord/7.1.0.alpha-b113b7fc4a26419efe52a4946d2c07bd1bd38d0c/lib/active_record/associations/builder/singular_association.rb#23
+  # source://activerecord/7.1.0.alpha-2815cb96207172f675a49860666f26167757f93c/lib/active_record/associations/builder/singular_association.rb#23
   def reset_record; end
 end
 
@@ -1286,216 +1288,216 @@ module ActionView::Helpers
   mixes_in_class_methods ::ActionView::Helpers::SanitizeHelper::ClassMethods
 
   class << self
-    # source://actionview/7.1.0.alpha-b113b7fc4a26419efe52a4946d2c07bd1bd38d0c/lib/action_view/helpers.rb#35
+    # source://actionview/7.1.0.alpha-2815cb96207172f675a49860666f26167757f93c/lib/action_view/helpers.rb#35
     def eager_load!; end
   end
 end
 
 class ActionView::Helpers::FormBuilder
-  # source://actionview/7.1.0.alpha-b113b7fc4a26419efe52a4946d2c07bd1bd38d0c/lib/action_view/helpers/form_helper.rb#1713
+  # source://actionview/7.1.0.alpha-2815cb96207172f675a49860666f26167757f93c/lib/action_view/helpers/form_helper.rb#1713
   def initialize(object_name, object, template, options); end
 
-  # source://actionview/7.1.0.alpha-b113b7fc4a26419efe52a4946d2c07bd1bd38d0c/lib/action_view/helpers/form_helper.rb#2640
+  # source://actionview/7.1.0.alpha-2815cb96207172f675a49860666f26167757f93c/lib/action_view/helpers/form_helper.rb#2640
   def button(value = T.unsafe(nil), options = T.unsafe(nil), &block); end
 
-  # source://actionview/7.1.0.alpha-b113b7fc4a26419efe52a4946d2c07bd1bd38d0c/lib/action_view/helpers/form_helper.rb#2464
+  # source://actionview/7.1.0.alpha-2815cb96207172f675a49860666f26167757f93c/lib/action_view/helpers/form_helper.rb#2464
   def check_box(method, options = T.unsafe(nil), checked_value = T.unsafe(nil), unchecked_value = T.unsafe(nil)); end
 
-  # source://actionview/7.1.0.alpha-b113b7fc4a26419efe52a4946d2c07bd1bd38d0c/lib/action_view/helpers/form_options_helper.rb#908
+  # source://actionview/7.1.0.alpha-2815cb96207172f675a49860666f26167757f93c/lib/action_view/helpers/form_options_helper.rb#908
   def collection_check_boxes(method, collection, value_method, text_method, options = T.unsafe(nil), html_options = T.unsafe(nil), &block); end
 
-  # source://actionview/7.1.0.alpha-b113b7fc4a26419efe52a4946d2c07bd1bd38d0c/lib/action_view/helpers/form_options_helper.rb#920
+  # source://actionview/7.1.0.alpha-2815cb96207172f675a49860666f26167757f93c/lib/action_view/helpers/form_options_helper.rb#920
   def collection_radio_buttons(method, collection, value_method, text_method, options = T.unsafe(nil), html_options = T.unsafe(nil), &block); end
 
-  # source://actionview/7.1.0.alpha-b113b7fc4a26419efe52a4946d2c07bd1bd38d0c/lib/action_view/helpers/form_options_helper.rb#860
+  # source://actionview/7.1.0.alpha-2815cb96207172f675a49860666f26167757f93c/lib/action_view/helpers/form_options_helper.rb#860
   def collection_select(method, collection, value_method, text_method, options = T.unsafe(nil), html_options = T.unsafe(nil)); end
 
-  # source://actionview/7.1.0.alpha-b113b7fc4a26419efe52a4946d2c07bd1bd38d0c/lib/action_view/helpers/form_helper.rb#2019
+  # source://actionview/7.1.0.alpha-2815cb96207172f675a49860666f26167757f93c/lib/action_view/helpers/form_helper.rb#2019
   def color_field(method, options = T.unsafe(nil)); end
 
-  # source://actionview/7.1.0.alpha-b113b7fc4a26419efe52a4946d2c07bd1bd38d0c/lib/action_view/helpers/form_helper.rb#2019
+  # source://actionview/7.1.0.alpha-2815cb96207172f675a49860666f26167757f93c/lib/action_view/helpers/form_helper.rb#2019
   def date_field(method, options = T.unsafe(nil)); end
 
-  # source://actionview/7.1.0.alpha-b113b7fc4a26419efe52a4946d2c07bd1bd38d0c/lib/action_view/helpers/date_helper.rb#1233
+  # source://actionview/7.1.0.alpha-2815cb96207172f675a49860666f26167757f93c/lib/action_view/helpers/date_helper.rb#1233
   def date_select(method, options = T.unsafe(nil), html_options = T.unsafe(nil)); end
 
-  # source://actionview/7.1.0.alpha-b113b7fc4a26419efe52a4946d2c07bd1bd38d0c/lib/action_view/helpers/form_helper.rb#2019
+  # source://actionview/7.1.0.alpha-2815cb96207172f675a49860666f26167757f93c/lib/action_view/helpers/form_helper.rb#2019
   def datetime_field(method, options = T.unsafe(nil)); end
 
-  # source://actionview/7.1.0.alpha-b113b7fc4a26419efe52a4946d2c07bd1bd38d0c/lib/action_view/helpers/form_helper.rb#2019
+  # source://actionview/7.1.0.alpha-2815cb96207172f675a49860666f26167757f93c/lib/action_view/helpers/form_helper.rb#2019
   def datetime_local_field(method, options = T.unsafe(nil)); end
 
-  # source://actionview/7.1.0.alpha-b113b7fc4a26419efe52a4946d2c07bd1bd38d0c/lib/action_view/helpers/date_helper.rb#1257
+  # source://actionview/7.1.0.alpha-2815cb96207172f675a49860666f26167757f93c/lib/action_view/helpers/date_helper.rb#1257
   def datetime_select(method, options = T.unsafe(nil), html_options = T.unsafe(nil)); end
 
-  # source://actionview/7.1.0.alpha-b113b7fc4a26419efe52a4946d2c07bd1bd38d0c/lib/action_view/helpers/form_helper.rb#2019
+  # source://actionview/7.1.0.alpha-2815cb96207172f675a49860666f26167757f93c/lib/action_view/helpers/form_helper.rb#2019
   def email_field(method, options = T.unsafe(nil)); end
 
-  # source://actionview/7.1.0.alpha-b113b7fc4a26419efe52a4946d2c07bd1bd38d0c/lib/action_view/helpers/form_helper.rb#2661
+  # source://actionview/7.1.0.alpha-2815cb96207172f675a49860666f26167757f93c/lib/action_view/helpers/form_helper.rb#2661
   def emitted_hidden_id?; end
 
-  # source://actionview/7.1.0.alpha-b113b7fc4a26419efe52a4946d2c07bd1bd38d0c/lib/action_view/helpers/form_helper.rb#1678
+  # source://actionview/7.1.0.alpha-2815cb96207172f675a49860666f26167757f93c/lib/action_view/helpers/form_helper.rb#1678
   def field_helpers; end
 
-  # source://actionview/7.1.0.alpha-b113b7fc4a26419efe52a4946d2c07bd1bd38d0c/lib/action_view/helpers/form_helper.rb#1678
+  # source://actionview/7.1.0.alpha-2815cb96207172f675a49860666f26167757f93c/lib/action_view/helpers/form_helper.rb#1678
   def field_helpers=(_arg0); end
 
-  # source://actionview/7.1.0.alpha-b113b7fc4a26419efe52a4946d2c07bd1bd38d0c/lib/action_view/helpers/form_helper.rb#1678
+  # source://actionview/7.1.0.alpha-2815cb96207172f675a49860666f26167757f93c/lib/action_view/helpers/form_helper.rb#1678
   def field_helpers?; end
 
-  # source://actionview/7.1.0.alpha-b113b7fc4a26419efe52a4946d2c07bd1bd38d0c/lib/action_view/helpers/form_helper.rb#1770
+  # source://actionview/7.1.0.alpha-2815cb96207172f675a49860666f26167757f93c/lib/action_view/helpers/form_helper.rb#1770
   def field_id(method, *suffixes, namespace: T.unsafe(nil), index: T.unsafe(nil)); end
 
-  # source://actionview/7.1.0.alpha-b113b7fc4a26419efe52a4946d2c07bd1bd38d0c/lib/action_view/helpers/form_helper.rb#1790
+  # source://actionview/7.1.0.alpha-2815cb96207172f675a49860666f26167757f93c/lib/action_view/helpers/form_helper.rb#1790
   def field_name(method, *methods, multiple: T.unsafe(nil), index: T.unsafe(nil)); end
 
-  # source://actionview/7.1.0.alpha-b113b7fc4a26419efe52a4946d2c07bd1bd38d0c/lib/action_view/helpers/form_helper.rb#2320
+  # source://actionview/7.1.0.alpha-2815cb96207172f675a49860666f26167757f93c/lib/action_view/helpers/form_helper.rb#2320
   def fields(scope = T.unsafe(nil), model: T.unsafe(nil), **options, &block); end
 
-  # source://actionview/7.1.0.alpha-b113b7fc4a26419efe52a4946d2c07bd1bd38d0c/lib/action_view/helpers/form_helper.rb#2282
+  # source://actionview/7.1.0.alpha-2815cb96207172f675a49860666f26167757f93c/lib/action_view/helpers/form_helper.rb#2282
   def fields_for(record_name, record_object = T.unsafe(nil), fields_options = T.unsafe(nil), &block); end
 
-  # source://actionview/7.1.0.alpha-b113b7fc4a26419efe52a4946d2c07bd1bd38d0c/lib/action_view/helpers/form_helper.rb#2547
+  # source://actionview/7.1.0.alpha-2815cb96207172f675a49860666f26167757f93c/lib/action_view/helpers/form_helper.rb#2547
   def file_field(method, options = T.unsafe(nil)); end
 
-  # source://actionview/7.1.0.alpha-b113b7fc4a26419efe52a4946d2c07bd1bd38d0c/lib/action_view/helpers/form_options_helper.rb#872
+  # source://actionview/7.1.0.alpha-2815cb96207172f675a49860666f26167757f93c/lib/action_view/helpers/form_options_helper.rb#872
   def grouped_collection_select(method, collection, group_method, group_label_method, option_key_method, option_value_method, options = T.unsafe(nil), html_options = T.unsafe(nil)); end
 
-  # source://actionview/7.1.0.alpha-b113b7fc4a26419efe52a4946d2c07bd1bd38d0c/lib/action_view/helpers/form_helper.rb#2508
+  # source://actionview/7.1.0.alpha-2815cb96207172f675a49860666f26167757f93c/lib/action_view/helpers/form_helper.rb#2508
   def hidden_field(method, options = T.unsafe(nil)); end
 
-  # source://actionview/7.1.0.alpha-b113b7fc4a26419efe52a4946d2c07bd1bd38d0c/lib/action_view/helpers/form_helper.rb#1750
+  # source://actionview/7.1.0.alpha-2815cb96207172f675a49860666f26167757f93c/lib/action_view/helpers/form_helper.rb#1750
   def id; end
 
-  # source://actionview/7.1.0.alpha-b113b7fc4a26419efe52a4946d2c07bd1bd38d0c/lib/action_view/helpers/form_helper.rb#1690
+  # source://actionview/7.1.0.alpha-2815cb96207172f675a49860666f26167757f93c/lib/action_view/helpers/form_helper.rb#1690
   def index; end
 
-  # source://actionview/7.1.0.alpha-b113b7fc4a26419efe52a4946d2c07bd1bd38d0c/lib/action_view/helpers/form_helper.rb#2395
+  # source://actionview/7.1.0.alpha-2815cb96207172f675a49860666f26167757f93c/lib/action_view/helpers/form_helper.rb#2395
   def label(method, text = T.unsafe(nil), options = T.unsafe(nil), &block); end
 
-  # source://actionview/7.1.0.alpha-b113b7fc4a26419efe52a4946d2c07bd1bd38d0c/lib/action_view/helpers/form_helper.rb#2019
+  # source://actionview/7.1.0.alpha-2815cb96207172f675a49860666f26167757f93c/lib/action_view/helpers/form_helper.rb#2019
   def month_field(method, options = T.unsafe(nil)); end
 
-  # source://actionview/7.1.0.alpha-b113b7fc4a26419efe52a4946d2c07bd1bd38d0c/lib/action_view/helpers/form_helper.rb#1690
+  # source://actionview/7.1.0.alpha-2815cb96207172f675a49860666f26167757f93c/lib/action_view/helpers/form_helper.rb#1690
   def multipart; end
 
-  # source://actionview/7.1.0.alpha-b113b7fc4a26419efe52a4946d2c07bd1bd38d0c/lib/action_view/helpers/form_helper.rb#1693
+  # source://actionview/7.1.0.alpha-2815cb96207172f675a49860666f26167757f93c/lib/action_view/helpers/form_helper.rb#1693
   def multipart=(multipart); end
 
-  # source://actionview/7.1.0.alpha-b113b7fc4a26419efe52a4946d2c07bd1bd38d0c/lib/action_view/helpers/form_helper.rb#1690
+  # source://actionview/7.1.0.alpha-2815cb96207172f675a49860666f26167757f93c/lib/action_view/helpers/form_helper.rb#1690
   def multipart?; end
 
-  # source://actionview/7.1.0.alpha-b113b7fc4a26419efe52a4946d2c07bd1bd38d0c/lib/action_view/helpers/form_helper.rb#2019
+  # source://actionview/7.1.0.alpha-2815cb96207172f675a49860666f26167757f93c/lib/action_view/helpers/form_helper.rb#2019
   def number_field(method, options = T.unsafe(nil)); end
 
-  # source://actionview/7.1.0.alpha-b113b7fc4a26419efe52a4946d2c07bd1bd38d0c/lib/action_view/helpers/form_helper.rb#1688
+  # source://actionview/7.1.0.alpha-2815cb96207172f675a49860666f26167757f93c/lib/action_view/helpers/form_helper.rb#1688
   def object; end
 
-  # source://actionview/7.1.0.alpha-b113b7fc4a26419efe52a4946d2c07bd1bd38d0c/lib/action_view/helpers/form_helper.rb#1688
+  # source://actionview/7.1.0.alpha-2815cb96207172f675a49860666f26167757f93c/lib/action_view/helpers/form_helper.rb#1688
   def object=(_arg0); end
 
-  # source://actionview/7.1.0.alpha-b113b7fc4a26419efe52a4946d2c07bd1bd38d0c/lib/action_view/helpers/form_helper.rb#1688
+  # source://actionview/7.1.0.alpha-2815cb96207172f675a49860666f26167757f93c/lib/action_view/helpers/form_helper.rb#1688
   def object_name; end
 
-  # source://actionview/7.1.0.alpha-b113b7fc4a26419efe52a4946d2c07bd1bd38d0c/lib/action_view/helpers/form_helper.rb#1688
+  # source://actionview/7.1.0.alpha-2815cb96207172f675a49860666f26167757f93c/lib/action_view/helpers/form_helper.rb#1688
   def object_name=(_arg0); end
 
-  # source://actionview/7.1.0.alpha-b113b7fc4a26419efe52a4946d2c07bd1bd38d0c/lib/action_view/helpers/form_helper.rb#1688
+  # source://actionview/7.1.0.alpha-2815cb96207172f675a49860666f26167757f93c/lib/action_view/helpers/form_helper.rb#1688
   def options; end
 
-  # source://actionview/7.1.0.alpha-b113b7fc4a26419efe52a4946d2c07bd1bd38d0c/lib/action_view/helpers/form_helper.rb#1688
+  # source://actionview/7.1.0.alpha-2815cb96207172f675a49860666f26167757f93c/lib/action_view/helpers/form_helper.rb#1688
   def options=(_arg0); end
 
-  # source://actionview/7.1.0.alpha-b113b7fc4a26419efe52a4946d2c07bd1bd38d0c/lib/action_view/helpers/form_helper.rb#2019
+  # source://actionview/7.1.0.alpha-2815cb96207172f675a49860666f26167757f93c/lib/action_view/helpers/form_helper.rb#2019
   def password_field(method, options = T.unsafe(nil)); end
 
-  # source://actionview/7.1.0.alpha-b113b7fc4a26419efe52a4946d2c07bd1bd38d0c/lib/action_view/helpers/form_helper.rb#2019
+  # source://actionview/7.1.0.alpha-2815cb96207172f675a49860666f26167757f93c/lib/action_view/helpers/form_helper.rb#2019
   def phone_field(method, options = T.unsafe(nil)); end
 
-  # source://actionview/7.1.0.alpha-b113b7fc4a26419efe52a4946d2c07bd1bd38d0c/lib/action_view/helpers/form_helper.rb#2486
+  # source://actionview/7.1.0.alpha-2815cb96207172f675a49860666f26167757f93c/lib/action_view/helpers/form_helper.rb#2486
   def radio_button(method, tag_value, options = T.unsafe(nil)); end
 
-  # source://actionview/7.1.0.alpha-b113b7fc4a26419efe52a4946d2c07bd1bd38d0c/lib/action_view/helpers/form_helper.rb#2019
+  # source://actionview/7.1.0.alpha-2815cb96207172f675a49860666f26167757f93c/lib/action_view/helpers/form_helper.rb#2019
   def range_field(method, options = T.unsafe(nil)); end
 
   def rich_text_area(method, options = T.unsafe(nil)); end
 
-  # source://actionview/7.1.0.alpha-b113b7fc4a26419efe52a4946d2c07bd1bd38d0c/lib/action_view/helpers/form_helper.rb#2019
+  # source://actionview/7.1.0.alpha-2815cb96207172f675a49860666f26167757f93c/lib/action_view/helpers/form_helper.rb#2019
   def search_field(method, options = T.unsafe(nil)); end
 
-  # source://actionview/7.1.0.alpha-b113b7fc4a26419efe52a4946d2c07bd1bd38d0c/lib/action_view/helpers/form_options_helper.rb#848
+  # source://actionview/7.1.0.alpha-2815cb96207172f675a49860666f26167757f93c/lib/action_view/helpers/form_options_helper.rb#848
   def select(method, choices = T.unsafe(nil), options = T.unsafe(nil), html_options = T.unsafe(nil), &block); end
 
-  # source://actionview/7.1.0.alpha-b113b7fc4a26419efe52a4946d2c07bd1bd38d0c/lib/action_view/helpers/form_helper.rb#2579
+  # source://actionview/7.1.0.alpha-2815cb96207172f675a49860666f26167757f93c/lib/action_view/helpers/form_helper.rb#2579
   def submit(value = T.unsafe(nil), options = T.unsafe(nil)); end
 
-  # source://actionview/7.1.0.alpha-b113b7fc4a26419efe52a4946d2c07bd1bd38d0c/lib/action_view/helpers/form_helper.rb#2019
+  # source://actionview/7.1.0.alpha-2815cb96207172f675a49860666f26167757f93c/lib/action_view/helpers/form_helper.rb#2019
   def telephone_field(method, options = T.unsafe(nil)); end
 
-  # source://actionview/7.1.0.alpha-b113b7fc4a26419efe52a4946d2c07bd1bd38d0c/lib/action_view/helpers/form_helper.rb#2019
+  # source://actionview/7.1.0.alpha-2815cb96207172f675a49860666f26167757f93c/lib/action_view/helpers/form_helper.rb#2019
   def text_area(method, options = T.unsafe(nil)); end
 
-  # source://actionview/7.1.0.alpha-b113b7fc4a26419efe52a4946d2c07bd1bd38d0c/lib/action_view/helpers/form_helper.rb#2019
+  # source://actionview/7.1.0.alpha-2815cb96207172f675a49860666f26167757f93c/lib/action_view/helpers/form_helper.rb#2019
   def text_field(method, options = T.unsafe(nil)); end
 
-  # source://actionview/7.1.0.alpha-b113b7fc4a26419efe52a4946d2c07bd1bd38d0c/lib/action_view/helpers/form_helper.rb#2019
+  # source://actionview/7.1.0.alpha-2815cb96207172f675a49860666f26167757f93c/lib/action_view/helpers/form_helper.rb#2019
   def time_field(method, options = T.unsafe(nil)); end
 
-  # source://actionview/7.1.0.alpha-b113b7fc4a26419efe52a4946d2c07bd1bd38d0c/lib/action_view/helpers/date_helper.rb#1245
+  # source://actionview/7.1.0.alpha-2815cb96207172f675a49860666f26167757f93c/lib/action_view/helpers/date_helper.rb#1245
   def time_select(method, options = T.unsafe(nil), html_options = T.unsafe(nil)); end
 
-  # source://actionview/7.1.0.alpha-b113b7fc4a26419efe52a4946d2c07bd1bd38d0c/lib/action_view/helpers/form_options_helper.rb#884
+  # source://actionview/7.1.0.alpha-2815cb96207172f675a49860666f26167757f93c/lib/action_view/helpers/form_options_helper.rb#884
   def time_zone_select(method, priority_zones = T.unsafe(nil), options = T.unsafe(nil), html_options = T.unsafe(nil)); end
 
-  # source://actionview/7.1.0.alpha-b113b7fc4a26419efe52a4946d2c07bd1bd38d0c/lib/action_view/helpers/form_helper.rb#1709
+  # source://actionview/7.1.0.alpha-2815cb96207172f675a49860666f26167757f93c/lib/action_view/helpers/form_helper.rb#1709
   def to_model; end
 
-  # source://actionview/7.1.0.alpha-b113b7fc4a26419efe52a4946d2c07bd1bd38d0c/lib/action_view/helpers/form_helper.rb#1705
+  # source://actionview/7.1.0.alpha-2815cb96207172f675a49860666f26167757f93c/lib/action_view/helpers/form_helper.rb#1705
   def to_partial_path; end
 
-  # source://actionview/7.1.0.alpha-b113b7fc4a26419efe52a4946d2c07bd1bd38d0c/lib/action_view/helpers/form_helper.rb#2019
+  # source://actionview/7.1.0.alpha-2815cb96207172f675a49860666f26167757f93c/lib/action_view/helpers/form_helper.rb#2019
   def url_field(method, options = T.unsafe(nil)); end
 
-  # source://actionview/7.1.0.alpha-b113b7fc4a26419efe52a4946d2c07bd1bd38d0c/lib/action_view/helpers/form_helper.rb#2019
+  # source://actionview/7.1.0.alpha-2815cb96207172f675a49860666f26167757f93c/lib/action_view/helpers/form_helper.rb#2019
   def week_field(method, options = T.unsafe(nil)); end
 
-  # source://actionview/7.1.0.alpha-b113b7fc4a26419efe52a4946d2c07bd1bd38d0c/lib/action_view/helpers/form_options_helper.rb#896
+  # source://actionview/7.1.0.alpha-2815cb96207172f675a49860666f26167757f93c/lib/action_view/helpers/form_options_helper.rb#896
   def weekday_select(method, options = T.unsafe(nil), html_options = T.unsafe(nil)); end
 
   private
 
-  # source://actionview/7.1.0.alpha-b113b7fc4a26419efe52a4946d2c07bd1bd38d0c/lib/action_view/helpers/form_helper.rb#2746
+  # source://actionview/7.1.0.alpha-2815cb96207172f675a49860666f26167757f93c/lib/action_view/helpers/form_helper.rb#2746
   def convert_to_legacy_options(options); end
 
-  # source://actionview/7.1.0.alpha-b113b7fc4a26419efe52a4946d2c07bd1bd38d0c/lib/action_view/helpers/form_helper.rb#2728
+  # source://actionview/7.1.0.alpha-2815cb96207172f675a49860666f26167757f93c/lib/action_view/helpers/form_helper.rb#2728
   def fields_for_nested_model(name, object, fields_options, block); end
 
-  # source://actionview/7.1.0.alpha-b113b7fc4a26419efe52a4946d2c07bd1bd38d0c/lib/action_view/helpers/form_helper.rb#2699
+  # source://actionview/7.1.0.alpha-2815cb96207172f675a49860666f26167757f93c/lib/action_view/helpers/form_helper.rb#2699
   def fields_for_with_nested_attributes(association_name, association, options, block); end
 
-  # source://actionview/7.1.0.alpha-b113b7fc4a26419efe52a4946d2c07bd1bd38d0c/lib/action_view/helpers/form_helper.rb#2695
+  # source://actionview/7.1.0.alpha-2815cb96207172f675a49860666f26167757f93c/lib/action_view/helpers/form_helper.rb#2695
   def nested_attributes_association?(association_name); end
 
-  # source://actionview/7.1.0.alpha-b113b7fc4a26419efe52a4946d2c07bd1bd38d0c/lib/action_view/helpers/form_helper.rb#2741
+  # source://actionview/7.1.0.alpha-2815cb96207172f675a49860666f26167757f93c/lib/action_view/helpers/form_helper.rb#2741
   def nested_child_index(name); end
 
-  # source://actionview/7.1.0.alpha-b113b7fc4a26419efe52a4946d2c07bd1bd38d0c/lib/action_view/helpers/form_helper.rb#2666
+  # source://actionview/7.1.0.alpha-2815cb96207172f675a49860666f26167757f93c/lib/action_view/helpers/form_helper.rb#2666
   def objectify_options(options); end
 
-  # source://actionview/7.1.0.alpha-b113b7fc4a26419efe52a4946d2c07bd1bd38d0c/lib/action_view/helpers/form_helper.rb#2672
+  # source://actionview/7.1.0.alpha-2815cb96207172f675a49860666f26167757f93c/lib/action_view/helpers/form_helper.rb#2672
   def submit_default_value; end
 
   class << self
-    # source://actionview/7.1.0.alpha-b113b7fc4a26419efe52a4946d2c07bd1bd38d0c/lib/action_view/helpers/form_helper.rb#1701
+    # source://actionview/7.1.0.alpha-2815cb96207172f675a49860666f26167757f93c/lib/action_view/helpers/form_helper.rb#1701
     def _to_partial_path; end
 
-    # source://actionview/7.1.0.alpha-b113b7fc4a26419efe52a4946d2c07bd1bd38d0c/lib/action_view/helpers/form_helper.rb#1678
+    # source://actionview/7.1.0.alpha-2815cb96207172f675a49860666f26167757f93c/lib/action_view/helpers/form_helper.rb#1678
     def field_helpers; end
 
-    # source://actionview/7.1.0.alpha-b113b7fc4a26419efe52a4946d2c07bd1bd38d0c/lib/action_view/helpers/form_helper.rb#1678
+    # source://actionview/7.1.0.alpha-2815cb96207172f675a49860666f26167757f93c/lib/action_view/helpers/form_helper.rb#1678
     def field_helpers=(value); end
 
-    # source://actionview/7.1.0.alpha-b113b7fc4a26419efe52a4946d2c07bd1bd38d0c/lib/action_view/helpers/form_helper.rb#1678
+    # source://actionview/7.1.0.alpha-2815cb96207172f675a49860666f26167757f93c/lib/action_view/helpers/form_helper.rb#1678
     def field_helpers?; end
   end
 end
@@ -1509,141 +1511,141 @@ module ActionView::Helpers::FormHelper
   mixes_in_class_methods ::ActionView::Helpers::UrlHelper::ClassMethods
   mixes_in_class_methods ::ActionView::Helpers::SanitizeHelper::ClassMethods
 
-  # source://actionview/7.1.0.alpha-b113b7fc4a26419efe52a4946d2c07bd1bd38d0c/lib/action_view/helpers/form_helper.rb#1584
+  # source://actionview/7.1.0.alpha-2815cb96207172f675a49860666f26167757f93c/lib/action_view/helpers/form_helper.rb#1584
   def _object_for_form_builder(object); end
 
-  # source://actionview/7.1.0.alpha-b113b7fc4a26419efe52a4946d2c07bd1bd38d0c/lib/action_view/helpers/form_helper.rb#1341
+  # source://actionview/7.1.0.alpha-2815cb96207172f675a49860666f26167757f93c/lib/action_view/helpers/form_helper.rb#1341
   def check_box(object_name, method, options = T.unsafe(nil), checked_value = T.unsafe(nil), unchecked_value = T.unsafe(nil)); end
 
-  # source://actionview/7.1.0.alpha-b113b7fc4a26419efe52a4946d2c07bd1bd38d0c/lib/action_view/helpers/form_helper.rb#1371
+  # source://actionview/7.1.0.alpha-2815cb96207172f675a49860666f26167757f93c/lib/action_view/helpers/form_helper.rb#1371
   def color_field(object_name, method, options = T.unsafe(nil)); end
 
-  # source://actionview/7.1.0.alpha-b113b7fc4a26419efe52a4946d2c07bd1bd38d0c/lib/action_view/helpers/form_helper.rb#1435
+  # source://actionview/7.1.0.alpha-2815cb96207172f675a49860666f26167757f93c/lib/action_view/helpers/form_helper.rb#1435
   def date_field(object_name, method, options = T.unsafe(nil)); end
 
-  # source://actionview/7.1.0.alpha-b113b7fc4a26419efe52a4946d2c07bd1bd38d0c/lib/action_view/helpers/form_helper.rb#1508
+  # source://actionview/7.1.0.alpha-2815cb96207172f675a49860666f26167757f93c/lib/action_view/helpers/form_helper.rb#1508
   def datetime_field(object_name, method, options = T.unsafe(nil)); end
 
-  # source://actionview/7.1.0.alpha-b113b7fc4a26419efe52a4946d2c07bd1bd38d0c/lib/action_view/helpers/form_helper.rb#1508
+  # source://actionview/7.1.0.alpha-2815cb96207172f675a49860666f26167757f93c/lib/action_view/helpers/form_helper.rb#1508
   def datetime_local_field(object_name, method, options = T.unsafe(nil)); end
 
   def default_form_builder; end
   def default_form_builder=(_arg0); end
 
-  # source://actionview/7.1.0.alpha-b113b7fc4a26419efe52a4946d2c07bd1bd38d0c/lib/action_view/helpers/form_helper.rb#1562
+  # source://actionview/7.1.0.alpha-2815cb96207172f675a49860666f26167757f93c/lib/action_view/helpers/form_helper.rb#1562
   def email_field(object_name, method, options = T.unsafe(nil)); end
 
-  # source://actionview/7.1.0.alpha-b113b7fc4a26419efe52a4946d2c07bd1bd38d0c/lib/action_view/helpers/form_helper.rb#1077
+  # source://actionview/7.1.0.alpha-2815cb96207172f675a49860666f26167757f93c/lib/action_view/helpers/form_helper.rb#1077
   def fields(scope = T.unsafe(nil), model: T.unsafe(nil), **options, &block); end
 
-  # source://actionview/7.1.0.alpha-b113b7fc4a26419efe52a4946d2c07bd1bd38d0c/lib/action_view/helpers/form_helper.rb#1026
+  # source://actionview/7.1.0.alpha-2815cb96207172f675a49860666f26167757f93c/lib/action_view/helpers/form_helper.rb#1026
   def fields_for(record_name, record_object = T.unsafe(nil), options = T.unsafe(nil), &block); end
 
-  # source://actionview/7.1.0.alpha-b113b7fc4a26419efe52a4946d2c07bd1bd38d0c/lib/action_view/helpers/form_helper.rb#1243
+  # source://actionview/7.1.0.alpha-2815cb96207172f675a49860666f26167757f93c/lib/action_view/helpers/form_helper.rb#1243
   def file_field(object_name, method, options = T.unsafe(nil)); end
 
-  # source://actionview/7.1.0.alpha-b113b7fc4a26419efe52a4946d2c07bd1bd38d0c/lib/action_view/helpers/form_helper.rb#434
+  # source://actionview/7.1.0.alpha-2815cb96207172f675a49860666f26167757f93c/lib/action_view/helpers/form_helper.rb#434
   def form_for(record, options = T.unsafe(nil), &block); end
 
-  # source://actionview/7.1.0.alpha-b113b7fc4a26419efe52a4946d2c07bd1bd38d0c/lib/action_view/helpers/form_helper.rb#755
+  # source://actionview/7.1.0.alpha-2815cb96207172f675a49860666f26167757f93c/lib/action_view/helpers/form_helper.rb#755
   def form_with(model: T.unsafe(nil), scope: T.unsafe(nil), url: T.unsafe(nil), format: T.unsafe(nil), **options, &block); end
 
-  # source://actionview/7.1.0.alpha-b113b7fc4a26419efe52a4946d2c07bd1bd38d0c/lib/action_view/helpers/form_helper.rb#480
+  # source://actionview/7.1.0.alpha-2815cb96207172f675a49860666f26167757f93c/lib/action_view/helpers/form_helper.rb#480
   def form_with_generates_ids; end
 
-  # source://actionview/7.1.0.alpha-b113b7fc4a26419efe52a4946d2c07bd1bd38d0c/lib/action_view/helpers/form_helper.rb#480
+  # source://actionview/7.1.0.alpha-2815cb96207172f675a49860666f26167757f93c/lib/action_view/helpers/form_helper.rb#480
   def form_with_generates_ids=(val); end
 
-  # source://actionview/7.1.0.alpha-b113b7fc4a26419efe52a4946d2c07bd1bd38d0c/lib/action_view/helpers/form_helper.rb#478
+  # source://actionview/7.1.0.alpha-2815cb96207172f675a49860666f26167757f93c/lib/action_view/helpers/form_helper.rb#478
   def form_with_generates_remote_forms; end
 
-  # source://actionview/7.1.0.alpha-b113b7fc4a26419efe52a4946d2c07bd1bd38d0c/lib/action_view/helpers/form_helper.rb#478
+  # source://actionview/7.1.0.alpha-2815cb96207172f675a49860666f26167757f93c/lib/action_view/helpers/form_helper.rb#478
   def form_with_generates_remote_forms=(val); end
 
-  # source://actionview/7.1.0.alpha-b113b7fc4a26419efe52a4946d2c07bd1bd38d0c/lib/action_view/helpers/form_helper.rb#1210
+  # source://actionview/7.1.0.alpha-2815cb96207172f675a49860666f26167757f93c/lib/action_view/helpers/form_helper.rb#1210
   def hidden_field(object_name, method, options = T.unsafe(nil)); end
 
-  # source://actionview/7.1.0.alpha-b113b7fc4a26419efe52a4946d2c07bd1bd38d0c/lib/action_view/helpers/form_helper.rb#1147
+  # source://actionview/7.1.0.alpha-2815cb96207172f675a49860666f26167757f93c/lib/action_view/helpers/form_helper.rb#1147
   def label(object_name, method, content_or_options = T.unsafe(nil), options = T.unsafe(nil), &block); end
 
-  # source://actionview/7.1.0.alpha-b113b7fc4a26419efe52a4946d2c07bd1bd38d0c/lib/action_view/helpers/form_helper.rb#1527
+  # source://actionview/7.1.0.alpha-2815cb96207172f675a49860666f26167757f93c/lib/action_view/helpers/form_helper.rb#1527
   def month_field(object_name, method, options = T.unsafe(nil)); end
 
-  # source://actionview/7.1.0.alpha-b113b7fc4a26419efe52a4946d2c07bd1bd38d0c/lib/action_view/helpers/form_helper.rb#482
+  # source://actionview/7.1.0.alpha-2815cb96207172f675a49860666f26167757f93c/lib/action_view/helpers/form_helper.rb#482
   def multiple_file_field_include_hidden; end
 
-  # source://actionview/7.1.0.alpha-b113b7fc4a26419efe52a4946d2c07bd1bd38d0c/lib/action_view/helpers/form_helper.rb#482
+  # source://actionview/7.1.0.alpha-2815cb96207172f675a49860666f26167757f93c/lib/action_view/helpers/form_helper.rb#482
   def multiple_file_field_include_hidden=(val); end
 
-  # source://actionview/7.1.0.alpha-b113b7fc4a26419efe52a4946d2c07bd1bd38d0c/lib/action_view/helpers/form_helper.rb#1571
+  # source://actionview/7.1.0.alpha-2815cb96207172f675a49860666f26167757f93c/lib/action_view/helpers/form_helper.rb#1571
   def number_field(object_name, method, options = T.unsafe(nil)); end
 
-  # source://actionview/7.1.0.alpha-b113b7fc4a26419efe52a4946d2c07bd1bd38d0c/lib/action_view/helpers/form_helper.rb#1192
+  # source://actionview/7.1.0.alpha-2815cb96207172f675a49860666f26167757f93c/lib/action_view/helpers/form_helper.rb#1192
   def password_field(object_name, method, options = T.unsafe(nil)); end
 
-  # source://actionview/7.1.0.alpha-b113b7fc4a26419efe52a4946d2c07bd1bd38d0c/lib/action_view/helpers/form_helper.rb#1403
+  # source://actionview/7.1.0.alpha-2815cb96207172f675a49860666f26167757f93c/lib/action_view/helpers/form_helper.rb#1403
   def phone_field(object_name, method, options = T.unsafe(nil)); end
 
-  # source://actionview/7.1.0.alpha-b113b7fc4a26419efe52a4946d2c07bd1bd38d0c/lib/action_view/helpers/form_helper.rb#1363
+  # source://actionview/7.1.0.alpha-2815cb96207172f675a49860666f26167757f93c/lib/action_view/helpers/form_helper.rb#1363
   def radio_button(object_name, method, tag_value, options = T.unsafe(nil)); end
 
-  # source://actionview/7.1.0.alpha-b113b7fc4a26419efe52a4946d2c07bd1bd38d0c/lib/action_view/helpers/form_helper.rb#1580
+  # source://actionview/7.1.0.alpha-2815cb96207172f675a49860666f26167757f93c/lib/action_view/helpers/form_helper.rb#1580
   def range_field(object_name, method, options = T.unsafe(nil)); end
 
   def rich_text_area(object_name, method, options = T.unsafe(nil)); end
 
-  # source://actionview/7.1.0.alpha-b113b7fc4a26419efe52a4946d2c07bd1bd38d0c/lib/action_view/helpers/form_helper.rb#1394
+  # source://actionview/7.1.0.alpha-2815cb96207172f675a49860666f26167757f93c/lib/action_view/helpers/form_helper.rb#1394
   def search_field(object_name, method, options = T.unsafe(nil)); end
 
-  # source://actionview/7.1.0.alpha-b113b7fc4a26419efe52a4946d2c07bd1bd38d0c/lib/action_view/helpers/form_helper.rb#1403
+  # source://actionview/7.1.0.alpha-2815cb96207172f675a49860666f26167757f93c/lib/action_view/helpers/form_helper.rb#1403
   def telephone_field(object_name, method, options = T.unsafe(nil)); end
 
-  # source://actionview/7.1.0.alpha-b113b7fc4a26419efe52a4946d2c07bd1bd38d0c/lib/action_view/helpers/form_helper.rb#1273
+  # source://actionview/7.1.0.alpha-2815cb96207172f675a49860666f26167757f93c/lib/action_view/helpers/form_helper.rb#1273
   def text_area(object_name, method, options = T.unsafe(nil)); end
 
-  # source://actionview/7.1.0.alpha-b113b7fc4a26419efe52a4946d2c07bd1bd38d0c/lib/action_view/helpers/form_helper.rb#1171
+  # source://actionview/7.1.0.alpha-2815cb96207172f675a49860666f26167757f93c/lib/action_view/helpers/form_helper.rb#1171
   def text_field(object_name, method, options = T.unsafe(nil)); end
 
-  # source://actionview/7.1.0.alpha-b113b7fc4a26419efe52a4946d2c07bd1bd38d0c/lib/action_view/helpers/form_helper.rb#1473
+  # source://actionview/7.1.0.alpha-2815cb96207172f675a49860666f26167757f93c/lib/action_view/helpers/form_helper.rb#1473
   def time_field(object_name, method, options = T.unsafe(nil)); end
 
-  # source://actionview/7.1.0.alpha-b113b7fc4a26419efe52a4946d2c07bd1bd38d0c/lib/action_view/helpers/form_helper.rb#1553
+  # source://actionview/7.1.0.alpha-2815cb96207172f675a49860666f26167757f93c/lib/action_view/helpers/form_helper.rb#1553
   def url_field(object_name, method, options = T.unsafe(nil)); end
 
-  # source://actionview/7.1.0.alpha-b113b7fc4a26419efe52a4946d2c07bd1bd38d0c/lib/action_view/helpers/form_helper.rb#1544
+  # source://actionview/7.1.0.alpha-2815cb96207172f675a49860666f26167757f93c/lib/action_view/helpers/form_helper.rb#1544
   def week_field(object_name, method, options = T.unsafe(nil)); end
 
   private
 
-  # source://actionview/7.1.0.alpha-b113b7fc4a26419efe52a4946d2c07bd1bd38d0c/lib/action_view/helpers/form_helper.rb#464
+  # source://actionview/7.1.0.alpha-2815cb96207172f675a49860666f26167757f93c/lib/action_view/helpers/form_helper.rb#464
   def apply_form_for_options!(object, options); end
 
-  # source://actionview/7.1.0.alpha-b113b7fc4a26419efe52a4946d2c07bd1bd38d0c/lib/action_view/helpers/form_helper.rb#1618
+  # source://actionview/7.1.0.alpha-2815cb96207172f675a49860666f26167757f93c/lib/action_view/helpers/form_helper.rb#1618
   def default_form_builder_class; end
 
-  # source://actionview/7.1.0.alpha-b113b7fc4a26419efe52a4946d2c07bd1bd38d0c/lib/action_view/helpers/form_helper.rb#1589
+  # source://actionview/7.1.0.alpha-2815cb96207172f675a49860666f26167757f93c/lib/action_view/helpers/form_helper.rb#1589
   def html_options_for_form_with(url_for_options = T.unsafe(nil), model = T.unsafe(nil), html: T.unsafe(nil), local: T.unsafe(nil), skip_enforcing_utf8: T.unsafe(nil), **options); end
 
-  # source://actionview/7.1.0.alpha-b113b7fc4a26419efe52a4946d2c07bd1bd38d0c/lib/action_view/helpers/form_helper.rb#1604
+  # source://actionview/7.1.0.alpha-2815cb96207172f675a49860666f26167757f93c/lib/action_view/helpers/form_helper.rb#1604
   def instantiate_builder(record_name, record_object, options); end
 
   class << self
-    # source://actionview/7.1.0.alpha-b113b7fc4a26419efe52a4946d2c07bd1bd38d0c/lib/action_view/helpers/form_helper.rb#480
+    # source://actionview/7.1.0.alpha-2815cb96207172f675a49860666f26167757f93c/lib/action_view/helpers/form_helper.rb#480
     def form_with_generates_ids; end
 
-    # source://actionview/7.1.0.alpha-b113b7fc4a26419efe52a4946d2c07bd1bd38d0c/lib/action_view/helpers/form_helper.rb#480
+    # source://actionview/7.1.0.alpha-2815cb96207172f675a49860666f26167757f93c/lib/action_view/helpers/form_helper.rb#480
     def form_with_generates_ids=(val); end
 
-    # source://actionview/7.1.0.alpha-b113b7fc4a26419efe52a4946d2c07bd1bd38d0c/lib/action_view/helpers/form_helper.rb#478
+    # source://actionview/7.1.0.alpha-2815cb96207172f675a49860666f26167757f93c/lib/action_view/helpers/form_helper.rb#478
     def form_with_generates_remote_forms; end
 
-    # source://actionview/7.1.0.alpha-b113b7fc4a26419efe52a4946d2c07bd1bd38d0c/lib/action_view/helpers/form_helper.rb#478
+    # source://actionview/7.1.0.alpha-2815cb96207172f675a49860666f26167757f93c/lib/action_view/helpers/form_helper.rb#478
     def form_with_generates_remote_forms=(val); end
 
-    # source://actionview/7.1.0.alpha-b113b7fc4a26419efe52a4946d2c07bd1bd38d0c/lib/action_view/helpers/form_helper.rb#482
+    # source://actionview/7.1.0.alpha-2815cb96207172f675a49860666f26167757f93c/lib/action_view/helpers/form_helper.rb#482
     def multiple_file_field_include_hidden; end
 
-    # source://actionview/7.1.0.alpha-b113b7fc4a26419efe52a4946d2c07bd1bd38d0c/lib/action_view/helpers/form_helper.rb#482
+    # source://actionview/7.1.0.alpha-2815cb96207172f675a49860666f26167757f93c/lib/action_view/helpers/form_helper.rb#482
     def multiple_file_field_include_hidden=(val); end
   end
 end

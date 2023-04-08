@@ -3642,10 +3642,35 @@ module ActiveSupport::Dependencies::RequireDependency
   def require_dependency(filename); end
 end
 
-# \Deprecation specifies the API used by Rails to deprecate methods, instance
-# variables, objects, and constants.
+# \Deprecation specifies the API used by Rails to deprecate methods, instance variables, objects, and constants. It's
+# also available for gems or applications.
 #
-# source://activesupport//lib/active_support/deprecation.rb#8
+# For a gem, use Deprecation.new to create a Deprecation object and store it in your module or class (in order for
+# users to be able to configure it).
+#
+#   module MyLibrary
+#     def self.deprecator
+#       @deprecator ||= ActiveSupport::Deprecation.new("2.0", "MyLibrary")
+#     end
+#   end
+#
+# For a Railtie or Engine, you may also want to add it to the application's deprecators, so that the application's
+# configuration can be applied to it.
+#
+#   module MyLibrary
+#     class Railtie < Rails::Railtie
+#       initializer "deprecator" do |app|
+#         app.deprecators[:my_library] = MyLibrary.deprecator
+#       end
+#     end
+#   end
+#
+# With the above initializer, configuration settings like the following will affect +MyLibrary.deprecator+:
+#
+#   # in config/environments/test.rb
+#   config.active_support.deprecation = :raise
+#
+# source://activesupport//lib/active_support/deprecation.rb#33
 class ActiveSupport::Deprecation
   include ::Singleton
   include ::ActiveSupport::Deprecation::InstanceDelegator
@@ -3664,81 +3689,84 @@ class ActiveSupport::Deprecation
   #
   # @return [Deprecation] a new instance of Deprecation
   #
-  # source://activesupport//lib/active_support/deprecation.rb#42
+  # source://activesupport//lib/active_support/deprecation.rb#67
   def initialize(deprecation_horizon = T.unsafe(nil), gem_name = T.unsafe(nil)); end
 
   # The version number in which the deprecated behavior will be removed, by default.
   #
-  # source://activesupport//lib/active_support/deprecation.rb#36
+  # source://activesupport//lib/active_support/deprecation.rb#61
   def deprecation_horizon; end
 
   # The version number in which the deprecated behavior will be removed, by default.
   #
-  # source://activesupport//lib/active_support/deprecation.rb#36
+  # source://activesupport//lib/active_support/deprecation.rb#61
   def deprecation_horizon=(_arg0); end
 
   class << self
-    # source://activesupport//lib/active_support/deprecation/instance_delegator.rb#21
+    # source://singleton/0.1.1/singleton.rb#123
+    def _instance; end
+
+    # source://activesupport//lib/active_support/deprecation/instance_delegator.rb#33
     def allow(*_arg0, **_arg1, &_arg2); end
 
-    # source://activesupport//lib/active_support/deprecation/instance_delegator.rb#21
+    # source://activesupport//lib/active_support/deprecation/instance_delegator.rb#33
     def begin_silence(*_arg0, **_arg1, &_arg2); end
 
-    # source://activesupport//lib/active_support/deprecation/instance_delegator.rb#21
+    # source://activesupport//lib/active_support/deprecation/instance_delegator.rb#33
     def behavior(*_arg0, **_arg1, &_arg2); end
 
-    # source://activesupport//lib/active_support/deprecation/instance_delegator.rb#21
+    # source://activesupport//lib/active_support/deprecation/instance_delegator.rb#33
     def behavior=(arg); end
 
-    # source://activesupport//lib/active_support/deprecation/instance_delegator.rb#21
+    # source://activesupport//lib/active_support/deprecation/instance_delegator.rb#33
     def debug(*_arg0, **_arg1, &_arg2); end
 
-    # source://activesupport//lib/active_support/deprecation/instance_delegator.rb#21
+    # source://activesupport//lib/active_support/deprecation/instance_delegator.rb#33
     def debug=(arg); end
 
-    # source://activesupport//lib/active_support/deprecation/instance_delegator.rb#21
+    # source://activesupport//lib/active_support/deprecation/instance_delegator.rb#33
     def deprecate_methods(*_arg0, **_arg1, &_arg2); end
 
-    # source://activesupport//lib/active_support/deprecation/instance_delegator.rb#21
+    # source://activesupport//lib/active_support/deprecation/instance_delegator.rb#33
     def deprecation_horizon(*_arg0, **_arg1, &_arg2); end
 
-    # source://activesupport//lib/active_support/deprecation/instance_delegator.rb#21
+    # source://activesupport//lib/active_support/deprecation/instance_delegator.rb#33
     def deprecation_horizon=(arg); end
 
-    # source://activesupport//lib/active_support/deprecation/instance_delegator.rb#31
+    # source://activesupport//lib/active_support/deprecation/instance_delegator.rb#53
     def deprecation_warning(deprecated_method_name, message = T.unsafe(nil), caller_backtrace = T.unsafe(nil)); end
 
-    # source://activesupport//lib/active_support/deprecation/instance_delegator.rb#21
+    # source://activesupport//lib/active_support/deprecation/instance_delegator.rb#33
     def disallowed_behavior(*_arg0, **_arg1, &_arg2); end
 
-    # source://activesupport//lib/active_support/deprecation/instance_delegator.rb#21
+    # source://activesupport//lib/active_support/deprecation/instance_delegator.rb#33
     def disallowed_behavior=(arg); end
 
-    # source://activesupport//lib/active_support/deprecation/instance_delegator.rb#21
+    # source://activesupport//lib/active_support/deprecation/instance_delegator.rb#33
     def disallowed_warnings(*_arg0, **_arg1, &_arg2); end
 
-    # source://activesupport//lib/active_support/deprecation/instance_delegator.rb#21
+    # source://activesupport//lib/active_support/deprecation/instance_delegator.rb#33
     def disallowed_warnings=(arg); end
 
-    # source://activesupport//lib/active_support/deprecation/instance_delegator.rb#21
+    # source://activesupport//lib/active_support/deprecation/instance_delegator.rb#33
     def end_silence(*_arg0, **_arg1, &_arg2); end
 
-    # source://activesupport//lib/active_support/deprecation/instance_delegator.rb#21
+    # source://activesupport//lib/active_support/deprecation/instance_delegator.rb#33
     def gem_name(*_arg0, **_arg1, &_arg2); end
 
-    # source://activesupport//lib/active_support/deprecation/instance_delegator.rb#21
+    # source://activesupport//lib/active_support/deprecation/instance_delegator.rb#33
     def gem_name=(arg); end
 
-    # source://activesupport//lib/active_support/deprecation/instance_delegator.rb#21
+    # source://activesupport//lib/active_support/deprecation/instance_delegator.rb#33
     def silence(*_arg0, **_arg1, &_arg2); end
 
-    # source://activesupport//lib/active_support/deprecation/instance_delegator.rb#21
+    # source://activesupport//lib/active_support/deprecation/instance_delegator.rb#33
     def silenced(*_arg0, **_arg1, &_arg2); end
 
-    # source://activesupport//lib/active_support/deprecation/instance_delegator.rb#21
+    # source://activesupport//lib/active_support/deprecation/instance_delegator.rb#33
     def silenced=(arg); end
 
-    # source://activesupport//lib/active_support/deprecation/instance_delegator.rb#26
+    # source://activesupport//lib/active_support/deprecation/instance_delegator.rb#48
     def warn(message = T.unsafe(nil), callstack = T.unsafe(nil)); end
   end
 end
@@ -3778,17 +3806,18 @@ module ActiveSupport::Deprecation::Behavior
   # Deprecation warnings raised by gems are not affected by this setting
   # because they happen before Rails boots up.
   #
-  #   ActiveSupport::Deprecation.behavior = :stderr
-  #   ActiveSupport::Deprecation.behavior = [:stderr, :log]
-  #   ActiveSupport::Deprecation.behavior = MyCustomHandler
-  #   ActiveSupport::Deprecation.behavior = ->(message, callstack, deprecation_horizon, gem_name) {
+  #   deprecator = ActiveSupport::Deprecation.new
+  #   deprecator.behavior = :stderr
+  #   deprecator.behavior = [:stderr, :log]
+  #   deprecator.behavior = MyCustomHandler
+  #   deprecator.behavior = ->(message, callstack, deprecation_horizon, gem_name) {
   #     # custom stuff
   #   }
   #
   # If you are using Rails, you can set <tt>config.active_support.report_deprecations = false</tt> to disable
   # all deprecation behaviors. This is similar to the +silence+ option but more performant.
   #
-  # source://activesupport//lib/active_support/deprecation/behaviors.rb#100
+  # source://activesupport//lib/active_support/deprecation/behaviors.rb#101
   def behavior=(behavior); end
 
   # Whether to print a backtrace along with the warning.
@@ -3807,19 +3836,19 @@ module ActiveSupport::Deprecation::Behavior
   def disallowed_behavior; end
 
   # Sets the behavior for disallowed deprecations (those configured by
-  # ActiveSupport::Deprecation.disallowed_warnings=) to the specified
+  # ActiveSupport::Deprecation#disallowed_warnings=) to the specified
   # value. As with +behavior=+, this can be a single value, array, or an
   # object that responds to +call+.
   #
-  # source://activesupport//lib/active_support/deprecation/behaviors.rb#108
+  # source://activesupport//lib/active_support/deprecation/behaviors.rb#109
   def disallowed_behavior=(behavior); end
 
   private
 
-  # source://activesupport//lib/active_support/deprecation/behaviors.rb#113
+  # source://activesupport//lib/active_support/deprecation/behaviors.rb#114
   def arity_coerce(behavior); end
 
-  # source://activesupport//lib/active_support/deprecation/behaviors.rb#132
+  # source://activesupport//lib/active_support/deprecation/behaviors.rb#133
   def arity_of_callable(callable); end
 end
 
@@ -3832,8 +3861,7 @@ ActiveSupport::Deprecation::DEFAULT_BEHAVIORS = T.let(T.unsafe(nil), Hash)
 # hooking +const_missing+.
 #
 # It takes the names of an old (deprecated) constant and of a new constant
-# (both in string form) and optionally a deprecator. The deprecator defaults
-# to +ActiveSupport::Deprecator+ if none is specified.
+# (both in string form) and a deprecator.
 #
 # The deprecated constant now returns the same object as the new one rather
 # than a proxy object, so it can be used transparently in +rescue+ blocks
@@ -3845,46 +3873,44 @@ ActiveSupport::Deprecation::DEFAULT_BEHAVIORS = T.let(T.unsafe(nil), Hash)
 #
 #   PLANETS_POST_2006 = %w(mercury venus earth mars jupiter saturn uranus neptune)
 #   include ActiveSupport::Deprecation::DeprecatedConstantAccessor
-#   deprecate_constant 'PLANETS', 'PLANETS_POST_2006'
+#   deprecate_constant 'PLANETS', 'PLANETS_POST_2006', deprecator: ActiveSupport::Deprecation.new
 #
 #   PLANETS.map { |planet| planet.capitalize }
 #   # => DEPRECATION WARNING: PLANETS is deprecated! Use PLANETS_POST_2006 instead.
 #        (Backtrace information…)
 #        ["Mercury", "Venus", "Earth", "Mars", "Jupiter", "Saturn", "Uranus", "Neptune"]
 #
-# source://activesupport//lib/active_support/deprecation/constant_accessor.rb#28
+# source://activesupport//lib/active_support/deprecation/constant_accessor.rb#27
 module ActiveSupport::Deprecation::DeprecatedConstantAccessor
   class << self
     # @private
     #
-    # source://activesupport//lib/active_support/deprecation/constant_accessor.rb#29
+    # source://activesupport//lib/active_support/deprecation/constant_accessor.rb#28
     def included(base); end
   end
 end
 
-# DeprecatedConstantProxy transforms a constant into a deprecated one. It
-# takes the full names of an old (deprecated) constant and of a new constant
-# (both in string form) and optionally a deprecator. The deprecator defaults
-# to +ActiveSupport::Deprecator+ if none is specified. The deprecated constant
-# now returns the value of the new one.
+# DeprecatedConstantProxy transforms a constant into a deprecated one. It takes the full names of an old
+# (deprecated) constant and of a new constant (both in string form) and a deprecator. The deprecated constant now
+# returns the value of the new one.
 #
 #   PLANETS = %w(mercury venus earth mars jupiter saturn uranus neptune pluto)
 #
 #   # (In a later update, the original implementation of `PLANETS` has been removed.)
 #
 #   PLANETS_POST_2006 = %w(mercury venus earth mars jupiter saturn uranus neptune)
-#   PLANETS = ActiveSupport::Deprecation::DeprecatedConstantProxy.new('PLANETS', 'PLANETS_POST_2006')
+#   PLANETS = ActiveSupport::Deprecation::DeprecatedConstantProxy.new("PLANETS", "PLANETS_POST_2006", ActiveSupport::Deprecation.new)
 #
 #   PLANETS.map { |planet| planet.capitalize }
 #   # => DEPRECATION WARNING: PLANETS is deprecated! Use PLANETS_POST_2006 instead.
 #        (Backtrace information…)
 #        ["Mercury", "Venus", "Earth", "Mars", "Jupiter", "Saturn", "Uranus", "Neptune"]
 #
-# source://activesupport//lib/active_support/deprecation/proxy_wrappers.rb#123
+# source://activesupport//lib/active_support/deprecation/proxy_wrappers.rb#122
 class ActiveSupport::Deprecation::DeprecatedConstantProxy < ::Module
   # @return [DeprecatedConstantProxy] a new instance of DeprecatedConstantProxy
   #
-  # source://activesupport//lib/active_support/deprecation/proxy_wrappers.rb#131
+  # source://activesupport//lib/active_support/deprecation/proxy_wrappers.rb#130
   def initialize(old_const, new_const, deprecator = T.unsafe(nil), message: T.unsafe(nil)); end
 
   # source://activesupport//lib/active_support/deprecation/proxy_wrappers.rb#161
@@ -3935,20 +3961,20 @@ class ActiveSupport::Deprecation::DeprecatedConstantProxy < ::Module
   def target; end
 
   class << self
-    # source://activesupport//lib/active_support/deprecation/proxy_wrappers.rb#124
+    # source://activesupport//lib/active_support/deprecation/proxy_wrappers.rb#123
     def new(*args, **options, &block); end
   end
 end
 
-# DeprecatedInstanceVariableProxy transforms an instance variable into a
-# deprecated one. It takes an instance of a class, a method on that class
-# and an instance variable. It optionally takes a deprecator as the last
-# argument. The deprecator defaults to +ActiveSupport::Deprecator+ if none
-# is specified.
+# DeprecatedInstanceVariableProxy transforms an instance variable into a deprecated one. It takes an instance of a
+# class, a method on that class, an instance variable, and a deprecator as the last argument.
+#
+# Trying to use the deprecated instance variable will result in a deprecation warning, pointing to the method as a
+# replacement.
 #
 #   class Example
 #     def initialize
-#       @request = ActiveSupport::Deprecation::DeprecatedInstanceVariableProxy.new(self, :request, :@request)
+#       @request = ActiveSupport::Deprecation::DeprecatedInstanceVariableProxy.new(self, :request, :@request, ActiveSupport::Deprecation.new)
 #       @_request = :special_request
 #     end
 #
@@ -3982,18 +4008,17 @@ class ActiveSupport::Deprecation::DeprecatedInstanceVariableProxy < ::ActiveSupp
 
   private
 
-  # source://activesupport//lib/active_support/deprecation/proxy_wrappers.rb#97
+  # source://activesupport//lib/active_support/deprecation/proxy_wrappers.rb#98
   def target; end
 
-  # source://activesupport//lib/active_support/deprecation/proxy_wrappers.rb#101
+  # source://activesupport//lib/active_support/deprecation/proxy_wrappers.rb#102
   def warn(callstack, called, args); end
 end
 
-# DeprecatedObjectProxy transforms an object into a deprecated one. It
-# takes an object, a deprecation message, and optionally a deprecator. The
-# deprecator defaults to +ActiveSupport::Deprecator+ if none is specified.
+# DeprecatedObjectProxy transforms an object into a deprecated one. It takes an object, a deprecation message, and
+# a deprecator.
 #
-#   deprecated_object = ActiveSupport::Deprecation::DeprecatedObjectProxy.new(Object.new, "This object is now deprecated")
+#   deprecated_object = ActiveSupport::Deprecation::DeprecatedObjectProxy.new(Object.new, "This object is now deprecated", ActiveSupport::Deprecation.new)
 #   # => #<Object:0x007fb9b34c34b0>
 #
 #   deprecated_object.to_s
@@ -4001,11 +4026,11 @@ end
 #   (Backtrace)
 #   # => "#<Object:0x007fb9b34c34b0>"
 #
-# source://activesupport//lib/active_support/deprecation/proxy_wrappers.rb#39
+# source://activesupport//lib/active_support/deprecation/proxy_wrappers.rb#38
 class ActiveSupport::Deprecation::DeprecatedObjectProxy < ::ActiveSupport::Deprecation::DeprecationProxy
   # @return [DeprecatedObjectProxy] a new instance of DeprecatedObjectProxy
   #
-  # source://activesupport//lib/active_support/deprecation/proxy_wrappers.rb#40
+  # source://activesupport//lib/active_support/deprecation/proxy_wrappers.rb#39
   def initialize(object, message, deprecator = T.unsafe(nil)); end
 
   private
@@ -4163,34 +4188,34 @@ module ActiveSupport::Deprecation::Disallowed
   def explicitly_allowed?(message); end
 end
 
-# source://activesupport//lib/active_support/deprecation/instance_delegator.rb#7
+# source://activesupport//lib/active_support/deprecation/instance_delegator.rb#5
 module ActiveSupport::Deprecation::InstanceDelegator
-  mixes_in_class_methods ::ActiveSupport::Deprecation::InstanceDelegator::ClassMethods
-  mixes_in_class_methods ::ActiveSupport::Deprecation::InstanceDelegator::OverrideDelegators
-
   class << self
     # @private
     #
-    # source://activesupport//lib/active_support/deprecation/instance_delegator.rb#8
+    # source://activesupport//lib/active_support/deprecation/instance_delegator.rb#6
     def included(base); end
   end
 end
 
-# source://activesupport//lib/active_support/deprecation/instance_delegator.rb#14
+# source://activesupport//lib/active_support/deprecation/instance_delegator.rb#13
 module ActiveSupport::Deprecation::InstanceDelegator::ClassMethods
-  # source://activesupport//lib/active_support/deprecation/instance_delegator.rb#15
+  # source://activesupport//lib/active_support/deprecation/instance_delegator.rb#14
   def include(included_module); end
 
-  # source://activesupport//lib/active_support/deprecation/instance_delegator.rb#20
+  # source://activesupport//lib/active_support/deprecation/instance_delegator.rb#41
+  def instance; end
+
+  # source://activesupport//lib/active_support/deprecation/instance_delegator.rb#19
   def method_added(method_name); end
 end
 
-# source://activesupport//lib/active_support/deprecation/instance_delegator.rb#25
+# source://activesupport//lib/active_support/deprecation/instance_delegator.rb#47
 module ActiveSupport::Deprecation::InstanceDelegator::OverrideDelegators
-  # source://activesupport//lib/active_support/deprecation/instance_delegator.rb#31
+  # source://activesupport//lib/active_support/deprecation/instance_delegator.rb#53
   def deprecation_warning(deprecated_method_name, message = T.unsafe(nil), caller_backtrace = T.unsafe(nil)); end
 
-  # source://activesupport//lib/active_support/deprecation/instance_delegator.rb#26
+  # source://activesupport//lib/active_support/deprecation/instance_delegator.rb#48
   def warn(message = T.unsafe(nil), callstack = T.unsafe(nil)); end
 end
 
@@ -4206,41 +4231,24 @@ module ActiveSupport::Deprecation::MethodWrapper
   #     def eee; end
   #   end
   #
-  # Using the default deprecator:
-  #   ActiveSupport::Deprecation.deprecate_methods(Fred, :aaa, bbb: :zzz, ccc: 'use Bar#ccc instead')
+  #   deprecator = ActiveSupport::Deprecation.new('next-release', 'MyGem')
+  #
+  #   deprecator.deprecate_methods(Fred, :aaa, bbb: :zzz, ccc: 'use Bar#ccc instead')
   #   # => Fred
   #
   #   Fred.new.aaa
-  #   # DEPRECATION WARNING: aaa is deprecated and will be removed from Rails 5.1. (called from irb_binding at (irb):10)
+  #   # DEPRECATION WARNING: aaa is deprecated and will be removed from MyGem next-release. (called from irb_binding at (irb):10)
   #   # => nil
   #
   #   Fred.new.bbb
-  #   # DEPRECATION WARNING: bbb is deprecated and will be removed from Rails 5.1 (use zzz instead). (called from irb_binding at (irb):11)
+  #   # DEPRECATION WARNING: bbb is deprecated and will be removed from MyGem next-release (use zzz instead). (called from irb_binding at (irb):11)
   #   # => nil
   #
   #   Fred.new.ccc
-  #   # DEPRECATION WARNING: ccc is deprecated and will be removed from Rails 5.1 (use Bar#ccc instead). (called from irb_binding at (irb):12)
+  #   # DEPRECATION WARNING: ccc is deprecated and will be removed from MyGem next-release (use Bar#ccc instead). (called from irb_binding at (irb):12)
   #   # => nil
   #
-  # Passing in a custom deprecator:
-  #   custom_deprecator = ActiveSupport::Deprecation.new('next-release', 'MyGem')
-  #   ActiveSupport::Deprecation.deprecate_methods(Fred, ddd: :zzz, deprecator: custom_deprecator)
-  #   # => [:ddd]
-  #
-  #   Fred.new.ddd
-  #   DEPRECATION WARNING: ddd is deprecated and will be removed from MyGem next-release (use zzz instead). (called from irb_binding at (irb):15)
-  #   # => nil
-  #
-  # Using a custom deprecator directly:
-  #   custom_deprecator = ActiveSupport::Deprecation.new('next-release', 'MyGem')
-  #   custom_deprecator.deprecate_methods(Fred, eee: :zzz)
-  #   # => [:eee]
-  #
-  #   Fred.new.eee
-  #   DEPRECATION WARNING: eee is deprecated and will be removed from MyGem next-release (use zzz instead). (called from irb_binding at (irb):18)
-  #   # => nil
-  #
-  # source://activesupport//lib/active_support/deprecation/method_wrappers.rb#52
+  # source://activesupport//lib/active_support/deprecation/method_wrappers.rb#35
   def deprecate_methods(target_module, *method_names); end
 end
 
@@ -4251,37 +4259,38 @@ module ActiveSupport::Deprecation::Reporting
   # expressions. (Symbols are treated as strings). These are compared against
   # the text of deprecation warning messages generated within the block.
   # Matching warnings will be exempt from the rules set by
-  # +ActiveSupport::Deprecation.disallowed_warnings+
+  # +ActiveSupport::Deprecation#disallowed_warnings+
   #
   # The optional <tt>if:</tt> argument accepts a truthy/falsy value or an object that
   # responds to <tt>.call</tt>. If truthy, then matching warnings will be allowed.
   # If falsey then the method yields to the block without allowing the warning.
   #
-  #   ActiveSupport::Deprecation.disallowed_behavior = :raise
-  #   ActiveSupport::Deprecation.disallowed_warnings = [
+  #   deprecator = ActiveSupport::Deprecation.new
+  #   deprecator.disallowed_behavior = :raise
+  #   deprecator.disallowed_warnings = [
   #     "something broke"
   #   ]
   #
-  #   ActiveSupport::Deprecation.warn('something broke!')
+  #   deprecator.warn('something broke!')
   #   # => ActiveSupport::DeprecationException
   #
-  #   ActiveSupport::Deprecation.allow ['something broke'] do
-  #     ActiveSupport::Deprecation.warn('something broke!')
+  #   deprecator.allow ['something broke'] do
+  #     deprecator.warn('something broke!')
   #   end
   #   # => nil
   #
-  #   ActiveSupport::Deprecation.allow ['something broke'], if: Rails.env.production? do
-  #     ActiveSupport::Deprecation.warn('something broke!')
+  #   deprecator.allow ['something broke'], if: Rails.env.production? do
+  #     deprecator.warn('something broke!')
   #   end
   #   # => ActiveSupport::DeprecationException for dev/test, nil for production
   #
-  # source://activesupport//lib/active_support/deprecation/reporting.rb#87
+  # source://activesupport//lib/active_support/deprecation/reporting.rb#88
   def allow(allowed_warnings = T.unsafe(nil), if: T.unsafe(nil), &block); end
 
   # source://activesupport//lib/active_support/deprecation/reporting.rb#47
   def begin_silence; end
 
-  # source://activesupport//lib/active_support/deprecation/reporting.rb#97
+  # source://activesupport//lib/active_support/deprecation/reporting.rb#98
   def deprecation_warning(deprecated_method_name, message = T.unsafe(nil), caller_backtrace = T.unsafe(nil)); end
 
   # source://activesupport//lib/active_support/deprecation/reporting.rb#51
@@ -4299,11 +4308,12 @@ module ActiveSupport::Deprecation::Reporting
 
   # Silence deprecation warnings within the block.
   #
-  #   ActiveSupport::Deprecation.warn('something broke!')
+  #   deprecator = ActiveSupport::Deprecation.new
+  #   deprecator.warn('something broke!')
   #   # => "DEPRECATION WARNING: something broke! (called from your_code.rb:1)"
   #
-  #   ActiveSupport::Deprecation.silence do
-  #     ActiveSupport::Deprecation.warn('something broke!')
+  #   deprecator.silence do
+  #     deprecator.warn('something broke!')
   #   end
   #   # => nil
   #
@@ -4318,18 +4328,17 @@ module ActiveSupport::Deprecation::Reporting
   # source://activesupport//lib/active_support/deprecation/reporting.rb#9
   def silenced=(_arg0); end
 
-  # Outputs a deprecation warning to the output configured by
-  # <tt>ActiveSupport::Deprecation.behavior</tt>.
+  # Outputs a deprecation warning to the output configured by <tt>ActiveSupport::Deprecation#behavior</tt>.
   #
-  #   ActiveSupport::Deprecation.warn('something broke!')
+  #   ActiveSupport::Deprecation.new.warn('something broke!')
   #   # => "DEPRECATION WARNING: something broke! (called from your_code.rb:1)"
   #
-  # source://activesupport//lib/active_support/deprecation/reporting.rb#18
+  # source://activesupport//lib/active_support/deprecation/reporting.rb#17
   def warn(message = T.unsafe(nil), callstack = T.unsafe(nil)); end
 
   private
 
-  # source://activesupport//lib/active_support/deprecation/reporting.rb#149
+  # source://activesupport//lib/active_support/deprecation/reporting.rb#150
   def _extract_callstack(callstack); end
 
   # Outputs a deprecation warning message
@@ -4341,23 +4350,23 @@ module ActiveSupport::Deprecation::Reporting
   #   deprecated_method_warning(:method_name, "Optional message")
   #   # => "method_name is deprecated and will be removed from Rails #{deprecation_horizon} (Optional message)"
   #
-  # source://activesupport//lib/active_support/deprecation/reporting.rb#113
+  # source://activesupport//lib/active_support/deprecation/reporting.rb#114
   def deprecated_method_warning(method_name, message = T.unsafe(nil)); end
 
-  # source://activesupport//lib/active_support/deprecation/reporting.rb#127
+  # source://activesupport//lib/active_support/deprecation/reporting.rb#128
   def deprecation_caller_message(callstack); end
 
-  # source://activesupport//lib/active_support/deprecation/reporting.rb#122
+  # source://activesupport//lib/active_support/deprecation/reporting.rb#123
   def deprecation_message(callstack, message = T.unsafe(nil)); end
 
-  # source://activesupport//lib/active_support/deprecation/reporting.rb#138
+  # source://activesupport//lib/active_support/deprecation/reporting.rb#139
   def extract_callstack(callstack); end
 
-  # source://activesupport//lib/active_support/deprecation/reporting.rb#164
+  # source://activesupport//lib/active_support/deprecation/reporting.rb#165
   def ignored_callstack(path); end
 end
 
-# source://activesupport//lib/active_support/deprecation/reporting.rb#162
+# source://activesupport//lib/active_support/deprecation/reporting.rb#163
 ActiveSupport::Deprecation::Reporting::RAILS_GEM_ROOT = T.let(T.unsafe(nil), String)
 
 # Raised when ActiveSupport::Deprecation::Behavior#behavior is set with <tt>:raise</tt>.
@@ -11931,8 +11940,6 @@ end
 # source://activesupport//lib/active_support/testing/deprecation.rb#7
 module ActiveSupport::Testing::Deprecation
   # :call-seq:
-  #   assert_deprecated(&block)
-  #   assert_deprecated(match, &block)
   #   assert_deprecated(deprecator, &block)
   #   assert_deprecated(match, deprecator, &block)
   #
@@ -11954,13 +11961,7 @@ module ActiveSupport::Testing::Deprecation
   #     CustomDeprecator.warn "foo should no longer be used"
   #   end
   #
-  # If no +deprecator+ is given, defaults to ActiveSupport::Deprecation.
-  #
-  #   assert_deprecated do
-  #     ActiveSupport::Deprecation.warn "foo should no longer be used"
-  #   end
-  #
-  # source://activesupport//lib/active_support/testing/deprecation.rb#38
+  # source://activesupport//lib/active_support/testing/deprecation.rb#30
   def assert_deprecated(match = T.unsafe(nil), deprecator = T.unsafe(nil), &block); end
 
   # Asserts that no deprecation warnings are emitted by the given deprecator during the execution of the yielded block.
@@ -11969,17 +11970,11 @@ module ActiveSupport::Testing::Deprecation
   #     CustomDeprecator.warn "message" # fails assertion
   #   end
   #
-  # If no +deprecator+ is given, defaults to ActiveSupport::Deprecation.
-  #
-  #   assert_not_deprecated do
-  #     ActiveSupport::Deprecation.warn "message" # fails assertion
+  #   assert_not_deprecated(ActiveSupport::Deprecation.new) do
+  #     CustomDeprecator.warn "message" # passes assertion, different deprecator
   #   end
   #
-  #   assert_not_deprecated do
-  #     CustomDeprecator.warn "message" # passes assertion
-  #   end
-  #
-  # source://activesupport//lib/active_support/testing/deprecation.rb#64
+  # source://activesupport//lib/active_support/testing/deprecation.rb#54
   def assert_not_deprecated(deprecator = T.unsafe(nil), &block); end
 
   # Returns the return value of the block and an array of all the deprecation warnings emitted by the given
@@ -11987,18 +11982,11 @@ module ActiveSupport::Testing::Deprecation
   #
   #   collect_deprecations(CustomDeprecator) do
   #     CustomDeprecator.warn "message"
+  #     ActiveSupport::Deprecation.new.warn "other message"
   #     :result
   #   end # => [:result, ["message"]]
   #
-  # If no +deprecator+ is given, defaults to ActiveSupport::Deprecation.
-  #
-  #   collect_deprecations do
-  #     CustomDeprecator.warn "custom message"
-  #     ActiveSupport::Deprecation.warn "message"
-  #     :result
-  #   end # => [:result, ["message"]]
-  #
-  # source://activesupport//lib/active_support/testing/deprecation.rb#85
+  # source://activesupport//lib/active_support/testing/deprecation.rb#72
   def collect_deprecations(deprecator = T.unsafe(nil)); end
 end
 
@@ -14224,7 +14212,7 @@ class Array
   # source://activesupport//lib/active_support/core_ext/array/access.rb#24
   def to(position); end
 
-  # source://activesupport//lib/active_support/deprecation/method_wrappers.rb#63
+  # source://activesupport//lib/active_support/deprecation/method_wrappers.rb#46
   def to_default_s(*args, **_arg1, &block); end
 
   # Extends <tt>Array#to_s</tt> to convert a collection of elements into a
@@ -14753,7 +14741,7 @@ class Date
   # source://activesupport//lib/active_support/core_ext/date/calculations.rb#61
   def since(seconds); end
 
-  # source://activesupport//lib/active_support/deprecation/method_wrappers.rb#63
+  # source://activesupport//lib/active_support/deprecation/method_wrappers.rb#46
   def to_default_s(*args, **_arg1, &block); end
 
   # Convert to a formatted string. See DATE_FORMATS for predefined formats.
@@ -15675,7 +15663,7 @@ class DateTime < ::Date
   # source://activesupport//lib/active_support/core_ext/date_time/calculations.rb#36
   def subsec; end
 
-  # source://activesupport//lib/active_support/deprecation/method_wrappers.rb#63
+  # source://activesupport//lib/active_support/deprecation/method_wrappers.rb#46
   def to_default_s(*args, **_arg1, &block); end
 
   # Converts +self+ to a floating-point number of seconds, including fractional microseconds, since the Unix epoch.
@@ -17006,6 +16994,8 @@ class Integer < ::Numeric
   def years; end
 end
 
+Integer::GMP_VERSION = T.let(T.unsafe(nil), String)
+
 # source://activesupport//lib/active_support/core_ext/kernel/reporting.rb#3
 module Kernel
   private
@@ -17572,17 +17562,12 @@ class Module
   # source://activesupport//lib/active_support/core_ext/module/delegation.rb#317
   def delegate_missing_to(target, allow_nil: T.unsafe(nil)); end
 
-  # deprecate :foo
-  #   deprecate bar: 'message'
-  #   deprecate :foo, :bar, baz: 'warning!', qux: 'gone!'
+  # deprecate :foo, deprecator: MyLib.deprecator
+  #   deprecate :foo, bar: "warning!", deprecator: MyLib.deprecator
   #
-  # You can also use custom deprecator instance:
-  #
-  #   deprecate :foo, deprecator: MyLib::Deprecator.new
-  #   deprecate :foo, bar: "warning!", deprecator: MyLib::Deprecator.new
-  #
-  # \Custom deprecators must respond to <tt>deprecation_warning(deprecated_method_name, message, caller_backtrace)</tt>
-  # method where you can implement your custom warning behavior.
+  # A deprecator is typically an instance of ActiveSupport::Deprecation, but you can also pass any object that responds
+  # to <tt>deprecation_warning(deprecated_method_name, message, caller_backtrace)</tt> where you can implement your
+  # custom warning behavior.
   #
   #   class MyLib::Deprecator
   #     def deprecation_warning(deprecated_method_name, message, caller_backtrace = nil)
@@ -17591,8 +17576,8 @@ class Module
   #     end
   #   end
   #
-  # source://activesupport//lib/active_support/core_ext/module/deprecation.rb#22
-  def deprecate(*method_names); end
+  # source://activesupport//lib/active_support/core_ext/module/deprecation.rb#17
+  def deprecate(*method_names, deprecator: T.unsafe(nil), **options); end
 
   # Defines both class and instance accessors for class attributes.
   # All class and instance methods created will be public, even if
@@ -19696,7 +19681,7 @@ end
 
 # source://activesupport//lib/active_support/core_ext/thread/backtrace/location.rb#3
 class Thread::Backtrace::Location
-  # source://activesupport//lib/active_support/core_ext/thread/backtrace/location.rb#5
+  # source://activesupport//lib/active_support/core_ext/thread/backtrace/location.rb#9
   def spot(ex); end
 end
 
@@ -19992,7 +19977,7 @@ class Time
   # source://activesupport//lib/active_support/core_ext/time/calculations.rb#233
   def since(seconds); end
 
-  # source://activesupport//lib/active_support/deprecation/method_wrappers.rb#63
+  # source://activesupport//lib/active_support/deprecation/method_wrappers.rb#46
   def to_default_s(*args, **_arg1, &block); end
 
   # Converts to a formatted string. See DATE_FORMATS for built-in formats.
