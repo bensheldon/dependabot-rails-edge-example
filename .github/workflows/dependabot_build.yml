@@ -1,0 +1,32 @@
+name: Dependabot Build
+on: pull_request
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    if: ${{ github.actor == 'dependabot[bot]' }}
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v3
+        with:
+          ref: ${{ github.event.pull_request.head.ref }}
+      - name: Setup Ruby
+        uses: ruby/setup-ruby@v1
+        with:
+          bundler-cache: true
+      # This workflow saves the changes to an artifact, which is used
+      # by a subsequent workflow to commit.
+      # # https://securitylab.github.com/research/github-actions-preventing-pwn-requests/
+      - name: Create artifact directory
+        run: mkdir ./dependabot-build
+      - name: Save current branch ref
+        run: | 
+          echo ${{ github.event.pull_request.head.ref }} > ./dependabot-build/BRANCH_REF
+      - name: Update Tapioca definitions
+        run: bundle exec tapioca gem
+      - name: Copy changed definitions
+        run: git status --porcelain v1 . | grep 'sorbet/rbi/' | awk {'print $2'} | xargs -I {} cp --parents {} ./dependabot-build
+      - uses: actions/upload-artifact@v2
+        with:
+          name: dependabot-build
+          path: dependabot-build/

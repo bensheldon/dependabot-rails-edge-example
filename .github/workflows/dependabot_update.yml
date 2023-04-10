@@ -1,0 +1,63 @@
+name: Dependabot Update
+on:
+  workflow_run:
+    workflows: ["Dependabot Build"]
+    types:
+      - completed
+
+permissions:
+  contents: write
+
+jobs:
+  update:
+    runs-on: ubuntu-latest
+    if: >
+      ${{ github.event.workflow_run.event == 'push' &&
+      github.event.workflow_run.conclusion == 'success' }}
+
+    steps:
+      - name: Download artifact
+        uses: actions/github-script@d556feaca394842dc55e4734bf3bb9f685482fa0
+        with:
+          script: |
+            var artifacts = await github.rest.actions.listWorkflowRunArtifacts({
+               owner: context.repo.owner,
+               repo: context.repo.repo,
+               run_id: ${{github.event.workflow_run.id }},
+            });
+            var matchArtifact = artifacts.data.artifacts.filter((artifact) => {
+              return artifact.name == "dependabot-build"
+            })[0];
+            var download = await github.rest.actions.downloadArtifact({
+               owner: context.repo.owner,
+               repo: context.repo.repo,
+               artifact_id: matchArtifact.id,
+               archive_format: 'zip',
+            });
+            var fs = require('fs');
+            fs.writeFileSync('/home/runner/work/dependabot-build.zip', Buffer.from(download.data));
+      - run: mkdir -p /home/runner/work/dependabot-build
+      # actions/checkout will delete the contents of the current workspace
+      # so unpack the changes outside the current workspace
+      - name: Unpack Dependabot Build artifacts
+        run: unzip -o /home/runner/work/dependabot-build.zip -d /home/runner/work/dependabot-build
+      - name: Set BRANCH_REF
+        run: echo "BRANCH_REF=$(cat '/home/runner/work/dependabot-build/BRANCH_REF' | sed 's/refs\/heads\///')" >> $GITHUB_ENV
+      - name: Checkout the branch that triggered this workflow
+        uses: actions/checkout@v3
+        with:
+          ref: ${{ env.BRANCH_REF }}
+      - name: Copy dependabot pr changes to current workspace
+        run: yes | cp -af /home/runner/work/dependabot-build/. .
+      - run: git status
+      - name: Commit Tapioca definitions
+        run: |
+          if [[ $(git status | grep 'sorbet/rbi') ]]; then
+            git config user.name "${GITHUB_ACTOR}"
+            git config user.email "${GITHUB_ACTOR}@users.noreply.github.com"
+            git add sorbet/rbi
+            git commit -m '[dependabot skip] Update Tapioca definitions'
+            git push
+          else
+            echo "Tapioca definitions have not changed"
+          fi
