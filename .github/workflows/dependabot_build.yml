@@ -24,8 +24,10 @@ jobs:
           echo ${{ github.event.pull_request.head.ref }} > ./dependabot-build/BRANCH_REF
       - name: Update Tapioca definitions
         run: bundle exec tapioca gem
-      - name: Copy changed definitions
-        run: git status --porcelain v1 . | grep 'sorbet/rbi/' | awk {'print $2'} | xargs -I {} cp --parents {} ./dependabot-build
+      - name: Generate a patch of changes
+        run: |
+          git add sorbet/rbi/
+          git diff --cached --binary sorbet/rbi/ > dependabot-build/tapioca.patch
       - uses: actions/upload-artifact@v2
         with:
           name: dependabot-build
