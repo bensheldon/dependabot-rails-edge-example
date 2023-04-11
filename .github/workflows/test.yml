@@ -11,5 +11,7 @@ jobs:
         uses: ruby/setup-ruby@v1
         with:
           bundler-cache: true
+      - name: Setup test database
+        run: bin/rails db:test:prepare
       - name: Run tests
         run: bin/rails test
