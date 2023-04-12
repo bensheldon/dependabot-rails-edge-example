@@ -86,13 +86,13 @@ module ActionMailbox
     # source://actionmailbox//lib/action_mailbox.rb#24
     def queues=(val); end
 
-    # source://railties/7.1.0.alpha-b113b7fc4a26419efe52a4946d2c07bd1bd38d0c/lib/rails/engine.rb#405
+    # source://railties/7.1.0.alpha-e11ebc04cfbe41c06cdfb70ee5a9fdbbd98bb263/lib/rails/engine.rb#405
     def railtie_helpers_paths; end
 
-    # source://railties/7.1.0.alpha-b113b7fc4a26419efe52a4946d2c07bd1bd38d0c/lib/rails/engine.rb#394
+    # source://railties/7.1.0.alpha-e11ebc04cfbe41c06cdfb70ee5a9fdbbd98bb263/lib/rails/engine.rb#394
     def railtie_namespace; end
 
-    # source://railties/7.1.0.alpha-b113b7fc4a26419efe52a4946d2c07bd1bd38d0c/lib/rails/engine.rb#409
+    # source://railties/7.1.0.alpha-e11ebc04cfbe41c06cdfb70ee5a9fdbbd98bb263/lib/rails/engine.rb#409
     def railtie_routes_url_helpers(include_path_helpers = T.unsafe(nil)); end
 
     # source://actionmailbox//lib/action_mailbox.rb#25
@@ -101,10 +101,10 @@ module ActionMailbox
     # source://actionmailbox//lib/action_mailbox.rb#25
     def storage_service=(val); end
 
-    # source://railties/7.1.0.alpha-b113b7fc4a26419efe52a4946d2c07bd1bd38d0c/lib/rails/engine.rb#397
+    # source://railties/7.1.0.alpha-e11ebc04cfbe41c06cdfb70ee5a9fdbbd98bb263/lib/rails/engine.rb#397
     def table_name_prefix; end
 
-    # source://railties/7.1.0.alpha-b113b7fc4a26419efe52a4946d2c07bd1bd38d0c/lib/rails/engine.rb#401
+    # source://railties/7.1.0.alpha-e11ebc04cfbe41c06cdfb70ee5a9fdbbd98bb263/lib/rails/engine.rb#401
     def use_relative_model_naming?; end
 
     # Returns the currently loaded version of Action Mailbox as a <tt>Gem::Version</tt>.
@@ -114,6 +114,8 @@ module ActionMailbox
   end
 end
 
+# = Action Mailbox \Base
+#
 # The base class for all application mailboxes. Not intended to be inherited from directly. Inherit from
 # +ApplicationMailbox+ instead, as that's where the app-specific routing is configured. This routing
 # is specified in the following ways:
@@ -169,7 +171,7 @@ end
 #     rescue_from(ApplicationSpecificVerificationError) { bounced! }
 #   end
 #
-# source://actionmailbox//lib/action_mailbox/base.rb#63
+# source://actionmailbox//lib/action_mailbox/base.rb#65
 class ActionMailbox::Base
   include ::ActiveSupport::Rescuable
   include ::ActionMailbox::Routing
@@ -183,61 +185,61 @@ class ActionMailbox::Base
 
   # @return [Base] a new instance of Base
   #
-  # source://actionmailbox//lib/action_mailbox/base.rb#76
+  # source://actionmailbox//lib/action_mailbox/base.rb#78
   def initialize(inbound_email); end
 
-  # source://activesupport/7.1.0.alpha-b113b7fc4a26419efe52a4946d2c07bd1bd38d0c/lib/active_support/callbacks.rb#68
+  # source://activesupport/7.1.0.alpha-e11ebc04cfbe41c06cdfb70ee5a9fdbbd98bb263/lib/active_support/callbacks.rb#68
   def __callbacks; end
 
-  # source://activesupport/7.1.0.alpha-b113b7fc4a26419efe52a4946d2c07bd1bd38d0c/lib/active_support/callbacks.rb#68
+  # source://activesupport/7.1.0.alpha-e11ebc04cfbe41c06cdfb70ee5a9fdbbd98bb263/lib/active_support/callbacks.rb#68
   def __callbacks?; end
 
-  # source://activesupport/7.1.0.alpha-b113b7fc4a26419efe52a4946d2c07bd1bd38d0c/lib/active_support/callbacks.rb#958
+  # source://activesupport/7.1.0.alpha-e11ebc04cfbe41c06cdfb70ee5a9fdbbd98bb263/lib/active_support/callbacks.rb#958
   def _process_callbacks; end
 
-  # source://activesupport/7.1.0.alpha-b113b7fc4a26419efe52a4946d2c07bd1bd38d0c/lib/active_support/callbacks.rb#946
+  # source://activesupport/7.1.0.alpha-e11ebc04cfbe41c06cdfb70ee5a9fdbbd98bb263/lib/active_support/callbacks.rb#946
   def _run_process_callbacks(&block); end
 
   # Enqueues the given +message+ for delivery and changes the inbound email's status to +:bounced+.
   #
-  # source://actionmailbox//lib/action_mailbox/base.rb#103
+  # source://actionmailbox//lib/action_mailbox/base.rb#105
   def bounce_with(message); end
 
-  # source://actionmailbox//lib/action_mailbox/base.rb#68
+  # source://actionmailbox//lib/action_mailbox/base.rb#70
   def bounced!(*_arg0, **_arg1, &_arg2); end
 
-  # source://actionmailbox//lib/action_mailbox/base.rb#68
+  # source://actionmailbox//lib/action_mailbox/base.rb#70
   def delivered!(*_arg0, **_arg1, &_arg2); end
 
   # @return [Boolean]
   #
-  # source://actionmailbox//lib/action_mailbox/base.rb#97
+  # source://actionmailbox//lib/action_mailbox/base.rb#99
   def finished_processing?; end
 
   # Returns the value of attribute inbound_email.
   #
-  # source://actionmailbox//lib/action_mailbox/base.rb#67
+  # source://actionmailbox//lib/action_mailbox/base.rb#69
   def inbound_email; end
 
-  # source://actionmailbox//lib/action_mailbox/base.rb#70
+  # source://actionmailbox//lib/action_mailbox/base.rb#72
   def logger; end
 
-  # source://actionmailbox//lib/action_mailbox/base.rb#68
+  # source://actionmailbox//lib/action_mailbox/base.rb#70
   def mail(*_arg0, **_arg1, &_arg2); end
 
-  # source://actionmailbox//lib/action_mailbox/base.rb#80
+  # source://actionmailbox//lib/action_mailbox/base.rb#82
   def perform_processing; end
 
-  # source://actionmailbox//lib/action_mailbox/base.rb#93
+  # source://actionmailbox//lib/action_mailbox/base.rb#95
   def process; end
 
-  # source://activesupport/7.1.0.alpha-b113b7fc4a26419efe52a4946d2c07bd1bd38d0c/lib/active_support/rescuable.rb#13
+  # source://activesupport/7.1.0.alpha-e11ebc04cfbe41c06cdfb70ee5a9fdbbd98bb263/lib/active_support/rescuable.rb#13
   def rescue_handlers; end
 
-  # source://activesupport/7.1.0.alpha-b113b7fc4a26419efe52a4946d2c07bd1bd38d0c/lib/active_support/rescuable.rb#13
+  # source://activesupport/7.1.0.alpha-e11ebc04cfbe41c06cdfb70ee5a9fdbbd98bb263/lib/active_support/rescuable.rb#13
   def rescue_handlers=(_arg0); end
 
-  # source://activesupport/7.1.0.alpha-b113b7fc4a26419efe52a4946d2c07bd1bd38d0c/lib/active_support/rescuable.rb#13
+  # source://activesupport/7.1.0.alpha-e11ebc04cfbe41c06cdfb70ee5a9fdbbd98bb263/lib/active_support/rescuable.rb#13
   def rescue_handlers?; end
 
   # source://actionmailbox//lib/action_mailbox/routing.rb#9
@@ -248,38 +250,38 @@ class ActionMailbox::Base
 
   private
 
-  # source://actionmailbox//lib/action_mailbox/base.rb#109
+  # source://actionmailbox//lib/action_mailbox/base.rb#111
   def instrumentation_payload; end
 
-  # source://actionmailbox//lib/action_mailbox/base.rb#116
+  # source://actionmailbox//lib/action_mailbox/base.rb#118
   def track_status_of_inbound_email; end
 
   class << self
-    # source://activesupport/7.1.0.alpha-b113b7fc4a26419efe52a4946d2c07bd1bd38d0c/lib/active_support/callbacks.rb#68
+    # source://activesupport/7.1.0.alpha-e11ebc04cfbe41c06cdfb70ee5a9fdbbd98bb263/lib/active_support/callbacks.rb#68
     def __callbacks; end
 
-    # source://activesupport/7.1.0.alpha-b113b7fc4a26419efe52a4946d2c07bd1bd38d0c/lib/active_support/callbacks.rb#68
+    # source://activesupport/7.1.0.alpha-e11ebc04cfbe41c06cdfb70ee5a9fdbbd98bb263/lib/active_support/callbacks.rb#68
     def __callbacks=(value); end
 
-    # source://activesupport/7.1.0.alpha-b113b7fc4a26419efe52a4946d2c07bd1bd38d0c/lib/active_support/callbacks.rb#68
+    # source://activesupport/7.1.0.alpha-e11ebc04cfbe41c06cdfb70ee5a9fdbbd98bb263/lib/active_support/callbacks.rb#68
     def __callbacks?; end
 
-    # source://activesupport/7.1.0.alpha-b113b7fc4a26419efe52a4946d2c07bd1bd38d0c/lib/active_support/callbacks.rb#950
+    # source://activesupport/7.1.0.alpha-e11ebc04cfbe41c06cdfb70ee5a9fdbbd98bb263/lib/active_support/callbacks.rb#950
     def _process_callbacks; end
 
-    # source://activesupport/7.1.0.alpha-b113b7fc4a26419efe52a4946d2c07bd1bd38d0c/lib/active_support/callbacks.rb#954
+    # source://activesupport/7.1.0.alpha-e11ebc04cfbe41c06cdfb70ee5a9fdbbd98bb263/lib/active_support/callbacks.rb#954
     def _process_callbacks=(value); end
 
-    # source://actionmailbox//lib/action_mailbox/base.rb#72
+    # source://actionmailbox//lib/action_mailbox/base.rb#74
     def receive(inbound_email); end
 
-    # source://activesupport/7.1.0.alpha-b113b7fc4a26419efe52a4946d2c07bd1bd38d0c/lib/active_support/rescuable.rb#13
+    # source://activesupport/7.1.0.alpha-e11ebc04cfbe41c06cdfb70ee5a9fdbbd98bb263/lib/active_support/rescuable.rb#13
     def rescue_handlers; end
 
-    # source://activesupport/7.1.0.alpha-b113b7fc4a26419efe52a4946d2c07bd1bd38d0c/lib/active_support/rescuable.rb#13
+    # source://activesupport/7.1.0.alpha-e11ebc04cfbe41c06cdfb70ee5a9fdbbd98bb263/lib/active_support/rescuable.rb#13
     def rescue_handlers=(value); end
 
-    # source://activesupport/7.1.0.alpha-b113b7fc4a26419efe52a4946d2c07bd1bd38d0c/lib/active_support/rescuable.rb#13
+    # source://activesupport/7.1.0.alpha-e11ebc04cfbe41c06cdfb70ee5a9fdbbd98bb263/lib/active_support/rescuable.rb#13
     def rescue_handlers?; end
 
     # source://actionmailbox//lib/action_mailbox/routing.rb#9
@@ -293,7 +295,7 @@ end
 class ActionMailbox::BaseController < ::ActionController::Base
   private
 
-  # source://actionview/7.1.0.alpha-b113b7fc4a26419efe52a4946d2c07bd1bd38d0c/lib/action_view/layouts.rb#328
+  # source://actionview/7.1.0.alpha-e11ebc04cfbe41c06cdfb70ee5a9fdbbd98bb263/lib/action_view/layouts.rb#330
   def _layout(lookup_context, formats); end
 
   def _layout_from_proc; end
@@ -303,17 +305,19 @@ class ActionMailbox::BaseController < ::ActionController::Base
   def password; end
 
   class << self
-    # source://activesupport/7.1.0.alpha-b113b7fc4a26419efe52a4946d2c07bd1bd38d0c/lib/active_support/callbacks.rb#68
+    # source://activesupport/7.1.0.alpha-e11ebc04cfbe41c06cdfb70ee5a9fdbbd98bb263/lib/active_support/callbacks.rb#68
     def __callbacks; end
 
-    # source://actionpack/7.1.0.alpha-b113b7fc4a26419efe52a4946d2c07bd1bd38d0c/lib/action_controller/metal.rb#254
+    # source://actionpack/7.1.0.alpha-e11ebc04cfbe41c06cdfb70ee5a9fdbbd98bb263/lib/action_controller/metal.rb#254
     def middleware_stack; end
   end
 end
 
+# = Action Mailbox \Callbacks
+#
 # Defines the callbacks related to processing.
 #
-# source://actionmailbox//lib/action_mailbox/callbacks.rb#7
+# source://actionmailbox//lib/action_mailbox/callbacks.rb#9
 module ActionMailbox::Callbacks
   extend ::ActiveSupport::Concern
   include GeneratedInstanceMethods
@@ -338,23 +342,23 @@ end
 
 # source://actionmailbox//lib/action_mailbox/callbacks.rb#0
 module ActionMailbox::Callbacks::ClassMethods
-  # source://actionmailbox//lib/action_mailbox/callbacks.rb#25
+  # source://actionmailbox//lib/action_mailbox/callbacks.rb#27
   def after_processing(*methods, &block); end
 
-  # source://actionmailbox//lib/action_mailbox/callbacks.rb#29
+  # source://actionmailbox//lib/action_mailbox/callbacks.rb#31
   def around_processing(*methods, &block); end
 
-  # source://actionmailbox//lib/action_mailbox/callbacks.rb#21
+  # source://actionmailbox//lib/action_mailbox/callbacks.rb#23
   def before_processing(*methods, &block); end
 end
 
-# source://actionmailbox//lib/action_mailbox/callbacks.rb#11
+# source://actionmailbox//lib/action_mailbox/callbacks.rb#13
 ActionMailbox::Callbacks::TERMINATOR = T.let(T.unsafe(nil), Proc)
 
 # source://actionmailbox//lib/action_mailbox/engine.rb#12
 class ActionMailbox::Engine < ::Rails::Engine
   class << self
-    # source://activesupport/7.1.0.alpha-b113b7fc4a26419efe52a4946d2c07bd1bd38d0c/lib/active_support/callbacks.rb#68
+    # source://activesupport/7.1.0.alpha-e11ebc04cfbe41c06cdfb70ee5a9fdbbd98bb263/lib/active_support/callbacks.rb#68
     def __callbacks; end
   end
 end
@@ -367,10 +371,10 @@ class ActionMailbox::InboundEmail < ::ActionMailbox::Record
   include ::ActionMailbox::InboundEmail::Incineratable
   extend ::ActionMailbox::InboundEmail::MessageId::ClassMethods
 
-  # source://activerecord/7.1.0.alpha-b113b7fc4a26419efe52a4946d2c07bd1bd38d0c/lib/active_record/autosave_association.rb#160
+  # source://activerecord/7.1.0.alpha-e11ebc04cfbe41c06cdfb70ee5a9fdbbd98bb263/lib/active_record/autosave_association.rb#160
   def autosave_associated_records_for_raw_email_attachment(*args); end
 
-  # source://activerecord/7.1.0.alpha-b113b7fc4a26419efe52a4946d2c07bd1bd38d0c/lib/active_record/autosave_association.rb#160
+  # source://activerecord/7.1.0.alpha-e11ebc04cfbe41c06cdfb70ee5a9fdbbd98bb263/lib/active_record/autosave_association.rb#160
   def autosave_associated_records_for_raw_email_blob(*args); end
 
   def instrumentation_payload; end
@@ -379,109 +383,109 @@ class ActionMailbox::InboundEmail < ::ActionMailbox::Record
   def source; end
 
   class << self
-    # source://activesupport/7.1.0.alpha-b113b7fc4a26419efe52a4946d2c07bd1bd38d0c/lib/active_support/callbacks.rb#68
+    # source://activesupport/7.1.0.alpha-e11ebc04cfbe41c06cdfb70ee5a9fdbbd98bb263/lib/active_support/callbacks.rb#68
     def __callbacks; end
 
-    # source://activerecord/7.1.0.alpha-b113b7fc4a26419efe52a4946d2c07bd1bd38d0c/lib/active_record/reflection.rb#11
+    # source://activerecord/7.1.0.alpha-e11ebc04cfbe41c06cdfb70ee5a9fdbbd98bb263/lib/active_record/reflection.rb#11
     def _reflections; end
 
-    # source://activemodel/7.1.0.alpha-b113b7fc4a26419efe52a4946d2c07bd1bd38d0c/lib/active_model/validations.rb#71
+    # source://activemodel/7.1.0.alpha-e11ebc04cfbe41c06cdfb70ee5a9fdbbd98bb263/lib/active_model/validations.rb#71
     def _validators; end
 
-    # source://activestorage/7.1.0.alpha-b113b7fc4a26419efe52a4946d2c07bd1bd38d0c/lib/active_storage/reflection.rb#53
+    # source://activestorage/7.1.0.alpha-e11ebc04cfbe41c06cdfb70ee5a9fdbbd98bb263/lib/active_storage/reflection.rb#53
     def attachment_reflections; end
 
-    # source://activerecord/7.1.0.alpha-b113b7fc4a26419efe52a4946d2c07bd1bd38d0c/lib/active_record/attributes.rb#11
+    # source://activerecord/7.1.0.alpha-e11ebc04cfbe41c06cdfb70ee5a9fdbbd98bb263/lib/active_record/attributes.rb#11
     def attributes_to_define_after_schema_loads; end
 
-    # source://activerecord/7.1.0.alpha-b113b7fc4a26419efe52a4946d2c07bd1bd38d0c/lib/active_record/scoping/named.rb#174
+    # source://activerecord/7.1.0.alpha-e11ebc04cfbe41c06cdfb70ee5a9fdbbd98bb263/lib/active_record/scoping/named.rb#174
     def bounced(*args, **_arg1); end
 
-    # source://activerecord/7.1.0.alpha-b113b7fc4a26419efe52a4946d2c07bd1bd38d0c/lib/active_record/enum.rb#123
+    # source://activerecord/7.1.0.alpha-e11ebc04cfbe41c06cdfb70ee5a9fdbbd98bb263/lib/active_record/enum.rb#123
     def defined_enums; end
 
-    # source://activerecord/7.1.0.alpha-b113b7fc4a26419efe52a4946d2c07bd1bd38d0c/lib/active_record/scoping/named.rb#174
+    # source://activerecord/7.1.0.alpha-e11ebc04cfbe41c06cdfb70ee5a9fdbbd98bb263/lib/active_record/scoping/named.rb#174
     def delivered(*args, **_arg1); end
 
-    # source://activerecord/7.1.0.alpha-b113b7fc4a26419efe52a4946d2c07bd1bd38d0c/lib/active_record/scoping/named.rb#174
+    # source://activerecord/7.1.0.alpha-e11ebc04cfbe41c06cdfb70ee5a9fdbbd98bb263/lib/active_record/scoping/named.rb#174
     def failed(*args, **_arg1); end
 
-    # source://activerecord/7.1.0.alpha-b113b7fc4a26419efe52a4946d2c07bd1bd38d0c/lib/active_record/scoping/named.rb#174
+    # source://activerecord/7.1.0.alpha-e11ebc04cfbe41c06cdfb70ee5a9fdbbd98bb263/lib/active_record/scoping/named.rb#174
     def not_bounced(*args, **_arg1); end
 
-    # source://activerecord/7.1.0.alpha-b113b7fc4a26419efe52a4946d2c07bd1bd38d0c/lib/active_record/scoping/named.rb#174
+    # source://activerecord/7.1.0.alpha-e11ebc04cfbe41c06cdfb70ee5a9fdbbd98bb263/lib/active_record/scoping/named.rb#174
     def not_delivered(*args, **_arg1); end
 
-    # source://activerecord/7.1.0.alpha-b113b7fc4a26419efe52a4946d2c07bd1bd38d0c/lib/active_record/scoping/named.rb#174
+    # source://activerecord/7.1.0.alpha-e11ebc04cfbe41c06cdfb70ee5a9fdbbd98bb263/lib/active_record/scoping/named.rb#174
     def not_failed(*args, **_arg1); end
 
-    # source://activerecord/7.1.0.alpha-b113b7fc4a26419efe52a4946d2c07bd1bd38d0c/lib/active_record/scoping/named.rb#174
+    # source://activerecord/7.1.0.alpha-e11ebc04cfbe41c06cdfb70ee5a9fdbbd98bb263/lib/active_record/scoping/named.rb#174
     def not_pending(*args, **_arg1); end
 
-    # source://activerecord/7.1.0.alpha-b113b7fc4a26419efe52a4946d2c07bd1bd38d0c/lib/active_record/scoping/named.rb#174
+    # source://activerecord/7.1.0.alpha-e11ebc04cfbe41c06cdfb70ee5a9fdbbd98bb263/lib/active_record/scoping/named.rb#174
     def not_processing(*args, **_arg1); end
 
-    # source://activerecord/7.1.0.alpha-b113b7fc4a26419efe52a4946d2c07bd1bd38d0c/lib/active_record/scoping/named.rb#174
+    # source://activerecord/7.1.0.alpha-e11ebc04cfbe41c06cdfb70ee5a9fdbbd98bb263/lib/active_record/scoping/named.rb#174
     def pending(*args, **_arg1); end
 
-    # source://activerecord/7.1.0.alpha-b113b7fc4a26419efe52a4946d2c07bd1bd38d0c/lib/active_record/scoping/named.rb#174
+    # source://activerecord/7.1.0.alpha-e11ebc04cfbe41c06cdfb70ee5a9fdbbd98bb263/lib/active_record/scoping/named.rb#174
     def processing(*args, **_arg1); end
 
-    # source://activerecord/7.1.0.alpha-b113b7fc4a26419efe52a4946d2c07bd1bd38d0c/lib/active_record/enum.rb#204
+    # source://activerecord/7.1.0.alpha-e11ebc04cfbe41c06cdfb70ee5a9fdbbd98bb263/lib/active_record/enum.rb#204
     def statuses; end
 
-    # source://activerecord/7.1.0.alpha-b113b7fc4a26419efe52a4946d2c07bd1bd38d0c/lib/active_record/scoping/named.rb#174
+    # source://activerecord/7.1.0.alpha-e11ebc04cfbe41c06cdfb70ee5a9fdbbd98bb263/lib/active_record/scoping/named.rb#174
     def with_attached_raw_email(*args, **_arg1); end
   end
 end
 
 module ActionMailbox::InboundEmail::GeneratedAssociationMethods
-  # source://activerecord/7.1.0.alpha-b113b7fc4a26419efe52a4946d2c07bd1bd38d0c/lib/active_record/associations/builder/singular_association.rb#32
+  # source://activerecord/7.1.0.alpha-e11ebc04cfbe41c06cdfb70ee5a9fdbbd98bb263/lib/active_record/associations/builder/singular_association.rb#32
   def build_raw_email_attachment(*args, &block); end
 
-  # source://activerecord/7.1.0.alpha-b113b7fc4a26419efe52a4946d2c07bd1bd38d0c/lib/active_record/associations/builder/singular_association.rb#32
+  # source://activerecord/7.1.0.alpha-e11ebc04cfbe41c06cdfb70ee5a9fdbbd98bb263/lib/active_record/associations/builder/singular_association.rb#32
   def build_raw_email_blob(*args, &block); end
 
-  # source://activerecord/7.1.0.alpha-b113b7fc4a26419efe52a4946d2c07bd1bd38d0c/lib/active_record/associations/builder/singular_association.rb#36
+  # source://activerecord/7.1.0.alpha-e11ebc04cfbe41c06cdfb70ee5a9fdbbd98bb263/lib/active_record/associations/builder/singular_association.rb#36
   def create_raw_email_attachment(*args, &block); end
 
-  # source://activerecord/7.1.0.alpha-b113b7fc4a26419efe52a4946d2c07bd1bd38d0c/lib/active_record/associations/builder/singular_association.rb#40
+  # source://activerecord/7.1.0.alpha-e11ebc04cfbe41c06cdfb70ee5a9fdbbd98bb263/lib/active_record/associations/builder/singular_association.rb#40
   def create_raw_email_attachment!(*args, &block); end
 
-  # source://activerecord/7.1.0.alpha-b113b7fc4a26419efe52a4946d2c07bd1bd38d0c/lib/active_record/associations/builder/singular_association.rb#36
+  # source://activerecord/7.1.0.alpha-e11ebc04cfbe41c06cdfb70ee5a9fdbbd98bb263/lib/active_record/associations/builder/singular_association.rb#36
   def create_raw_email_blob(*args, &block); end
 
-  # source://activerecord/7.1.0.alpha-b113b7fc4a26419efe52a4946d2c07bd1bd38d0c/lib/active_record/associations/builder/singular_association.rb#40
+  # source://activerecord/7.1.0.alpha-e11ebc04cfbe41c06cdfb70ee5a9fdbbd98bb263/lib/active_record/associations/builder/singular_association.rb#40
   def create_raw_email_blob!(*args, &block); end
 
-  # source://activestorage/7.1.0.alpha-b113b7fc4a26419efe52a4946d2c07bd1bd38d0c/lib/active_storage/attached/model.rb#55
+  # source://activestorage/7.1.0.alpha-e11ebc04cfbe41c06cdfb70ee5a9fdbbd98bb263/lib/active_storage/attached/model.rb#57
   def raw_email; end
 
-  # source://activestorage/7.1.0.alpha-b113b7fc4a26419efe52a4946d2c07bd1bd38d0c/lib/active_storage/attached/model.rb#60
+  # source://activestorage/7.1.0.alpha-e11ebc04cfbe41c06cdfb70ee5a9fdbbd98bb263/lib/active_storage/attached/model.rb#62
   def raw_email=(attachable); end
 
-  # source://activerecord/7.1.0.alpha-b113b7fc4a26419efe52a4946d2c07bd1bd38d0c/lib/active_record/associations/builder/association.rb#103
+  # source://activerecord/7.1.0.alpha-e11ebc04cfbe41c06cdfb70ee5a9fdbbd98bb263/lib/active_record/associations/builder/association.rb#103
   def raw_email_attachment; end
 
-  # source://activerecord/7.1.0.alpha-b113b7fc4a26419efe52a4946d2c07bd1bd38d0c/lib/active_record/associations/builder/association.rb#111
+  # source://activerecord/7.1.0.alpha-e11ebc04cfbe41c06cdfb70ee5a9fdbbd98bb263/lib/active_record/associations/builder/association.rb#111
   def raw_email_attachment=(value); end
 
-  # source://activerecord/7.1.0.alpha-b113b7fc4a26419efe52a4946d2c07bd1bd38d0c/lib/active_record/associations/builder/association.rb#103
+  # source://activerecord/7.1.0.alpha-e11ebc04cfbe41c06cdfb70ee5a9fdbbd98bb263/lib/active_record/associations/builder/association.rb#103
   def raw_email_blob; end
 
-  # source://activerecord/7.1.0.alpha-b113b7fc4a26419efe52a4946d2c07bd1bd38d0c/lib/active_record/associations/builder/association.rb#111
+  # source://activerecord/7.1.0.alpha-e11ebc04cfbe41c06cdfb70ee5a9fdbbd98bb263/lib/active_record/associations/builder/association.rb#111
   def raw_email_blob=(value); end
 
-  # source://activerecord/7.1.0.alpha-b113b7fc4a26419efe52a4946d2c07bd1bd38d0c/lib/active_record/associations/builder/singular_association.rb#19
+  # source://activerecord/7.1.0.alpha-e11ebc04cfbe41c06cdfb70ee5a9fdbbd98bb263/lib/active_record/associations/builder/singular_association.rb#19
   def reload_raw_email_attachment; end
 
-  # source://activerecord/7.1.0.alpha-b113b7fc4a26419efe52a4946d2c07bd1bd38d0c/lib/active_record/associations/builder/singular_association.rb#19
+  # source://activerecord/7.1.0.alpha-e11ebc04cfbe41c06cdfb70ee5a9fdbbd98bb263/lib/active_record/associations/builder/singular_association.rb#19
   def reload_raw_email_blob; end
 
-  # source://activerecord/7.1.0.alpha-b113b7fc4a26419efe52a4946d2c07bd1bd38d0c/lib/active_record/associations/builder/singular_association.rb#23
+  # source://activerecord/7.1.0.alpha-e11ebc04cfbe41c06cdfb70ee5a9fdbbd98bb263/lib/active_record/associations/builder/singular_association.rb#23
   def reset_raw_email_attachment; end
 
-  # source://activerecord/7.1.0.alpha-b113b7fc4a26419efe52a4946d2c07bd1bd38d0c/lib/active_record/associations/builder/singular_association.rb#23
+  # source://activerecord/7.1.0.alpha-e11ebc04cfbe41c06cdfb70ee5a9fdbbd98bb263/lib/active_record/associations/builder/singular_association.rb#23
   def reset_raw_email_blob; end
 end
 
@@ -532,10 +536,10 @@ class ActionMailbox::IncinerationJob < ::ActiveJob::Base
   def perform(inbound_email); end
 
   class << self
-    # source://activejob/7.1.0.alpha-b113b7fc4a26419efe52a4946d2c07bd1bd38d0c/lib/active_job/queue_name.rb#56
+    # source://activejob/7.1.0.alpha-e11ebc04cfbe41c06cdfb70ee5a9fdbbd98bb263/lib/active_job/queue_name.rb#56
     def queue_name; end
 
-    # source://activesupport/7.1.0.alpha-b113b7fc4a26419efe52a4946d2c07bd1bd38d0c/lib/active_support/rescuable.rb#13
+    # source://activesupport/7.1.0.alpha-e11ebc04cfbe41c06cdfb70ee5a9fdbbd98bb263/lib/active_support/rescuable.rb#13
     def rescue_handlers; end
 
     def schedule(inbound_email); end
@@ -550,7 +554,7 @@ class ActionMailbox::Ingresses::Mailgun::InboundEmailsController < ::ActionMailb
 
   private
 
-  # source://actionview/7.1.0.alpha-b113b7fc4a26419efe52a4946d2c07bd1bd38d0c/lib/action_view/layouts.rb#328
+  # source://actionview/7.1.0.alpha-e11ebc04cfbe41c06cdfb70ee5a9fdbbd98bb263/lib/action_view/layouts.rb#330
   def _layout(lookup_context, formats); end
 
   def _layout_from_proc; end
@@ -560,10 +564,10 @@ class ActionMailbox::Ingresses::Mailgun::InboundEmailsController < ::ActionMailb
   def mail; end
 
   class << self
-    # source://activesupport/7.1.0.alpha-b113b7fc4a26419efe52a4946d2c07bd1bd38d0c/lib/active_support/callbacks.rb#68
+    # source://activesupport/7.1.0.alpha-e11ebc04cfbe41c06cdfb70ee5a9fdbbd98bb263/lib/active_support/callbacks.rb#68
     def __callbacks; end
 
-    # source://actionpack/7.1.0.alpha-b113b7fc4a26419efe52a4946d2c07bd1bd38d0c/lib/action_controller/metal.rb#254
+    # source://actionpack/7.1.0.alpha-e11ebc04cfbe41c06cdfb70ee5a9fdbbd98bb263/lib/action_controller/metal.rb#254
     def middleware_stack; end
   end
 end
@@ -592,7 +596,7 @@ class ActionMailbox::Ingresses::Mandrill::InboundEmailsController < ::ActionMail
 
   private
 
-  # source://actionview/7.1.0.alpha-b113b7fc4a26419efe52a4946d2c07bd1bd38d0c/lib/action_view/layouts.rb#328
+  # source://actionview/7.1.0.alpha-e11ebc04cfbe41c06cdfb70ee5a9fdbbd98bb263/lib/action_view/layouts.rb#330
   def _layout(lookup_context, formats); end
 
   def _layout_from_proc; end
@@ -603,10 +607,10 @@ class ActionMailbox::Ingresses::Mandrill::InboundEmailsController < ::ActionMail
   def raw_emails; end
 
   class << self
-    # source://activesupport/7.1.0.alpha-b113b7fc4a26419efe52a4946d2c07bd1bd38d0c/lib/active_support/callbacks.rb#68
+    # source://activesupport/7.1.0.alpha-e11ebc04cfbe41c06cdfb70ee5a9fdbbd98bb263/lib/active_support/callbacks.rb#68
     def __callbacks; end
 
-    # source://actionpack/7.1.0.alpha-b113b7fc4a26419efe52a4946d2c07bd1bd38d0c/lib/action_controller/metal.rb#254
+    # source://actionpack/7.1.0.alpha-e11ebc04cfbe41c06cdfb70ee5a9fdbbd98bb263/lib/action_controller/metal.rb#254
     def middleware_stack; end
   end
 end
@@ -632,16 +636,16 @@ class ActionMailbox::Ingresses::Postmark::InboundEmailsController < ::ActionMail
 
   private
 
-  # source://actionview/7.1.0.alpha-b113b7fc4a26419efe52a4946d2c07bd1bd38d0c/lib/action_view/layouts.rb#328
+  # source://actionview/7.1.0.alpha-e11ebc04cfbe41c06cdfb70ee5a9fdbbd98bb263/lib/action_view/layouts.rb#330
   def _layout(lookup_context, formats); end
 
   def _layout_from_proc; end
 
   class << self
-    # source://activesupport/7.1.0.alpha-b113b7fc4a26419efe52a4946d2c07bd1bd38d0c/lib/active_support/callbacks.rb#68
+    # source://activesupport/7.1.0.alpha-e11ebc04cfbe41c06cdfb70ee5a9fdbbd98bb263/lib/active_support/callbacks.rb#68
     def __callbacks; end
 
-    # source://actionpack/7.1.0.alpha-b113b7fc4a26419efe52a4946d2c07bd1bd38d0c/lib/action_controller/metal.rb#254
+    # source://actionpack/7.1.0.alpha-e11ebc04cfbe41c06cdfb70ee5a9fdbbd98bb263/lib/action_controller/metal.rb#254
     def middleware_stack; end
   end
 end
@@ -653,17 +657,17 @@ class ActionMailbox::Ingresses::Relay::InboundEmailsController < ::ActionMailbox
 
   private
 
-  # source://actionview/7.1.0.alpha-b113b7fc4a26419efe52a4946d2c07bd1bd38d0c/lib/action_view/layouts.rb#328
+  # source://actionview/7.1.0.alpha-e11ebc04cfbe41c06cdfb70ee5a9fdbbd98bb263/lib/action_view/layouts.rb#330
   def _layout(lookup_context, formats); end
 
   def _layout_from_proc; end
   def require_valid_rfc822_message; end
 
   class << self
-    # source://activesupport/7.1.0.alpha-b113b7fc4a26419efe52a4946d2c07bd1bd38d0c/lib/active_support/callbacks.rb#68
+    # source://activesupport/7.1.0.alpha-e11ebc04cfbe41c06cdfb70ee5a9fdbbd98bb263/lib/active_support/callbacks.rb#68
     def __callbacks; end
 
-    # source://actionpack/7.1.0.alpha-b113b7fc4a26419efe52a4946d2c07bd1bd38d0c/lib/action_controller/metal.rb#254
+    # source://actionpack/7.1.0.alpha-e11ebc04cfbe41c06cdfb70ee5a9fdbbd98bb263/lib/action_controller/metal.rb#254
     def middleware_stack; end
   end
 end
@@ -675,7 +679,7 @@ class ActionMailbox::Ingresses::Sendgrid::InboundEmailsController < ::ActionMail
 
   private
 
-  # source://actionview/7.1.0.alpha-b113b7fc4a26419efe52a4946d2c07bd1bd38d0c/lib/action_view/layouts.rb#328
+  # source://actionview/7.1.0.alpha-e11ebc04cfbe41c06cdfb70ee5a9fdbbd98bb263/lib/action_view/layouts.rb#330
   def _layout(lookup_context, formats); end
 
   def _layout_from_proc; end
@@ -683,10 +687,10 @@ class ActionMailbox::Ingresses::Sendgrid::InboundEmailsController < ::ActionMail
   def mail; end
 
   class << self
-    # source://activesupport/7.1.0.alpha-b113b7fc4a26419efe52a4946d2c07bd1bd38d0c/lib/active_support/callbacks.rb#68
+    # source://activesupport/7.1.0.alpha-e11ebc04cfbe41c06cdfb70ee5a9fdbbd98bb263/lib/active_support/callbacks.rb#68
     def __callbacks; end
 
-    # source://actionpack/7.1.0.alpha-b113b7fc4a26419efe52a4946d2c07bd1bd38d0c/lib/action_controller/metal.rb#254
+    # source://actionpack/7.1.0.alpha-e11ebc04cfbe41c06cdfb70ee5a9fdbbd98bb263/lib/action_controller/metal.rb#254
     def middleware_stack; end
   end
 end
@@ -696,10 +700,10 @@ class ActionMailbox::Record < ::ActiveRecord::Base
   include ::ActionMailbox::Record::GeneratedAssociationMethods
 
   class << self
-    # source://activemodel/7.1.0.alpha-b113b7fc4a26419efe52a4946d2c07bd1bd38d0c/lib/active_model/validations.rb#71
+    # source://activemodel/7.1.0.alpha-e11ebc04cfbe41c06cdfb70ee5a9fdbbd98bb263/lib/active_model/validations.rb#71
     def _validators; end
 
-    # source://activerecord/7.1.0.alpha-b113b7fc4a26419efe52a4946d2c07bd1bd38d0c/lib/active_record/enum.rb#123
+    # source://activerecord/7.1.0.alpha-e11ebc04cfbe41c06cdfb70ee5a9fdbbd98bb263/lib/active_record/enum.rb#123
     def defined_enums; end
   end
 end
@@ -707,33 +711,35 @@ end
 module ActionMailbox::Record::GeneratedAssociationMethods; end
 module ActionMailbox::Record::GeneratedAttributeMethods; end
 
+# = Action Mailbox \Router
+#
 # Encapsulates the routes that live on the ApplicationMailbox and performs the actual routing when
 # an inbound_email is received.
 #
-# source://actionmailbox//lib/action_mailbox/router.rb#6
+# source://actionmailbox//lib/action_mailbox/router.rb#8
 class ActionMailbox::Router
   # @return [Router] a new instance of Router
   #
-  # source://actionmailbox//lib/action_mailbox/router.rb#9
+  # source://actionmailbox//lib/action_mailbox/router.rb#11
   def initialize; end
 
-  # source://actionmailbox//lib/action_mailbox/router.rb#19
+  # source://actionmailbox//lib/action_mailbox/router.rb#21
   def add_route(address, to:); end
 
-  # source://actionmailbox//lib/action_mailbox/router.rb#13
+  # source://actionmailbox//lib/action_mailbox/router.rb#15
   def add_routes(routes); end
 
-  # source://actionmailbox//lib/action_mailbox/router.rb#33
+  # source://actionmailbox//lib/action_mailbox/router.rb#35
   def mailbox_for(inbound_email); end
 
-  # source://actionmailbox//lib/action_mailbox/router.rb#23
+  # source://actionmailbox//lib/action_mailbox/router.rb#25
   def route(inbound_email); end
 
   private
 
   # Returns the value of attribute routes.
   #
-  # source://actionmailbox//lib/action_mailbox/router.rb#38
+  # source://actionmailbox//lib/action_mailbox/router.rb#40
   def routes; end
 end
 
@@ -760,7 +766,7 @@ class ActionMailbox::Router::Route
   def ensure_valid_address; end
 end
 
-# source://actionmailbox//lib/action_mailbox/router.rb#7
+# source://actionmailbox//lib/action_mailbox/router.rb#9
 class ActionMailbox::Router::RoutingError < ::StandardError; end
 
 # See ActionMailbox::Base for how to specify routing.
@@ -788,7 +794,7 @@ class ActionMailbox::RoutingJob < ::ActiveJob::Base
   def perform(inbound_email); end
 
   class << self
-    # source://activejob/7.1.0.alpha-b113b7fc4a26419efe52a4946d2c07bd1bd38d0c/lib/active_job/queue_name.rb#56
+    # source://activejob/7.1.0.alpha-e11ebc04cfbe41c06cdfb70ee5a9fdbbd98bb263/lib/active_job/queue_name.rb#56
     def queue_name; end
   end
 end
@@ -1667,70 +1673,70 @@ end
 
 module Rails
   class << self
-    # source://railties/7.1.0.alpha-b113b7fc4a26419efe52a4946d2c07bd1bd38d0c/lib/rails.rb#42
+    # source://railties/7.1.0.alpha-e11ebc04cfbe41c06cdfb70ee5a9fdbbd98bb263/lib/rails.rb#42
     def app_class; end
 
-    # source://railties/7.1.0.alpha-b113b7fc4a26419efe52a4946d2c07bd1bd38d0c/lib/rails.rb#42
+    # source://railties/7.1.0.alpha-e11ebc04cfbe41c06cdfb70ee5a9fdbbd98bb263/lib/rails.rb#42
     def app_class=(_arg0); end
 
-    # source://railties/7.1.0.alpha-b113b7fc4a26419efe52a4946d2c07bd1bd38d0c/lib/rails.rb#43
+    # source://railties/7.1.0.alpha-e11ebc04cfbe41c06cdfb70ee5a9fdbbd98bb263/lib/rails.rb#43
     def application; end
 
-    # source://railties/7.1.0.alpha-b113b7fc4a26419efe52a4946d2c07bd1bd38d0c/lib/rails.rb#41
+    # source://railties/7.1.0.alpha-e11ebc04cfbe41c06cdfb70ee5a9fdbbd98bb263/lib/rails.rb#41
     def application=(_arg0); end
 
-    # source://railties/7.1.0.alpha-b113b7fc4a26419efe52a4946d2c07bd1bd38d0c/lib/rails.rb#123
+    # source://railties/7.1.0.alpha-e11ebc04cfbe41c06cdfb70ee5a9fdbbd98bb263/lib/rails.rb#123
     def autoloaders; end
 
-    # source://railties/7.1.0.alpha-b113b7fc4a26419efe52a4946d2c07bd1bd38d0c/lib/rails.rb#54
+    # source://railties/7.1.0.alpha-e11ebc04cfbe41c06cdfb70ee5a9fdbbd98bb263/lib/rails.rb#54
     def backtrace_cleaner; end
 
-    # source://railties/7.1.0.alpha-b113b7fc4a26419efe52a4946d2c07bd1bd38d0c/lib/rails.rb#42
+    # source://railties/7.1.0.alpha-e11ebc04cfbe41c06cdfb70ee5a9fdbbd98bb263/lib/rails.rb#42
     def cache; end
 
-    # source://railties/7.1.0.alpha-b113b7fc4a26419efe52a4946d2c07bd1bd38d0c/lib/rails.rb#42
+    # source://railties/7.1.0.alpha-e11ebc04cfbe41c06cdfb70ee5a9fdbbd98bb263/lib/rails.rb#42
     def cache=(_arg0); end
 
-    # source://railties/7.1.0.alpha-b113b7fc4a26419efe52a4946d2c07bd1bd38d0c/lib/rails.rb#50
+    # source://railties/7.1.0.alpha-e11ebc04cfbe41c06cdfb70ee5a9fdbbd98bb263/lib/rails.rb#50
     def configuration; end
 
-    # source://railties/7.1.0.alpha-b113b7fc4a26419efe52a4946d2c07bd1bd38d0c/lib/rails/deprecator.rb#4
+    # source://railties/7.1.0.alpha-e11ebc04cfbe41c06cdfb70ee5a9fdbbd98bb263/lib/rails/deprecator.rb#4
     def deprecator; end
 
-    # source://railties/7.1.0.alpha-b113b7fc4a26419efe52a4946d2c07bd1bd38d0c/lib/rails.rb#72
+    # source://railties/7.1.0.alpha-e11ebc04cfbe41c06cdfb70ee5a9fdbbd98bb263/lib/rails.rb#72
     def env; end
 
-    # source://railties/7.1.0.alpha-b113b7fc4a26419efe52a4946d2c07bd1bd38d0c/lib/rails.rb#79
+    # source://railties/7.1.0.alpha-e11ebc04cfbe41c06cdfb70ee5a9fdbbd98bb263/lib/rails.rb#79
     def env=(environment); end
 
-    # source://railties/7.1.0.alpha-b113b7fc4a26419efe52a4946d2c07bd1bd38d0c/lib/rails.rb#90
+    # source://railties/7.1.0.alpha-e11ebc04cfbe41c06cdfb70ee5a9fdbbd98bb263/lib/rails.rb#90
     def error; end
 
-    # source://railties/7.1.0.alpha-b113b7fc4a26419efe52a4946d2c07bd1bd38d0c/lib/rails/gem_version.rb#5
+    # source://railties/7.1.0.alpha-e11ebc04cfbe41c06cdfb70ee5a9fdbbd98bb263/lib/rails/gem_version.rb#5
     def gem_version; end
 
-    # source://railties/7.1.0.alpha-b113b7fc4a26419efe52a4946d2c07bd1bd38d0c/lib/rails.rb#103
+    # source://railties/7.1.0.alpha-e11ebc04cfbe41c06cdfb70ee5a9fdbbd98bb263/lib/rails.rb#103
     def groups(*groups); end
 
-    # source://railties/7.1.0.alpha-b113b7fc4a26419efe52a4946d2c07bd1bd38d0c/lib/rails.rb#47
+    # source://railties/7.1.0.alpha-e11ebc04cfbe41c06cdfb70ee5a9fdbbd98bb263/lib/rails.rb#47
     def initialize!(*_arg0, **_arg1, &_arg2); end
 
-    # source://railties/7.1.0.alpha-b113b7fc4a26419efe52a4946d2c07bd1bd38d0c/lib/rails.rb#47
+    # source://railties/7.1.0.alpha-e11ebc04cfbe41c06cdfb70ee5a9fdbbd98bb263/lib/rails.rb#47
     def initialized?(*_arg0, **_arg1, &_arg2); end
 
-    # source://railties/7.1.0.alpha-b113b7fc4a26419efe52a4946d2c07bd1bd38d0c/lib/rails.rb#42
+    # source://railties/7.1.0.alpha-e11ebc04cfbe41c06cdfb70ee5a9fdbbd98bb263/lib/rails.rb#42
     def logger; end
 
-    # source://railties/7.1.0.alpha-b113b7fc4a26419efe52a4946d2c07bd1bd38d0c/lib/rails.rb#42
+    # source://railties/7.1.0.alpha-e11ebc04cfbe41c06cdfb70ee5a9fdbbd98bb263/lib/rails.rb#42
     def logger=(_arg0); end
 
-    # source://railties/7.1.0.alpha-b113b7fc4a26419efe52a4946d2c07bd1bd38d0c/lib/rails.rb#119
+    # source://railties/7.1.0.alpha-e11ebc04cfbe41c06cdfb70ee5a9fdbbd98bb263/lib/rails.rb#119
     def public_path; end
 
-    # source://railties/7.1.0.alpha-b113b7fc4a26419efe52a4946d2c07bd1bd38d0c/lib/rails.rb#63
+    # source://railties/7.1.0.alpha-e11ebc04cfbe41c06cdfb70ee5a9fdbbd98bb263/lib/rails.rb#63
     def root; end
 
-    # source://railties/7.1.0.alpha-b113b7fc4a26419efe52a4946d2c07bd1bd38d0c/lib/rails/version.rb#7
+    # source://railties/7.1.0.alpha-e11ebc04cfbe41c06cdfb70ee5a9fdbbd98bb263/lib/rails/version.rb#7
     def version; end
   end
 end
@@ -1745,11 +1751,11 @@ class Rails::Conductor::ActionMailbox::InboundEmails::SourcesController < ::Rail
 
   private
 
-  # source://actionview/7.1.0.alpha-b113b7fc4a26419efe52a4946d2c07bd1bd38d0c/lib/action_view/layouts.rb#328
+  # source://actionview/7.1.0.alpha-e11ebc04cfbe41c06cdfb70ee5a9fdbbd98bb263/lib/action_view/layouts.rb#330
   def _layout(lookup_context, formats); end
 
   class << self
-    # source://actionpack/7.1.0.alpha-b113b7fc4a26419efe52a4946d2c07bd1bd38d0c/lib/action_controller/metal.rb#254
+    # source://actionpack/7.1.0.alpha-e11ebc04cfbe41c06cdfb70ee5a9fdbbd98bb263/lib/action_controller/metal.rb#254
     def middleware_stack; end
   end
 end
@@ -1762,7 +1768,7 @@ class Rails::Conductor::ActionMailbox::InboundEmailsController < ::Rails::Conduc
 
   private
 
-  # source://actionview/7.1.0.alpha-b113b7fc4a26419efe52a4946d2c07bd1bd38d0c/lib/action_view/layouts.rb#328
+  # source://actionview/7.1.0.alpha-e11ebc04cfbe41c06cdfb70ee5a9fdbbd98bb263/lib/action_view/layouts.rb#330
   def _layout(lookup_context, formats); end
 
   def create_inbound_email(mail); end
@@ -1770,7 +1776,7 @@ class Rails::Conductor::ActionMailbox::InboundEmailsController < ::Rails::Conduc
   def new_mail; end
 
   class << self
-    # source://actionpack/7.1.0.alpha-b113b7fc4a26419efe52a4946d2c07bd1bd38d0c/lib/action_controller/metal.rb#254
+    # source://actionpack/7.1.0.alpha-e11ebc04cfbe41c06cdfb70ee5a9fdbbd98bb263/lib/action_controller/metal.rb#254
     def middleware_stack; end
   end
 end
@@ -1780,11 +1786,11 @@ class Rails::Conductor::ActionMailbox::IncineratesController < ::Rails::Conducto
 
   private
 
-  # source://actionview/7.1.0.alpha-b113b7fc4a26419efe52a4946d2c07bd1bd38d0c/lib/action_view/layouts.rb#328
+  # source://actionview/7.1.0.alpha-e11ebc04cfbe41c06cdfb70ee5a9fdbbd98bb263/lib/action_view/layouts.rb#330
   def _layout(lookup_context, formats); end
 
   class << self
-    # source://actionpack/7.1.0.alpha-b113b7fc4a26419efe52a4946d2c07bd1bd38d0c/lib/action_controller/metal.rb#254
+    # source://actionpack/7.1.0.alpha-e11ebc04cfbe41c06cdfb70ee5a9fdbbd98bb263/lib/action_controller/metal.rb#254
     def middleware_stack; end
   end
 end
@@ -1794,13 +1800,13 @@ class Rails::Conductor::ActionMailbox::ReroutesController < ::Rails::Conductor::
 
   private
 
-  # source://actionview/7.1.0.alpha-b113b7fc4a26419efe52a4946d2c07bd1bd38d0c/lib/action_view/layouts.rb#328
+  # source://actionview/7.1.0.alpha-e11ebc04cfbe41c06cdfb70ee5a9fdbbd98bb263/lib/action_view/layouts.rb#330
   def _layout(lookup_context, formats); end
 
   def reroute(inbound_email); end
 
   class << self
-    # source://actionpack/7.1.0.alpha-b113b7fc4a26419efe52a4946d2c07bd1bd38d0c/lib/action_controller/metal.rb#254
+    # source://actionpack/7.1.0.alpha-e11ebc04cfbe41c06cdfb70ee5a9fdbbd98bb263/lib/action_controller/metal.rb#254
     def middleware_stack; end
   end
 end
@@ -1808,23 +1814,23 @@ end
 class Rails::Conductor::BaseController < ::ActionController::Base
   private
 
-  # source://actionview/7.1.0.alpha-b113b7fc4a26419efe52a4946d2c07bd1bd38d0c/lib/action_view/layouts.rb#328
+  # source://actionview/7.1.0.alpha-e11ebc04cfbe41c06cdfb70ee5a9fdbbd98bb263/lib/action_view/layouts.rb#330
   def _layout(lookup_context, formats); end
 
   def _layout_from_proc; end
   def ensure_development_env; end
 
   class << self
-    # source://activesupport/7.1.0.alpha-b113b7fc4a26419efe52a4946d2c07bd1bd38d0c/lib/active_support/callbacks.rb#68
+    # source://activesupport/7.1.0.alpha-e11ebc04cfbe41c06cdfb70ee5a9fdbbd98bb263/lib/active_support/callbacks.rb#68
     def __callbacks; end
 
-    # source://actionview/7.1.0.alpha-b113b7fc4a26419efe52a4946d2c07bd1bd38d0c/lib/action_view/layouts.rb#209
+    # source://actionview/7.1.0.alpha-e11ebc04cfbe41c06cdfb70ee5a9fdbbd98bb263/lib/action_view/layouts.rb#211
     def _layout; end
 
-    # source://actionview/7.1.0.alpha-b113b7fc4a26419efe52a4946d2c07bd1bd38d0c/lib/action_view/layouts.rb#210
+    # source://actionview/7.1.0.alpha-e11ebc04cfbe41c06cdfb70ee5a9fdbbd98bb263/lib/action_view/layouts.rb#212
     def _layout_conditions; end
 
-    # source://actionpack/7.1.0.alpha-b113b7fc4a26419efe52a4946d2c07bd1bd38d0c/lib/action_controller/metal.rb#254
+    # source://actionpack/7.1.0.alpha-e11ebc04cfbe41c06cdfb70ee5a9fdbbd98bb263/lib/action_controller/metal.rb#254
     def middleware_stack; end
   end
 end
