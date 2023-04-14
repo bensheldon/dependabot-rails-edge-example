@@ -3140,16 +3140,16 @@ end
 #
 # source://activerecord//lib/active_record/associations/collection_association.rb#31
 class ActiveRecord::Associations::CollectionAssociation < ::ActiveRecord::Associations::Association
-  # source://activerecord//lib/active_record/associations/collection_association.rb#271
+  # source://activerecord//lib/active_record/associations/collection_association.rb#279
   def add_to_target(record, skip_callbacks: T.unsafe(nil), replace: T.unsafe(nil), &block); end
 
-  # source://activerecord//lib/active_record/associations/collection_association.rb#109
+  # source://activerecord//lib/active_record/associations/collection_association.rb#117
   def build(attributes = T.unsafe(nil), &block); end
 
   # Add +records+ to this association. Since +<<+ flattens its argument list
   # and inserts each record, +push+ and +concat+ behave identically.
   #
-  # source://activerecord//lib/active_record/associations/collection_association.rb#119
+  # source://activerecord//lib/active_record/associations/collection_association.rb#127
   def concat(*records); end
 
   # Removes +records+ from this association calling +before_remove+ and
@@ -3160,7 +3160,7 @@ class ActiveRecord::Associations::CollectionAssociation < ::ActiveRecord::Associ
   # are actually removed from the database, that depends precisely on
   # +delete_records+. They are in any case removed from the collection.
   #
-  # source://activerecord//lib/active_record/associations/collection_association.rb#178
+  # source://activerecord//lib/active_record/associations/collection_association.rb#186
   def delete(*records); end
 
   # Removes all records from the association without calling callbacks
@@ -3177,7 +3177,7 @@ class ActiveRecord::Associations::CollectionAssociation < ::ActiveRecord::Associ
   #
   # See delete for more info.
   #
-  # source://activerecord//lib/active_record/associations/collection_association.rb#142
+  # source://activerecord//lib/active_record/associations/collection_association.rb#150
   def delete_all(dependent = T.unsafe(nil)); end
 
   # Deletes the +records+ and removes them from this association calling
@@ -3186,14 +3186,14 @@ class ActiveRecord::Associations::CollectionAssociation < ::ActiveRecord::Associ
   # Note that this method removes records from the database ignoring the
   # +:dependent+ option.
   #
-  # source://activerecord//lib/active_record/associations/collection_association.rb#187
+  # source://activerecord//lib/active_record/associations/collection_association.rb#195
   def destroy(*records); end
 
   # Destroy all the records from this association.
   #
   # See destroy for more info.
   #
-  # source://activerecord//lib/active_record/associations/collection_association.rb#164
+  # source://activerecord//lib/active_record/associations/collection_association.rb#172
   def destroy_all; end
 
   # Returns true if the collection is empty.
@@ -3207,15 +3207,15 @@ class ActiveRecord::Associations::CollectionAssociation < ::ActiveRecord::Associ
   #
   # @return [Boolean]
   #
-  # source://activerecord//lib/active_record/associations/collection_association.rb#224
+  # source://activerecord//lib/active_record/associations/collection_association.rb#232
   def empty?; end
 
-  # source://activerecord//lib/active_record/associations/collection_association.rb#86
+  # source://activerecord//lib/active_record/associations/collection_association.rb#94
   def find(*args); end
 
   # @return [Boolean]
   #
-  # source://activerecord//lib/active_record/associations/collection_association.rb#298
+  # source://activerecord//lib/active_record/associations/collection_association.rb#306
   def find_from_target?; end
 
   # Implements the ids reader method, e.g. foo.item_ids for Foo.has_many :items
@@ -3230,15 +3230,15 @@ class ActiveRecord::Associations::CollectionAssociation < ::ActiveRecord::Associ
 
   # @return [Boolean]
   #
-  # source://activerecord//lib/active_record/associations/collection_association.rb#250
+  # source://activerecord//lib/active_record/associations/collection_association.rb#258
   def include?(record); end
 
-  # source://activerecord//lib/active_record/associations/collection_association.rb#262
+  # source://activerecord//lib/active_record/associations/collection_association.rb#270
   def load_target; end
 
   # @return [Boolean]
   #
-  # source://activerecord//lib/active_record/associations/collection_association.rb#294
+  # source://activerecord//lib/active_record/associations/collection_association.rb#302
   def null_scope?; end
 
   # Implements the reader method, e.g. foo.items for Foo.has_many :items
@@ -3249,13 +3249,13 @@ class ActiveRecord::Associations::CollectionAssociation < ::ActiveRecord::Associ
   # Replace this collection with +other_array+. This will perform a diff
   # and delete/add only records that have changed.
   #
-  # source://activerecord//lib/active_record/associations/collection_association.rb#234
+  # source://activerecord//lib/active_record/associations/collection_association.rb#242
   def replace(other_array); end
 
-  # source://activerecord//lib/active_record/associations/collection_association.rb#79
+  # source://activerecord//lib/active_record/associations/collection_association.rb#87
   def reset; end
 
-  # source://activerecord//lib/active_record/associations/collection_association.rb#288
+  # source://activerecord//lib/active_record/associations/collection_association.rb#296
   def scope; end
 
   # Returns the size of the collection by executing a SELECT COUNT(*)
@@ -3269,10 +3269,10 @@ class ActiveRecord::Associations::CollectionAssociation < ::ActiveRecord::Associ
   # This method is abstract in the sense that it relies on
   # +count_records+, which is a method descendants have to provide.
   #
-  # source://activerecord//lib/active_record/associations/collection_association.rb#201
+  # source://activerecord//lib/active_record/associations/collection_association.rb#209
   def size; end
 
-  # source://activerecord//lib/active_record/associations/collection_association.rb#275
+  # source://activerecord//lib/active_record/associations/collection_association.rb#283
   def target=(record); end
 
   # Implements the writer method, e.g. foo.items= for Foo.has_many :items
@@ -3282,21 +3282,21 @@ class ActiveRecord::Associations::CollectionAssociation < ::ActiveRecord::Associ
 
   private
 
-  # source://activerecord//lib/active_record/associations/collection_association.rb#340
+  # source://activerecord//lib/active_record/associations/collection_association.rb#348
   def _create_record(attributes, raise = T.unsafe(nil), &block); end
 
-  # source://activerecord//lib/active_record/associations/collection_association.rb#478
+  # source://activerecord//lib/active_record/associations/collection_association.rb#486
   def callback(method, record); end
 
-  # source://activerecord//lib/active_record/associations/collection_association.rb#484
+  # source://activerecord//lib/active_record/associations/collection_association.rb#492
   def callbacks_for(callback_name); end
 
   # @raise [ActiveRecord::Rollback]
   #
-  # source://activerecord//lib/active_record/associations/collection_association.rb#424
+  # source://activerecord//lib/active_record/associations/collection_association.rb#432
   def concat_records(records, raise = T.unsafe(nil)); end
 
-  # source://activerecord//lib/active_record/associations/collection_association.rb#371
+  # source://activerecord//lib/active_record/associations/collection_association.rb#379
   def delete_or_destroy(records, method); end
 
   # Delete the given records from the association,
@@ -3305,23 +3305,23 @@ class ActiveRecord::Associations::CollectionAssociation < ::ActiveRecord::Associ
   #
   # @raise [NotImplementedError]
   #
-  # source://activerecord//lib/active_record/associations/collection_association.rb#400
+  # source://activerecord//lib/active_record/associations/collection_association.rb#408
   def delete_records(records, method); end
 
   # If the :inverse_of option has been
   # specified, then #find scans the entire collection.
   #
-  # source://activerecord//lib/active_record/associations/collection_association.rb#507
+  # source://activerecord//lib/active_record/associations/collection_association.rb#515
   def find_by_scan(*args); end
 
   # @return [Boolean]
   #
-  # source://activerecord//lib/active_record/associations/collection_association.rb#493
+  # source://activerecord//lib/active_record/associations/collection_association.rb#501
   def include_in_memory?(record); end
 
   # Do the relevant stuff to insert the given record into the association collection.
   #
-  # source://activerecord//lib/active_record/associations/collection_association.rb#363
+  # source://activerecord//lib/active_record/associations/collection_association.rb#371
   def insert_record(record, validate = T.unsafe(nil), raise = T.unsafe(nil), &block); end
 
   # We have some records loaded from the database (persisted) and some that are
@@ -3335,22 +3335,22 @@ class ActiveRecord::Associations::CollectionAssociation < ::ActiveRecord::Associ
   #   * Any changes made to attributes on objects in the memory array are to be preserved
   #   * Otherwise, attributes should have the value found in the database
   #
-  # source://activerecord//lib/active_record/associations/collection_association.rb#321
+  # source://activerecord//lib/active_record/associations/collection_association.rb#329
   def merge_target_lists(persisted, memory); end
 
-  # source://activerecord//lib/active_record/associations/collection_association.rb#385
+  # source://activerecord//lib/active_record/associations/collection_association.rb#393
   def remove_records(existing_records, records, method); end
 
-  # source://activerecord//lib/active_record/associations/collection_association.rb#416
+  # source://activerecord//lib/active_record/associations/collection_association.rb#424
   def replace_common_records_in_memory(new_target, original_target); end
 
-  # source://activerecord//lib/active_record/associations/collection_association.rb#443
+  # source://activerecord//lib/active_record/associations/collection_association.rb#451
   def replace_on_target(record, skip_callbacks, replace:, inversing: T.unsafe(nil)); end
 
-  # source://activerecord//lib/active_record/associations/collection_association.rb#404
+  # source://activerecord//lib/active_record/associations/collection_association.rb#412
   def replace_records(new_target, original_target); end
 
-  # source://activerecord//lib/active_record/associations/collection_association.rb#307
+  # source://activerecord//lib/active_record/associations/collection_association.rb#315
   def transaction(&block); end
 end
 
@@ -4758,10 +4758,10 @@ class ActiveRecord::Associations::HasManyAssociation < ::ActiveRecord::Associati
 
   private
 
-  # source://activerecord//lib/active_record/associations/has_many_association.rb#140
+  # source://activerecord//lib/active_record/associations/has_many_association.rb#142
   def _create_record(attributes, *_arg1); end
 
-  # source://activerecord//lib/active_record/associations/has_many_association.rb#136
+  # source://activerecord//lib/active_record/associations/has_many_association.rb#138
   def concat_records(records, *_arg1); end
 
   # Returns the number of records in this collection.
@@ -4792,16 +4792,16 @@ class ActiveRecord::Associations::HasManyAssociation < ::ActiveRecord::Associati
   # source://activerecord//lib/active_record/associations/has_many_association.rb#126
   def delete_records(records, method); end
 
-  # source://activerecord//lib/active_record/associations/has_many_association.rb#155
+  # source://activerecord//lib/active_record/associations/has_many_association.rb#157
   def difference(a, b); end
 
-  # source://activerecord//lib/active_record/associations/has_many_association.rb#159
+  # source://activerecord//lib/active_record/associations/has_many_association.rb#161
   def intersection(a, b); end
 
   # source://activerecord//lib/active_record/associations/has_many_association.rb#97
   def update_counter(difference, reflection = T.unsafe(nil)); end
 
-  # source://activerecord//lib/active_record/associations/has_many_association.rb#148
+  # source://activerecord//lib/active_record/associations/has_many_association.rb#150
   def update_counter_if_success(saved_successfully, difference); end
 
   # source://activerecord//lib/active_record/associations/has_many_association.rb#103
@@ -8155,28 +8155,28 @@ class ActiveRecord::Base
   extend ::ActionText::Attribute::ClassMethods
   extend ::Turbo::Broadcastable::ClassMethods
 
-  # source://activesupport/7.1.0.alpha-c2a25803ddce92c43342690d7b6198b14c2a15b4/lib/active_support/callbacks.rb#68
+  # source://activesupport/7.1.0.alpha-444df0eee1b537ecaa11509e819b071d4e87b519/lib/active_support/callbacks.rb#68
   def __callbacks; end
 
-  # source://activesupport/7.1.0.alpha-c2a25803ddce92c43342690d7b6198b14c2a15b4/lib/active_support/callbacks.rb#68
+  # source://activesupport/7.1.0.alpha-444df0eee1b537ecaa11509e819b071d4e87b519/lib/active_support/callbacks.rb#68
   def __callbacks?; end
 
-  # source://activesupport/7.1.0.alpha-c2a25803ddce92c43342690d7b6198b14c2a15b4/lib/active_support/callbacks.rb#958
+  # source://activesupport/7.1.0.alpha-444df0eee1b537ecaa11509e819b071d4e87b519/lib/active_support/callbacks.rb#958
   def _before_commit_callbacks; end
 
-  # source://activesupport/7.1.0.alpha-c2a25803ddce92c43342690d7b6198b14c2a15b4/lib/active_support/callbacks.rb#958
+  # source://activesupport/7.1.0.alpha-444df0eee1b537ecaa11509e819b071d4e87b519/lib/active_support/callbacks.rb#958
   def _commit_callbacks; end
 
-  # source://activesupport/7.1.0.alpha-c2a25803ddce92c43342690d7b6198b14c2a15b4/lib/active_support/callbacks.rb#958
+  # source://activesupport/7.1.0.alpha-444df0eee1b537ecaa11509e819b071d4e87b519/lib/active_support/callbacks.rb#958
   def _create_callbacks; end
 
-  # source://activesupport/7.1.0.alpha-c2a25803ddce92c43342690d7b6198b14c2a15b4/lib/active_support/callbacks.rb#958
+  # source://activesupport/7.1.0.alpha-444df0eee1b537ecaa11509e819b071d4e87b519/lib/active_support/callbacks.rb#958
   def _destroy_callbacks; end
 
-  # source://activesupport/7.1.0.alpha-c2a25803ddce92c43342690d7b6198b14c2a15b4/lib/active_support/callbacks.rb#958
+  # source://activesupport/7.1.0.alpha-444df0eee1b537ecaa11509e819b071d4e87b519/lib/active_support/callbacks.rb#958
   def _find_callbacks; end
 
-  # source://activesupport/7.1.0.alpha-c2a25803ddce92c43342690d7b6198b14c2a15b4/lib/active_support/callbacks.rb#958
+  # source://activesupport/7.1.0.alpha-444df0eee1b537ecaa11509e819b071d4e87b519/lib/active_support/callbacks.rb#958
   def _initialize_callbacks; end
 
   # source://activerecord//lib/active_record/reflection.rb#11
@@ -8185,64 +8185,64 @@ class ActiveRecord::Base
   # source://activerecord//lib/active_record/reflection.rb#11
   def _reflections?; end
 
-  # source://activesupport/7.1.0.alpha-c2a25803ddce92c43342690d7b6198b14c2a15b4/lib/active_support/callbacks.rb#958
+  # source://activesupport/7.1.0.alpha-444df0eee1b537ecaa11509e819b071d4e87b519/lib/active_support/callbacks.rb#958
   def _rollback_callbacks; end
 
-  # source://activesupport/7.1.0.alpha-c2a25803ddce92c43342690d7b6198b14c2a15b4/lib/active_support/callbacks.rb#946
+  # source://activesupport/7.1.0.alpha-444df0eee1b537ecaa11509e819b071d4e87b519/lib/active_support/callbacks.rb#946
   def _run_before_commit_callbacks(&block); end
 
-  # source://activesupport/7.1.0.alpha-c2a25803ddce92c43342690d7b6198b14c2a15b4/lib/active_support/callbacks.rb#946
+  # source://activesupport/7.1.0.alpha-444df0eee1b537ecaa11509e819b071d4e87b519/lib/active_support/callbacks.rb#946
   def _run_commit_callbacks(&block); end
 
-  # source://activesupport/7.1.0.alpha-c2a25803ddce92c43342690d7b6198b14c2a15b4/lib/active_support/callbacks.rb#946
+  # source://activesupport/7.1.0.alpha-444df0eee1b537ecaa11509e819b071d4e87b519/lib/active_support/callbacks.rb#946
   def _run_create_callbacks(&block); end
 
-  # source://activesupport/7.1.0.alpha-c2a25803ddce92c43342690d7b6198b14c2a15b4/lib/active_support/callbacks.rb#946
+  # source://activesupport/7.1.0.alpha-444df0eee1b537ecaa11509e819b071d4e87b519/lib/active_support/callbacks.rb#946
   def _run_destroy_callbacks(&block); end
 
-  # source://activesupport/7.1.0.alpha-c2a25803ddce92c43342690d7b6198b14c2a15b4/lib/active_support/callbacks.rb#946
+  # source://activesupport/7.1.0.alpha-444df0eee1b537ecaa11509e819b071d4e87b519/lib/active_support/callbacks.rb#946
   def _run_find_callbacks(&block); end
 
-  # source://activesupport/7.1.0.alpha-c2a25803ddce92c43342690d7b6198b14c2a15b4/lib/active_support/callbacks.rb#946
+  # source://activesupport/7.1.0.alpha-444df0eee1b537ecaa11509e819b071d4e87b519/lib/active_support/callbacks.rb#946
   def _run_initialize_callbacks(&block); end
 
-  # source://activesupport/7.1.0.alpha-c2a25803ddce92c43342690d7b6198b14c2a15b4/lib/active_support/callbacks.rb#946
+  # source://activesupport/7.1.0.alpha-444df0eee1b537ecaa11509e819b071d4e87b519/lib/active_support/callbacks.rb#946
   def _run_rollback_callbacks(&block); end
 
-  # source://activesupport/7.1.0.alpha-c2a25803ddce92c43342690d7b6198b14c2a15b4/lib/active_support/callbacks.rb#946
+  # source://activesupport/7.1.0.alpha-444df0eee1b537ecaa11509e819b071d4e87b519/lib/active_support/callbacks.rb#946
   def _run_save_callbacks(&block); end
 
-  # source://activesupport/7.1.0.alpha-c2a25803ddce92c43342690d7b6198b14c2a15b4/lib/active_support/callbacks.rb#946
+  # source://activesupport/7.1.0.alpha-444df0eee1b537ecaa11509e819b071d4e87b519/lib/active_support/callbacks.rb#946
   def _run_touch_callbacks(&block); end
 
-  # source://activesupport/7.1.0.alpha-c2a25803ddce92c43342690d7b6198b14c2a15b4/lib/active_support/callbacks.rb#946
+  # source://activesupport/7.1.0.alpha-444df0eee1b537ecaa11509e819b071d4e87b519/lib/active_support/callbacks.rb#946
   def _run_update_callbacks(&block); end
 
-  # source://activesupport/7.1.0.alpha-c2a25803ddce92c43342690d7b6198b14c2a15b4/lib/active_support/callbacks.rb#946
+  # source://activesupport/7.1.0.alpha-444df0eee1b537ecaa11509e819b071d4e87b519/lib/active_support/callbacks.rb#946
   def _run_validate_callbacks(&block); end
 
-  # source://activesupport/7.1.0.alpha-c2a25803ddce92c43342690d7b6198b14c2a15b4/lib/active_support/callbacks.rb#946
+  # source://activesupport/7.1.0.alpha-444df0eee1b537ecaa11509e819b071d4e87b519/lib/active_support/callbacks.rb#946
   def _run_validation_callbacks(&block); end
 
-  # source://activesupport/7.1.0.alpha-c2a25803ddce92c43342690d7b6198b14c2a15b4/lib/active_support/callbacks.rb#958
+  # source://activesupport/7.1.0.alpha-444df0eee1b537ecaa11509e819b071d4e87b519/lib/active_support/callbacks.rb#958
   def _save_callbacks; end
 
-  # source://activesupport/7.1.0.alpha-c2a25803ddce92c43342690d7b6198b14c2a15b4/lib/active_support/callbacks.rb#958
+  # source://activesupport/7.1.0.alpha-444df0eee1b537ecaa11509e819b071d4e87b519/lib/active_support/callbacks.rb#958
   def _touch_callbacks; end
 
-  # source://activesupport/7.1.0.alpha-c2a25803ddce92c43342690d7b6198b14c2a15b4/lib/active_support/callbacks.rb#958
+  # source://activesupport/7.1.0.alpha-444df0eee1b537ecaa11509e819b071d4e87b519/lib/active_support/callbacks.rb#958
   def _update_callbacks; end
 
-  # source://activesupport/7.1.0.alpha-c2a25803ddce92c43342690d7b6198b14c2a15b4/lib/active_support/callbacks.rb#958
+  # source://activesupport/7.1.0.alpha-444df0eee1b537ecaa11509e819b071d4e87b519/lib/active_support/callbacks.rb#958
   def _validate_callbacks; end
 
-  # source://activesupport/7.1.0.alpha-c2a25803ddce92c43342690d7b6198b14c2a15b4/lib/active_support/callbacks.rb#958
+  # source://activesupport/7.1.0.alpha-444df0eee1b537ecaa11509e819b071d4e87b519/lib/active_support/callbacks.rb#958
   def _validation_callbacks; end
 
-  # source://activemodel/7.1.0.alpha-c2a25803ddce92c43342690d7b6198b14c2a15b4/lib/active_model/validations.rb#71
+  # source://activemodel/7.1.0.alpha-444df0eee1b537ecaa11509e819b071d4e87b519/lib/active_model/validations.rb#71
   def _validators; end
 
-  # source://activemodel/7.1.0.alpha-c2a25803ddce92c43342690d7b6198b14c2a15b4/lib/active_model/validations.rb#71
+  # source://activemodel/7.1.0.alpha-444df0eee1b537ecaa11509e819b071d4e87b519/lib/active_model/validations.rb#71
   def _validators?; end
 
   # source://activerecord//lib/active_record/reflection.rb#12
@@ -8251,22 +8251,22 @@ class ActiveRecord::Base
   # source://activerecord//lib/active_record/reflection.rb#12
   def aggregate_reflections?; end
 
-  # source://activestorage/7.1.0.alpha-c2a25803ddce92c43342690d7b6198b14c2a15b4/lib/active_storage/reflection.rb#53
+  # source://activestorage/7.1.0.alpha-444df0eee1b537ecaa11509e819b071d4e87b519/lib/active_storage/reflection.rb#53
   def attachment_reflections; end
 
-  # source://activestorage/7.1.0.alpha-c2a25803ddce92c43342690d7b6198b14c2a15b4/lib/active_storage/reflection.rb#53
+  # source://activestorage/7.1.0.alpha-444df0eee1b537ecaa11509e819b071d4e87b519/lib/active_storage/reflection.rb#53
   def attachment_reflections?; end
 
-  # source://activemodel/7.1.0.alpha-c2a25803ddce92c43342690d7b6198b14c2a15b4/lib/active_model/attribute_methods.rb#72
+  # source://activemodel/7.1.0.alpha-444df0eee1b537ecaa11509e819b071d4e87b519/lib/active_model/attribute_methods.rb#72
   def attribute_aliases; end
 
-  # source://activemodel/7.1.0.alpha-c2a25803ddce92c43342690d7b6198b14c2a15b4/lib/active_model/attribute_methods.rb#72
+  # source://activemodel/7.1.0.alpha-444df0eee1b537ecaa11509e819b071d4e87b519/lib/active_model/attribute_methods.rb#72
   def attribute_aliases?; end
 
-  # source://activemodel/7.1.0.alpha-c2a25803ddce92c43342690d7b6198b14c2a15b4/lib/active_model/attribute_methods.rb#73
+  # source://activemodel/7.1.0.alpha-444df0eee1b537ecaa11509e819b071d4e87b519/lib/active_model/attribute_methods.rb#73
   def attribute_method_patterns; end
 
-  # source://activemodel/7.1.0.alpha-c2a25803ddce92c43342690d7b6198b14c2a15b4/lib/active_model/attribute_methods.rb#73
+  # source://activemodel/7.1.0.alpha-444df0eee1b537ecaa11509e819b071d4e87b519/lib/active_model/attribute_methods.rb#73
   def attribute_method_patterns?; end
 
   # source://activerecord//lib/active_record/reflection.rb#13
@@ -8341,10 +8341,10 @@ class ActiveRecord::Base
   # source://activerecord//lib/active_record/encryption/encryptable_record.rb#11
   def encrypted_attributes?; end
 
-  # source://activemodel/7.1.0.alpha-c2a25803ddce92c43342690d7b6198b14c2a15b4/lib/active_model/serializers/json.rb#15
+  # source://activemodel/7.1.0.alpha-444df0eee1b537ecaa11509e819b071d4e87b519/lib/active_model/serializers/json.rb#15
   def include_root_in_json; end
 
-  # source://activemodel/7.1.0.alpha-c2a25803ddce92c43342690d7b6198b14c2a15b4/lib/active_model/serializers/json.rb#15
+  # source://activemodel/7.1.0.alpha-444df0eee1b537ecaa11509e819b071d4e87b519/lib/active_model/serializers/json.rb#15
   def include_root_in_json?; end
 
   # source://activerecord//lib/active_record/locking/optimistic.rb#56
@@ -8359,7 +8359,7 @@ class ActiveRecord::Base
   # source://activerecord//lib/active_record/core.rb#21
   def logger?; end
 
-  # source://activemodel/7.1.0.alpha-c2a25803ddce92c43342690d7b6198b14c2a15b4/lib/active_model/naming.rb#255
+  # source://activemodel/7.1.0.alpha-444df0eee1b537ecaa11509e819b071d4e87b519/lib/active_model/naming.rb#255
   def model_name; end
 
   # source://activerecord//lib/active_record/nested_attributes.rb#15
@@ -8461,22 +8461,22 @@ class ActiveRecord::Base
   # source://activerecord//lib/active_record/model_schema.rb#171
   def type_for_attribute(attr_name, &block); end
 
-  # source://activemodel/7.1.0.alpha-c2a25803ddce92c43342690d7b6198b14c2a15b4/lib/active_model/validations.rb#67
+  # source://activemodel/7.1.0.alpha-444df0eee1b537ecaa11509e819b071d4e87b519/lib/active_model/validations.rb#67
   def validation_context; end
 
   private
 
-  # source://activemodel/7.1.0.alpha-c2a25803ddce92c43342690d7b6198b14c2a15b4/lib/active_model/validations.rb#67
+  # source://activemodel/7.1.0.alpha-444df0eee1b537ecaa11509e819b071d4e87b519/lib/active_model/validations.rb#67
   def validation_context=(_arg0); end
 
   class << self
-    # source://activesupport/7.1.0.alpha-c2a25803ddce92c43342690d7b6198b14c2a15b4/lib/active_support/callbacks.rb#68
+    # source://activesupport/7.1.0.alpha-444df0eee1b537ecaa11509e819b071d4e87b519/lib/active_support/callbacks.rb#68
     def __callbacks; end
 
-    # source://activesupport/7.1.0.alpha-c2a25803ddce92c43342690d7b6198b14c2a15b4/lib/active_support/callbacks.rb#68
+    # source://activesupport/7.1.0.alpha-444df0eee1b537ecaa11509e819b071d4e87b519/lib/active_support/callbacks.rb#68
     def __callbacks=(value); end
 
-    # source://activesupport/7.1.0.alpha-c2a25803ddce92c43342690d7b6198b14c2a15b4/lib/active_support/callbacks.rb#68
+    # source://activesupport/7.1.0.alpha-444df0eee1b537ecaa11509e819b071d4e87b519/lib/active_support/callbacks.rb#68
     def __callbacks?; end
 
     # source://activerecord//lib/active_record/readonly_attributes.rb#11
@@ -8488,16 +8488,16 @@ class ActiveRecord::Base
     # source://activerecord//lib/active_record/readonly_attributes.rb#11
     def _attr_readonly?; end
 
-    # source://activesupport/7.1.0.alpha-c2a25803ddce92c43342690d7b6198b14c2a15b4/lib/active_support/callbacks.rb#950
+    # source://activesupport/7.1.0.alpha-444df0eee1b537ecaa11509e819b071d4e87b519/lib/active_support/callbacks.rb#950
     def _before_commit_callbacks; end
 
-    # source://activesupport/7.1.0.alpha-c2a25803ddce92c43342690d7b6198b14c2a15b4/lib/active_support/callbacks.rb#954
+    # source://activesupport/7.1.0.alpha-444df0eee1b537ecaa11509e819b071d4e87b519/lib/active_support/callbacks.rb#954
     def _before_commit_callbacks=(value); end
 
-    # source://activesupport/7.1.0.alpha-c2a25803ddce92c43342690d7b6198b14c2a15b4/lib/active_support/callbacks.rb#950
+    # source://activesupport/7.1.0.alpha-444df0eee1b537ecaa11509e819b071d4e87b519/lib/active_support/callbacks.rb#950
     def _commit_callbacks; end
 
-    # source://activesupport/7.1.0.alpha-c2a25803ddce92c43342690d7b6198b14c2a15b4/lib/active_support/callbacks.rb#954
+    # source://activesupport/7.1.0.alpha-444df0eee1b537ecaa11509e819b071d4e87b519/lib/active_support/callbacks.rb#954
     def _commit_callbacks=(value); end
 
     # source://activerecord//lib/active_record/counter_cache.rb#9
@@ -8509,10 +8509,10 @@ class ActiveRecord::Base
     # source://activerecord//lib/active_record/counter_cache.rb#9
     def _counter_cache_columns?; end
 
-    # source://activesupport/7.1.0.alpha-c2a25803ddce92c43342690d7b6198b14c2a15b4/lib/active_support/callbacks.rb#950
+    # source://activesupport/7.1.0.alpha-444df0eee1b537ecaa11509e819b071d4e87b519/lib/active_support/callbacks.rb#950
     def _create_callbacks; end
 
-    # source://activesupport/7.1.0.alpha-c2a25803ddce92c43342690d7b6198b14c2a15b4/lib/active_support/callbacks.rb#954
+    # source://activesupport/7.1.0.alpha-444df0eee1b537ecaa11509e819b071d4e87b519/lib/active_support/callbacks.rb#954
     def _create_callbacks=(value); end
 
     # source://activerecord//lib/active_record/core.rb#23
@@ -8524,22 +8524,22 @@ class ActiveRecord::Base
     # source://activerecord//lib/active_record/core.rb#23
     def _destroy_association_async_job?; end
 
-    # source://activesupport/7.1.0.alpha-c2a25803ddce92c43342690d7b6198b14c2a15b4/lib/active_support/callbacks.rb#950
+    # source://activesupport/7.1.0.alpha-444df0eee1b537ecaa11509e819b071d4e87b519/lib/active_support/callbacks.rb#950
     def _destroy_callbacks; end
 
-    # source://activesupport/7.1.0.alpha-c2a25803ddce92c43342690d7b6198b14c2a15b4/lib/active_support/callbacks.rb#954
+    # source://activesupport/7.1.0.alpha-444df0eee1b537ecaa11509e819b071d4e87b519/lib/active_support/callbacks.rb#954
     def _destroy_callbacks=(value); end
 
-    # source://activesupport/7.1.0.alpha-c2a25803ddce92c43342690d7b6198b14c2a15b4/lib/active_support/callbacks.rb#950
+    # source://activesupport/7.1.0.alpha-444df0eee1b537ecaa11509e819b071d4e87b519/lib/active_support/callbacks.rb#950
     def _find_callbacks; end
 
-    # source://activesupport/7.1.0.alpha-c2a25803ddce92c43342690d7b6198b14c2a15b4/lib/active_support/callbacks.rb#954
+    # source://activesupport/7.1.0.alpha-444df0eee1b537ecaa11509e819b071d4e87b519/lib/active_support/callbacks.rb#954
     def _find_callbacks=(value); end
 
-    # source://activesupport/7.1.0.alpha-c2a25803ddce92c43342690d7b6198b14c2a15b4/lib/active_support/callbacks.rb#950
+    # source://activesupport/7.1.0.alpha-444df0eee1b537ecaa11509e819b071d4e87b519/lib/active_support/callbacks.rb#950
     def _initialize_callbacks; end
 
-    # source://activesupport/7.1.0.alpha-c2a25803ddce92c43342690d7b6198b14c2a15b4/lib/active_support/callbacks.rb#954
+    # source://activesupport/7.1.0.alpha-444df0eee1b537ecaa11509e819b071d4e87b519/lib/active_support/callbacks.rb#954
     def _initialize_callbacks=(value); end
 
     # source://activerecord//lib/active_record/reflection.rb#11
@@ -8551,70 +8551,70 @@ class ActiveRecord::Base
     # source://activerecord//lib/active_record/reflection.rb#11
     def _reflections?; end
 
-    # source://activesupport/7.1.0.alpha-c2a25803ddce92c43342690d7b6198b14c2a15b4/lib/active_support/callbacks.rb#950
+    # source://activesupport/7.1.0.alpha-444df0eee1b537ecaa11509e819b071d4e87b519/lib/active_support/callbacks.rb#950
     def _rollback_callbacks; end
 
-    # source://activesupport/7.1.0.alpha-c2a25803ddce92c43342690d7b6198b14c2a15b4/lib/active_support/callbacks.rb#954
+    # source://activesupport/7.1.0.alpha-444df0eee1b537ecaa11509e819b071d4e87b519/lib/active_support/callbacks.rb#954
     def _rollback_callbacks=(value); end
 
-    # source://activesupport/7.1.0.alpha-c2a25803ddce92c43342690d7b6198b14c2a15b4/lib/active_support/callbacks.rb#950
+    # source://activesupport/7.1.0.alpha-444df0eee1b537ecaa11509e819b071d4e87b519/lib/active_support/callbacks.rb#950
     def _save_callbacks; end
 
-    # source://activesupport/7.1.0.alpha-c2a25803ddce92c43342690d7b6198b14c2a15b4/lib/active_support/callbacks.rb#954
+    # source://activesupport/7.1.0.alpha-444df0eee1b537ecaa11509e819b071d4e87b519/lib/active_support/callbacks.rb#954
     def _save_callbacks=(value); end
 
-    # source://activesupport/7.1.0.alpha-c2a25803ddce92c43342690d7b6198b14c2a15b4/lib/active_support/callbacks.rb#950
+    # source://activesupport/7.1.0.alpha-444df0eee1b537ecaa11509e819b071d4e87b519/lib/active_support/callbacks.rb#950
     def _touch_callbacks; end
 
-    # source://activesupport/7.1.0.alpha-c2a25803ddce92c43342690d7b6198b14c2a15b4/lib/active_support/callbacks.rb#954
+    # source://activesupport/7.1.0.alpha-444df0eee1b537ecaa11509e819b071d4e87b519/lib/active_support/callbacks.rb#954
     def _touch_callbacks=(value); end
 
-    # source://activesupport/7.1.0.alpha-c2a25803ddce92c43342690d7b6198b14c2a15b4/lib/active_support/callbacks.rb#950
+    # source://activesupport/7.1.0.alpha-444df0eee1b537ecaa11509e819b071d4e87b519/lib/active_support/callbacks.rb#950
     def _update_callbacks; end
 
-    # source://activesupport/7.1.0.alpha-c2a25803ddce92c43342690d7b6198b14c2a15b4/lib/active_support/callbacks.rb#954
+    # source://activesupport/7.1.0.alpha-444df0eee1b537ecaa11509e819b071d4e87b519/lib/active_support/callbacks.rb#954
     def _update_callbacks=(value); end
 
-    # source://activesupport/7.1.0.alpha-c2a25803ddce92c43342690d7b6198b14c2a15b4/lib/active_support/callbacks.rb#950
+    # source://activesupport/7.1.0.alpha-444df0eee1b537ecaa11509e819b071d4e87b519/lib/active_support/callbacks.rb#950
     def _validate_callbacks; end
 
-    # source://activesupport/7.1.0.alpha-c2a25803ddce92c43342690d7b6198b14c2a15b4/lib/active_support/callbacks.rb#954
+    # source://activesupport/7.1.0.alpha-444df0eee1b537ecaa11509e819b071d4e87b519/lib/active_support/callbacks.rb#954
     def _validate_callbacks=(value); end
 
-    # source://activesupport/7.1.0.alpha-c2a25803ddce92c43342690d7b6198b14c2a15b4/lib/active_support/callbacks.rb#950
+    # source://activesupport/7.1.0.alpha-444df0eee1b537ecaa11509e819b071d4e87b519/lib/active_support/callbacks.rb#950
     def _validation_callbacks; end
 
-    # source://activesupport/7.1.0.alpha-c2a25803ddce92c43342690d7b6198b14c2a15b4/lib/active_support/callbacks.rb#954
+    # source://activesupport/7.1.0.alpha-444df0eee1b537ecaa11509e819b071d4e87b519/lib/active_support/callbacks.rb#954
     def _validation_callbacks=(value); end
 
-    # source://activemodel/7.1.0.alpha-c2a25803ddce92c43342690d7b6198b14c2a15b4/lib/active_model/validations.rb#71
+    # source://activemodel/7.1.0.alpha-444df0eee1b537ecaa11509e819b071d4e87b519/lib/active_model/validations.rb#71
     def _validators; end
 
-    # source://activemodel/7.1.0.alpha-c2a25803ddce92c43342690d7b6198b14c2a15b4/lib/active_model/validations.rb#71
+    # source://activemodel/7.1.0.alpha-444df0eee1b537ecaa11509e819b071d4e87b519/lib/active_model/validations.rb#71
     def _validators=(value); end
 
-    # source://activemodel/7.1.0.alpha-c2a25803ddce92c43342690d7b6198b14c2a15b4/lib/active_model/validations.rb#71
+    # source://activemodel/7.1.0.alpha-444df0eee1b537ecaa11509e819b071d4e87b519/lib/active_model/validations.rb#71
     def _validators?; end
 
-    # source://activemodel/7.1.0.alpha-c2a25803ddce92c43342690d7b6198b14c2a15b4/lib/active_model/callbacks.rb#144
+    # source://activemodel/7.1.0.alpha-444df0eee1b537ecaa11509e819b071d4e87b519/lib/active_model/callbacks.rb#144
     def after_create(*args, **options, &block); end
 
-    # source://activemodel/7.1.0.alpha-c2a25803ddce92c43342690d7b6198b14c2a15b4/lib/active_model/callbacks.rb#144
+    # source://activemodel/7.1.0.alpha-444df0eee1b537ecaa11509e819b071d4e87b519/lib/active_model/callbacks.rb#144
     def after_destroy(*args, **options, &block); end
 
-    # source://activemodel/7.1.0.alpha-c2a25803ddce92c43342690d7b6198b14c2a15b4/lib/active_model/callbacks.rb#144
+    # source://activemodel/7.1.0.alpha-444df0eee1b537ecaa11509e819b071d4e87b519/lib/active_model/callbacks.rb#144
     def after_find(*args, **options, &block); end
 
-    # source://activemodel/7.1.0.alpha-c2a25803ddce92c43342690d7b6198b14c2a15b4/lib/active_model/callbacks.rb#144
+    # source://activemodel/7.1.0.alpha-444df0eee1b537ecaa11509e819b071d4e87b519/lib/active_model/callbacks.rb#144
     def after_initialize(*args, **options, &block); end
 
-    # source://activemodel/7.1.0.alpha-c2a25803ddce92c43342690d7b6198b14c2a15b4/lib/active_model/callbacks.rb#144
+    # source://activemodel/7.1.0.alpha-444df0eee1b537ecaa11509e819b071d4e87b519/lib/active_model/callbacks.rb#144
     def after_save(*args, **options, &block); end
 
-    # source://activemodel/7.1.0.alpha-c2a25803ddce92c43342690d7b6198b14c2a15b4/lib/active_model/callbacks.rb#144
+    # source://activemodel/7.1.0.alpha-444df0eee1b537ecaa11509e819b071d4e87b519/lib/active_model/callbacks.rb#144
     def after_touch(*args, **options, &block); end
 
-    # source://activemodel/7.1.0.alpha-c2a25803ddce92c43342690d7b6198b14c2a15b4/lib/active_model/callbacks.rb#144
+    # source://activemodel/7.1.0.alpha-444df0eee1b537ecaa11509e819b071d4e87b519/lib/active_model/callbacks.rb#144
     def after_update(*args, **options, &block); end
 
     # source://activerecord//lib/active_record/reflection.rb#12
@@ -8629,16 +8629,16 @@ class ActiveRecord::Base
     # source://activerecord//lib/active_record/core.rb#104
     def application_record_class?; end
 
-    # source://activemodel/7.1.0.alpha-c2a25803ddce92c43342690d7b6198b14c2a15b4/lib/active_model/callbacks.rb#137
+    # source://activemodel/7.1.0.alpha-444df0eee1b537ecaa11509e819b071d4e87b519/lib/active_model/callbacks.rb#137
     def around_create(*args, **options, &block); end
 
-    # source://activemodel/7.1.0.alpha-c2a25803ddce92c43342690d7b6198b14c2a15b4/lib/active_model/callbacks.rb#137
+    # source://activemodel/7.1.0.alpha-444df0eee1b537ecaa11509e819b071d4e87b519/lib/active_model/callbacks.rb#137
     def around_destroy(*args, **options, &block); end
 
-    # source://activemodel/7.1.0.alpha-c2a25803ddce92c43342690d7b6198b14c2a15b4/lib/active_model/callbacks.rb#137
+    # source://activemodel/7.1.0.alpha-444df0eee1b537ecaa11509e819b071d4e87b519/lib/active_model/callbacks.rb#137
     def around_save(*args, **options, &block); end
 
-    # source://activemodel/7.1.0.alpha-c2a25803ddce92c43342690d7b6198b14c2a15b4/lib/active_model/callbacks.rb#137
+    # source://activemodel/7.1.0.alpha-444df0eee1b537ecaa11509e819b071d4e87b519/lib/active_model/callbacks.rb#137
     def around_update(*args, **options, &block); end
 
     # source://activerecord//lib/active_record/core.rb#124
@@ -8647,31 +8647,31 @@ class ActiveRecord::Base
     # source://activerecord//lib/active_record/core.rb#128
     def asynchronous_queries_tracker; end
 
-    # source://activestorage/7.1.0.alpha-c2a25803ddce92c43342690d7b6198b14c2a15b4/lib/active_storage/reflection.rb#53
+    # source://activestorage/7.1.0.alpha-444df0eee1b537ecaa11509e819b071d4e87b519/lib/active_storage/reflection.rb#53
     def attachment_reflections; end
 
-    # source://activestorage/7.1.0.alpha-c2a25803ddce92c43342690d7b6198b14c2a15b4/lib/active_storage/reflection.rb#53
+    # source://activestorage/7.1.0.alpha-444df0eee1b537ecaa11509e819b071d4e87b519/lib/active_storage/reflection.rb#53
     def attachment_reflections=(value); end
 
-    # source://activestorage/7.1.0.alpha-c2a25803ddce92c43342690d7b6198b14c2a15b4/lib/active_storage/reflection.rb#53
+    # source://activestorage/7.1.0.alpha-444df0eee1b537ecaa11509e819b071d4e87b519/lib/active_storage/reflection.rb#53
     def attachment_reflections?; end
 
-    # source://activemodel/7.1.0.alpha-c2a25803ddce92c43342690d7b6198b14c2a15b4/lib/active_model/attribute_methods.rb#72
+    # source://activemodel/7.1.0.alpha-444df0eee1b537ecaa11509e819b071d4e87b519/lib/active_model/attribute_methods.rb#72
     def attribute_aliases; end
 
-    # source://activemodel/7.1.0.alpha-c2a25803ddce92c43342690d7b6198b14c2a15b4/lib/active_model/attribute_methods.rb#72
+    # source://activemodel/7.1.0.alpha-444df0eee1b537ecaa11509e819b071d4e87b519/lib/active_model/attribute_methods.rb#72
     def attribute_aliases=(value); end
 
-    # source://activemodel/7.1.0.alpha-c2a25803ddce92c43342690d7b6198b14c2a15b4/lib/active_model/attribute_methods.rb#72
+    # source://activemodel/7.1.0.alpha-444df0eee1b537ecaa11509e819b071d4e87b519/lib/active_model/attribute_methods.rb#72
     def attribute_aliases?; end
 
-    # source://activemodel/7.1.0.alpha-c2a25803ddce92c43342690d7b6198b14c2a15b4/lib/active_model/attribute_methods.rb#73
+    # source://activemodel/7.1.0.alpha-444df0eee1b537ecaa11509e819b071d4e87b519/lib/active_model/attribute_methods.rb#73
     def attribute_method_patterns; end
 
-    # source://activemodel/7.1.0.alpha-c2a25803ddce92c43342690d7b6198b14c2a15b4/lib/active_model/attribute_methods.rb#73
+    # source://activemodel/7.1.0.alpha-444df0eee1b537ecaa11509e819b071d4e87b519/lib/active_model/attribute_methods.rb#73
     def attribute_method_patterns=(value); end
 
-    # source://activemodel/7.1.0.alpha-c2a25803ddce92c43342690d7b6198b14c2a15b4/lib/active_model/attribute_methods.rb#73
+    # source://activemodel/7.1.0.alpha-444df0eee1b537ecaa11509e819b071d4e87b519/lib/active_model/attribute_methods.rb#73
     def attribute_method_patterns?; end
 
     # source://activerecord//lib/active_record/attributes.rb#11
@@ -8692,16 +8692,16 @@ class ActiveRecord::Base
     # source://activerecord//lib/active_record/reflection.rb#13
     def automatic_scope_inversing?; end
 
-    # source://activemodel/7.1.0.alpha-c2a25803ddce92c43342690d7b6198b14c2a15b4/lib/active_model/callbacks.rb#130
+    # source://activemodel/7.1.0.alpha-444df0eee1b537ecaa11509e819b071d4e87b519/lib/active_model/callbacks.rb#130
     def before_create(*args, **options, &block); end
 
-    # source://activemodel/7.1.0.alpha-c2a25803ddce92c43342690d7b6198b14c2a15b4/lib/active_model/callbacks.rb#130
+    # source://activemodel/7.1.0.alpha-444df0eee1b537ecaa11509e819b071d4e87b519/lib/active_model/callbacks.rb#130
     def before_destroy(*args, **options, &block); end
 
-    # source://activemodel/7.1.0.alpha-c2a25803ddce92c43342690d7b6198b14c2a15b4/lib/active_model/callbacks.rb#130
+    # source://activemodel/7.1.0.alpha-444df0eee1b537ecaa11509e819b071d4e87b519/lib/active_model/callbacks.rb#130
     def before_save(*args, **options, &block); end
 
-    # source://activemodel/7.1.0.alpha-c2a25803ddce92c43342690d7b6198b14c2a15b4/lib/active_model/callbacks.rb#130
+    # source://activemodel/7.1.0.alpha-444df0eee1b537ecaa11509e819b071d4e87b519/lib/active_model/callbacks.rb#130
     def before_update(*args, **options, &block); end
 
     # source://activerecord//lib/active_record/core.rb#88
@@ -8896,13 +8896,13 @@ class ActiveRecord::Base
     # source://activerecord//lib/active_record/model_schema.rb#157
     def implicit_order_column?; end
 
-    # source://activemodel/7.1.0.alpha-c2a25803ddce92c43342690d7b6198b14c2a15b4/lib/active_model/serializers/json.rb#15
+    # source://activemodel/7.1.0.alpha-444df0eee1b537ecaa11509e819b071d4e87b519/lib/active_model/serializers/json.rb#15
     def include_root_in_json; end
 
-    # source://activemodel/7.1.0.alpha-c2a25803ddce92c43342690d7b6198b14c2a15b4/lib/active_model/serializers/json.rb#15
+    # source://activemodel/7.1.0.alpha-444df0eee1b537ecaa11509e819b071d4e87b519/lib/active_model/serializers/json.rb#15
     def include_root_in_json=(value); end
 
-    # source://activemodel/7.1.0.alpha-c2a25803ddce92c43342690d7b6198b14c2a15b4/lib/active_model/serializers/json.rb#15
+    # source://activemodel/7.1.0.alpha-444df0eee1b537ecaa11509e819b071d4e87b519/lib/active_model/serializers/json.rb#15
     def include_root_in_json?; end
 
     # source://activerecord//lib/active_record/model_schema.rb#160
@@ -9329,7 +9329,7 @@ module ActiveRecord::Batches
 
   private
 
-  # source://activerecord//lib/active_record/relation/batches.rb#301
+  # source://activerecord//lib/active_record/relation/batches.rb#318
   def act_on_ignored_order(error_on_ignore); end
 
   # source://activerecord//lib/active_record/relation/batches.rb#293
@@ -9342,6 +9342,9 @@ module ActiveRecord::Batches
   def apply_start_limit(relation, start, order); end
 
   # source://activerecord//lib/active_record/relation/batches.rb#297
+  def batch_condition(relation, columns, values, operator); end
+
+  # source://activerecord//lib/active_record/relation/batches.rb#314
   def batch_order(order); end
 end
 
@@ -9566,7 +9569,7 @@ module ActiveRecord::Calculations
   # Returns the base model's ID's for the relation using the table's primary key
   #
   #   Person.ids # SELECT people.id FROM people
-  #   Person.joins(:companies).ids # SELECT people.id FROM people INNER JOIN companies ON companies.person_id = people.id
+  #   Person.joins(:companies).ids # SELECT people.id FROM people INNER JOIN companies ON companies.id = people.company_id
   #
   # source://activerecord//lib/active_record/relation/calculations.rb#326
   def ids; end
@@ -10203,22 +10206,22 @@ class ActiveRecord::ConnectionAdapters::AbstractAdapter
   # source://activerecord//lib/active_record/connection_adapters/abstract_adapter.rb#126
   def initialize(config_or_deprecated_connection, deprecated_logger = T.unsafe(nil), deprecated_connection_options = T.unsafe(nil), deprecated_config = T.unsafe(nil)); end
 
-  # source://activesupport/7.1.0.alpha-c2a25803ddce92c43342690d7b6198b14c2a15b4/lib/active_support/callbacks.rb#68
+  # source://activesupport/7.1.0.alpha-444df0eee1b537ecaa11509e819b071d4e87b519/lib/active_support/callbacks.rb#68
   def __callbacks; end
 
-  # source://activesupport/7.1.0.alpha-c2a25803ddce92c43342690d7b6198b14c2a15b4/lib/active_support/callbacks.rb#68
+  # source://activesupport/7.1.0.alpha-444df0eee1b537ecaa11509e819b071d4e87b519/lib/active_support/callbacks.rb#68
   def __callbacks?; end
 
-  # source://activesupport/7.1.0.alpha-c2a25803ddce92c43342690d7b6198b14c2a15b4/lib/active_support/callbacks.rb#958
+  # source://activesupport/7.1.0.alpha-444df0eee1b537ecaa11509e819b071d4e87b519/lib/active_support/callbacks.rb#958
   def _checkin_callbacks; end
 
-  # source://activesupport/7.1.0.alpha-c2a25803ddce92c43342690d7b6198b14c2a15b4/lib/active_support/callbacks.rb#958
+  # source://activesupport/7.1.0.alpha-444df0eee1b537ecaa11509e819b071d4e87b519/lib/active_support/callbacks.rb#958
   def _checkout_callbacks; end
 
-  # source://activesupport/7.1.0.alpha-c2a25803ddce92c43342690d7b6198b14c2a15b4/lib/active_support/callbacks.rb#946
+  # source://activesupport/7.1.0.alpha-444df0eee1b537ecaa11509e819b071d4e87b519/lib/active_support/callbacks.rb#946
   def _run_checkin_callbacks(&block); end
 
-  # source://activesupport/7.1.0.alpha-c2a25803ddce92c43342690d7b6198b14c2a15b4/lib/active_support/callbacks.rb#946
+  # source://activesupport/7.1.0.alpha-444df0eee1b537ecaa11509e819b071d4e87b519/lib/active_support/callbacks.rb#946
   def _run_checkout_callbacks(&block); end
 
   # Checks whether the connection to the database is still active. This includes
@@ -11005,25 +11008,25 @@ class ActiveRecord::ConnectionAdapters::AbstractAdapter
   def without_prepared_statement?(binds); end
 
   class << self
-    # source://activesupport/7.1.0.alpha-c2a25803ddce92c43342690d7b6198b14c2a15b4/lib/active_support/callbacks.rb#68
+    # source://activesupport/7.1.0.alpha-444df0eee1b537ecaa11509e819b071d4e87b519/lib/active_support/callbacks.rb#68
     def __callbacks; end
 
-    # source://activesupport/7.1.0.alpha-c2a25803ddce92c43342690d7b6198b14c2a15b4/lib/active_support/callbacks.rb#68
+    # source://activesupport/7.1.0.alpha-444df0eee1b537ecaa11509e819b071d4e87b519/lib/active_support/callbacks.rb#68
     def __callbacks=(value); end
 
-    # source://activesupport/7.1.0.alpha-c2a25803ddce92c43342690d7b6198b14c2a15b4/lib/active_support/callbacks.rb#68
+    # source://activesupport/7.1.0.alpha-444df0eee1b537ecaa11509e819b071d4e87b519/lib/active_support/callbacks.rb#68
     def __callbacks?; end
 
-    # source://activesupport/7.1.0.alpha-c2a25803ddce92c43342690d7b6198b14c2a15b4/lib/active_support/callbacks.rb#950
+    # source://activesupport/7.1.0.alpha-444df0eee1b537ecaa11509e819b071d4e87b519/lib/active_support/callbacks.rb#950
     def _checkin_callbacks; end
 
-    # source://activesupport/7.1.0.alpha-c2a25803ddce92c43342690d7b6198b14c2a15b4/lib/active_support/callbacks.rb#954
+    # source://activesupport/7.1.0.alpha-444df0eee1b537ecaa11509e819b071d4e87b519/lib/active_support/callbacks.rb#954
     def _checkin_callbacks=(value); end
 
-    # source://activesupport/7.1.0.alpha-c2a25803ddce92c43342690d7b6198b14c2a15b4/lib/active_support/callbacks.rb#950
+    # source://activesupport/7.1.0.alpha-444df0eee1b537ecaa11509e819b071d4e87b519/lib/active_support/callbacks.rb#950
     def _checkout_callbacks; end
 
-    # source://activesupport/7.1.0.alpha-c2a25803ddce92c43342690d7b6198b14c2a15b4/lib/active_support/callbacks.rb#954
+    # source://activesupport/7.1.0.alpha-444df0eee1b537ecaa11509e819b071d4e87b519/lib/active_support/callbacks.rb#954
     def _checkout_callbacks=(value); end
 
     # source://activerecord//lib/active_record/connection_adapters/abstract_adapter.rb#79
@@ -12020,7 +12023,7 @@ class ActiveRecord::ConnectionAdapters::ConnectionPool
   # source://activerecord//lib/active_record/connection_adapters/abstract/connection_pool.rb#201
   def connection_class; end
 
-  # source://activesupport/7.1.0.alpha-c2a25803ddce92c43342690d7b6198b14c2a15b4/lib/active_support/deprecation/method_wrappers.rb#46
+  # source://activesupport/7.1.0.alpha-444df0eee1b537ecaa11509e819b071d4e87b519/lib/active_support/deprecation/method_wrappers.rb#46
   def connection_klass(*args, **_arg1, &block); end
 
   # Returns an array containing the connections currently in the pool.
@@ -18308,10 +18311,10 @@ class ActiveRecord::DestroyAssociationAsyncJob < ::ActiveJob::Base
   def owner_destroyed?(owner, ensuring_owner_was_method); end
 
   class << self
-    # source://activejob/7.1.0.alpha-c2a25803ddce92c43342690d7b6198b14c2a15b4/lib/active_job/queue_name.rb#56
+    # source://activejob/7.1.0.alpha-444df0eee1b537ecaa11509e819b071d4e87b519/lib/active_job/queue_name.rb#56
     def queue_name; end
 
-    # source://activesupport/7.1.0.alpha-c2a25803ddce92c43342690d7b6198b14c2a15b4/lib/active_support/rescuable.rb#13
+    # source://activesupport/7.1.0.alpha-444df0eee1b537ecaa11509e819b071d4e87b519/lib/active_support/rescuable.rb#13
     def rescue_handlers; end
   end
 end
@@ -18494,10 +18497,10 @@ module ActiveRecord::Encryption
   # source://activerecord//lib/active_record/encryption/configurable.rb#10
   def config; end
 
-  # source://activesupport/7.1.0.alpha-c2a25803ddce92c43342690d7b6198b14c2a15b4/lib/active_support/core_ext/module/attribute_accessors_per_thread.rb#74
+  # source://activesupport/7.1.0.alpha-444df0eee1b537ecaa11509e819b071d4e87b519/lib/active_support/core_ext/module/attribute_accessors_per_thread.rb#74
   def custom_contexts; end
 
-  # source://activesupport/7.1.0.alpha-c2a25803ddce92c43342690d7b6198b14c2a15b4/lib/active_support/core_ext/module/attribute_accessors_per_thread.rb#116
+  # source://activesupport/7.1.0.alpha-444df0eee1b537ecaa11509e819b071d4e87b519/lib/active_support/core_ext/module/attribute_accessors_per_thread.rb#116
   def custom_contexts=(obj); end
 
   # source://activerecord//lib/active_record/encryption/contexts.rb#17
@@ -18513,10 +18516,10 @@ module ActiveRecord::Encryption
     # source://activerecord//lib/active_record/encryption/configurable.rb#10
     def config; end
 
-    # source://activesupport/7.1.0.alpha-c2a25803ddce92c43342690d7b6198b14c2a15b4/lib/active_support/core_ext/module/attribute_accessors_per_thread.rb#49
+    # source://activesupport/7.1.0.alpha-444df0eee1b537ecaa11509e819b071d4e87b519/lib/active_support/core_ext/module/attribute_accessors_per_thread.rb#49
     def custom_contexts; end
 
-    # source://activesupport/7.1.0.alpha-c2a25803ddce92c43342690d7b6198b14c2a15b4/lib/active_support/core_ext/module/attribute_accessors_per_thread.rb#108
+    # source://activesupport/7.1.0.alpha-444df0eee1b537ecaa11509e819b071d4e87b519/lib/active_support/core_ext/module/attribute_accessors_per_thread.rb#108
     def custom_contexts=(obj); end
 
     # source://activerecord//lib/active_record/encryption/contexts.rb#17
@@ -19832,7 +19835,7 @@ class ActiveRecord::Encryption::Properties
   # source://activerecord//lib/active_record/encryption/properties.rb#20
   def key?(*_arg0, **_arg1, &_arg2); end
 
-  # source://activesupport/7.1.0.alpha-c2a25803ddce92c43342690d7b6198b14c2a15b4/lib/active_support/core_ext/module/delegation.rb#330
+  # source://activesupport/7.1.0.alpha-444df0eee1b537ecaa11509e819b071d4e87b519/lib/active_support/core_ext/module/delegation.rb#330
   def method_missing(method, *args, **_arg2, &block); end
 
   # source://activerecord//lib/active_record/encryption/properties.rb#68
@@ -19848,7 +19851,7 @@ class ActiveRecord::Encryption::Properties
   # source://activerecord//lib/active_record/encryption/properties.rb#73
   def data; end
 
-  # source://activesupport/7.1.0.alpha-c2a25803ddce92c43342690d7b6198b14c2a15b4/lib/active_support/core_ext/module/delegation.rb#322
+  # source://activesupport/7.1.0.alpha-444df0eee1b537ecaa11509e819b071d4e87b519/lib/active_support/core_ext/module/delegation.rb#322
   def respond_to_missing?(name, include_private = T.unsafe(nil)); end
 end
 
@@ -23003,7 +23006,7 @@ class ActiveRecord::LogSubscriber < ::ActiveSupport::LogSubscriber
     # source://activerecord//lib/active_record/log_subscriber.rb#7
     def backtrace_cleaner?; end
 
-    # source://activesupport/7.1.0.alpha-c2a25803ddce92c43342690d7b6198b14c2a15b4/lib/active_support/log_subscriber.rb#90
+    # source://activesupport/7.1.0.alpha-444df0eee1b537ecaa11509e819b071d4e87b519/lib/active_support/log_subscriber.rb#90
     def log_levels; end
 
     # source://activerecord//lib/active_record/log_subscriber.rb#23
@@ -26074,23 +26077,23 @@ class ActiveRecord::NoDatabaseError < ::ActiveRecord::StatementInvalid
   # source://activerecord//lib/active_record/errors.rb#291
   def initialize(message = T.unsafe(nil)); end
 
-  # source://activesupport/7.1.0.alpha-c2a25803ddce92c43342690d7b6198b14c2a15b4/lib/active_support/actionable_error.rb#15
+  # source://activesupport/7.1.0.alpha-444df0eee1b537ecaa11509e819b071d4e87b519/lib/active_support/actionable_error.rb#15
   def _actions; end
 
-  # source://activesupport/7.1.0.alpha-c2a25803ddce92c43342690d7b6198b14c2a15b4/lib/active_support/actionable_error.rb#15
+  # source://activesupport/7.1.0.alpha-444df0eee1b537ecaa11509e819b071d4e87b519/lib/active_support/actionable_error.rb#15
   def _actions=(_arg0); end
 
-  # source://activesupport/7.1.0.alpha-c2a25803ddce92c43342690d7b6198b14c2a15b4/lib/active_support/actionable_error.rb#15
+  # source://activesupport/7.1.0.alpha-444df0eee1b537ecaa11509e819b071d4e87b519/lib/active_support/actionable_error.rb#15
   def _actions?; end
 
   class << self
-    # source://activesupport/7.1.0.alpha-c2a25803ddce92c43342690d7b6198b14c2a15b4/lib/active_support/actionable_error.rb#15
+    # source://activesupport/7.1.0.alpha-444df0eee1b537ecaa11509e819b071d4e87b519/lib/active_support/actionable_error.rb#15
     def _actions; end
 
-    # source://activesupport/7.1.0.alpha-c2a25803ddce92c43342690d7b6198b14c2a15b4/lib/active_support/actionable_error.rb#15
+    # source://activesupport/7.1.0.alpha-444df0eee1b537ecaa11509e819b071d4e87b519/lib/active_support/actionable_error.rb#15
     def _actions=(value); end
 
-    # source://activesupport/7.1.0.alpha-c2a25803ddce92c43342690d7b6198b14c2a15b4/lib/active_support/actionable_error.rb#15
+    # source://activesupport/7.1.0.alpha-444df0eee1b537ecaa11509e819b071d4e87b519/lib/active_support/actionable_error.rb#15
     def _actions?; end
 
     # source://activerecord//lib/active_record/errors.rb#296
@@ -26348,13 +26351,13 @@ class ActiveRecord::PendingMigrationError < ::ActiveRecord::MigrationError
   # source://activerecord//lib/active_record/migration.rb#145
   def initialize(message = T.unsafe(nil), pending_migrations: T.unsafe(nil)); end
 
-  # source://activesupport/7.1.0.alpha-c2a25803ddce92c43342690d7b6198b14c2a15b4/lib/active_support/actionable_error.rb#15
+  # source://activesupport/7.1.0.alpha-444df0eee1b537ecaa11509e819b071d4e87b519/lib/active_support/actionable_error.rb#15
   def _actions; end
 
-  # source://activesupport/7.1.0.alpha-c2a25803ddce92c43342690d7b6198b14c2a15b4/lib/active_support/actionable_error.rb#15
+  # source://activesupport/7.1.0.alpha-444df0eee1b537ecaa11509e819b071d4e87b519/lib/active_support/actionable_error.rb#15
   def _actions=(_arg0); end
 
-  # source://activesupport/7.1.0.alpha-c2a25803ddce92c43342690d7b6198b14c2a15b4/lib/active_support/actionable_error.rb#15
+  # source://activesupport/7.1.0.alpha-444df0eee1b537ecaa11509e819b071d4e87b519/lib/active_support/actionable_error.rb#15
   def _actions?; end
 
   private
@@ -26366,13 +26369,13 @@ class ActiveRecord::PendingMigrationError < ::ActiveRecord::MigrationError
   def detailed_migration_message(pending_migrations); end
 
   class << self
-    # source://activesupport/7.1.0.alpha-c2a25803ddce92c43342690d7b6198b14c2a15b4/lib/active_support/actionable_error.rb#15
+    # source://activesupport/7.1.0.alpha-444df0eee1b537ecaa11509e819b071d4e87b519/lib/active_support/actionable_error.rb#15
     def _actions; end
 
-    # source://activesupport/7.1.0.alpha-c2a25803ddce92c43342690d7b6198b14c2a15b4/lib/active_support/actionable_error.rb#15
+    # source://activesupport/7.1.0.alpha-444df0eee1b537ecaa11509e819b071d4e87b519/lib/active_support/actionable_error.rb#15
     def _actions=(value); end
 
-    # source://activesupport/7.1.0.alpha-c2a25803ddce92c43342690d7b6198b14c2a15b4/lib/active_support/actionable_error.rb#15
+    # source://activesupport/7.1.0.alpha-444df0eee1b537ecaa11509e819b071d4e87b519/lib/active_support/actionable_error.rb#15
     def _actions?; end
   end
 end
@@ -27819,10 +27822,10 @@ module ActiveRecord::QueryLogs
     # source://activerecord//lib/active_record/query_logs.rb#77
     def cache_query_log_tags=(val); end
 
-    # source://activesupport/7.1.0.alpha-c2a25803ddce92c43342690d7b6198b14c2a15b4/lib/active_support/core_ext/module/attribute_accessors_per_thread.rb#49
+    # source://activesupport/7.1.0.alpha-444df0eee1b537ecaa11509e819b071d4e87b519/lib/active_support/core_ext/module/attribute_accessors_per_thread.rb#49
     def cached_comment; end
 
-    # source://activesupport/7.1.0.alpha-c2a25803ddce92c43342690d7b6198b14c2a15b4/lib/active_support/core_ext/module/attribute_accessors_per_thread.rb#108
+    # source://activesupport/7.1.0.alpha-444df0eee1b537ecaa11509e819b071d4e87b519/lib/active_support/core_ext/module/attribute_accessors_per_thread.rb#108
     def cached_comment=(obj); end
 
     # source://activerecord//lib/active_record/query_logs.rb#82
@@ -30039,7 +30042,7 @@ module ActiveRecord::Reflection
 
     private
 
-    # source://activestorage/7.1.0.alpha-c2a25803ddce92c43342690d7b6198b14c2a15b4/lib/active_storage/reflection.rb#37
+    # source://activestorage/7.1.0.alpha-444df0eee1b537ecaa11509e819b071d4e87b519/lib/active_storage/reflection.rb#37
     def reflection_class_for(macro); end
   end
 
@@ -30305,7 +30308,7 @@ class ActiveRecord::Reflection::AssociationReflection < ::ActiveRecord::Reflecti
   def extensions; end
 
   # source://activerecord//lib/active_record/reflection.rb#496
-  def foreign_key; end
+  def foreign_key(infer_from_inverse_of: T.unsafe(nil)); end
 
   # Returns the value of attribute foreign_type.
   #
@@ -30422,7 +30425,7 @@ class ActiveRecord::Reflection::AssociationReflection < ::ActiveRecord::Reflecti
   def derive_class_name; end
 
   # source://activerecord//lib/active_record/reflection.rb#729
-  def derive_foreign_key; end
+  def derive_foreign_key(infer_from_inverse_of: T.unsafe(nil)); end
 
   # source://activerecord//lib/active_record/reflection.rb#741
   def derive_join_table; end
@@ -31829,30 +31832,30 @@ class ActiveRecord::Relation::Merger
 
   private
 
-  # source://activerecord//lib/active_record/relation/merger.rb#176
+  # source://activerecord//lib/active_record/relation/merger.rb#178
   def merge_clauses; end
 
-  # source://activerecord//lib/active_record/relation/merger.rb#117
+  # source://activerecord//lib/active_record/relation/merger.rb#119
   def merge_joins; end
 
-  # source://activerecord//lib/active_record/relation/merger.rb#155
+  # source://activerecord//lib/active_record/relation/merger.rb#157
   def merge_multi_values; end
 
-  # source://activerecord//lib/active_record/relation/merger.rb#136
+  # source://activerecord//lib/active_record/relation/merger.rb#138
   def merge_outer_joins; end
 
-  # source://activerecord//lib/active_record/relation/merger.rb#96
+  # source://activerecord//lib/active_record/relation/merger.rb#98
   def merge_preloads; end
 
-  # source://activerecord//lib/active_record/relation/merger.rb#84
+  # source://activerecord//lib/active_record/relation/merger.rb#86
   def merge_select_values; end
 
-  # source://activerecord//lib/active_record/relation/merger.rb#168
+  # source://activerecord//lib/active_record/relation/merger.rb#170
   def merge_single_values; end
 
   # @return [Boolean]
   #
-  # source://activerecord//lib/active_record/relation/merger.rb#186
+  # source://activerecord//lib/active_record/relation/merger.rb#188
   def replace_from_clause?; end
 end
 

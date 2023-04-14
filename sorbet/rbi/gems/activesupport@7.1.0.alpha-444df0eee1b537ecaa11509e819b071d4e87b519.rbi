@@ -4101,7 +4101,7 @@ class ActiveSupport::Deprecation::Deprecators
   # Sets the deprecation warning behavior for all deprecators in this
   # collection.
   #
-  # See ActiveSupport::Deprecation::Behavior#behavior=.
+  # See ActiveSupport::Deprecation#behavior=.
   #
   # source://activesupport//lib/active_support/deprecation/deprecators.rb#60
   def behavior=(behavior); end
@@ -4114,7 +4114,7 @@ class ActiveSupport::Deprecation::Deprecators
   # Sets the disallowed deprecation warning behavior for all deprecators in
   # this collection.
   #
-  # See ActiveSupport::Deprecation::Behavior#disallowed_behavior=.
+  # See ActiveSupport::Deprecation#disallowed_behavior=.
   #
   # source://activesupport//lib/active_support/deprecation/deprecators.rb#68
   def disallowed_behavior=(disallowed_behavior); end
@@ -4122,7 +4122,7 @@ class ActiveSupport::Deprecation::Deprecators
   # Sets the disallowed deprecation warnings for all deprecators in this
   # collection.
   #
-  # See ActiveSupport::Deprecation::Disallowed#disallowed_warnings=.
+  # See ActiveSupport::Deprecation#disallowed_warnings=.
   #
   # source://activesupport//lib/active_support/deprecation/deprecators.rb#76
   def disallowed_warnings=(disallowed_warnings); end
@@ -4136,7 +4136,7 @@ class ActiveSupport::Deprecation::Deprecators
   # Silences all deprecators in this collection for the duration of the
   # given block.
   #
-  # See ActiveSupport::Deprecation::Reporting#silence.
+  # See ActiveSupport::Deprecation#silence.
   #
   # source://activesupport//lib/active_support/deprecation/deprecators.rb#84
   def silence(&block); end
@@ -4262,7 +4262,7 @@ module ActiveSupport::Deprecation::Reporting
   # expressions. (Symbols are treated as strings). These are compared against
   # the text of deprecation warning messages generated within the block.
   # Matching warnings will be exempt from the rules set by
-  # +ActiveSupport::Deprecation#disallowed_warnings+
+  # ActiveSupport::Deprecation#disallowed_warnings.
   #
   # The optional <tt>if:</tt> argument accepts a truthy/falsy value or an object that
   # responds to <tt>.call</tt>. If truthy, then matching warnings will be allowed.
@@ -4287,16 +4287,16 @@ module ActiveSupport::Deprecation::Reporting
   #   end
   #   # => ActiveSupport::DeprecationException for dev/test, nil for production
   #
-  # source://activesupport//lib/active_support/deprecation/reporting.rb#88
+  # source://activesupport//lib/active_support/deprecation/reporting.rb#89
   def allow(allowed_warnings = T.unsafe(nil), if: T.unsafe(nil), &block); end
 
-  # source://activesupport//lib/active_support/deprecation/reporting.rb#47
+  # source://activesupport//lib/active_support/deprecation/reporting.rb#48
   def begin_silence; end
 
-  # source://activesupport//lib/active_support/deprecation/reporting.rb#98
+  # source://activesupport//lib/active_support/deprecation/reporting.rb#99
   def deprecation_warning(deprecated_method_name, message = T.unsafe(nil), caller_backtrace = T.unsafe(nil)); end
 
-  # source://activesupport//lib/active_support/deprecation/reporting.rb#51
+  # source://activesupport//lib/active_support/deprecation/reporting.rb#52
   def end_silence; end
 
   # Name of gem where method is deprecated
@@ -4320,10 +4320,10 @@ module ActiveSupport::Deprecation::Reporting
   #   end
   #   # => nil
   #
-  # source://activesupport//lib/active_support/deprecation/reporting.rb#40
+  # source://activesupport//lib/active_support/deprecation/reporting.rb#41
   def silence(&block); end
 
-  # source://activesupport//lib/active_support/deprecation/reporting.rb#55
+  # source://activesupport//lib/active_support/deprecation/reporting.rb#56
   def silenced; end
 
   # Whether to print a message (silent mode)
@@ -4331,17 +4331,18 @@ module ActiveSupport::Deprecation::Reporting
   # source://activesupport//lib/active_support/deprecation/reporting.rb#9
   def silenced=(_arg0); end
 
-  # Outputs a deprecation warning to the output configured by <tt>ActiveSupport::Deprecation#behavior</tt>.
+  # Outputs a deprecation warning to the output configured by
+  # ActiveSupport::Deprecation#behavior.
   #
   #   ActiveSupport::Deprecation.new.warn('something broke!')
   #   # => "DEPRECATION WARNING: something broke! (called from your_code.rb:1)"
   #
-  # source://activesupport//lib/active_support/deprecation/reporting.rb#17
+  # source://activesupport//lib/active_support/deprecation/reporting.rb#18
   def warn(message = T.unsafe(nil), callstack = T.unsafe(nil)); end
 
   private
 
-  # source://activesupport//lib/active_support/deprecation/reporting.rb#150
+  # source://activesupport//lib/active_support/deprecation/reporting.rb#151
   def _extract_callstack(callstack); end
 
   # Outputs a deprecation warning message
@@ -4353,23 +4354,23 @@ module ActiveSupport::Deprecation::Reporting
   #   deprecated_method_warning(:method_name, "Optional message")
   #   # => "method_name is deprecated and will be removed from Rails #{deprecation_horizon} (Optional message)"
   #
-  # source://activesupport//lib/active_support/deprecation/reporting.rb#114
+  # source://activesupport//lib/active_support/deprecation/reporting.rb#115
   def deprecated_method_warning(method_name, message = T.unsafe(nil)); end
 
-  # source://activesupport//lib/active_support/deprecation/reporting.rb#128
+  # source://activesupport//lib/active_support/deprecation/reporting.rb#129
   def deprecation_caller_message(callstack); end
 
-  # source://activesupport//lib/active_support/deprecation/reporting.rb#123
+  # source://activesupport//lib/active_support/deprecation/reporting.rb#124
   def deprecation_message(callstack, message = T.unsafe(nil)); end
 
-  # source://activesupport//lib/active_support/deprecation/reporting.rb#139
+  # source://activesupport//lib/active_support/deprecation/reporting.rb#140
   def extract_callstack(callstack); end
 
-  # source://activesupport//lib/active_support/deprecation/reporting.rb#165
+  # source://activesupport//lib/active_support/deprecation/reporting.rb#166
   def ignored_callstack(path); end
 end
 
-# source://activesupport//lib/active_support/deprecation/reporting.rb#163
+# source://activesupport//lib/active_support/deprecation/reporting.rb#164
 ActiveSupport::Deprecation::Reporting::RAILS_GEM_ROOT = T.let(T.unsafe(nil), String)
 
 # Raised when ActiveSupport::Deprecation::Behavior#behavior is set with <tt>:raise</tt>.
