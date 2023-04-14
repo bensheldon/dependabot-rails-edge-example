@@ -486,6 +486,63 @@ RUBY18 = T.let(T.unsafe(nil), FalseClass)
 # source://yard//lib/yard.rb#62
 RUBY19 = T.let(T.unsafe(nil), TrueClass)
 
+# @private
+#
+# source://yard//lib/yard/server/rack_adapter.rb#93
+class Rack::Request
+  # source://rack/3.0.7/lib/rack/request.rb#62
+  def initialize(env); end
+
+  # source://rack/3.0.7/lib/rack/request.rb#76
+  def delete_param(k); end
+
+  # source://rack/3.0.7/lib/rack/request.rb#67
+  def params; end
+
+  # source://rack/3.0.7/lib/rack/request.rb#67
+  def query; end
+
+  # source://rack/3.0.7/lib/rack/request.rb#71
+  def update_param(k, v); end
+
+  # Returns the value of attribute version_supplied.
+  #
+  # source://yard//lib/yard/server/rack_adapter.rb#94
+  def version_supplied; end
+
+  # Sets the attribute version_supplied
+  #
+  # @param value the value to set the attribute version_supplied to.
+  #
+  # source://yard//lib/yard/server/rack_adapter.rb#94
+  def version_supplied=(_arg0); end
+
+  # @return [Boolean]
+  #
+  # source://yard//lib/yard/server/rack_adapter.rb#96
+  def xhr?; end
+
+  class << self
+    # source://rack/3.0.7/lib/rack/request.rb#31
+    def forwarded_priority; end
+
+    # source://rack/3.0.7/lib/rack/request.rb#31
+    def forwarded_priority=(_arg0); end
+
+    # source://rack/3.0.7/lib/rack/request.rb#18
+    def ip_filter; end
+
+    # source://rack/3.0.7/lib/rack/request.rb#18
+    def ip_filter=(_arg0); end
+
+    # source://rack/3.0.7/lib/rack/request.rb#40
+    def x_forwarded_proto_priority; end
+
+    # source://rack/3.0.7/lib/rack/request.rb#40
+    def x_forwarded_proto_priority=(_arg0); end
+  end
+end
+
 # source://yard//lib/yard/core_ext/string.rb#2
 class String
   include ::Comparable
@@ -7427,13 +7484,13 @@ class YARD::I18n::Text
   #   block separated by one or more empty lines. Empty line is a
   #   line that contains only zero or more whitespaces. It may
   #   called many times.
-  # @yieldparam text [String] the text of extracted paragraph.
-  # @yieldparam start_line_no [Integer] the start line number of
-  #   extracted paragraph.
   # @yieldparam name [String] the name of extracted attribute.
   # @yieldparam value [String] the value of extracted attribute.
   # @yieldparam line_no [Integer] the defined line number of extracted
   #   attribute.
+  # @yieldparam text [String] the text of extracted paragraph.
+  # @yieldparam start_line_no [Integer] the start line number of
+  #   extracted paragraph.
   #
   # source://yard//lib/yard/i18n/text.rb#35
   def extract_messages; end
@@ -11150,10 +11207,6 @@ class YARD::Parser::SourceParser
     # To register a callback that is called before the entire list of files
     # is processed, see {before_parse_list}.
     #
-    # @example Cancel parsing of any test_*.rb files
-    #   SourceParser.before_parse_file do |parser|
-    #   return false if parser.file =~ /^test_.+\.rb$/
-    #   end
     # @example Installing a simple callback
     #   SourceParser.before_parse_file do |parser|
     #   puts "I'm parsing #{parser.file}"
@@ -11163,9 +11216,13 @@ class YARD::Parser::SourceParser
     #   "I'm parsing lib/foo.rb"
     #   "I'm parsing lib/foo_bar.rb"
     #   "I'm parsing lib/last_file.rb"
+    # @example Cancel parsing of any test_*.rb files
+    #   SourceParser.before_parse_file do |parser|
+    #   return false if parser.file =~ /^test_.+\.rb$/
+    #   end
     # @return [Proc] the yielded block
-    # @see before_parse_list
     # @see after_parse_file
+    # @see before_parse_list
     # @since 0.7.0
     # @yield [parser] the yielded block is called once before each
     #   file that is parsed. This might happen many times for a single
@@ -11189,6 +11246,12 @@ class YARD::Parser::SourceParser
     # via {parse}. The block passed to this method will be called on
     # subsequent parse calls.
     #
+    # @example Installing a simple callback
+    #   SourceParser.before_parse_list do |files, globals|
+    #   puts "Starting to parse..."
+    #   end
+    #   YARD.parse('lib/**/*.rb')
+    #   # prints "Starting to parse..."
     # @example Setting global state
     #   SourceParser.before_parse_list do |files, globals|
     #   globals.method_count = 0
@@ -11202,12 +11265,6 @@ class YARD::Parser::SourceParser
     #   end
     #   YARD.parse
     #   # Prints: "Found 37 methods"
-    # @example Installing a simple callback
-    #   SourceParser.before_parse_list do |files, globals|
-    #   puts "Starting to parse..."
-    #   end
-    #   YARD.parse('lib/**/*.rb')
-    #   # prints "Starting to parse..."
     # @example Using a global callback to cancel parsing
     #   SourceParser.before_parse_list do |files, globals|
     #   return false if files.include?('foo.rb')
@@ -11216,8 +11273,8 @@ class YARD::Parser::SourceParser
     #   YARD.parse(['foo.rb', 'bar.rb']) # callback cancels this method
     #   YARD.parse('bar.rb') # parses normally
     # @return [Proc] the yielded block
-    # @see before_parse_file
     # @see after_parse_list
+    # @see before_parse_file
     # @since 0.7.0
     # @yield [files, globals] the yielded block is called once before
     #   parsing all files
@@ -11744,22 +11801,22 @@ module YARD::Registry
     # Attempts to find an object by name starting at +namespace+, performing
     # a lookup similar to Ruby's method of resolving a constant in a namespace.
     #
+    # @example Looks for instance method #reverse starting from A::B::C
+    #   Registry.resolve(P("A::B::C"), "#reverse")
     # @example Looks for a constant in the root namespace
     #   Registry.resolve(nil, 'CONSTANT')
     # @example Looks for a class method respecting the inheritance tree
     #   Registry.resolve(myclass, 'mymethod', true)
-    # @example Looks for instance method #reverse starting from A::B::C
-    #   Registry.resolve(P("A::B::C"), "#reverse")
     # @example Looks for a constant but returns a proxy if not found
     #   Registry.resolve(P('A::B::C'), 'D', false, true) # => #<yardoc proxy A::B::C::D>
     # @example Looks for a complex path from a namespace
     #   Registry.resolve(P('A::B'), 'B::D') # => #<yardoc class A::B::D>
-    # @param inheritance [Boolean] Follows inheritance chain (mixins, superclass)
-    #   when performing name resolution if set to +true+.
     # @param namespace [CodeObjects::NamespaceObject, nil] the starting namespace
     #   (module or class). If +nil+ or +:root+, starts from the {root} object.
     # @param name [String, Symbol] the name (or complex path) to look for from
     #   +namespace+.
+    # @param inheritance [Boolean] Follows inheritance chain (mixins, superclass)
+    #   when performing name resolution if set to +true+.
     # @param proxy_fallback [Boolean] If +true+, returns a proxy representing
     #   the unresolved path (namespace + name) if no object is found.
     # @param type [Symbol, nil] the {CodeObjects::Base#type} that the resolved
@@ -11917,12 +11974,12 @@ class YARD::RegistryResolver
   # object can be returned if the lookup fails for future resolution. The
   # proxy will be type hinted with the +type+ used in the original lookup.
   #
-  # @example A lookup on a method through the inheritance tree
-  #   resolver.lookup_by_math("A::B#foo", inheritance: true)
   # @example A lookup from root
   #   resolver.lookup_by_path("A::B::C")
   # @example A lookup from the A::B namespace
   #   resolver.lookup_by_path("C", namespace: P("A::B"))
+  # @example A lookup on a method through the inheritance tree
+  #   resolver.lookup_by_math("A::B#foo", inheritance: true)
   # @option opts
   # @option opts
   # @option opts
@@ -13301,7 +13358,7 @@ end
 #
 # source://yard//lib/yard/server/commands/root_request_command.rb#6
 class YARD::Server::Commands::RootRequestCommand < ::YARD::Server::Commands::Base
-  include ::WEBrick::HTTPUtils
+  include ::YARD::Server::HTTPUtils
   include ::YARD::Server::Commands::StaticFileHelpers
 
   # @since 0.6.0
@@ -13380,7 +13437,7 @@ end
 #
 # source://yard//lib/yard/server/commands/static_file_command.rb#6
 class YARD::Server::Commands::StaticFileCommand < ::YARD::Server::Commands::LibraryCommand
-  include ::WEBrick::HTTPUtils
+  include ::YARD::Server::HTTPUtils
   include ::YARD::Server::Commands::StaticFileHelpers
 
   # @since 0.6.0
@@ -13404,9 +13461,9 @@ YARD::Server::Commands::StaticFileCommand::STATIC_PATHS = T.let(T.unsafe(nil), A
 #
 # @since 0.6.0
 #
-# source://yard//lib/yard/server/commands/static_file_helpers.rb#9
+# source://yard//lib/yard/server/commands/static_file_helpers.rb#8
 module YARD::Server::Commands::StaticFileHelpers
-  include ::WEBrick::HTTPUtils
+  include ::YARD::Server::HTTPUtils
 
   # Serves an empty favicon.
   #
@@ -13415,7 +13472,7 @@ module YARD::Server::Commands::StaticFileHelpers
   # @return [Boolean]
   # @since 0.6.0
   #
-  # source://yard//lib/yard/server/commands/static_file_helpers.rb#15
+  # source://yard//lib/yard/server/commands/static_file_helpers.rb#14
   def favicon?; end
 
   # Attempts to route a path to a static template file.
@@ -13424,20 +13481,20 @@ module YARD::Server::Commands::StaticFileHelpers
   # @return [void]
   # @since 0.6.0
   #
-  # source://yard//lib/yard/server/commands/static_file_helpers.rb#27
+  # source://yard//lib/yard/server/commands/static_file_helpers.rb#26
   def static_template_file?; end
 
   private
 
   # @since 0.6.0
   #
-  # source://yard//lib/yard/server/commands/static_file_helpers.rb#43
+  # source://yard//lib/yard/server/commands/static_file_helpers.rb#42
   def find_file(adapter, url); end
 
   class << self
     # @since 0.6.0
     #
-    # source://yard//lib/yard/server/commands/static_file_helpers.rb#43
+    # source://yard//lib/yard/server/commands/static_file_helpers.rb#42
     def find_file(adapter, url); end
   end
 end
@@ -14361,7 +14418,7 @@ class YARD::Server::NotFoundError < ::RuntimeError; end
 #
 # @since 0.6.0
 #
-# source://yard//lib/yard/server/rack_adapter.rb#62
+# source://yard//lib/yard/server/rack_adapter.rb#52
 class YARD::Server::RackAdapter < ::YARD::Server::Adapter
   include ::YARD::Server::HTTPUtils
 
@@ -14370,7 +14427,7 @@ class YARD::Server::RackAdapter < ::YARD::Server::Adapter
   # @return [Array(Numeric,Hash,Array)] the Rack-style response
   # @since 0.6.0
   #
-  # source://yard//lib/yard/server/rack_adapter.rb#68
+  # source://yard//lib/yard/server/rack_adapter.rb#57
   def call(env); end
 
   # Starts the Rack server. This method will pass control to the server and
@@ -14379,14 +14436,14 @@ class YARD::Server::RackAdapter < ::YARD::Server::Adapter
   # @return [void]
   # @since 0.6.0
   #
-  # source://yard//lib/yard/server/rack_adapter.rb#81
+  # source://yard//lib/yard/server/rack_adapter.rb#70
   def start; end
 
   private
 
   # @since 0.6.0
   #
-  # source://yard//lib/yard/server/rack_adapter.rb#90
+  # source://yard//lib/yard/server/rack_adapter.rb#79
   def print_start_message(server); end
 end
 
@@ -14401,7 +14458,7 @@ end
 #   at the example below.
 # @since 0.6.0
 #
-# source://yard//lib/yard/server/rack_adapter.rb#35
+# source://yard//lib/yard/server/rack_adapter.rb#25
 class YARD::Server::RackMiddleware
   # Creates a new Rack-based middleware for serving YARD documentation.
   #
@@ -14413,22 +14470,14 @@ class YARD::Server::RackMiddleware
   # @return [RackMiddleware] a new instance of RackMiddleware
   # @since 0.6.0
   #
-  # source://yard//lib/yard/server/rack_adapter.rb#45
+  # source://yard//lib/yard/server/rack_adapter.rb#35
   def initialize(app, opts = T.unsafe(nil)); end
 
   # @since 0.6.0
   #
-  # source://yard//lib/yard/server/rack_adapter.rb#51
+  # source://yard//lib/yard/server/rack_adapter.rb#41
   def call(env); end
 end
-
-# Safely use refinements since Rack requires 2.4+
-#
-# @private
-# @since 0.6.0
-#
-# source://yard//lib/yard/server/rack_adapter.rb#17
-module YARD::Server::RackRefinements; end
 
 # source://yard//lib/yard/server/rack_adapter.rb#8
 YARD::Server::RackServer = Rackup::Server
