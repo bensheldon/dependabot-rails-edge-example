@@ -1,6 +1,6 @@
 GIT
   remote: https://github.com/rails/rails.git
-  revision: c2a25803ddce92c43342690d7b6198b14c2a15b4
+  revision: 444df0eee1b537ecaa11509e819b071d4e87b519
   branch: main
   specs:
     actioncable (7.1.0.alpha)
@@ -158,9 +158,9 @@ GEM
       net-protocol
     netrc (0.11.0)
     nio4r (2.5.9)
-    nokogiri (1.14.2-arm64-darwin)
+    nokogiri (1.14.3-arm64-darwin)
       racc (~> 1.4)
-    nokogiri (1.14.2-x86_64-linux)
+    nokogiri (1.14.3-x86_64-linux)
       racc (~> 1.4)
     parallel (1.22.1)
     parser (3.2.2.0)
