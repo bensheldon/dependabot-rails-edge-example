@@ -154,32 +154,32 @@ class ActionCable::Channel::Base
   # source://actioncable//lib/action_cable/channel/base.rb#147
   def initialize(connection, identifier, params = T.unsafe(nil)); end
 
-  # source://activesupport/7.1.0.alpha-444df0eee1b537ecaa11509e819b071d4e87b519/lib/active_support/callbacks.rb#68
+  # source://activesupport/7.1.0.alpha-bd8aeead92c11dbd82ddb9f114ea63b0daf160b4/lib/active_support/callbacks.rb#68
   def __callbacks; end
 
-  # source://activesupport/7.1.0.alpha-444df0eee1b537ecaa11509e819b071d4e87b519/lib/active_support/callbacks.rb#68
+  # source://activesupport/7.1.0.alpha-bd8aeead92c11dbd82ddb9f114ea63b0daf160b4/lib/active_support/callbacks.rb#68
   def __callbacks?; end
 
-  # source://activesupport/7.1.0.alpha-444df0eee1b537ecaa11509e819b071d4e87b519/lib/active_support/callbacks.rb#946
+  # source://activesupport/7.1.0.alpha-bd8aeead92c11dbd82ddb9f114ea63b0daf160b4/lib/active_support/callbacks.rb#946
   def _run_subscribe_callbacks(&block); end
 
-  # source://activesupport/7.1.0.alpha-444df0eee1b537ecaa11509e819b071d4e87b519/lib/active_support/callbacks.rb#946
+  # source://activesupport/7.1.0.alpha-bd8aeead92c11dbd82ddb9f114ea63b0daf160b4/lib/active_support/callbacks.rb#946
   def _run_unsubscribe_callbacks(&block); end
 
-  # source://activesupport/7.1.0.alpha-444df0eee1b537ecaa11509e819b071d4e87b519/lib/active_support/callbacks.rb#958
+  # source://activesupport/7.1.0.alpha-bd8aeead92c11dbd82ddb9f114ea63b0daf160b4/lib/active_support/callbacks.rb#958
   def _subscribe_callbacks; end
 
-  # source://activesupport/7.1.0.alpha-444df0eee1b537ecaa11509e819b071d4e87b519/lib/active_support/callbacks.rb#958
+  # source://activesupport/7.1.0.alpha-bd8aeead92c11dbd82ddb9f114ea63b0daf160b4/lib/active_support/callbacks.rb#958
   def _unsubscribe_callbacks; end
 
   # source://actioncable//lib/action_cable/channel/broadcasting.rb#11
-  def broadcast_to(model, message); end
+  def broadcast_to(model, message, &block); end
 
   # source://actioncable//lib/action_cable/channel/broadcasting.rb#11
-  def broadcasting_for(model); end
+  def broadcasting_for(model, &block); end
 
   # source://actioncable//lib/action_cable/channel/naming.rb#23
-  def channel_name; end
+  def channel_name(&block); end
 
   # Returns the value of attribute connection.
   #
@@ -209,13 +209,13 @@ class ActionCable::Channel::Base
   # source://actioncable//lib/action_cable/channel/periodic_timers.rb#9
   def periodic_timers=(_arg0); end
 
-  # source://activesupport/7.1.0.alpha-444df0eee1b537ecaa11509e819b071d4e87b519/lib/active_support/rescuable.rb#13
+  # source://activesupport/7.1.0.alpha-bd8aeead92c11dbd82ddb9f114ea63b0daf160b4/lib/active_support/rescuable.rb#13
   def rescue_handlers; end
 
-  # source://activesupport/7.1.0.alpha-444df0eee1b537ecaa11509e819b071d4e87b519/lib/active_support/rescuable.rb#13
+  # source://activesupport/7.1.0.alpha-bd8aeead92c11dbd82ddb9f114ea63b0daf160b4/lib/active_support/rescuable.rb#13
   def rescue_handlers=(_arg0); end
 
-  # source://activesupport/7.1.0.alpha-444df0eee1b537ecaa11509e819b071d4e87b519/lib/active_support/rescuable.rb#13
+  # source://activesupport/7.1.0.alpha-bd8aeead92c11dbd82ddb9f114ea63b0daf160b4/lib/active_support/rescuable.rb#13
   def rescue_handlers?; end
 
   # This method is called after subscription has been added to the connection
@@ -304,25 +304,25 @@ class ActionCable::Channel::Base
   def unsubscribed; end
 
   class << self
-    # source://activesupport/7.1.0.alpha-444df0eee1b537ecaa11509e819b071d4e87b519/lib/active_support/callbacks.rb#68
+    # source://activesupport/7.1.0.alpha-bd8aeead92c11dbd82ddb9f114ea63b0daf160b4/lib/active_support/callbacks.rb#68
     def __callbacks; end
 
-    # source://activesupport/7.1.0.alpha-444df0eee1b537ecaa11509e819b071d4e87b519/lib/active_support/callbacks.rb#68
+    # source://activesupport/7.1.0.alpha-bd8aeead92c11dbd82ddb9f114ea63b0daf160b4/lib/active_support/callbacks.rb#68
     def __callbacks=(value); end
 
-    # source://activesupport/7.1.0.alpha-444df0eee1b537ecaa11509e819b071d4e87b519/lib/active_support/callbacks.rb#68
+    # source://activesupport/7.1.0.alpha-bd8aeead92c11dbd82ddb9f114ea63b0daf160b4/lib/active_support/callbacks.rb#68
     def __callbacks?; end
 
-    # source://activesupport/7.1.0.alpha-444df0eee1b537ecaa11509e819b071d4e87b519/lib/active_support/callbacks.rb#950
+    # source://activesupport/7.1.0.alpha-bd8aeead92c11dbd82ddb9f114ea63b0daf160b4/lib/active_support/callbacks.rb#950
     def _subscribe_callbacks; end
 
-    # source://activesupport/7.1.0.alpha-444df0eee1b537ecaa11509e819b071d4e87b519/lib/active_support/callbacks.rb#954
+    # source://activesupport/7.1.0.alpha-bd8aeead92c11dbd82ddb9f114ea63b0daf160b4/lib/active_support/callbacks.rb#954
     def _subscribe_callbacks=(value); end
 
-    # source://activesupport/7.1.0.alpha-444df0eee1b537ecaa11509e819b071d4e87b519/lib/active_support/callbacks.rb#950
+    # source://activesupport/7.1.0.alpha-bd8aeead92c11dbd82ddb9f114ea63b0daf160b4/lib/active_support/callbacks.rb#950
     def _unsubscribe_callbacks; end
 
-    # source://activesupport/7.1.0.alpha-444df0eee1b537ecaa11509e819b071d4e87b519/lib/active_support/callbacks.rb#954
+    # source://activesupport/7.1.0.alpha-bd8aeead92c11dbd82ddb9f114ea63b0daf160b4/lib/active_support/callbacks.rb#954
     def _unsubscribe_callbacks=(value); end
 
     # A list of method names that should be considered actions. This
@@ -346,13 +346,13 @@ class ActionCable::Channel::Base
     # source://actioncable//lib/action_cable/channel/periodic_timers.rb#9
     def periodic_timers?; end
 
-    # source://activesupport/7.1.0.alpha-444df0eee1b537ecaa11509e819b071d4e87b519/lib/active_support/rescuable.rb#13
+    # source://activesupport/7.1.0.alpha-bd8aeead92c11dbd82ddb9f114ea63b0daf160b4/lib/active_support/rescuable.rb#13
     def rescue_handlers; end
 
-    # source://activesupport/7.1.0.alpha-444df0eee1b537ecaa11509e819b071d4e87b519/lib/active_support/rescuable.rb#13
+    # source://activesupport/7.1.0.alpha-bd8aeead92c11dbd82ddb9f114ea63b0daf160b4/lib/active_support/rescuable.rb#13
     def rescue_handlers=(value); end
 
-    # source://activesupport/7.1.0.alpha-444df0eee1b537ecaa11509e819b071d4e87b519/lib/active_support/rescuable.rb#13
+    # source://activesupport/7.1.0.alpha-bd8aeead92c11dbd82ddb9f114ea63b0daf160b4/lib/active_support/rescuable.rb#13
     def rescue_handlers?; end
 
     private
@@ -1115,16 +1115,16 @@ class ActionCable::Connection::Base
   # source://actioncable//lib/action_cable/connection/base.rb#58
   def initialize(server, env, coder: T.unsafe(nil)); end
 
-  # source://activesupport/7.1.0.alpha-444df0eee1b537ecaa11509e819b071d4e87b519/lib/active_support/callbacks.rb#68
+  # source://activesupport/7.1.0.alpha-bd8aeead92c11dbd82ddb9f114ea63b0daf160b4/lib/active_support/callbacks.rb#68
   def __callbacks; end
 
-  # source://activesupport/7.1.0.alpha-444df0eee1b537ecaa11509e819b071d4e87b519/lib/active_support/callbacks.rb#68
+  # source://activesupport/7.1.0.alpha-bd8aeead92c11dbd82ddb9f114ea63b0daf160b4/lib/active_support/callbacks.rb#68
   def __callbacks?; end
 
-  # source://activesupport/7.1.0.alpha-444df0eee1b537ecaa11509e819b071d4e87b519/lib/active_support/callbacks.rb#958
+  # source://activesupport/7.1.0.alpha-bd8aeead92c11dbd82ddb9f114ea63b0daf160b4/lib/active_support/callbacks.rb#958
   def _command_callbacks; end
 
-  # source://activesupport/7.1.0.alpha-444df0eee1b537ecaa11509e819b071d4e87b519/lib/active_support/callbacks.rb#946
+  # source://activesupport/7.1.0.alpha-bd8aeead92c11dbd82ddb9f114ea63b0daf160b4/lib/active_support/callbacks.rb#946
   def _run_command_callbacks(&block); end
 
   # source://actioncable//lib/action_cable/connection/base.rb#134
@@ -1201,13 +1201,13 @@ class ActionCable::Connection::Base
   # source://actioncable//lib/action_cable/connection/base.rb#86
   def receive(websocket_message); end
 
-  # source://activesupport/7.1.0.alpha-444df0eee1b537ecaa11509e819b071d4e87b519/lib/active_support/rescuable.rb#13
+  # source://activesupport/7.1.0.alpha-bd8aeead92c11dbd82ddb9f114ea63b0daf160b4/lib/active_support/rescuable.rb#13
   def rescue_handlers; end
 
-  # source://activesupport/7.1.0.alpha-444df0eee1b537ecaa11509e819b071d4e87b519/lib/active_support/rescuable.rb#13
+  # source://activesupport/7.1.0.alpha-bd8aeead92c11dbd82ddb9f114ea63b0daf160b4/lib/active_support/rescuable.rb#13
   def rescue_handlers=(_arg0); end
 
-  # source://activesupport/7.1.0.alpha-444df0eee1b537ecaa11509e819b071d4e87b519/lib/active_support/rescuable.rb#13
+  # source://activesupport/7.1.0.alpha-bd8aeead92c11dbd82ddb9f114ea63b0daf160b4/lib/active_support/rescuable.rb#13
   def rescue_handlers?; end
 
   # Invoke a method on the connection asynchronously through the pool of thread workers.
@@ -1305,19 +1305,19 @@ class ActionCable::Connection::Base
   def websocket; end
 
   class << self
-    # source://activesupport/7.1.0.alpha-444df0eee1b537ecaa11509e819b071d4e87b519/lib/active_support/callbacks.rb#68
+    # source://activesupport/7.1.0.alpha-bd8aeead92c11dbd82ddb9f114ea63b0daf160b4/lib/active_support/callbacks.rb#68
     def __callbacks; end
 
-    # source://activesupport/7.1.0.alpha-444df0eee1b537ecaa11509e819b071d4e87b519/lib/active_support/callbacks.rb#68
+    # source://activesupport/7.1.0.alpha-bd8aeead92c11dbd82ddb9f114ea63b0daf160b4/lib/active_support/callbacks.rb#68
     def __callbacks=(value); end
 
-    # source://activesupport/7.1.0.alpha-444df0eee1b537ecaa11509e819b071d4e87b519/lib/active_support/callbacks.rb#68
+    # source://activesupport/7.1.0.alpha-bd8aeead92c11dbd82ddb9f114ea63b0daf160b4/lib/active_support/callbacks.rb#68
     def __callbacks?; end
 
-    # source://activesupport/7.1.0.alpha-444df0eee1b537ecaa11509e819b071d4e87b519/lib/active_support/callbacks.rb#950
+    # source://activesupport/7.1.0.alpha-bd8aeead92c11dbd82ddb9f114ea63b0daf160b4/lib/active_support/callbacks.rb#950
     def _command_callbacks; end
 
-    # source://activesupport/7.1.0.alpha-444df0eee1b537ecaa11509e819b071d4e87b519/lib/active_support/callbacks.rb#954
+    # source://activesupport/7.1.0.alpha-bd8aeead92c11dbd82ddb9f114ea63b0daf160b4/lib/active_support/callbacks.rb#954
     def _command_callbacks=(value); end
 
     # source://actioncable//lib/action_cable/connection/identification.rb#11
@@ -1329,13 +1329,13 @@ class ActionCable::Connection::Base
     # source://actioncable//lib/action_cable/connection/identification.rb#11
     def identifiers?; end
 
-    # source://activesupport/7.1.0.alpha-444df0eee1b537ecaa11509e819b071d4e87b519/lib/active_support/rescuable.rb#13
+    # source://activesupport/7.1.0.alpha-bd8aeead92c11dbd82ddb9f114ea63b0daf160b4/lib/active_support/rescuable.rb#13
     def rescue_handlers; end
 
-    # source://activesupport/7.1.0.alpha-444df0eee1b537ecaa11509e819b071d4e87b519/lib/active_support/rescuable.rb#13
+    # source://activesupport/7.1.0.alpha-bd8aeead92c11dbd82ddb9f114ea63b0daf160b4/lib/active_support/rescuable.rb#13
     def rescue_handlers=(value); end
 
-    # source://activesupport/7.1.0.alpha-444df0eee1b537ecaa11509e819b071d4e87b519/lib/active_support/rescuable.rb#13
+    # source://activesupport/7.1.0.alpha-bd8aeead92c11dbd82ddb9f114ea63b0daf160b4/lib/active_support/rescuable.rb#13
     def rescue_handlers?; end
   end
 end
@@ -2044,7 +2044,7 @@ end
 # source://actioncable//lib/action_cable/engine.rb#8
 class ActionCable::Engine < ::Rails::Engine
   class << self
-    # source://activesupport/7.1.0.alpha-444df0eee1b537ecaa11509e819b071d4e87b519/lib/active_support/callbacks.rb#68
+    # source://activesupport/7.1.0.alpha-bd8aeead92c11dbd82ddb9f114ea63b0daf160b4/lib/active_support/callbacks.rb#68
     def __callbacks; end
   end
 end
@@ -2548,16 +2548,16 @@ class ActionCable::Server::Worker
   # source://actioncable//lib/action_cable/server/worker.rb#19
   def initialize(max_size: T.unsafe(nil)); end
 
-  # source://activesupport/7.1.0.alpha-444df0eee1b537ecaa11509e819b071d4e87b519/lib/active_support/callbacks.rb#68
+  # source://activesupport/7.1.0.alpha-bd8aeead92c11dbd82ddb9f114ea63b0daf160b4/lib/active_support/callbacks.rb#68
   def __callbacks; end
 
-  # source://activesupport/7.1.0.alpha-444df0eee1b537ecaa11509e819b071d4e87b519/lib/active_support/callbacks.rb#68
+  # source://activesupport/7.1.0.alpha-bd8aeead92c11dbd82ddb9f114ea63b0daf160b4/lib/active_support/callbacks.rb#68
   def __callbacks?; end
 
-  # source://activesupport/7.1.0.alpha-444df0eee1b537ecaa11509e819b071d4e87b519/lib/active_support/callbacks.rb#946
+  # source://activesupport/7.1.0.alpha-bd8aeead92c11dbd82ddb9f114ea63b0daf160b4/lib/active_support/callbacks.rb#946
   def _run_work_callbacks(&block); end
 
-  # source://activesupport/7.1.0.alpha-444df0eee1b537ecaa11509e819b071d4e87b519/lib/active_support/callbacks.rb#958
+  # source://activesupport/7.1.0.alpha-bd8aeead92c11dbd82ddb9f114ea63b0daf160b4/lib/active_support/callbacks.rb#958
   def _work_callbacks; end
 
   # source://actioncable//lib/action_cable/server/worker.rb#46
@@ -2566,10 +2566,10 @@ class ActionCable::Server::Worker
   # source://actioncable//lib/action_cable/server/worker.rb#50
   def async_invoke(receiver, method, *args, connection: T.unsafe(nil), &block); end
 
-  # source://activesupport/7.1.0.alpha-444df0eee1b537ecaa11509e819b071d4e87b519/lib/active_support/core_ext/module/attribute_accessors_per_thread.rb#74
+  # source://activesupport/7.1.0.alpha-bd8aeead92c11dbd82ddb9f114ea63b0daf160b4/lib/active_support/core_ext/module/attribute_accessors_per_thread.rb#74
   def connection; end
 
-  # source://activesupport/7.1.0.alpha-444df0eee1b537ecaa11509e819b071d4e87b519/lib/active_support/core_ext/module/attribute_accessors_per_thread.rb#116
+  # source://activesupport/7.1.0.alpha-bd8aeead92c11dbd82ddb9f114ea63b0daf160b4/lib/active_support/core_ext/module/attribute_accessors_per_thread.rb#116
   def connection=(obj); end
 
   # Returns the value of attribute executor.
@@ -2600,25 +2600,25 @@ class ActionCable::Server::Worker
   def logger; end
 
   class << self
-    # source://activesupport/7.1.0.alpha-444df0eee1b537ecaa11509e819b071d4e87b519/lib/active_support/callbacks.rb#68
+    # source://activesupport/7.1.0.alpha-bd8aeead92c11dbd82ddb9f114ea63b0daf160b4/lib/active_support/callbacks.rb#68
     def __callbacks; end
 
-    # source://activesupport/7.1.0.alpha-444df0eee1b537ecaa11509e819b071d4e87b519/lib/active_support/callbacks.rb#68
+    # source://activesupport/7.1.0.alpha-bd8aeead92c11dbd82ddb9f114ea63b0daf160b4/lib/active_support/callbacks.rb#68
     def __callbacks=(value); end
 
-    # source://activesupport/7.1.0.alpha-444df0eee1b537ecaa11509e819b071d4e87b519/lib/active_support/callbacks.rb#68
+    # source://activesupport/7.1.0.alpha-bd8aeead92c11dbd82ddb9f114ea63b0daf160b4/lib/active_support/callbacks.rb#68
     def __callbacks?; end
 
-    # source://activesupport/7.1.0.alpha-444df0eee1b537ecaa11509e819b071d4e87b519/lib/active_support/callbacks.rb#950
+    # source://activesupport/7.1.0.alpha-bd8aeead92c11dbd82ddb9f114ea63b0daf160b4/lib/active_support/callbacks.rb#950
     def _work_callbacks; end
 
-    # source://activesupport/7.1.0.alpha-444df0eee1b537ecaa11509e819b071d4e87b519/lib/active_support/callbacks.rb#954
+    # source://activesupport/7.1.0.alpha-bd8aeead92c11dbd82ddb9f114ea63b0daf160b4/lib/active_support/callbacks.rb#954
     def _work_callbacks=(value); end
 
-    # source://activesupport/7.1.0.alpha-444df0eee1b537ecaa11509e819b071d4e87b519/lib/active_support/core_ext/module/attribute_accessors_per_thread.rb#49
+    # source://activesupport/7.1.0.alpha-bd8aeead92c11dbd82ddb9f114ea63b0daf160b4/lib/active_support/core_ext/module/attribute_accessors_per_thread.rb#49
     def connection; end
 
-    # source://activesupport/7.1.0.alpha-444df0eee1b537ecaa11509e819b071d4e87b519/lib/active_support/core_ext/module/attribute_accessors_per_thread.rb#108
+    # source://activesupport/7.1.0.alpha-bd8aeead92c11dbd82ddb9f114ea63b0daf160b4/lib/active_support/core_ext/module/attribute_accessors_per_thread.rb#108
     def connection=(obj); end
   end
 end
