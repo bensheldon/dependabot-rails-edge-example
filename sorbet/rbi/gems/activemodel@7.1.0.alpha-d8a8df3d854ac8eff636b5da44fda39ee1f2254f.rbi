@@ -3492,11 +3492,11 @@ module ActiveModel::SecurePassword::ClassMethods
   def has_secure_password(attribute = T.unsafe(nil), validations: T.unsafe(nil)); end
 end
 
-# source://activemodel//lib/active_model/secure_password.rb#141
+# source://activemodel//lib/active_model/secure_password.rb#148
 class ActiveModel::SecurePassword::InstanceMethodsOnActivation < ::Module
   # @return [InstanceMethodsOnActivation] a new instance of InstanceMethodsOnActivation
   #
-  # source://activemodel//lib/active_model/secure_password.rb#142
+  # source://activemodel//lib/active_model/secure_password.rb#149
   def initialize(attribute); end
 end
 

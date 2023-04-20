@@ -63,10 +63,10 @@ class AbstractController::Base
 
   # Returns the name of the action this controller is processing.
   #
-  # source://activesupport/7.1.0.alpha-444df0eee1b537ecaa11509e819b071d4e87b519/lib/active_support/core_ext/module/attr_internal.rb#33
+  # source://activesupport/7.1.0.alpha-d8a8df3d854ac8eff636b5da44fda39ee1f2254f/lib/active_support/core_ext/module/attr_internal.rb#33
   def action_name; end
 
-  # source://activesupport/7.1.0.alpha-444df0eee1b537ecaa11509e819b071d4e87b519/lib/active_support/core_ext/module/attr_internal.rb#33
+  # source://activesupport/7.1.0.alpha-d8a8df3d854ac8eff636b5da44fda39ee1f2254f/lib/active_support/core_ext/module/attr_internal.rb#33
   def action_name=(_arg0); end
 
   # Returns true if a method for the action is available and
@@ -92,10 +92,10 @@ class AbstractController::Base
 
   # Returns the formats that can be processed by the controller.
   #
-  # source://activesupport/7.1.0.alpha-444df0eee1b537ecaa11509e819b071d4e87b519/lib/active_support/core_ext/module/attr_internal.rb#33
+  # source://activesupport/7.1.0.alpha-d8a8df3d854ac8eff636b5da44fda39ee1f2254f/lib/active_support/core_ext/module/attr_internal.rb#33
   def formats; end
 
-  # source://activesupport/7.1.0.alpha-444df0eee1b537ecaa11509e819b071d4e87b519/lib/active_support/core_ext/module/attr_internal.rb#33
+  # source://activesupport/7.1.0.alpha-d8a8df3d854ac8eff636b5da44fda39ee1f2254f/lib/active_support/core_ext/module/attr_internal.rb#33
   def formats=(_arg0); end
 
   # source://actionpack//lib/abstract_controller/base.rb#199
@@ -124,10 +124,10 @@ class AbstractController::Base
 
   # Returns the body of the HTTP response sent by the controller.
   #
-  # source://activesupport/7.1.0.alpha-444df0eee1b537ecaa11509e819b071d4e87b519/lib/active_support/core_ext/module/attr_internal.rb#33
+  # source://activesupport/7.1.0.alpha-d8a8df3d854ac8eff636b5da44fda39ee1f2254f/lib/active_support/core_ext/module/attr_internal.rb#33
   def response_body; end
 
-  # source://activesupport/7.1.0.alpha-444df0eee1b537ecaa11509e819b071d4e87b519/lib/active_support/core_ext/module/attr_internal.rb#33
+  # source://activesupport/7.1.0.alpha-d8a8df3d854ac8eff636b5da44fda39ee1f2254f/lib/active_support/core_ext/module/attr_internal.rb#33
   def response_body=(_arg0); end
 
   # Actually call the method associated with the action. Override
@@ -1289,13 +1289,13 @@ class ActionController::API < ::ActionController::Metal
   extend ::ActionController::Instrumentation::ClassMethods
   extend ::ActionController::ParamsWrapper::ClassMethods
 
-  # source://activesupport/7.1.0.alpha-444df0eee1b537ecaa11509e819b071d4e87b519/lib/active_support/callbacks.rb#68
+  # source://activesupport/7.1.0.alpha-d8a8df3d854ac8eff636b5da44fda39ee1f2254f/lib/active_support/callbacks.rb#68
   def __callbacks; end
 
-  # source://activesupport/7.1.0.alpha-444df0eee1b537ecaa11509e819b071d4e87b519/lib/active_support/callbacks.rb#68
+  # source://activesupport/7.1.0.alpha-d8a8df3d854ac8eff636b5da44fda39ee1f2254f/lib/active_support/callbacks.rb#68
   def __callbacks?; end
 
-  # source://activesupport/7.1.0.alpha-444df0eee1b537ecaa11509e819b071d4e87b519/lib/active_support/callbacks.rb#958
+  # source://activesupport/7.1.0.alpha-d8a8df3d854ac8eff636b5da44fda39ee1f2254f/lib/active_support/callbacks.rb#958
   def _process_action_callbacks; end
 
   # source://actionpack//lib/action_controller/metal/renderers.rb#31
@@ -1307,7 +1307,7 @@ class ActionController::API < ::ActionController::Metal
   # source://actionpack//lib/action_controller/metal/renderers.rb#31
   def _renderers?; end
 
-  # source://activesupport/7.1.0.alpha-444df0eee1b537ecaa11509e819b071d4e87b519/lib/active_support/callbacks.rb#946
+  # source://activesupport/7.1.0.alpha-d8a8df3d854ac8eff636b5da44fda39ee1f2254f/lib/active_support/callbacks.rb#946
   def _run_process_action_callbacks(&block); end
 
   # source://actionpack//lib/action_controller/metal/params_wrapper.rb#185
@@ -1337,10 +1337,10 @@ class ActionController::API < ::ActionController::Metal
   # source://actionpack//lib/action_controller/metal/conditional_get.rb#13
   def etaggers?; end
 
-  # source://activesupport/7.1.0.alpha-444df0eee1b537ecaa11509e819b071d4e87b519/lib/active_support/configurable.rb#113
+  # source://activesupport/7.1.0.alpha-d8a8df3d854ac8eff636b5da44fda39ee1f2254f/lib/active_support/configurable.rb#113
   def logger; end
 
-  # source://activesupport/7.1.0.alpha-444df0eee1b537ecaa11509e819b071d4e87b519/lib/active_support/configurable.rb#114
+  # source://activesupport/7.1.0.alpha-d8a8df3d854ac8eff636b5da44fda39ee1f2254f/lib/active_support/configurable.rb#114
   def logger=(value); end
 
   # source://actionpack//lib/abstract_controller/callbacks.rb#36
@@ -1355,29 +1355,29 @@ class ActionController::API < ::ActionController::Metal
   # source://actionpack//lib/action_controller/metal/redirecting.rb#13
   def raise_on_open_redirects=(val); end
 
-  # source://activesupport/7.1.0.alpha-444df0eee1b537ecaa11509e819b071d4e87b519/lib/active_support/rescuable.rb#13
+  # source://activesupport/7.1.0.alpha-d8a8df3d854ac8eff636b5da44fda39ee1f2254f/lib/active_support/rescuable.rb#13
   def rescue_handlers; end
 
-  # source://activesupport/7.1.0.alpha-444df0eee1b537ecaa11509e819b071d4e87b519/lib/active_support/rescuable.rb#13
+  # source://activesupport/7.1.0.alpha-d8a8df3d854ac8eff636b5da44fda39ee1f2254f/lib/active_support/rescuable.rb#13
   def rescue_handlers=(_arg0); end
 
-  # source://activesupport/7.1.0.alpha-444df0eee1b537ecaa11509e819b071d4e87b519/lib/active_support/rescuable.rb#13
+  # source://activesupport/7.1.0.alpha-d8a8df3d854ac8eff636b5da44fda39ee1f2254f/lib/active_support/rescuable.rb#13
   def rescue_handlers?; end
 
   class << self
-    # source://activesupport/7.1.0.alpha-444df0eee1b537ecaa11509e819b071d4e87b519/lib/active_support/callbacks.rb#68
+    # source://activesupport/7.1.0.alpha-d8a8df3d854ac8eff636b5da44fda39ee1f2254f/lib/active_support/callbacks.rb#68
     def __callbacks; end
 
-    # source://activesupport/7.1.0.alpha-444df0eee1b537ecaa11509e819b071d4e87b519/lib/active_support/callbacks.rb#68
+    # source://activesupport/7.1.0.alpha-d8a8df3d854ac8eff636b5da44fda39ee1f2254f/lib/active_support/callbacks.rb#68
     def __callbacks=(value); end
 
-    # source://activesupport/7.1.0.alpha-444df0eee1b537ecaa11509e819b071d4e87b519/lib/active_support/callbacks.rb#68
+    # source://activesupport/7.1.0.alpha-d8a8df3d854ac8eff636b5da44fda39ee1f2254f/lib/active_support/callbacks.rb#68
     def __callbacks?; end
 
-    # source://activesupport/7.1.0.alpha-444df0eee1b537ecaa11509e819b071d4e87b519/lib/active_support/callbacks.rb#950
+    # source://activesupport/7.1.0.alpha-d8a8df3d854ac8eff636b5da44fda39ee1f2254f/lib/active_support/callbacks.rb#950
     def _process_action_callbacks; end
 
-    # source://activesupport/7.1.0.alpha-444df0eee1b537ecaa11509e819b071d4e87b519/lib/active_support/callbacks.rb#954
+    # source://activesupport/7.1.0.alpha-d8a8df3d854ac8eff636b5da44fda39ee1f2254f/lib/active_support/callbacks.rb#954
     def _process_action_callbacks=(value); end
 
     # source://actionpack//lib/action_controller/metal/renderers.rb#31
@@ -1416,10 +1416,10 @@ class ActionController::API < ::ActionController::Metal
     # source://actionpack//lib/action_controller/metal/conditional_get.rb#13
     def etaggers?; end
 
-    # source://activesupport/7.1.0.alpha-444df0eee1b537ecaa11509e819b071d4e87b519/lib/active_support/configurable.rb#113
+    # source://activesupport/7.1.0.alpha-d8a8df3d854ac8eff636b5da44fda39ee1f2254f/lib/active_support/configurable.rb#113
     def logger; end
 
-    # source://activesupport/7.1.0.alpha-444df0eee1b537ecaa11509e819b071d4e87b519/lib/active_support/configurable.rb#114
+    # source://activesupport/7.1.0.alpha-d8a8df3d854ac8eff636b5da44fda39ee1f2254f/lib/active_support/configurable.rb#114
     def logger=(value); end
 
     # source://actionpack//lib/action_controller/metal.rb#254
@@ -1437,13 +1437,13 @@ class ActionController::API < ::ActionController::Metal
     # source://actionpack//lib/action_controller/metal/redirecting.rb#13
     def raise_on_open_redirects=(val); end
 
-    # source://activesupport/7.1.0.alpha-444df0eee1b537ecaa11509e819b071d4e87b519/lib/active_support/rescuable.rb#13
+    # source://activesupport/7.1.0.alpha-d8a8df3d854ac8eff636b5da44fda39ee1f2254f/lib/active_support/rescuable.rb#13
     def rescue_handlers; end
 
-    # source://activesupport/7.1.0.alpha-444df0eee1b537ecaa11509e819b071d4e87b519/lib/active_support/rescuable.rb#13
+    # source://activesupport/7.1.0.alpha-d8a8df3d854ac8eff636b5da44fda39ee1f2254f/lib/active_support/rescuable.rb#13
     def rescue_handlers=(value); end
 
-    # source://activesupport/7.1.0.alpha-444df0eee1b537ecaa11509e819b071d4e87b519/lib/active_support/rescuable.rb#13
+    # source://activesupport/7.1.0.alpha-d8a8df3d854ac8eff636b5da44fda39ee1f2254f/lib/active_support/rescuable.rb#13
     def rescue_handlers?; end
 
     # Shortcut helper that returns all the ActionController::API modules except
@@ -1734,10 +1734,10 @@ class ActionController::Base < ::ActionController::Metal
   extend ::ActionController::Instrumentation::ClassMethods
   extend ::ActionController::ParamsWrapper::ClassMethods
 
-  # source://activesupport/7.1.0.alpha-444df0eee1b537ecaa11509e819b071d4e87b519/lib/active_support/callbacks.rb#68
+  # source://activesupport/7.1.0.alpha-d8a8df3d854ac8eff636b5da44fda39ee1f2254f/lib/active_support/callbacks.rb#68
   def __callbacks; end
 
-  # source://activesupport/7.1.0.alpha-444df0eee1b537ecaa11509e819b071d4e87b519/lib/active_support/callbacks.rb#68
+  # source://activesupport/7.1.0.alpha-d8a8df3d854ac8eff636b5da44fda39ee1f2254f/lib/active_support/callbacks.rb#68
   def __callbacks?; end
 
   # source://actionpack//lib/abstract_controller/helpers.rb#12
@@ -1749,10 +1749,10 @@ class ActionController::Base < ::ActionController::Metal
   # source://actionpack//lib/abstract_controller/helpers.rb#12
   def _helper_methods?; end
 
-  # source://actionview/7.1.0.alpha-444df0eee1b537ecaa11509e819b071d4e87b519/lib/action_view/layouts.rb#216
-  def _layout_conditions; end
+  # source://actionview/7.1.0.alpha-d8a8df3d854ac8eff636b5da44fda39ee1f2254f/lib/action_view/layouts.rb#216
+  def _layout_conditions(&block); end
 
-  # source://activesupport/7.1.0.alpha-444df0eee1b537ecaa11509e819b071d4e87b519/lib/active_support/callbacks.rb#958
+  # source://activesupport/7.1.0.alpha-d8a8df3d854ac8eff636b5da44fda39ee1f2254f/lib/active_support/callbacks.rb#958
   def _process_action_callbacks; end
 
   # source://actionpack//lib/action_controller/metal/renderers.rb#31
@@ -1764,7 +1764,7 @@ class ActionController::Base < ::ActionController::Metal
   # source://actionpack//lib/action_controller/metal/renderers.rb#31
   def _renderers?; end
 
-  # source://activesupport/7.1.0.alpha-444df0eee1b537ecaa11509e819b071d4e87b519/lib/active_support/callbacks.rb#946
+  # source://activesupport/7.1.0.alpha-d8a8df3d854ac8eff636b5da44fda39ee1f2254f/lib/active_support/callbacks.rb#946
   def _run_process_action_callbacks(&block); end
 
   # source://actionpack//lib/abstract_controller/caching.rb#42
@@ -1788,46 +1788,46 @@ class ActionController::Base < ::ActionController::Metal
   # source://actionpack//lib/action_controller/metal/flash.rb#36
   def alert; end
 
-  # source://activesupport/7.1.0.alpha-444df0eee1b537ecaa11509e819b071d4e87b519/lib/active_support/configurable.rb#113
+  # source://activesupport/7.1.0.alpha-d8a8df3d854ac8eff636b5da44fda39ee1f2254f/lib/active_support/configurable.rb#113
   def allow_forgery_protection; end
 
-  # source://activesupport/7.1.0.alpha-444df0eee1b537ecaa11509e819b071d4e87b519/lib/active_support/configurable.rb#114
+  # source://activesupport/7.1.0.alpha-d8a8df3d854ac8eff636b5da44fda39ee1f2254f/lib/active_support/configurable.rb#114
   def allow_forgery_protection=(value); end
 
-  # source://activesupport/7.1.0.alpha-444df0eee1b537ecaa11509e819b071d4e87b519/lib/active_support/configurable.rb#113
+  # source://activesupport/7.1.0.alpha-d8a8df3d854ac8eff636b5da44fda39ee1f2254f/lib/active_support/configurable.rb#113
   def asset_host; end
 
-  # source://activesupport/7.1.0.alpha-444df0eee1b537ecaa11509e819b071d4e87b519/lib/active_support/configurable.rb#114
+  # source://activesupport/7.1.0.alpha-d8a8df3d854ac8eff636b5da44fda39ee1f2254f/lib/active_support/configurable.rb#114
   def asset_host=(value); end
 
-  # source://activesupport/7.1.0.alpha-444df0eee1b537ecaa11509e819b071d4e87b519/lib/active_support/configurable.rb#113
+  # source://activesupport/7.1.0.alpha-d8a8df3d854ac8eff636b5da44fda39ee1f2254f/lib/active_support/configurable.rb#113
   def assets_dir; end
 
-  # source://activesupport/7.1.0.alpha-444df0eee1b537ecaa11509e819b071d4e87b519/lib/active_support/configurable.rb#114
+  # source://activesupport/7.1.0.alpha-d8a8df3d854ac8eff636b5da44fda39ee1f2254f/lib/active_support/configurable.rb#114
   def assets_dir=(value); end
 
-  # source://activesupport/7.1.0.alpha-444df0eee1b537ecaa11509e819b071d4e87b519/lib/active_support/configurable.rb#113
+  # source://activesupport/7.1.0.alpha-d8a8df3d854ac8eff636b5da44fda39ee1f2254f/lib/active_support/configurable.rb#113
   def csrf_token_storage_strategy; end
 
-  # source://activesupport/7.1.0.alpha-444df0eee1b537ecaa11509e819b071d4e87b519/lib/active_support/configurable.rb#114
+  # source://activesupport/7.1.0.alpha-d8a8df3d854ac8eff636b5da44fda39ee1f2254f/lib/active_support/configurable.rb#114
   def csrf_token_storage_strategy=(value); end
 
-  # source://activesupport/7.1.0.alpha-444df0eee1b537ecaa11509e819b071d4e87b519/lib/active_support/configurable.rb#113
+  # source://activesupport/7.1.0.alpha-d8a8df3d854ac8eff636b5da44fda39ee1f2254f/lib/active_support/configurable.rb#113
   def default_asset_host_protocol; end
 
-  # source://activesupport/7.1.0.alpha-444df0eee1b537ecaa11509e819b071d4e87b519/lib/active_support/configurable.rb#114
+  # source://activesupport/7.1.0.alpha-d8a8df3d854ac8eff636b5da44fda39ee1f2254f/lib/active_support/configurable.rb#114
   def default_asset_host_protocol=(value); end
 
-  # source://activesupport/7.1.0.alpha-444df0eee1b537ecaa11509e819b071d4e87b519/lib/active_support/configurable.rb#113
+  # source://activesupport/7.1.0.alpha-d8a8df3d854ac8eff636b5da44fda39ee1f2254f/lib/active_support/configurable.rb#113
   def default_protect_from_forgery; end
 
-  # source://activesupport/7.1.0.alpha-444df0eee1b537ecaa11509e819b071d4e87b519/lib/active_support/configurable.rb#114
+  # source://activesupport/7.1.0.alpha-d8a8df3d854ac8eff636b5da44fda39ee1f2254f/lib/active_support/configurable.rb#114
   def default_protect_from_forgery=(value); end
 
-  # source://activesupport/7.1.0.alpha-444df0eee1b537ecaa11509e819b071d4e87b519/lib/active_support/configurable.rb#113
+  # source://activesupport/7.1.0.alpha-d8a8df3d854ac8eff636b5da44fda39ee1f2254f/lib/active_support/configurable.rb#113
   def default_static_extension; end
 
-  # source://activesupport/7.1.0.alpha-444df0eee1b537ecaa11509e819b071d4e87b519/lib/active_support/configurable.rb#114
+  # source://activesupport/7.1.0.alpha-d8a8df3d854ac8eff636b5da44fda39ee1f2254f/lib/active_support/configurable.rb#114
   def default_static_extension=(value); end
 
   # source://actionpack//lib/action_dispatch/routing/url_for.rb#95
@@ -1839,10 +1839,10 @@ class ActionController::Base < ::ActionController::Metal
   # source://actionpack//lib/action_dispatch/routing/url_for.rb#95
   def default_url_options?; end
 
-  # source://activesupport/7.1.0.alpha-444df0eee1b537ecaa11509e819b071d4e87b519/lib/active_support/configurable.rb#113
+  # source://activesupport/7.1.0.alpha-d8a8df3d854ac8eff636b5da44fda39ee1f2254f/lib/active_support/configurable.rb#113
   def enable_fragment_cache_logging; end
 
-  # source://activesupport/7.1.0.alpha-444df0eee1b537ecaa11509e819b071d4e87b519/lib/active_support/configurable.rb#114
+  # source://activesupport/7.1.0.alpha-d8a8df3d854ac8eff636b5da44fda39ee1f2254f/lib/active_support/configurable.rb#114
   def enable_fragment_cache_logging=(value); end
 
   # source://actionpack//lib/action_controller/metal/etag_with_template_digest.rb#27
@@ -1866,16 +1866,16 @@ class ActionController::Base < ::ActionController::Metal
   # source://actionpack//lib/action_controller/metal/flash.rb#10
   def flash(*_arg0, **_arg1, &_arg2); end
 
-  # source://activesupport/7.1.0.alpha-444df0eee1b537ecaa11509e819b071d4e87b519/lib/active_support/configurable.rb#113
+  # source://activesupport/7.1.0.alpha-d8a8df3d854ac8eff636b5da44fda39ee1f2254f/lib/active_support/configurable.rb#113
   def forgery_protection_origin_check; end
 
-  # source://activesupport/7.1.0.alpha-444df0eee1b537ecaa11509e819b071d4e87b519/lib/active_support/configurable.rb#114
+  # source://activesupport/7.1.0.alpha-d8a8df3d854ac8eff636b5da44fda39ee1f2254f/lib/active_support/configurable.rb#114
   def forgery_protection_origin_check=(value); end
 
-  # source://activesupport/7.1.0.alpha-444df0eee1b537ecaa11509e819b071d4e87b519/lib/active_support/configurable.rb#113
+  # source://activesupport/7.1.0.alpha-d8a8df3d854ac8eff636b5da44fda39ee1f2254f/lib/active_support/configurable.rb#113
   def forgery_protection_strategy; end
 
-  # source://activesupport/7.1.0.alpha-444df0eee1b537ecaa11509e819b071d4e87b519/lib/active_support/configurable.rb#114
+  # source://activesupport/7.1.0.alpha-d8a8df3d854ac8eff636b5da44fda39ee1f2254f/lib/active_support/configurable.rb#114
   def forgery_protection_strategy=(value); end
 
   # source://actionpack//lib/abstract_controller/caching/fragments.rb#23
@@ -1905,37 +1905,37 @@ class ActionController::Base < ::ActionController::Metal
   # source://actionpack//lib/action_controller/metal/helpers.rb#64
   def include_all_helpers?; end
 
-  # source://activesupport/7.1.0.alpha-444df0eee1b537ecaa11509e819b071d4e87b519/lib/active_support/configurable.rb#113
+  # source://activesupport/7.1.0.alpha-d8a8df3d854ac8eff636b5da44fda39ee1f2254f/lib/active_support/configurable.rb#113
   def javascripts_dir; end
 
-  # source://activesupport/7.1.0.alpha-444df0eee1b537ecaa11509e819b071d4e87b519/lib/active_support/configurable.rb#114
+  # source://activesupport/7.1.0.alpha-d8a8df3d854ac8eff636b5da44fda39ee1f2254f/lib/active_support/configurable.rb#114
   def javascripts_dir=(value); end
 
-  # source://activesupport/7.1.0.alpha-444df0eee1b537ecaa11509e819b071d4e87b519/lib/active_support/configurable.rb#113
+  # source://activesupport/7.1.0.alpha-d8a8df3d854ac8eff636b5da44fda39ee1f2254f/lib/active_support/configurable.rb#113
   def log_warning_on_csrf_failure; end
 
-  # source://activesupport/7.1.0.alpha-444df0eee1b537ecaa11509e819b071d4e87b519/lib/active_support/configurable.rb#114
+  # source://activesupport/7.1.0.alpha-d8a8df3d854ac8eff636b5da44fda39ee1f2254f/lib/active_support/configurable.rb#114
   def log_warning_on_csrf_failure=(value); end
 
-  # source://activesupport/7.1.0.alpha-444df0eee1b537ecaa11509e819b071d4e87b519/lib/active_support/configurable.rb#113
+  # source://activesupport/7.1.0.alpha-d8a8df3d854ac8eff636b5da44fda39ee1f2254f/lib/active_support/configurable.rb#113
   def logger; end
 
-  # source://activesupport/7.1.0.alpha-444df0eee1b537ecaa11509e819b071d4e87b519/lib/active_support/configurable.rb#114
+  # source://activesupport/7.1.0.alpha-d8a8df3d854ac8eff636b5da44fda39ee1f2254f/lib/active_support/configurable.rb#114
   def logger=(value); end
 
   # source://actionpack//lib/action_controller/metal/flash.rb#36
   def notice; end
 
-  # source://activesupport/7.1.0.alpha-444df0eee1b537ecaa11509e819b071d4e87b519/lib/active_support/configurable.rb#113
+  # source://activesupport/7.1.0.alpha-d8a8df3d854ac8eff636b5da44fda39ee1f2254f/lib/active_support/configurable.rb#113
   def per_form_csrf_tokens; end
 
-  # source://activesupport/7.1.0.alpha-444df0eee1b537ecaa11509e819b071d4e87b519/lib/active_support/configurable.rb#114
+  # source://activesupport/7.1.0.alpha-d8a8df3d854ac8eff636b5da44fda39ee1f2254f/lib/active_support/configurable.rb#114
   def per_form_csrf_tokens=(value); end
 
-  # source://activesupport/7.1.0.alpha-444df0eee1b537ecaa11509e819b071d4e87b519/lib/active_support/configurable.rb#113
+  # source://activesupport/7.1.0.alpha-d8a8df3d854ac8eff636b5da44fda39ee1f2254f/lib/active_support/configurable.rb#113
   def perform_caching; end
 
-  # source://activesupport/7.1.0.alpha-444df0eee1b537ecaa11509e819b071d4e87b519/lib/active_support/configurable.rb#114
+  # source://activesupport/7.1.0.alpha-d8a8df3d854ac8eff636b5da44fda39ee1f2254f/lib/active_support/configurable.rb#114
   def perform_caching=(value); end
 
   # source://actionpack//lib/abstract_controller/callbacks.rb#36
@@ -1950,36 +1950,36 @@ class ActionController::Base < ::ActionController::Metal
   # source://actionpack//lib/action_controller/metal/redirecting.rb#13
   def raise_on_open_redirects=(val); end
 
-  # source://activesupport/7.1.0.alpha-444df0eee1b537ecaa11509e819b071d4e87b519/lib/active_support/configurable.rb#113
+  # source://activesupport/7.1.0.alpha-d8a8df3d854ac8eff636b5da44fda39ee1f2254f/lib/active_support/configurable.rb#113
   def relative_url_root; end
 
-  # source://activesupport/7.1.0.alpha-444df0eee1b537ecaa11509e819b071d4e87b519/lib/active_support/configurable.rb#114
+  # source://activesupport/7.1.0.alpha-d8a8df3d854ac8eff636b5da44fda39ee1f2254f/lib/active_support/configurable.rb#114
   def relative_url_root=(value); end
 
-  # source://activesupport/7.1.0.alpha-444df0eee1b537ecaa11509e819b071d4e87b519/lib/active_support/configurable.rb#113
+  # source://activesupport/7.1.0.alpha-d8a8df3d854ac8eff636b5da44fda39ee1f2254f/lib/active_support/configurable.rb#113
   def request_forgery_protection_token; end
 
-  # source://activesupport/7.1.0.alpha-444df0eee1b537ecaa11509e819b071d4e87b519/lib/active_support/configurable.rb#114
+  # source://activesupport/7.1.0.alpha-d8a8df3d854ac8eff636b5da44fda39ee1f2254f/lib/active_support/configurable.rb#114
   def request_forgery_protection_token=(value); end
 
-  # source://activesupport/7.1.0.alpha-444df0eee1b537ecaa11509e819b071d4e87b519/lib/active_support/rescuable.rb#13
+  # source://activesupport/7.1.0.alpha-d8a8df3d854ac8eff636b5da44fda39ee1f2254f/lib/active_support/rescuable.rb#13
   def rescue_handlers; end
 
-  # source://activesupport/7.1.0.alpha-444df0eee1b537ecaa11509e819b071d4e87b519/lib/active_support/rescuable.rb#13
+  # source://activesupport/7.1.0.alpha-d8a8df3d854ac8eff636b5da44fda39ee1f2254f/lib/active_support/rescuable.rb#13
   def rescue_handlers=(_arg0); end
 
-  # source://activesupport/7.1.0.alpha-444df0eee1b537ecaa11509e819b071d4e87b519/lib/active_support/rescuable.rb#13
+  # source://activesupport/7.1.0.alpha-d8a8df3d854ac8eff636b5da44fda39ee1f2254f/lib/active_support/rescuable.rb#13
   def rescue_handlers?; end
 
-  # source://activesupport/7.1.0.alpha-444df0eee1b537ecaa11509e819b071d4e87b519/lib/active_support/configurable.rb#113
+  # source://activesupport/7.1.0.alpha-d8a8df3d854ac8eff636b5da44fda39ee1f2254f/lib/active_support/configurable.rb#113
   def stylesheets_dir; end
 
-  # source://activesupport/7.1.0.alpha-444df0eee1b537ecaa11509e819b071d4e87b519/lib/active_support/configurable.rb#114
+  # source://activesupport/7.1.0.alpha-d8a8df3d854ac8eff636b5da44fda39ee1f2254f/lib/active_support/configurable.rb#114
   def stylesheets_dir=(value); end
 
   private
 
-  # source://actionview/7.1.0.alpha-444df0eee1b537ecaa11509e819b071d4e87b519/lib/action_view/layouts.rb#330
+  # source://actionview/7.1.0.alpha-d8a8df3d854ac8eff636b5da44fda39ee1f2254f/lib/action_view/layouts.rb#330
   def _layout(lookup_context, formats); end
 
   def _layout_from_proc; end
@@ -1988,13 +1988,13 @@ class ActionController::Base < ::ActionController::Metal
   def _protected_ivars; end
 
   class << self
-    # source://activesupport/7.1.0.alpha-444df0eee1b537ecaa11509e819b071d4e87b519/lib/active_support/callbacks.rb#68
+    # source://activesupport/7.1.0.alpha-d8a8df3d854ac8eff636b5da44fda39ee1f2254f/lib/active_support/callbacks.rb#68
     def __callbacks; end
 
-    # source://activesupport/7.1.0.alpha-444df0eee1b537ecaa11509e819b071d4e87b519/lib/active_support/callbacks.rb#68
+    # source://activesupport/7.1.0.alpha-d8a8df3d854ac8eff636b5da44fda39ee1f2254f/lib/active_support/callbacks.rb#68
     def __callbacks=(value); end
 
-    # source://activesupport/7.1.0.alpha-444df0eee1b537ecaa11509e819b071d4e87b519/lib/active_support/callbacks.rb#68
+    # source://activesupport/7.1.0.alpha-d8a8df3d854ac8eff636b5da44fda39ee1f2254f/lib/active_support/callbacks.rb#68
     def __callbacks?; end
 
     # source://actionpack//lib/action_controller/form_builder.rb#31
@@ -2027,28 +2027,28 @@ class ActionController::Base < ::ActionController::Metal
     # source://actionpack//lib/abstract_controller/helpers.rb#16
     def _helpers; end
 
-    # source://actionview/7.1.0.alpha-444df0eee1b537ecaa11509e819b071d4e87b519/lib/action_view/layouts.rb#211
+    # source://actionview/7.1.0.alpha-d8a8df3d854ac8eff636b5da44fda39ee1f2254f/lib/action_view/layouts.rb#211
     def _layout; end
 
-    # source://actionview/7.1.0.alpha-444df0eee1b537ecaa11509e819b071d4e87b519/lib/action_view/layouts.rb#211
+    # source://actionview/7.1.0.alpha-d8a8df3d854ac8eff636b5da44fda39ee1f2254f/lib/action_view/layouts.rb#211
     def _layout=(value); end
 
-    # source://actionview/7.1.0.alpha-444df0eee1b537ecaa11509e819b071d4e87b519/lib/action_view/layouts.rb#211
+    # source://actionview/7.1.0.alpha-d8a8df3d854ac8eff636b5da44fda39ee1f2254f/lib/action_view/layouts.rb#211
     def _layout?; end
 
-    # source://actionview/7.1.0.alpha-444df0eee1b537ecaa11509e819b071d4e87b519/lib/action_view/layouts.rb#212
+    # source://actionview/7.1.0.alpha-d8a8df3d854ac8eff636b5da44fda39ee1f2254f/lib/action_view/layouts.rb#212
     def _layout_conditions; end
 
-    # source://actionview/7.1.0.alpha-444df0eee1b537ecaa11509e819b071d4e87b519/lib/action_view/layouts.rb#212
+    # source://actionview/7.1.0.alpha-d8a8df3d854ac8eff636b5da44fda39ee1f2254f/lib/action_view/layouts.rb#212
     def _layout_conditions=(value); end
 
-    # source://actionview/7.1.0.alpha-444df0eee1b537ecaa11509e819b071d4e87b519/lib/action_view/layouts.rb#212
+    # source://actionview/7.1.0.alpha-d8a8df3d854ac8eff636b5da44fda39ee1f2254f/lib/action_view/layouts.rb#212
     def _layout_conditions?; end
 
-    # source://activesupport/7.1.0.alpha-444df0eee1b537ecaa11509e819b071d4e87b519/lib/active_support/callbacks.rb#950
+    # source://activesupport/7.1.0.alpha-d8a8df3d854ac8eff636b5da44fda39ee1f2254f/lib/active_support/callbacks.rb#950
     def _process_action_callbacks; end
 
-    # source://activesupport/7.1.0.alpha-444df0eee1b537ecaa11509e819b071d4e87b519/lib/active_support/callbacks.rb#954
+    # source://activesupport/7.1.0.alpha-d8a8df3d854ac8eff636b5da44fda39ee1f2254f/lib/active_support/callbacks.rb#954
     def _process_action_callbacks=(value); end
 
     # source://actionpack//lib/action_controller/metal/renderers.rb#31
@@ -2078,46 +2078,46 @@ class ActionController::Base < ::ActionController::Metal
     # source://actionpack//lib/action_controller/metal/params_wrapper.rb#185
     def _wrapper_options?; end
 
-    # source://activesupport/7.1.0.alpha-444df0eee1b537ecaa11509e819b071d4e87b519/lib/active_support/configurable.rb#113
+    # source://activesupport/7.1.0.alpha-d8a8df3d854ac8eff636b5da44fda39ee1f2254f/lib/active_support/configurable.rb#113
     def allow_forgery_protection; end
 
-    # source://activesupport/7.1.0.alpha-444df0eee1b537ecaa11509e819b071d4e87b519/lib/active_support/configurable.rb#114
+    # source://activesupport/7.1.0.alpha-d8a8df3d854ac8eff636b5da44fda39ee1f2254f/lib/active_support/configurable.rb#114
     def allow_forgery_protection=(value); end
 
-    # source://activesupport/7.1.0.alpha-444df0eee1b537ecaa11509e819b071d4e87b519/lib/active_support/configurable.rb#113
+    # source://activesupport/7.1.0.alpha-d8a8df3d854ac8eff636b5da44fda39ee1f2254f/lib/active_support/configurable.rb#113
     def asset_host; end
 
-    # source://activesupport/7.1.0.alpha-444df0eee1b537ecaa11509e819b071d4e87b519/lib/active_support/configurable.rb#114
+    # source://activesupport/7.1.0.alpha-d8a8df3d854ac8eff636b5da44fda39ee1f2254f/lib/active_support/configurable.rb#114
     def asset_host=(value); end
 
-    # source://activesupport/7.1.0.alpha-444df0eee1b537ecaa11509e819b071d4e87b519/lib/active_support/configurable.rb#113
+    # source://activesupport/7.1.0.alpha-d8a8df3d854ac8eff636b5da44fda39ee1f2254f/lib/active_support/configurable.rb#113
     def assets_dir; end
 
-    # source://activesupport/7.1.0.alpha-444df0eee1b537ecaa11509e819b071d4e87b519/lib/active_support/configurable.rb#114
+    # source://activesupport/7.1.0.alpha-d8a8df3d854ac8eff636b5da44fda39ee1f2254f/lib/active_support/configurable.rb#114
     def assets_dir=(value); end
 
-    # source://activesupport/7.1.0.alpha-444df0eee1b537ecaa11509e819b071d4e87b519/lib/active_support/configurable.rb#113
+    # source://activesupport/7.1.0.alpha-d8a8df3d854ac8eff636b5da44fda39ee1f2254f/lib/active_support/configurable.rb#113
     def csrf_token_storage_strategy; end
 
-    # source://activesupport/7.1.0.alpha-444df0eee1b537ecaa11509e819b071d4e87b519/lib/active_support/configurable.rb#114
+    # source://activesupport/7.1.0.alpha-d8a8df3d854ac8eff636b5da44fda39ee1f2254f/lib/active_support/configurable.rb#114
     def csrf_token_storage_strategy=(value); end
 
-    # source://activesupport/7.1.0.alpha-444df0eee1b537ecaa11509e819b071d4e87b519/lib/active_support/configurable.rb#113
+    # source://activesupport/7.1.0.alpha-d8a8df3d854ac8eff636b5da44fda39ee1f2254f/lib/active_support/configurable.rb#113
     def default_asset_host_protocol; end
 
-    # source://activesupport/7.1.0.alpha-444df0eee1b537ecaa11509e819b071d4e87b519/lib/active_support/configurable.rb#114
+    # source://activesupport/7.1.0.alpha-d8a8df3d854ac8eff636b5da44fda39ee1f2254f/lib/active_support/configurable.rb#114
     def default_asset_host_protocol=(value); end
 
-    # source://activesupport/7.1.0.alpha-444df0eee1b537ecaa11509e819b071d4e87b519/lib/active_support/configurable.rb#113
+    # source://activesupport/7.1.0.alpha-d8a8df3d854ac8eff636b5da44fda39ee1f2254f/lib/active_support/configurable.rb#113
     def default_protect_from_forgery; end
 
-    # source://activesupport/7.1.0.alpha-444df0eee1b537ecaa11509e819b071d4e87b519/lib/active_support/configurable.rb#114
+    # source://activesupport/7.1.0.alpha-d8a8df3d854ac8eff636b5da44fda39ee1f2254f/lib/active_support/configurable.rb#114
     def default_protect_from_forgery=(value); end
 
-    # source://activesupport/7.1.0.alpha-444df0eee1b537ecaa11509e819b071d4e87b519/lib/active_support/configurable.rb#113
+    # source://activesupport/7.1.0.alpha-d8a8df3d854ac8eff636b5da44fda39ee1f2254f/lib/active_support/configurable.rb#113
     def default_static_extension; end
 
-    # source://activesupport/7.1.0.alpha-444df0eee1b537ecaa11509e819b071d4e87b519/lib/active_support/configurable.rb#114
+    # source://activesupport/7.1.0.alpha-d8a8df3d854ac8eff636b5da44fda39ee1f2254f/lib/active_support/configurable.rb#114
     def default_static_extension=(value); end
 
     # source://actionpack//lib/action_dispatch/routing/url_for.rb#95
@@ -2129,10 +2129,10 @@ class ActionController::Base < ::ActionController::Metal
     # source://actionpack//lib/action_dispatch/routing/url_for.rb#95
     def default_url_options?; end
 
-    # source://activesupport/7.1.0.alpha-444df0eee1b537ecaa11509e819b071d4e87b519/lib/active_support/configurable.rb#113
+    # source://activesupport/7.1.0.alpha-d8a8df3d854ac8eff636b5da44fda39ee1f2254f/lib/active_support/configurable.rb#113
     def enable_fragment_cache_logging; end
 
-    # source://activesupport/7.1.0.alpha-444df0eee1b537ecaa11509e819b071d4e87b519/lib/active_support/configurable.rb#114
+    # source://activesupport/7.1.0.alpha-d8a8df3d854ac8eff636b5da44fda39ee1f2254f/lib/active_support/configurable.rb#114
     def enable_fragment_cache_logging=(value); end
 
     # source://actionpack//lib/action_controller/metal/etag_with_template_digest.rb#27
@@ -2153,16 +2153,16 @@ class ActionController::Base < ::ActionController::Metal
     # source://actionpack//lib/action_controller/metal/conditional_get.rb#13
     def etaggers?; end
 
-    # source://activesupport/7.1.0.alpha-444df0eee1b537ecaa11509e819b071d4e87b519/lib/active_support/configurable.rb#113
+    # source://activesupport/7.1.0.alpha-d8a8df3d854ac8eff636b5da44fda39ee1f2254f/lib/active_support/configurable.rb#113
     def forgery_protection_origin_check; end
 
-    # source://activesupport/7.1.0.alpha-444df0eee1b537ecaa11509e819b071d4e87b519/lib/active_support/configurable.rb#114
+    # source://activesupport/7.1.0.alpha-d8a8df3d854ac8eff636b5da44fda39ee1f2254f/lib/active_support/configurable.rb#114
     def forgery_protection_origin_check=(value); end
 
-    # source://activesupport/7.1.0.alpha-444df0eee1b537ecaa11509e819b071d4e87b519/lib/active_support/configurable.rb#113
+    # source://activesupport/7.1.0.alpha-d8a8df3d854ac8eff636b5da44fda39ee1f2254f/lib/active_support/configurable.rb#113
     def forgery_protection_strategy; end
 
-    # source://activesupport/7.1.0.alpha-444df0eee1b537ecaa11509e819b071d4e87b519/lib/active_support/configurable.rb#114
+    # source://activesupport/7.1.0.alpha-d8a8df3d854ac8eff636b5da44fda39ee1f2254f/lib/active_support/configurable.rb#114
     def forgery_protection_strategy=(value); end
 
     # source://actionpack//lib/abstract_controller/caching/fragments.rb#23
@@ -2192,37 +2192,37 @@ class ActionController::Base < ::ActionController::Metal
     # source://actionpack//lib/action_controller/metal/helpers.rb#64
     def include_all_helpers?; end
 
-    # source://activesupport/7.1.0.alpha-444df0eee1b537ecaa11509e819b071d4e87b519/lib/active_support/configurable.rb#113
+    # source://activesupport/7.1.0.alpha-d8a8df3d854ac8eff636b5da44fda39ee1f2254f/lib/active_support/configurable.rb#113
     def javascripts_dir; end
 
-    # source://activesupport/7.1.0.alpha-444df0eee1b537ecaa11509e819b071d4e87b519/lib/active_support/configurable.rb#114
+    # source://activesupport/7.1.0.alpha-d8a8df3d854ac8eff636b5da44fda39ee1f2254f/lib/active_support/configurable.rb#114
     def javascripts_dir=(value); end
 
-    # source://activesupport/7.1.0.alpha-444df0eee1b537ecaa11509e819b071d4e87b519/lib/active_support/configurable.rb#113
+    # source://activesupport/7.1.0.alpha-d8a8df3d854ac8eff636b5da44fda39ee1f2254f/lib/active_support/configurable.rb#113
     def log_warning_on_csrf_failure; end
 
-    # source://activesupport/7.1.0.alpha-444df0eee1b537ecaa11509e819b071d4e87b519/lib/active_support/configurable.rb#114
+    # source://activesupport/7.1.0.alpha-d8a8df3d854ac8eff636b5da44fda39ee1f2254f/lib/active_support/configurable.rb#114
     def log_warning_on_csrf_failure=(value); end
 
-    # source://activesupport/7.1.0.alpha-444df0eee1b537ecaa11509e819b071d4e87b519/lib/active_support/configurable.rb#113
+    # source://activesupport/7.1.0.alpha-d8a8df3d854ac8eff636b5da44fda39ee1f2254f/lib/active_support/configurable.rb#113
     def logger; end
 
-    # source://activesupport/7.1.0.alpha-444df0eee1b537ecaa11509e819b071d4e87b519/lib/active_support/configurable.rb#114
+    # source://activesupport/7.1.0.alpha-d8a8df3d854ac8eff636b5da44fda39ee1f2254f/lib/active_support/configurable.rb#114
     def logger=(value); end
 
     # source://actionpack//lib/action_controller/metal.rb#254
     def middleware_stack; end
 
-    # source://activesupport/7.1.0.alpha-444df0eee1b537ecaa11509e819b071d4e87b519/lib/active_support/configurable.rb#113
+    # source://activesupport/7.1.0.alpha-d8a8df3d854ac8eff636b5da44fda39ee1f2254f/lib/active_support/configurable.rb#113
     def per_form_csrf_tokens; end
 
-    # source://activesupport/7.1.0.alpha-444df0eee1b537ecaa11509e819b071d4e87b519/lib/active_support/configurable.rb#114
+    # source://activesupport/7.1.0.alpha-d8a8df3d854ac8eff636b5da44fda39ee1f2254f/lib/active_support/configurable.rb#114
     def per_form_csrf_tokens=(value); end
 
-    # source://activesupport/7.1.0.alpha-444df0eee1b537ecaa11509e819b071d4e87b519/lib/active_support/configurable.rb#113
+    # source://activesupport/7.1.0.alpha-d8a8df3d854ac8eff636b5da44fda39ee1f2254f/lib/active_support/configurable.rb#113
     def perform_caching; end
 
-    # source://activesupport/7.1.0.alpha-444df0eee1b537ecaa11509e819b071d4e87b519/lib/active_support/configurable.rb#114
+    # source://activesupport/7.1.0.alpha-d8a8df3d854ac8eff636b5da44fda39ee1f2254f/lib/active_support/configurable.rb#114
     def perform_caching=(value); end
 
     # source://actionpack//lib/abstract_controller/callbacks.rb#36
@@ -2237,31 +2237,31 @@ class ActionController::Base < ::ActionController::Metal
     # source://actionpack//lib/action_controller/metal/redirecting.rb#13
     def raise_on_open_redirects=(val); end
 
-    # source://activesupport/7.1.0.alpha-444df0eee1b537ecaa11509e819b071d4e87b519/lib/active_support/configurable.rb#113
+    # source://activesupport/7.1.0.alpha-d8a8df3d854ac8eff636b5da44fda39ee1f2254f/lib/active_support/configurable.rb#113
     def relative_url_root; end
 
-    # source://activesupport/7.1.0.alpha-444df0eee1b537ecaa11509e819b071d4e87b519/lib/active_support/configurable.rb#114
+    # source://activesupport/7.1.0.alpha-d8a8df3d854ac8eff636b5da44fda39ee1f2254f/lib/active_support/configurable.rb#114
     def relative_url_root=(value); end
 
-    # source://activesupport/7.1.0.alpha-444df0eee1b537ecaa11509e819b071d4e87b519/lib/active_support/configurable.rb#113
+    # source://activesupport/7.1.0.alpha-d8a8df3d854ac8eff636b5da44fda39ee1f2254f/lib/active_support/configurable.rb#113
     def request_forgery_protection_token; end
 
-    # source://activesupport/7.1.0.alpha-444df0eee1b537ecaa11509e819b071d4e87b519/lib/active_support/configurable.rb#114
+    # source://activesupport/7.1.0.alpha-d8a8df3d854ac8eff636b5da44fda39ee1f2254f/lib/active_support/configurable.rb#114
     def request_forgery_protection_token=(value); end
 
-    # source://activesupport/7.1.0.alpha-444df0eee1b537ecaa11509e819b071d4e87b519/lib/active_support/rescuable.rb#13
+    # source://activesupport/7.1.0.alpha-d8a8df3d854ac8eff636b5da44fda39ee1f2254f/lib/active_support/rescuable.rb#13
     def rescue_handlers; end
 
-    # source://activesupport/7.1.0.alpha-444df0eee1b537ecaa11509e819b071d4e87b519/lib/active_support/rescuable.rb#13
+    # source://activesupport/7.1.0.alpha-d8a8df3d854ac8eff636b5da44fda39ee1f2254f/lib/active_support/rescuable.rb#13
     def rescue_handlers=(value); end
 
-    # source://activesupport/7.1.0.alpha-444df0eee1b537ecaa11509e819b071d4e87b519/lib/active_support/rescuable.rb#13
+    # source://activesupport/7.1.0.alpha-d8a8df3d854ac8eff636b5da44fda39ee1f2254f/lib/active_support/rescuable.rb#13
     def rescue_handlers?; end
 
-    # source://activesupport/7.1.0.alpha-444df0eee1b537ecaa11509e819b071d4e87b519/lib/active_support/configurable.rb#113
+    # source://activesupport/7.1.0.alpha-d8a8df3d854ac8eff636b5da44fda39ee1f2254f/lib/active_support/configurable.rb#113
     def stylesheets_dir; end
 
-    # source://activesupport/7.1.0.alpha-444df0eee1b537ecaa11509e819b071d4e87b519/lib/active_support/configurable.rb#114
+    # source://activesupport/7.1.0.alpha-d8a8df3d854ac8eff636b5da44fda39ee1f2254f/lib/active_support/configurable.rb#114
     def stylesheets_dir=(value); end
 
     # Shortcut helper that returns all the modules included in
@@ -3948,7 +3948,22 @@ class ActionController::InvalidParameterKey < ::ArgumentError; end
 # the main thread. Make sure your actions are thread safe, and this shouldn't
 # be a problem (don't share state across threads, etc).
 #
-# source://actionpack//lib/action_controller/metal/live.rb#37
+# Note that \Rails includes +Rack::ETag+ by default, which will buffer your
+# response. As a result, streaming responses may not work properly with Rack
+# 2.2.x, and you may need to implement workarounds in your application.
+# You can either set the +ETag+ or +Last-Modified+ response headers or remove
+# +Rack::ETag+ from the middleware stack to address this issue.
+#
+# Here's an example of how you can set the +Last-Modified+ header if your Rack
+# version is 2.2.x:
+#
+#   def stream
+#     response.headers["Content-Type"] = "text/event-stream"
+#     response.headers["Last-Modified"] = Time.now.httpdate # Add this line if your Rack version is 2.2.x
+#     ...
+#   end
+#
+# source://actionpack//lib/action_controller/metal/live.rb#52
 module ActionController::Live
   extend ::ActiveSupport::Concern
 
@@ -3957,10 +3972,10 @@ module ActionController::Live
   # source://actionpack//lib/action_controller/test_case.rb#24
   def new_controller_thread; end
 
-  # source://actionpack//lib/action_controller/metal/live.rb#249
+  # source://actionpack//lib/action_controller/metal/live.rb#264
   def process(name); end
 
-  # source://actionpack//lib/action_controller/metal/live.rb#295
+  # source://actionpack//lib/action_controller/metal/live.rb#310
   def response_body=(body); end
 
   # Sends a stream to the browser, which is helpful when you're generating exports or other running data where you
@@ -3985,22 +4000,22 @@ module ActionController::Live
   #      end
   #    end
   #
-  # source://actionpack//lib/action_controller/metal/live.rb#321
+  # source://actionpack//lib/action_controller/metal/live.rb#336
   def send_stream(filename:, disposition: T.unsafe(nil), type: T.unsafe(nil)); end
 
   private
 
-  # source://actionpack//lib/action_controller/metal/live.rb#348
+  # source://actionpack//lib/action_controller/metal/live.rb#363
   def log_error(exception); end
 end
 
-# source://actionpack//lib/action_controller/metal/live.rb#127
+# source://actionpack//lib/action_controller/metal/live.rb#142
 class ActionController::Live::Buffer < ::ActionDispatch::Response::Buffer
   include ::MonitorMixin
 
   # @return [Buffer] a new instance of Buffer
   #
-  # source://actionpack//lib/action_controller/metal/live.rb#143
+  # source://actionpack//lib/action_controller/metal/live.rb#158
   def initialize(response); end
 
   # Inform the producer/writing thread that the client has
@@ -4009,10 +4024,10 @@ class ActionController::Live::Buffer < ::ActionDispatch::Response::Buffer
   #
   # See also #close.
   #
-  # source://actionpack//lib/action_controller/metal/live.rb#193
+  # source://actionpack//lib/action_controller/metal/live.rb#208
   def abort; end
 
-  # source://actionpack//lib/action_controller/metal/live.rb#212
+  # source://actionpack//lib/action_controller/metal/live.rb#227
   def call_on_error; end
 
   # Write a 'close' event to the buffer; the producer/writing thread
@@ -4020,7 +4035,7 @@ class ActionController::Live::Buffer < ::ActionDispatch::Response::Buffer
   #
   # See also #abort.
   #
-  # source://actionpack//lib/action_controller/metal/live.rb#180
+  # source://actionpack//lib/action_controller/metal/live.rb#195
   def close; end
 
   # Is the client still connected and waiting for content?
@@ -4030,7 +4045,7 @@ class ActionController::Live::Buffer < ::ActionDispatch::Response::Buffer
   #
   # @return [Boolean]
   #
-  # source://actionpack//lib/action_controller/metal/live.rb#204
+  # source://actionpack//lib/action_controller/metal/live.rb#219
   def connected?; end
 
   # Ignore that the client has disconnected.
@@ -4040,7 +4055,7 @@ class ActionController::Live::Buffer < ::ActionDispatch::Response::Buffer
   # discarded. If this value is `false` (the default), a
   # ClientDisconnected exception will be raised.
   #
-  # source://actionpack//lib/action_controller/metal/live.rb#141
+  # source://actionpack//lib/action_controller/metal/live.rb#156
   def ignore_disconnect; end
 
   # Ignore that the client has disconnected.
@@ -4050,60 +4065,60 @@ class ActionController::Live::Buffer < ::ActionDispatch::Response::Buffer
   # discarded. If this value is `false` (the default), a
   # ClientDisconnected exception will be raised.
   #
-  # source://actionpack//lib/action_controller/metal/live.rb#141
+  # source://actionpack//lib/action_controller/metal/live.rb#156
   def ignore_disconnect=(_arg0); end
 
-  # source://actionpack//lib/action_controller/metal/live.rb#208
+  # source://actionpack//lib/action_controller/metal/live.rb#223
   def on_error(&block); end
 
-  # source://actionpack//lib/action_controller/metal/live.rb#151
+  # source://actionpack//lib/action_controller/metal/live.rb#166
   def write(string); end
 
   # Same as +write+ but automatically include a newline at the end of the string.
   #
-  # source://actionpack//lib/action_controller/metal/live.rb#172
+  # source://actionpack//lib/action_controller/metal/live.rb#187
   def writeln(string); end
 
   private
 
-  # source://actionpack//lib/action_controller/metal/live.rb#228
+  # source://actionpack//lib/action_controller/metal/live.rb#243
   def build_queue(queue_size); end
 
-  # source://actionpack//lib/action_controller/metal/live.rb#217
+  # source://actionpack//lib/action_controller/metal/live.rb#232
   def each_chunk(&block); end
 
   class << self
     # Returns the value of attribute queue_size.
     #
-    # source://actionpack//lib/action_controller/metal/live.rb#131
+    # source://actionpack//lib/action_controller/metal/live.rb#146
     def queue_size; end
 
     # Sets the attribute queue_size
     #
     # @param value the value to set the attribute queue_size to.
     #
-    # source://actionpack//lib/action_controller/metal/live.rb#131
+    # source://actionpack//lib/action_controller/metal/live.rb#146
     def queue_size=(_arg0); end
   end
 end
 
-# source://actionpack//lib/action_controller/metal/live.rb#40
+# source://actionpack//lib/action_controller/metal/live.rb#55
 module ActionController::Live::ClassMethods
-  # source://actionpack//lib/action_controller/metal/live.rb#41
+  # source://actionpack//lib/action_controller/metal/live.rb#56
   def make_response!(request); end
 end
 
-# source://actionpack//lib/action_controller/metal/live.rb#124
+# source://actionpack//lib/action_controller/metal/live.rb#139
 class ActionController::Live::ClientDisconnected < ::RuntimeError; end
 
-# source://actionpack//lib/action_controller/metal/live.rb#233
+# source://actionpack//lib/action_controller/metal/live.rb#248
 class ActionController::Live::Response < ::ActionDispatch::Response
   private
 
-  # source://actionpack//lib/action_controller/metal/live.rb#235
+  # source://actionpack//lib/action_controller/metal/live.rb#250
   def before_committed; end
 
-  # source://actionpack//lib/action_controller/metal/live.rb#242
+  # source://actionpack//lib/action_controller/metal/live.rb#257
   def build_buffer(response, body); end
 end
 
@@ -4144,26 +4159,26 @@ end
 # Note: SSEs are not currently supported by IE. However, they are supported
 # by Chrome, Firefox, Opera, and Safari.
 #
-# source://actionpack//lib/action_controller/metal/live.rb#88
+# source://actionpack//lib/action_controller/metal/live.rb#103
 class ActionController::Live::SSE
   # @return [SSE] a new instance of SSE
   #
-  # source://actionpack//lib/action_controller/metal/live.rb#91
+  # source://actionpack//lib/action_controller/metal/live.rb#106
   def initialize(stream, options = T.unsafe(nil)); end
 
-  # source://actionpack//lib/action_controller/metal/live.rb#96
+  # source://actionpack//lib/action_controller/metal/live.rb#111
   def close; end
 
-  # source://actionpack//lib/action_controller/metal/live.rb#100
+  # source://actionpack//lib/action_controller/metal/live.rb#115
   def write(object, options = T.unsafe(nil)); end
 
   private
 
-  # source://actionpack//lib/action_controller/metal/live.rb#110
+  # source://actionpack//lib/action_controller/metal/live.rb#125
   def perform_write(json, options); end
 end
 
-# source://actionpack//lib/action_controller/metal/live.rb#89
+# source://actionpack//lib/action_controller/metal/live.rb#104
 ActionController::Live::SSE::PERMITTED_OPTIONS = T.let(T.unsafe(nil), Array)
 
 # source://actionpack//lib/action_controller/test_case.rb#173
@@ -4223,7 +4238,7 @@ class ActionController::LogSubscriber < ::ActiveSupport::LogSubscriber
   def write_fragment(event); end
 
   class << self
-    # source://activesupport/7.1.0.alpha-444df0eee1b537ecaa11509e819b071d4e87b519/lib/active_support/log_subscriber.rb#90
+    # source://activesupport/7.1.0.alpha-d8a8df3d854ac8eff636b5da44fda39ee1f2254f/lib/active_support/log_subscriber.rb#90
     def log_levels; end
   end
 end
@@ -4372,10 +4387,10 @@ class ActionController::Metal < ::AbstractController::Base
   #
   # The ActionDispatch::Request instance for the current request.
   #
-  # source://activesupport/7.1.0.alpha-444df0eee1b537ecaa11509e819b071d4e87b519/lib/active_support/core_ext/module/attr_internal.rb#33
+  # source://activesupport/7.1.0.alpha-d8a8df3d854ac8eff636b5da44fda39ee1f2254f/lib/active_support/core_ext/module/attr_internal.rb#33
   def request; end
 
-  # source://activesupport/7.1.0.alpha-444df0eee1b537ecaa11509e819b071d4e87b519/lib/active_support/core_ext/module/attr_internal.rb#33
+  # source://activesupport/7.1.0.alpha-d8a8df3d854ac8eff636b5da44fda39ee1f2254f/lib/active_support/core_ext/module/attr_internal.rb#33
   def request=(_arg0); end
 
   # source://actionpack//lib/action_controller/metal.rb#250
@@ -4385,7 +4400,7 @@ class ActionController::Metal < ::AbstractController::Base
   #
   # The ActionDispatch::Response instance for the current response.
   #
-  # source://activesupport/7.1.0.alpha-444df0eee1b537ecaa11509e819b071d4e87b519/lib/active_support/core_ext/module/attr_internal.rb#33
+  # source://activesupport/7.1.0.alpha-d8a8df3d854ac8eff636b5da44fda39ee1f2254f/lib/active_support/core_ext/module/attr_internal.rb#33
   def response; end
 
   # Assign the response and mark it as committed. No further processing will occur.
@@ -6468,7 +6483,7 @@ class ActionController::Renderer
   def new(env = T.unsafe(nil)); end
 
   # source://actionpack//lib/action_controller/renderer.rb#143
-  def normalize_env(env); end
+  def normalize_env(env, &block); end
 
   # Renders a template to a string, just like ActionController::Rendering#render_to_string.
   #
@@ -7904,7 +7919,7 @@ class ActionController::TestCase < ::ActiveSupport::TestCase
   def _controller_class?; end
 
   class << self
-    # source://activesupport/7.1.0.alpha-444df0eee1b537ecaa11509e819b071d4e87b519/lib/active_support/callbacks.rb#68
+    # source://activesupport/7.1.0.alpha-d8a8df3d854ac8eff636b5da44fda39ee1f2254f/lib/active_support/callbacks.rb#68
     def __callbacks; end
 
     # source://actionpack//lib/action_controller/test_case.rb#569
@@ -8683,35 +8698,35 @@ class ActionDispatch::Callbacks
   # source://actionpack//lib/action_dispatch/middleware/callbacks.rb#20
   def initialize(app); end
 
-  # source://activesupport/7.1.0.alpha-444df0eee1b537ecaa11509e819b071d4e87b519/lib/active_support/callbacks.rb#68
+  # source://activesupport/7.1.0.alpha-d8a8df3d854ac8eff636b5da44fda39ee1f2254f/lib/active_support/callbacks.rb#68
   def __callbacks; end
 
-  # source://activesupport/7.1.0.alpha-444df0eee1b537ecaa11509e819b071d4e87b519/lib/active_support/callbacks.rb#68
+  # source://activesupport/7.1.0.alpha-d8a8df3d854ac8eff636b5da44fda39ee1f2254f/lib/active_support/callbacks.rb#68
   def __callbacks?; end
 
-  # source://activesupport/7.1.0.alpha-444df0eee1b537ecaa11509e819b071d4e87b519/lib/active_support/callbacks.rb#958
+  # source://activesupport/7.1.0.alpha-d8a8df3d854ac8eff636b5da44fda39ee1f2254f/lib/active_support/callbacks.rb#958
   def _call_callbacks; end
 
-  # source://activesupport/7.1.0.alpha-444df0eee1b537ecaa11509e819b071d4e87b519/lib/active_support/callbacks.rb#946
+  # source://activesupport/7.1.0.alpha-d8a8df3d854ac8eff636b5da44fda39ee1f2254f/lib/active_support/callbacks.rb#946
   def _run_call_callbacks(&block); end
 
   # source://actionpack//lib/action_dispatch/middleware/callbacks.rb#24
   def call(env); end
 
   class << self
-    # source://activesupport/7.1.0.alpha-444df0eee1b537ecaa11509e819b071d4e87b519/lib/active_support/callbacks.rb#68
+    # source://activesupport/7.1.0.alpha-d8a8df3d854ac8eff636b5da44fda39ee1f2254f/lib/active_support/callbacks.rb#68
     def __callbacks; end
 
-    # source://activesupport/7.1.0.alpha-444df0eee1b537ecaa11509e819b071d4e87b519/lib/active_support/callbacks.rb#68
+    # source://activesupport/7.1.0.alpha-d8a8df3d854ac8eff636b5da44fda39ee1f2254f/lib/active_support/callbacks.rb#68
     def __callbacks=(value); end
 
-    # source://activesupport/7.1.0.alpha-444df0eee1b537ecaa11509e819b071d4e87b519/lib/active_support/callbacks.rb#68
+    # source://activesupport/7.1.0.alpha-d8a8df3d854ac8eff636b5da44fda39ee1f2254f/lib/active_support/callbacks.rb#68
     def __callbacks?; end
 
-    # source://activesupport/7.1.0.alpha-444df0eee1b537ecaa11509e819b071d4e87b519/lib/active_support/callbacks.rb#950
+    # source://activesupport/7.1.0.alpha-d8a8df3d854ac8eff636b5da44fda39ee1f2254f/lib/active_support/callbacks.rb#950
     def _call_callbacks; end
 
-    # source://activesupport/7.1.0.alpha-444df0eee1b537ecaa11509e819b071d4e87b519/lib/active_support/callbacks.rb#954
+    # source://activesupport/7.1.0.alpha-d8a8df3d854ac8eff636b5da44fda39ee1f2254f/lib/active_support/callbacks.rb#954
     def _call_callbacks=(value); end
 
     # source://actionpack//lib/action_dispatch/middleware/callbacks.rb#15
@@ -13575,7 +13590,7 @@ class ActionDispatch::LogSubscriber < ::ActiveSupport::LogSubscriber
   def redirect(event); end
 
   class << self
-    # source://activesupport/7.1.0.alpha-444df0eee1b537ecaa11509e819b071d4e87b519/lib/active_support/log_subscriber.rb#90
+    # source://activesupport/7.1.0.alpha-d8a8df3d854ac8eff636b5da44fda39ee1f2254f/lib/active_support/log_subscriber.rb#90
     def log_levels; end
   end
 end
