@@ -671,55 +671,58 @@ class ActiveSupport::Cache::FileStore < ::ActiveSupport::Cache::Store
   # source://activesupport//lib/active_support/cache/file_store.rb#58
   def increment(name, amount = T.unsafe(nil), options = T.unsafe(nil)); end
 
+  # source://activesupport//lib/active_support/cache/file_store.rb#88
+  def inspect; end
+
   private
 
   # Delete empty directories in the cache.
   #
-  # source://activesupport//lib/active_support/cache/file_store.rb#176
+  # source://activesupport//lib/active_support/cache/file_store.rb#180
   def delete_empty_directories(dir); end
 
-  # source://activesupport//lib/active_support/cache/file_store.rb#114
+  # source://activesupport//lib/active_support/cache/file_store.rb#118
   def delete_entry(key, **options); end
 
   # Make sure a file path's directories exist.
   #
-  # source://activesupport//lib/active_support/cache/file_store.rb#185
+  # source://activesupport//lib/active_support/cache/file_store.rb#189
   def ensure_cache_path(path); end
 
   # Translate a file path into a key.
   #
-  # source://activesupport//lib/active_support/cache/file_store.rb#170
+  # source://activesupport//lib/active_support/cache/file_store.rb#174
   def file_path_key(path); end
 
   # Lock a file for a block so only one process can modify it at a time.
   #
-  # source://activesupport//lib/active_support/cache/file_store.rb#129
+  # source://activesupport//lib/active_support/cache/file_store.rb#133
   def lock_file(file_name, &block); end
 
   # Modifies the amount of an integer value that is stored in the cache.
   # If the key is not found it is created and set to +amount+.
   #
-  # source://activesupport//lib/active_support/cache/file_store.rb#203
+  # source://activesupport//lib/active_support/cache/file_store.rb#207
   def modify_value(name, amount, options); end
 
   # Translate a key into a file path.
   #
-  # source://activesupport//lib/active_support/cache/file_store.rb#143
+  # source://activesupport//lib/active_support/cache/file_store.rb#147
   def normalize_key(key, options); end
 
-  # source://activesupport//lib/active_support/cache/file_store.rb#89
+  # source://activesupport//lib/active_support/cache/file_store.rb#93
   def read_entry(key, **options); end
 
-  # source://activesupport//lib/active_support/cache/file_store.rb#96
+  # source://activesupport//lib/active_support/cache/file_store.rb#100
   def read_serialized_entry(key, **_arg1); end
 
-  # source://activesupport//lib/active_support/cache/file_store.rb#189
+  # source://activesupport//lib/active_support/cache/file_store.rb#193
   def search_dir(dir, &callback); end
 
-  # source://activesupport//lib/active_support/cache/file_store.rb#103
+  # source://activesupport//lib/active_support/cache/file_store.rb#107
   def write_entry(key, entry, **options); end
 
-  # source://activesupport//lib/active_support/cache/file_store.rb#107
+  # source://activesupport//lib/active_support/cache/file_store.rb#111
   def write_serialized_entry(key, payload, **options); end
 
   class << self
@@ -932,18 +935,21 @@ class ActiveSupport::Cache::NullStore < ::ActiveSupport::Cache::Store
   # source://activesupport//lib/active_support/cache/strategy/local_cache.rb#93
   def increment(name, amount = T.unsafe(nil), options = T.unsafe(nil)); end
 
+  # source://activesupport//lib/active_support/cache/null_store.rb#35
+  def inspect; end
+
   private
 
   # source://activesupport//lib/active_support/cache/strategy/local_cache.rb#155
   def delete_entry(key, **_arg1); end
 
-  # source://activesupport//lib/active_support/cache/null_store.rb#36
+  # source://activesupport//lib/active_support/cache/null_store.rb#40
   def read_entry(key, **s); end
 
   # source://activesupport//lib/active_support/cache/strategy/local_cache.rb#116
   def read_serialized_entry(key, raw: T.unsafe(nil), **options); end
 
-  # source://activesupport//lib/active_support/cache/null_store.rb#43
+  # source://activesupport//lib/active_support/cache/null_store.rb#47
   def write_entry(key, entry, **_arg2); end
 
   # source://activesupport//lib/active_support/cache/strategy/local_cache.rb#146
@@ -5080,7 +5086,7 @@ class ActiveSupport::EncryptedConfiguration < ::ActiveSupport::EncryptedFile
   # source://activesupport//lib/active_support/encrypted_configuration.rb#43
   def fetch(*_arg0, **_arg1, &_arg2); end
 
-  # source://activesupport//lib/active_support/core_ext/module/delegation.rb#330
+  # source://activesupport//lib/active_support/core_ext/module/delegation.rb#331
   def method_missing(method, *args, **_arg2, &block); end
 
   # Reads the file and returns the decrypted content. See EncryptedFile#read.
@@ -5102,7 +5108,7 @@ class ActiveSupport::EncryptedConfiguration < ::ActiveSupport::EncryptedFile
   # source://activesupport//lib/active_support/encrypted_configuration.rb#88
   def options; end
 
-  # source://activesupport//lib/active_support/core_ext/module/delegation.rb#322
+  # source://activesupport//lib/active_support/core_ext/module/delegation.rb#323
   def respond_to_missing?(name, include_private = T.unsafe(nil)); end
 end
 
@@ -7716,26 +7722,49 @@ class ActiveSupport::MessageEncryptor < ::ActiveSupport::Messages::Codec
   # key by using ActiveSupport::KeyGenerator or a similar key
   # derivation function.
   #
-  # First additional parameter is used as the signature key for MessageVerifier.
-  # This allows you to specify keys to encrypt and sign data.
+  # The first additional parameter is used as the signature key for
+  # MessageVerifier. This allows you to specify keys to encrypt and sign
+  # data. Ignored when using an AEAD cipher like 'aes-256-gcm'.
   #
   #    ActiveSupport::MessageEncryptor.new('secret', 'signature_secret')
   #
-  # Options:
-  # * <tt>:cipher</tt>     - Cipher to use. Can be any cipher returned by
-  #   <tt>OpenSSL::Cipher.ciphers</tt>. Default is 'aes-256-gcm'.
-  # * <tt>:digest</tt> - String of digest to use for signing. Default is
-  #   +SHA1+. Ignored when using an AEAD cipher like 'aes-256-gcm'.
-  # * <tt>:serializer</tt> - Object serializer to use. Default is +JSON+.
-  # * <tt>:url_safe</tt> - Whether to encode messages using a URL-safe
-  #   encoding. Default is +false+ for backward compatibility.
+  # ==== Options
+  #
+  # [+:cipher+]
+  #   Cipher to use. Can be any cipher returned by +OpenSSL::Cipher.ciphers+.
+  #   Default is 'aes-256-gcm'.
+  #
+  # [+:digest+]
+  #   Digest used for signing. Ignored when using an AEAD cipher like
+  #   'aes-256-gcm'.
+  #
+  # [+:serializer+]
+  #   By default, MessageEncryptor uses JSON to serialize the message. If
+  #   you want to use another serialization method, you can pass an object
+  #   that responds to +load+ and +dump+, like +Marshal+ or +YAML+.
+  #   +:marshal+, +:hybrid+, and +:json+ are also supported.
+  #
+  # [+:url_safe+]
+  #   By default, MessageEncryptor generates RFC 4648 compliant strings
+  #   which are not URL-safe. In other words, they can contain "+" and "/".
+  #   If you want to generate URL-safe strings (in compliance with "Base 64
+  #   Encoding with URL and Filename Safe Alphabet" in RFC 4648), you can
+  #   pass +true+.
+  #
+  # [+:force_legacy_metadata_serializer+]
+  #   Whether to use the legacy metadata serializer, which serializes the
+  #   message first, then wraps it in an envelope which is also serialized. This
+  #   was the default in \Rails 7.0 and below.
+  #
+  #   If you don't pass a truthy value, the default is set using
+  #   +config.active_support.use_message_serializer_for_metadata+.
   #
   # @return [MessageEncryptor] a new instance of MessageEncryptor
   #
   # source://activesupport//lib/active_support/messages/rotator.rb#6
   def initialize(*args, on_rotation: T.unsafe(nil), **options); end
 
-  # source://activesupport//lib/active_support/message_encryptor.rb#212
+  # source://activesupport//lib/active_support/message_encryptor.rb#239
   def create_message(value, **options); end
 
   # Decrypt and verify a message. We need to verify the message in order to
@@ -7755,7 +7784,7 @@ class ActiveSupport::MessageEncryptor < ::ActiveSupport::Messages::Codec
   #     encryptor.decrypt_and_verify(message)                      # => "bye"
   #     encryptor.decrypt_and_verify(message, purpose: "greeting") # => nil
   #
-  # source://activesupport//lib/active_support/message_encryptor.rb#197
+  # source://activesupport//lib/active_support/message_encryptor.rb#224
   def decrypt_and_verify(message, **options); end
 
   # Encrypt and sign a message. We need to sign the message in order to avoid
@@ -7786,7 +7815,7 @@ class ActiveSupport::MessageEncryptor < ::ActiveSupport::Messages::Codec
   #   specified when verifying the message; otherwise, verification will fail.
   #   (See #decrypt_and_verify.)
   #
-  # source://activesupport//lib/active_support/message_encryptor.rb#176
+  # source://activesupport//lib/active_support/message_encryptor.rb#203
   def encrypt_and_sign(value, **options); end
 
   # source://activesupport//lib/active_support/messages/rotator.rb#23
@@ -7796,45 +7825,45 @@ class ActiveSupport::MessageEncryptor < ::ActiveSupport::Messages::Codec
 
   # Returns the value of attribute aead_mode.
   #
-  # source://activesupport//lib/active_support/message_encryptor.rb#323
+  # source://activesupport//lib/active_support/message_encryptor.rb#350
   def aead_mode; end
 
   # Returns the value of attribute aead_mode.
   #
-  # source://activesupport//lib/active_support/message_encryptor.rb#323
+  # source://activesupport//lib/active_support/message_encryptor.rb#350
   def aead_mode?; end
 
-  # source://activesupport//lib/active_support/message_encryptor.rb#247
+  # source://activesupport//lib/active_support/message_encryptor.rb#274
   def decrypt(encrypted_message); end
 
-  # source://activesupport//lib/active_support/message_encryptor.rb#229
+  # source://activesupport//lib/active_support/message_encryptor.rb#256
   def encrypt(data); end
 
-  # source://activesupport//lib/active_support/message_encryptor.rb#292
+  # source://activesupport//lib/active_support/message_encryptor.rb#319
   def extract_part(encrypted_message, rindex, length); end
 
-  # source://activesupport//lib/active_support/message_encryptor.rb#302
+  # source://activesupport//lib/active_support/message_encryptor.rb#329
   def extract_parts(encrypted_message); end
 
-  # source://activesupport//lib/active_support/message_encryptor.rb#288
+  # source://activesupport//lib/active_support/message_encryptor.rb#315
   def join_parts(parts); end
 
-  # source://activesupport//lib/active_support/message_encryptor.rb#272
+  # source://activesupport//lib/active_support/message_encryptor.rb#299
   def length_after_encode(length_before_encode); end
 
-  # source://activesupport//lib/active_support/message_encryptor.rb#284
+  # source://activesupport//lib/active_support/message_encryptor.rb#311
   def length_of_encoded_auth_tag; end
 
-  # source://activesupport//lib/active_support/message_encryptor.rb#280
+  # source://activesupport//lib/active_support/message_encryptor.rb#307
   def length_of_encoded_iv; end
 
-  # source://activesupport//lib/active_support/message_encryptor.rb#319
+  # source://activesupport//lib/active_support/message_encryptor.rb#346
   def new_cipher; end
 
-  # source://activesupport//lib/active_support/message_encryptor.rb#221
+  # source://activesupport//lib/active_support/message_encryptor.rb#248
   def sign(data); end
 
-  # source://activesupport//lib/active_support/message_encryptor.rb#225
+  # source://activesupport//lib/active_support/message_encryptor.rb#252
   def verify(data); end
 
   class << self
@@ -7849,7 +7878,7 @@ class ActiveSupport::MessageEncryptor < ::ActiveSupport::Messages::Codec
 
     # Given a cipher, returns the key length of the cipher to help generate the key of desired size
     #
-    # source://activesupport//lib/active_support/message_encryptor.rb#208
+    # source://activesupport//lib/active_support/message_encryptor.rb#235
     def key_len(cipher = T.unsafe(nil)); end
 
     # source://activesupport//lib/active_support/message_encryptor.rb#91
@@ -7953,20 +7982,6 @@ end
 # Thereafter, the +verified+ method returns +nil+ while +verify+ raises
 # <tt>ActiveSupport::MessageVerifier::InvalidSignature</tt>.
 #
-# === Alternative serializers
-#
-# By default MessageVerifier uses JSON to serialize the message. If you want to use
-# another serialization method, you can set the serializer in the options
-# hash upon initialization:
-#
-#   @verifier = ActiveSupport::MessageVerifier.new("secret", serializer: YAML)
-#
-# +MessageVerifier+ creates HMAC signatures using the SHA1 hash algorithm by default.
-# If you want to use a different hash algorithm, you can change it by providing
-# +:digest+ key as an option while initializing the verifier:
-#
-#   @verifier = ActiveSupport::MessageVerifier.new("secret", digest: "SHA256")
-#
 # === Rotating keys
 #
 # MessageVerifier also supports rotating out old configurations by falling
@@ -7991,28 +8006,45 @@ end
 #
 #   verifier.rotate(old_secret, digest: "SHA256", serializer: Marshal)
 #
-# === Generating URL-safe strings
-#
-# By default MessageVerifier generates RFC 4648 compliant strings which are
-# not URL-safe. In other words, they can contain "+" and "/". If you want to
-# generate URL-safe strings (in compliance with "Base 64 Encoding with URL and
-# Filename Safe Alphabet" in RFC 4648), you can pass <tt>url_safe: true</tt>
-# to the constructor:
-#
-#   @verifier = ActiveSupport::MessageVerifier.new("secret", url_safe: true)
-#   @verifier.generate("signed message") #=> URL-safe string
-#
-# source://activesupport//lib/active_support/message_verifier.rb#121
+# source://activesupport//lib/active_support/message_verifier.rb#96
 class ActiveSupport::MessageVerifier < ::ActiveSupport::Messages::Codec
   include ::ActiveSupport::Messages::Rotator
 
+  # Initialize a new MessageVerifier with a secret for the signature.
+  #
+  # ==== Options
+  #
+  # [+:digest+]
+  #   Digest used for signing. The default is <tt>"SHA1"</tt>. See
+  #   +OpenSSL::Digest+ for alternatives.
+  #
+  # [+:serializer+]
+  #   By default, MessageVerifier uses JSON to serialize the message. If you want
+  #   to use another serialization method, you can pass an object that responds
+  #   to +load+ and +dump+, like +Marshal+ or +YAML+.
+  #   +:marshal+, +:hybrid+, and +:json+ are also supported.
+  #
+  # [+:url_safe+]
+  #   By default, MessageVerifier generates RFC 4648 compliant strings which are
+  #   not URL-safe. In other words, they can contain "+" and "/". If you want to
+  #   generate URL-safe strings (in compliance with "Base 64 Encoding with URL
+  #   and Filename Safe Alphabet" in RFC 4648), you can pass +true+.
+  #
+  # [+:force_legacy_metadata_serializer+]
+  #   Whether to use the legacy metadata serializer, which serializes the
+  #   message first, then wraps it in an envelope which is also serialized. This
+  #   was the default in \Rails 7.0 and below.
+  #
+  #   If you don't pass a truthy value, the default is set using
+  #   +config.active_support.use_message_serializer_for_metadata+.
+  #
   # @raise [ArgumentError]
   # @return [MessageVerifier] a new instance of MessageVerifier
   #
   # source://activesupport//lib/active_support/messages/rotator.rb#6
   def initialize(*args, on_rotation: T.unsafe(nil), **options); end
 
-  # source://activesupport//lib/active_support/message_verifier.rb#274
+  # source://activesupport//lib/active_support/message_verifier.rb#280
   def create_message(value, **options); end
 
   # Generates a signed message for the provided value.
@@ -8050,7 +8082,7 @@ class ActiveSupport::MessageVerifier < ::ActiveSupport::Messages::Codec
   #   specified when verifying the message; otherwise, verification will fail.
   #   (See #verified and #verify.)
   #
-  # source://activesupport//lib/active_support/message_verifier.rb#270
+  # source://activesupport//lib/active_support/message_verifier.rb#276
   def generate(value, **options); end
 
   # source://activesupport//lib/active_support/messages/rotator.rb#23
@@ -8068,7 +8100,7 @@ class ActiveSupport::MessageVerifier < ::ActiveSupport::Messages::Codec
   #
   # @return [Boolean]
   #
-  # source://activesupport//lib/active_support/message_verifier.rb#147
+  # source://activesupport//lib/active_support/message_verifier.rb#153
   def valid_message?(message); end
 
   # Decodes the signed message using the +MessageVerifier+'s secret.
@@ -8108,7 +8140,7 @@ class ActiveSupport::MessageVerifier < ::ActiveSupport::Messages::Codec
   #     verifier.verified(message)                      # => "bye"
   #     verifier.verified(message, purpose: "greeting") # => nil
   #
-  # source://activesupport//lib/active_support/message_verifier.rb#188
+  # source://activesupport//lib/active_support/message_verifier.rb#194
   def verified(message, **options); end
 
   # Decodes the signed message using the +MessageVerifier+'s secret.
@@ -8139,52 +8171,52 @@ class ActiveSupport::MessageVerifier < ::ActiveSupport::Messages::Codec
   #     verifier.verify(message)                      # => "bye"
   #     verifier.verify(message, purpose: "greeting") # => raises InvalidSignature
   #
-  # source://activesupport//lib/active_support/message_verifier.rb#226
+  # source://activesupport//lib/active_support/message_verifier.rb#232
   def verify(message, **options); end
 
   private
 
-  # source://activesupport//lib/active_support/message_verifier.rb#309
+  # source://activesupport//lib/active_support/message_verifier.rb#315
   def digest_length_in_hex; end
 
   # @return [Boolean]
   #
-  # source://activesupport//lib/active_support/message_verifier.rb#326
+  # source://activesupport//lib/active_support/message_verifier.rb#332
   def digest_matches_data?(digest, data); end
 
-  # source://activesupport//lib/active_support/message_verifier.rb#288
+  # source://activesupport//lib/active_support/message_verifier.rb#294
   def extract_encoded(signed); end
 
-  # source://activesupport//lib/active_support/message_verifier.rb#305
+  # source://activesupport//lib/active_support/message_verifier.rb#311
   def generate_digest(data); end
 
   # @return [Boolean]
   #
-  # source://activesupport//lib/active_support/message_verifier.rb#317
+  # source://activesupport//lib/active_support/message_verifier.rb#323
   def separator_at?(signed_message, index); end
 
-  # source://activesupport//lib/active_support/message_verifier.rb#321
+  # source://activesupport//lib/active_support/message_verifier.rb#327
   def separator_index_for(signed_message); end
 
-  # source://activesupport//lib/active_support/message_verifier.rb#283
+  # source://activesupport//lib/active_support/message_verifier.rb#289
   def sign_encoded(encoded); end
 
   class << self
-    # source://activesupport//lib/active_support/message_verifier.rb#129
+    # source://activesupport//lib/active_support/message_verifier.rb#104
     def default_message_verifier_serializer; end
 
-    # source://activesupport//lib/active_support/message_verifier.rb#129
+    # source://activesupport//lib/active_support/message_verifier.rb#104
     def default_message_verifier_serializer=(val); end
   end
 end
 
-# source://activesupport//lib/active_support/message_verifier.rb#124
+# source://activesupport//lib/active_support/message_verifier.rb#99
 class ActiveSupport::MessageVerifier::InvalidSignature < ::StandardError; end
 
-# source://activesupport//lib/active_support/message_verifier.rb#126
+# source://activesupport//lib/active_support/message_verifier.rb#101
 ActiveSupport::MessageVerifier::SEPARATOR = T.let(T.unsafe(nil), String)
 
-# source://activesupport//lib/active_support/message_verifier.rb#127
+# source://activesupport//lib/active_support/message_verifier.rb#102
 ActiveSupport::MessageVerifier::SEPARATOR_LENGTH = T.let(T.unsafe(nil), Integer)
 
 # source://activesupport//lib/active_support/message_verifiers.rb#28
@@ -8205,81 +8237,86 @@ class ActiveSupport::Messages::Codec
   # @return [Codec] a new instance of Codec
   #
   # source://activesupport//lib/active_support/messages/codec.rb#10
-  def initialize(serializer:, url_safe:); end
+  def initialize(serializer:, url_safe:, force_legacy_metadata_serializer: T.unsafe(nil)); end
 
   private
 
-  # source://activesupport//lib/active_support/messages/codec.rb#49
+  # source://activesupport//lib/active_support/messages/codec.rb#50
   def catch_and_ignore(throwable, &block); end
 
-  # source://activesupport//lib/active_support/messages/codec.rb#56
+  # source://activesupport//lib/active_support/messages/codec.rb#57
   def catch_and_raise(throwable, as: T.unsafe(nil), &block); end
 
-  # source://activesupport//lib/active_support/messages/codec.rb#33
+  # source://activesupport//lib/active_support/messages/codec.rb#34
   def decode(encoded, url_safe: T.unsafe(nil)); end
 
-  # source://activesupport//lib/active_support/messages/codec.rb#43
+  # source://activesupport//lib/active_support/messages/codec.rb#44
   def deserialize(serialized); end
 
-  # source://activesupport//lib/active_support/messages/codec.rb#29
+  # source://activesupport//lib/active_support/messages/codec.rb#30
   def encode(data, url_safe: T.unsafe(nil)); end
 
-  # source://activesupport//lib/active_support/messages/codec.rb#39
+  # source://activesupport//lib/active_support/messages/codec.rb#40
   def serialize(data); end
 
   # Returns the value of attribute serializer.
   #
-  # source://activesupport//lib/active_support/messages/codec.rb#27
+  # source://activesupport//lib/active_support/messages/codec.rb#28
   def serializer; end
+
+  # @return [Boolean]
+  #
+  # source://activesupport//lib/active_support/messages/codec.rb#65
+  def use_message_serializer_for_metadata?; end
 end
 
 # source://activesupport//lib/active_support/messages/metadata.rb#8
 module ActiveSupport::Messages::Metadata
   private
 
-  # source://activesupport//lib/active_support/messages/metadata.rb#104
+  # source://activesupport//lib/active_support/messages/metadata.rb#117
   def deserialize_from_json(serialized); end
 
-  # source://activesupport//lib/active_support/messages/metadata.rb#117
+  # source://activesupport//lib/active_support/messages/metadata.rb#130
   def deserialize_from_json_safe_string(string); end
 
-  # source://activesupport//lib/active_support/messages/metadata.rb#32
+  # source://activesupport//lib/active_support/messages/metadata.rb#39
   def deserialize_with_metadata(message, **expected_metadata); end
 
   # @return [Boolean]
   #
-  # source://activesupport//lib/active_support/messages/metadata.rb#78
+  # source://activesupport//lib/active_support/messages/metadata.rb#85
   def dual_serialized_metadata_envelope_json?(string); end
 
-  # source://activesupport//lib/active_support/messages/metadata.rb#60
+  # source://activesupport//lib/active_support/messages/metadata.rb#67
   def extract_from_metadata_envelope(envelope, purpose: T.unsafe(nil)); end
 
   # @return [Boolean]
   #
-  # source://activesupport//lib/active_support/messages/metadata.rb#74
+  # source://activesupport//lib/active_support/messages/metadata.rb#81
   def metadata_envelope?(object); end
 
-  # source://activesupport//lib/active_support/messages/metadata.rb#90
+  # source://activesupport//lib/active_support/messages/metadata.rb#103
   def parse_expiry(expires_at); end
 
-  # source://activesupport//lib/active_support/messages/metadata.rb#82
+  # source://activesupport//lib/active_support/messages/metadata.rb#89
   def pick_expiry(expires_at, expires_in); end
 
-  # source://activesupport//lib/active_support/messages/metadata.rb#100
+  # source://activesupport//lib/active_support/messages/metadata.rb#113
   def serialize_to_json(data); end
 
-  # source://activesupport//lib/active_support/messages/metadata.rb#113
+  # source://activesupport//lib/active_support/messages/metadata.rb#126
   def serialize_to_json_safe_string(data); end
 
-  # source://activesupport//lib/active_support/messages/metadata.rb#19
+  # source://activesupport//lib/active_support/messages/metadata.rb#26
   def serialize_with_metadata(data, **metadata); end
 
   # @return [Boolean]
   #
-  # source://activesupport//lib/active_support/messages/metadata.rb#49
+  # source://activesupport//lib/active_support/messages/metadata.rb#56
   def use_message_serializer_for_metadata?; end
 
-  # source://activesupport//lib/active_support/messages/metadata.rb#53
+  # source://activesupport//lib/active_support/messages/metadata.rb#60
   def wrap_in_metadata_envelope(hash, expires_at: T.unsafe(nil), expires_in: T.unsafe(nil), purpose: T.unsafe(nil)); end
 
   class << self
@@ -8293,6 +8330,9 @@ end
 
 # source://activesupport//lib/active_support/messages/metadata.rb#11
 ActiveSupport::Messages::Metadata::ENVELOPE_SERIALIZERS = T.let(T.unsafe(nil), Array)
+
+# source://activesupport//lib/active_support/messages/metadata.rb#18
+ActiveSupport::Messages::Metadata::TIMESTAMP_SERIALIZERS = T.let(T.unsafe(nil), Array)
 
 # source://activesupport//lib/active_support/messages/rotation_configuration.rb#5
 class ActiveSupport::Messages::RotationConfiguration
@@ -9138,11 +9178,11 @@ class ActiveSupport::Notifications::Fanout::EventedGroup < ::ActiveSupport::Noti
   def start(name, id, payload); end
 end
 
-# A +Handle+ is used to record the start and finish time of event
+# A +Handle+ is used to record the start and finish time of event.
 #
-# Both #start and #finish must each be called exactly once
+# Both #start and #finish must each be called exactly once.
 #
-# Where possible, it's best to the block form, ActiveSupport::Notifications.instrument.
+# Where possible, it's best to use the block form: ActiveSupport::Notifications.instrument.
 # +Handle+ is a low-level API intended for cases where the block form can't be used.
 #
 #   handle = ActiveSupport::Notifications.instrumenter.build_handle("my.event", {})
@@ -17563,7 +17603,7 @@ class Module
   # <tt>Marshal.dump(object)</tt>, should the delegation target method
   # of <tt>object</tt> add or remove instance variables.
   #
-  # source://activesupport//lib/active_support/core_ext/module/delegation.rb#317
+  # source://activesupport//lib/active_support/core_ext/module/delegation.rb#318
   def delegate_missing_to(target, allow_nil: T.unsafe(nil)); end
 
   # deprecate :foo, deprecator: MyLib.deprecator
