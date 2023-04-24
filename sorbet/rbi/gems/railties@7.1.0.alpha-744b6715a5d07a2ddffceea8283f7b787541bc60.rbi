@@ -1412,10 +1412,10 @@ class Rails::Application::RoutesReloader
   # source://railties//lib/rails/application/routes_reloader.rb#15
   def initialize; end
 
-  # source://activesupport/7.1.0.alpha-444df0eee1b537ecaa11509e819b071d4e87b519/lib/active_support/callbacks.rb#68
+  # source://activesupport/7.1.0.alpha-744b6715a5d07a2ddffceea8283f7b787541bc60/lib/active_support/callbacks.rb#70
   def __callbacks; end
 
-  # source://activesupport/7.1.0.alpha-444df0eee1b537ecaa11509e819b071d4e87b519/lib/active_support/callbacks.rb#68
+  # source://activesupport/7.1.0.alpha-744b6715a5d07a2ddffceea8283f7b787541bc60/lib/active_support/callbacks.rb#70
   def __callbacks?; end
 
   # Returns the value of attribute eager_load.
@@ -1481,13 +1481,13 @@ class Rails::Application::RoutesReloader
   def updater; end
 
   class << self
-    # source://activesupport/7.1.0.alpha-444df0eee1b537ecaa11509e819b071d4e87b519/lib/active_support/callbacks.rb#68
+    # source://activesupport/7.1.0.alpha-744b6715a5d07a2ddffceea8283f7b787541bc60/lib/active_support/callbacks.rb#70
     def __callbacks; end
 
-    # source://activesupport/7.1.0.alpha-444df0eee1b537ecaa11509e819b071d4e87b519/lib/active_support/callbacks.rb#68
+    # source://activesupport/7.1.0.alpha-744b6715a5d07a2ddffceea8283f7b787541bc60/lib/active_support/callbacks.rb#70
     def __callbacks=(value); end
 
-    # source://activesupport/7.1.0.alpha-444df0eee1b537ecaa11509e819b071d4e87b519/lib/active_support/callbacks.rb#68
+    # source://activesupport/7.1.0.alpha-744b6715a5d07a2ddffceea8283f7b787541bc60/lib/active_support/callbacks.rb#70
     def __callbacks?; end
   end
 end
@@ -1496,7 +1496,7 @@ end
 class Rails::ApplicationController < ::ActionController::Base
   private
 
-  # source://actionview/7.1.0.alpha-444df0eee1b537ecaa11509e819b071d4e87b519/lib/action_view/layouts.rb#330
+  # source://actionview/7.1.0.alpha-744b6715a5d07a2ddffceea8283f7b787541bc60/lib/action_view/layouts.rb#330
   def _layout(lookup_context, formats); end
 
   def _layout_from_proc; end
@@ -1513,16 +1513,16 @@ class Rails::ApplicationController < ::ActionController::Base
   def require_local!; end
 
   class << self
-    # source://activesupport/7.1.0.alpha-444df0eee1b537ecaa11509e819b071d4e87b519/lib/active_support/callbacks.rb#68
+    # source://activesupport/7.1.0.alpha-744b6715a5d07a2ddffceea8283f7b787541bc60/lib/active_support/callbacks.rb#70
     def __callbacks; end
 
-    # source://actionview/7.1.0.alpha-444df0eee1b537ecaa11509e819b071d4e87b519/lib/action_view/layouts.rb#211
+    # source://actionview/7.1.0.alpha-744b6715a5d07a2ddffceea8283f7b787541bc60/lib/action_view/layouts.rb#211
     def _layout; end
 
-    # source://actionview/7.1.0.alpha-444df0eee1b537ecaa11509e819b071d4e87b519/lib/action_view/layouts.rb#212
+    # source://actionview/7.1.0.alpha-744b6715a5d07a2ddffceea8283f7b787541bc60/lib/action_view/layouts.rb#212
     def _layout_conditions; end
 
-    # source://actionpack/7.1.0.alpha-444df0eee1b537ecaa11509e819b071d4e87b519/lib/action_controller/metal.rb#254
+    # source://actionpack/7.1.0.alpha-744b6715a5d07a2ddffceea8283f7b787541bc60/lib/action_controller/metal.rb#258
     def middleware_stack; end
   end
 end
@@ -2135,16 +2135,16 @@ class Rails::Engine < ::Rails::Railtie
   # source://railties//lib/rails/engine.rb#432
   def initialize; end
 
-  # source://activesupport/7.1.0.alpha-444df0eee1b537ecaa11509e819b071d4e87b519/lib/active_support/callbacks.rb#68
+  # source://activesupport/7.1.0.alpha-744b6715a5d07a2ddffceea8283f7b787541bc60/lib/active_support/callbacks.rb#70
   def __callbacks; end
 
-  # source://activesupport/7.1.0.alpha-444df0eee1b537ecaa11509e819b071d4e87b519/lib/active_support/callbacks.rb#68
+  # source://activesupport/7.1.0.alpha-744b6715a5d07a2ddffceea8283f7b787541bc60/lib/active_support/callbacks.rb#70
   def __callbacks?; end
 
-  # source://activesupport/7.1.0.alpha-444df0eee1b537ecaa11509e819b071d4e87b519/lib/active_support/callbacks.rb#958
+  # source://activesupport/7.1.0.alpha-744b6715a5d07a2ddffceea8283f7b787541bc60/lib/active_support/callbacks.rb#960
   def _load_seed_callbacks; end
 
-  # source://activesupport/7.1.0.alpha-444df0eee1b537ecaa11509e819b071d4e87b519/lib/active_support/callbacks.rb#946
+  # source://activesupport/7.1.0.alpha-744b6715a5d07a2ddffceea8283f7b787541bc60/lib/active_support/callbacks.rb#948
   def _run_load_seed_callbacks(&block); end
 
   # Returns the underlying Rack application for this engine.
@@ -2190,7 +2190,7 @@ class Rails::Engine < ::Rails::Railtie
   def helpers_paths; end
 
   # source://railties//lib/rails/engine.rb#430
-  def isolated?; end
+  def isolated?(&block); end
 
   # Load console and invoke the registered hooks.
   # Check Rails::Railtie.console for more info.
@@ -2287,19 +2287,19 @@ class Rails::Engine < ::Rails::Railtie
   def load_config_initializer(initializer); end
 
   class << self
-    # source://activesupport/7.1.0.alpha-444df0eee1b537ecaa11509e819b071d4e87b519/lib/active_support/callbacks.rb#68
+    # source://activesupport/7.1.0.alpha-744b6715a5d07a2ddffceea8283f7b787541bc60/lib/active_support/callbacks.rb#70
     def __callbacks; end
 
-    # source://activesupport/7.1.0.alpha-444df0eee1b537ecaa11509e819b071d4e87b519/lib/active_support/callbacks.rb#68
+    # source://activesupport/7.1.0.alpha-744b6715a5d07a2ddffceea8283f7b787541bc60/lib/active_support/callbacks.rb#70
     def __callbacks=(value); end
 
-    # source://activesupport/7.1.0.alpha-444df0eee1b537ecaa11509e819b071d4e87b519/lib/active_support/callbacks.rb#68
+    # source://activesupport/7.1.0.alpha-744b6715a5d07a2ddffceea8283f7b787541bc60/lib/active_support/callbacks.rb#70
     def __callbacks?; end
 
-    # source://activesupport/7.1.0.alpha-444df0eee1b537ecaa11509e819b071d4e87b519/lib/active_support/callbacks.rb#950
+    # source://activesupport/7.1.0.alpha-744b6715a5d07a2ddffceea8283f7b787541bc60/lib/active_support/callbacks.rb#952
     def _load_seed_callbacks; end
 
-    # source://activesupport/7.1.0.alpha-444df0eee1b537ecaa11509e819b071d4e87b519/lib/active_support/callbacks.rb#954
+    # source://activesupport/7.1.0.alpha-744b6715a5d07a2ddffceea8283f7b787541bc60/lib/active_support/callbacks.rb#956
     def _load_seed_callbacks=(value); end
 
     # Returns the value of attribute called_from.
@@ -2511,7 +2511,7 @@ class Rails::HealthController < ::ActionController::Base
 
   private
 
-  # source://actionview/7.1.0.alpha-444df0eee1b537ecaa11509e819b071d4e87b519/lib/action_view/layouts.rb#330
+  # source://actionview/7.1.0.alpha-744b6715a5d07a2ddffceea8283f7b787541bc60/lib/action_view/layouts.rb#330
   def _layout(lookup_context, formats); end
 
   def _layout_from_proc; end
@@ -2526,10 +2526,10 @@ class Rails::HealthController < ::ActionController::Base
   def render_up; end
 
   class << self
-    # source://actionpack/7.1.0.alpha-444df0eee1b537ecaa11509e819b071d4e87b519/lib/action_controller/metal.rb#254
+    # source://actionpack/7.1.0.alpha-744b6715a5d07a2ddffceea8283f7b787541bc60/lib/action_controller/metal.rb#258
     def middleware_stack; end
 
-    # source://activesupport/7.1.0.alpha-444df0eee1b537ecaa11509e819b071d4e87b519/lib/active_support/rescuable.rb#13
+    # source://activesupport/7.1.0.alpha-744b6715a5d07a2ddffceea8283f7b787541bc60/lib/active_support/rescuable.rb#15
     def rescue_handlers; end
   end
 end
@@ -2580,7 +2580,7 @@ class Rails::InfoController < ::Rails::ApplicationController
 
   private
 
-  # source://actionview/7.1.0.alpha-444df0eee1b537ecaa11509e819b071d4e87b519/lib/action_view/layouts.rb#330
+  # source://actionview/7.1.0.alpha-744b6715a5d07a2ddffceea8283f7b787541bc60/lib/action_view/layouts.rb#330
   def _layout(lookup_context, formats); end
 
   # source://railties//lib/rails/info_controller.rb#8
@@ -2590,16 +2590,16 @@ class Rails::InfoController < ::Rails::ApplicationController
   def matching_routes(query:, exact_match:); end
 
   class << self
-    # source://activesupport/7.1.0.alpha-444df0eee1b537ecaa11509e819b071d4e87b519/lib/active_support/callbacks.rb#68
+    # source://activesupport/7.1.0.alpha-744b6715a5d07a2ddffceea8283f7b787541bc60/lib/active_support/callbacks.rb#70
     def __callbacks; end
 
-    # source://actionview/7.1.0.alpha-444df0eee1b537ecaa11509e819b071d4e87b519/lib/action_view/layouts.rb#211
+    # source://actionview/7.1.0.alpha-744b6715a5d07a2ddffceea8283f7b787541bc60/lib/action_view/layouts.rb#211
     def _layout; end
 
-    # source://actionview/7.1.0.alpha-444df0eee1b537ecaa11509e819b071d4e87b519/lib/action_view/layouts.rb#212
+    # source://actionview/7.1.0.alpha-744b6715a5d07a2ddffceea8283f7b787541bc60/lib/action_view/layouts.rb#212
     def _layout_conditions; end
 
-    # source://actionpack/7.1.0.alpha-444df0eee1b537ecaa11509e819b071d4e87b519/lib/action_controller/metal.rb#254
+    # source://actionpack/7.1.0.alpha-744b6715a5d07a2ddffceea8283f7b787541bc60/lib/action_controller/metal.rb#258
     def middleware_stack; end
   end
 end
@@ -2707,7 +2707,7 @@ class Rails::MailersController < ::Rails::ApplicationController
 
   private
 
-  # source://actionview/7.1.0.alpha-444df0eee1b537ecaa11509e819b071d4e87b519/lib/action_view/layouts.rb#330
+  # source://actionview/7.1.0.alpha-744b6715a5d07a2ddffceea8283f7b787541bc60/lib/action_view/layouts.rb#330
   def _layout(lookup_context, formats); end
 
   # source://railties//lib/rails/mailers_controller.rb#90
@@ -2734,13 +2734,13 @@ class Rails::MailersController < ::Rails::ApplicationController
   def show_previews?; end
 
   class << self
-    # source://activesupport/7.1.0.alpha-444df0eee1b537ecaa11509e819b071d4e87b519/lib/active_support/callbacks.rb#68
+    # source://activesupport/7.1.0.alpha-744b6715a5d07a2ddffceea8283f7b787541bc60/lib/active_support/callbacks.rb#70
     def __callbacks; end
 
-    # source://actionpack/7.1.0.alpha-444df0eee1b537ecaa11509e819b071d4e87b519/lib/abstract_controller/helpers.rb#12
+    # source://actionpack/7.1.0.alpha-744b6715a5d07a2ddffceea8283f7b787541bc60/lib/abstract_controller/helpers.rb#12
     def _helper_methods; end
 
-    # source://actionpack/7.1.0.alpha-444df0eee1b537ecaa11509e819b071d4e87b519/lib/action_controller/metal.rb#254
+    # source://actionpack/7.1.0.alpha-744b6715a5d07a2ddffceea8283f7b787541bc60/lib/action_controller/metal.rb#258
     def middleware_stack; end
   end
 end
@@ -3379,7 +3379,12 @@ class Rails::Railtie::Configuration
 
   private
 
+  # @return [Boolean]
+  #
   # source://railties//lib/rails/railtie/configuration.rb#95
+  def actual_method?(key); end
+
+  # source://railties//lib/rails/railtie/configuration.rb#99
   def method_missing(name, *args, &blk); end
 
   class << self
@@ -3605,45 +3610,45 @@ end
 # source://railties//lib/rails/test_unit/test_parser.rb#6
 module Rails::TestUnit; end
 
-# source://railties//lib/rails/test_unit/runner.rb#116
+# source://railties//lib/rails/test_unit/runner.rb#121
 class Rails::TestUnit::CompositeFilter
   # @return [CompositeFilter] a new instance of CompositeFilter
   #
-  # source://railties//lib/rails/test_unit/runner.rb#119
+  # source://railties//lib/rails/test_unit/runner.rb#124
   def initialize(runnable, filter, patterns); end
 
   # minitest uses === to find matching filters.
   #
-  # source://railties//lib/rails/test_unit/runner.rb#126
+  # source://railties//lib/rails/test_unit/runner.rb#131
   def ===(method); end
 
   # Returns the value of attribute named_filter.
   #
-  # source://railties//lib/rails/test_unit/runner.rb#117
+  # source://railties//lib/rails/test_unit/runner.rb#122
   def named_filter; end
 
   private
 
-  # source://railties//lib/rails/test_unit/runner.rb#141
+  # source://railties//lib/rails/test_unit/runner.rb#146
   def derive_line_filters(patterns); end
 
-  # source://railties//lib/rails/test_unit/runner.rb#131
+  # source://railties//lib/rails/test_unit/runner.rb#136
   def derive_named_filter(filter); end
 end
 
-# source://railties//lib/rails/test_unit/runner.rb#152
+# source://railties//lib/rails/test_unit/runner.rb#157
 class Rails::TestUnit::Filter
   # @return [Filter] a new instance of Filter
   #
-  # source://railties//lib/rails/test_unit/runner.rb#153
+  # source://railties//lib/rails/test_unit/runner.rb#158
   def initialize(runnable, file, line); end
 
-  # source://railties//lib/rails/test_unit/runner.rb#158
+  # source://railties//lib/rails/test_unit/runner.rb#163
   def ===(method); end
 
   private
 
-  # source://railties//lib/rails/test_unit/runner.rb#170
+  # source://railties//lib/rails/test_unit/runner.rb#175
   def definition_for(method); end
 end
 
@@ -3823,20 +3828,20 @@ class Rails::WelcomeController < ::Rails::ApplicationController
 
   private
 
-  # source://actionview/7.1.0.alpha-444df0eee1b537ecaa11509e819b071d4e87b519/lib/action_view/layouts.rb#330
+  # source://actionview/7.1.0.alpha-744b6715a5d07a2ddffceea8283f7b787541bc60/lib/action_view/layouts.rb#330
   def _layout(lookup_context, formats); end
 
   class << self
-    # source://activesupport/7.1.0.alpha-444df0eee1b537ecaa11509e819b071d4e87b519/lib/active_support/callbacks.rb#68
+    # source://activesupport/7.1.0.alpha-744b6715a5d07a2ddffceea8283f7b787541bc60/lib/active_support/callbacks.rb#70
     def __callbacks; end
 
-    # source://actionview/7.1.0.alpha-444df0eee1b537ecaa11509e819b071d4e87b519/lib/action_view/layouts.rb#211
+    # source://actionview/7.1.0.alpha-744b6715a5d07a2ddffceea8283f7b787541bc60/lib/action_view/layouts.rb#211
     def _layout; end
 
-    # source://actionview/7.1.0.alpha-444df0eee1b537ecaa11509e819b071d4e87b519/lib/action_view/layouts.rb#212
+    # source://actionview/7.1.0.alpha-744b6715a5d07a2ddffceea8283f7b787541bc60/lib/action_view/layouts.rb#212
     def _layout_conditions; end
 
-    # source://actionpack/7.1.0.alpha-444df0eee1b537ecaa11509e819b071d4e87b519/lib/action_controller/metal.rb#254
+    # source://actionpack/7.1.0.alpha-744b6715a5d07a2ddffceea8283f7b787541bc60/lib/action_controller/metal.rb#258
     def middleware_stack; end
   end
 end

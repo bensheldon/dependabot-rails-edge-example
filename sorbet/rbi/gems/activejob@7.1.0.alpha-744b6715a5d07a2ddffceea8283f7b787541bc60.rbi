@@ -208,22 +208,22 @@ class ActiveJob::Base
   extend ::ActiveJob::Exceptions::ClassMethods
   extend ::ActiveJob::TestHelper::TestQueueAdapter::ClassMethods
 
-  # source://activesupport/7.1.0.alpha-444df0eee1b537ecaa11509e819b071d4e87b519/lib/active_support/callbacks.rb#68
+  # source://activesupport/7.1.0.alpha-744b6715a5d07a2ddffceea8283f7b787541bc60/lib/active_support/callbacks.rb#70
   def __callbacks; end
 
-  # source://activesupport/7.1.0.alpha-444df0eee1b537ecaa11509e819b071d4e87b519/lib/active_support/callbacks.rb#68
+  # source://activesupport/7.1.0.alpha-744b6715a5d07a2ddffceea8283f7b787541bc60/lib/active_support/callbacks.rb#70
   def __callbacks?; end
 
-  # source://activesupport/7.1.0.alpha-444df0eee1b537ecaa11509e819b071d4e87b519/lib/active_support/callbacks.rb#958
+  # source://activesupport/7.1.0.alpha-744b6715a5d07a2ddffceea8283f7b787541bc60/lib/active_support/callbacks.rb#960
   def _enqueue_callbacks; end
 
-  # source://activesupport/7.1.0.alpha-444df0eee1b537ecaa11509e819b071d4e87b519/lib/active_support/callbacks.rb#958
+  # source://activesupport/7.1.0.alpha-744b6715a5d07a2ddffceea8283f7b787541bc60/lib/active_support/callbacks.rb#960
   def _perform_callbacks; end
 
-  # source://activesupport/7.1.0.alpha-444df0eee1b537ecaa11509e819b071d4e87b519/lib/active_support/callbacks.rb#946
+  # source://activesupport/7.1.0.alpha-744b6715a5d07a2ddffceea8283f7b787541bc60/lib/active_support/callbacks.rb#948
   def _run_enqueue_callbacks(&block); end
 
-  # source://activesupport/7.1.0.alpha-444df0eee1b537ecaa11509e819b071d4e87b519/lib/active_support/callbacks.rb#946
+  # source://activesupport/7.1.0.alpha-744b6715a5d07a2ddffceea8283f7b787541bc60/lib/active_support/callbacks.rb#948
   def _run_perform_callbacks(&block); end
 
   # source://activejob//lib/active_job/logging.rb#11
@@ -233,7 +233,7 @@ class ActiveJob::Base
   def logger=(val); end
 
   # source://activejob//lib/active_job/queue_adapter.rb#17
-  def queue_adapter; end
+  def queue_adapter(&block); end
 
   # source://activejob//lib/active_job/queue_name.rb#58
   def queue_name_prefix; end
@@ -244,35 +244,35 @@ class ActiveJob::Base
   # source://activejob//lib/active_job/queue_name.rb#58
   def queue_name_prefix?; end
 
-  # source://activesupport/7.1.0.alpha-444df0eee1b537ecaa11509e819b071d4e87b519/lib/active_support/rescuable.rb#13
+  # source://activesupport/7.1.0.alpha-744b6715a5d07a2ddffceea8283f7b787541bc60/lib/active_support/rescuable.rb#15
   def rescue_handlers; end
 
-  # source://activesupport/7.1.0.alpha-444df0eee1b537ecaa11509e819b071d4e87b519/lib/active_support/rescuable.rb#13
+  # source://activesupport/7.1.0.alpha-744b6715a5d07a2ddffceea8283f7b787541bc60/lib/active_support/rescuable.rb#15
   def rescue_handlers=(_arg0); end
 
-  # source://activesupport/7.1.0.alpha-444df0eee1b537ecaa11509e819b071d4e87b519/lib/active_support/rescuable.rb#13
+  # source://activesupport/7.1.0.alpha-744b6715a5d07a2ddffceea8283f7b787541bc60/lib/active_support/rescuable.rb#15
   def rescue_handlers?; end
 
   class << self
-    # source://activesupport/7.1.0.alpha-444df0eee1b537ecaa11509e819b071d4e87b519/lib/active_support/callbacks.rb#68
+    # source://activesupport/7.1.0.alpha-744b6715a5d07a2ddffceea8283f7b787541bc60/lib/active_support/callbacks.rb#70
     def __callbacks; end
 
-    # source://activesupport/7.1.0.alpha-444df0eee1b537ecaa11509e819b071d4e87b519/lib/active_support/callbacks.rb#68
+    # source://activesupport/7.1.0.alpha-744b6715a5d07a2ddffceea8283f7b787541bc60/lib/active_support/callbacks.rb#70
     def __callbacks=(value); end
 
-    # source://activesupport/7.1.0.alpha-444df0eee1b537ecaa11509e819b071d4e87b519/lib/active_support/callbacks.rb#68
+    # source://activesupport/7.1.0.alpha-744b6715a5d07a2ddffceea8283f7b787541bc60/lib/active_support/callbacks.rb#70
     def __callbacks?; end
 
-    # source://activesupport/7.1.0.alpha-444df0eee1b537ecaa11509e819b071d4e87b519/lib/active_support/callbacks.rb#950
+    # source://activesupport/7.1.0.alpha-744b6715a5d07a2ddffceea8283f7b787541bc60/lib/active_support/callbacks.rb#952
     def _enqueue_callbacks; end
 
-    # source://activesupport/7.1.0.alpha-444df0eee1b537ecaa11509e819b071d4e87b519/lib/active_support/callbacks.rb#954
+    # source://activesupport/7.1.0.alpha-744b6715a5d07a2ddffceea8283f7b787541bc60/lib/active_support/callbacks.rb#956
     def _enqueue_callbacks=(value); end
 
-    # source://activesupport/7.1.0.alpha-444df0eee1b537ecaa11509e819b071d4e87b519/lib/active_support/callbacks.rb#950
+    # source://activesupport/7.1.0.alpha-744b6715a5d07a2ddffceea8283f7b787541bc60/lib/active_support/callbacks.rb#952
     def _perform_callbacks; end
 
-    # source://activesupport/7.1.0.alpha-444df0eee1b537ecaa11509e819b071d4e87b519/lib/active_support/callbacks.rb#954
+    # source://activesupport/7.1.0.alpha-744b6715a5d07a2ddffceea8283f7b787541bc60/lib/active_support/callbacks.rb#956
     def _perform_callbacks=(value); end
 
     # source://activejob//lib/active_job/queue_adapter.rb#15
@@ -344,13 +344,13 @@ class ActiveJob::Base
     # source://activejob//lib/active_job/queue_name.rb#58
     def queue_name_prefix?; end
 
-    # source://activesupport/7.1.0.alpha-444df0eee1b537ecaa11509e819b071d4e87b519/lib/active_support/rescuable.rb#13
+    # source://activesupport/7.1.0.alpha-744b6715a5d07a2ddffceea8283f7b787541bc60/lib/active_support/rescuable.rb#15
     def rescue_handlers; end
 
-    # source://activesupport/7.1.0.alpha-444df0eee1b537ecaa11509e819b071d4e87b519/lib/active_support/rescuable.rb#13
+    # source://activesupport/7.1.0.alpha-744b6715a5d07a2ddffceea8283f7b787541bc60/lib/active_support/rescuable.rb#15
     def rescue_handlers=(value); end
 
-    # source://activesupport/7.1.0.alpha-444df0eee1b537ecaa11509e819b071d4e87b519/lib/active_support/rescuable.rb#13
+    # source://activesupport/7.1.0.alpha-744b6715a5d07a2ddffceea8283f7b787541bc60/lib/active_support/rescuable.rb#15
     def rescue_handlers?; end
 
     # source://activejob//lib/active_job/exceptions.rb#11
@@ -388,16 +388,16 @@ module ActiveJob::Callbacks
   mixes_in_class_methods ::ActiveJob::Callbacks::ClassMethods
 
   class << self
-    # source://activesupport/7.1.0.alpha-444df0eee1b537ecaa11509e819b071d4e87b519/lib/active_support/callbacks.rb#68
+    # source://activesupport/7.1.0.alpha-744b6715a5d07a2ddffceea8283f7b787541bc60/lib/active_support/callbacks.rb#70
     def __callbacks; end
 
-    # source://activesupport/7.1.0.alpha-444df0eee1b537ecaa11509e819b071d4e87b519/lib/active_support/callbacks.rb#68
+    # source://activesupport/7.1.0.alpha-744b6715a5d07a2ddffceea8283f7b787541bc60/lib/active_support/callbacks.rb#70
     def __callbacks?; end
 
-    # source://activesupport/7.1.0.alpha-444df0eee1b537ecaa11509e819b071d4e87b519/lib/active_support/callbacks.rb#958
+    # source://activesupport/7.1.0.alpha-744b6715a5d07a2ddffceea8283f7b787541bc60/lib/active_support/callbacks.rb#960
     def _execute_callbacks; end
 
-    # source://activesupport/7.1.0.alpha-444df0eee1b537ecaa11509e819b071d4e87b519/lib/active_support/callbacks.rb#946
+    # source://activesupport/7.1.0.alpha-744b6715a5d07a2ddffceea8283f7b787541bc60/lib/active_support/callbacks.rb#948
     def _run_execute_callbacks(&block); end
   end
 
@@ -1164,7 +1164,7 @@ class ActiveJob::LogSubscriber < ::ActiveSupport::LogSubscriber
     # source://activejob//lib/active_job/log_subscriber.rb#8
     def backtrace_cleaner?; end
 
-    # source://activesupport/7.1.0.alpha-444df0eee1b537ecaa11509e819b071d4e87b519/lib/active_support/log_subscriber.rb#90
+    # source://activesupport/7.1.0.alpha-744b6715a5d07a2ddffceea8283f7b787541bc60/lib/active_support/log_subscriber.rb#92
     def log_levels; end
   end
 end
@@ -1248,6 +1248,9 @@ module ActiveJob::QueueAdapter::ClassMethods
 
   # source://activejob//lib/active_job/queue_adapter.rb#55
   def assign_adapter(adapter_name, queue_adapter); end
+
+  # source://activejob//lib/active_job/queue_adapter.rb#66
+  def extract_adapter_name(adapter); end
 
   # @return [Boolean]
   #

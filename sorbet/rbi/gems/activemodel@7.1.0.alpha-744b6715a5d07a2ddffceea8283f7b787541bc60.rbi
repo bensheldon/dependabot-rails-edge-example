@@ -3205,7 +3205,7 @@ end
 # source://activemodel//lib/active_model/naming.rb#214
 ActiveModel::Name::MISSING_TRANSLATION = T.let(T.unsafe(nil), Integer)
 
-# == Active \Model \Naming
+# = Active \Model \Naming
 #
 # Creates a +model_name+ method on your object.
 #
@@ -3492,11 +3492,11 @@ module ActiveModel::SecurePassword::ClassMethods
   def has_secure_password(attribute = T.unsafe(nil), validations: T.unsafe(nil)); end
 end
 
-# source://activemodel//lib/active_model/secure_password.rb#141
+# source://activemodel//lib/active_model/secure_password.rb#148
 class ActiveModel::SecurePassword::InstanceMethodsOnActivation < ::Module
   # @return [InstanceMethodsOnActivation] a new instance of InstanceMethodsOnActivation
   #
-  # source://activemodel//lib/active_model/secure_password.rb#142
+  # source://activemodel//lib/active_model/secure_password.rb#149
   def initialize(attribute); end
 end
 
@@ -3911,6 +3911,8 @@ module ActiveModel::Type
   end
 end
 
+# = Active Model \BigInteger \Type
+#
 # Attribute type for integers that can be serialized to an unlimited number
 # of bytes. This type is registered under the +:big_integer+ key.
 #
@@ -3928,64 +3930,68 @@ end
 # All casting and serialization are performed in the same way as the
 # standard ActiveModel::Type::Integer type.
 #
-# source://activemodel//lib/active_model/type/big_integer.rb#23
+# source://activemodel//lib/active_model/type/big_integer.rb#25
 class ActiveModel::Type::BigInteger < ::ActiveModel::Type::Integer
-  # source://activemodel//lib/active_model/type/big_integer.rb#24
+  # source://activemodel//lib/active_model/type/big_integer.rb#26
   def serialize_cast_value(value); end
 
   private
 
-  # source://activemodel//lib/active_model/type/big_integer.rb#29
+  # source://activemodel//lib/active_model/type/big_integer.rb#31
   def max_value; end
 end
 
+# = Active Model \Binary \Type
+#
 # Attribute type for representation of binary data. This type is registered
 # under the +:binary+ key.
 #
 # Non-string values are coerced to strings using their +to_s+ method.
 #
-# source://activemodel//lib/active_model/type/binary.rb#9
+# source://activemodel//lib/active_model/type/binary.rb#11
 class ActiveModel::Type::Binary < ::ActiveModel::Type::Value
   # @return [Boolean]
   #
-  # source://activemodel//lib/active_model/type/binary.rb#14
+  # source://activemodel//lib/active_model/type/binary.rb#16
   def binary?; end
 
-  # source://activemodel//lib/active_model/type/binary.rb#18
+  # source://activemodel//lib/active_model/type/binary.rb#20
   def cast(value); end
 
   # @return [Boolean]
   #
-  # source://activemodel//lib/active_model/type/binary.rb#31
+  # source://activemodel//lib/active_model/type/binary.rb#33
   def changed_in_place?(raw_old_value, value); end
 
-  # source://activemodel//lib/active_model/type/binary.rb#26
+  # source://activemodel//lib/active_model/type/binary.rb#28
   def serialize(value); end
 
-  # source://activemodel//lib/active_model/type/binary.rb#10
+  # source://activemodel//lib/active_model/type/binary.rb#12
   def type; end
 end
 
-# source://activemodel//lib/active_model/type/binary.rb#36
+# source://activemodel//lib/active_model/type/binary.rb#38
 class ActiveModel::Type::Binary::Data
   # @return [Data] a new instance of Data
   #
-  # source://activemodel//lib/active_model/type/binary.rb#37
+  # source://activemodel//lib/active_model/type/binary.rb#39
   def initialize(value); end
 
-  # source://activemodel//lib/active_model/type/binary.rb#50
+  # source://activemodel//lib/active_model/type/binary.rb#52
   def ==(other); end
 
-  # source://activemodel//lib/active_model/type/binary.rb#46
+  # source://activemodel//lib/active_model/type/binary.rb#48
   def hex; end
 
-  # source://activemodel//lib/active_model/type/binary.rb#41
+  # source://activemodel//lib/active_model/type/binary.rb#43
   def to_s; end
 
-  # source://activemodel//lib/active_model/type/binary.rb#41
+  # source://activemodel//lib/active_model/type/binary.rb#43
   def to_str; end
 end
 
+# = Active Model \Boolean \Type
+#
 # A class that behaves like a boolean type, including rules for coercion of
 # user input.
 #
@@ -3994,26 +4000,28 @@ end
 # - Empty strings are coerced to +nil+.
 # - All other values will be coerced to +true+.
 #
-# source://activemodel//lib/active_model/type/boolean.rb#12
+# source://activemodel//lib/active_model/type/boolean.rb#14
 class ActiveModel::Type::Boolean < ::ActiveModel::Type::Value
-  # source://activemodel//lib/active_model/type/boolean.rb#28
+  # source://activemodel//lib/active_model/type/boolean.rb#30
   def serialize(value); end
 
-  # source://activemodel//lib/active_model/type/boolean.rb#32
+  # source://activemodel//lib/active_model/type/boolean.rb#34
   def serialize_cast_value(value); end
 
-  # source://activemodel//lib/active_model/type/boolean.rb#24
+  # source://activemodel//lib/active_model/type/boolean.rb#26
   def type; end
 
   private
 
-  # source://activemodel//lib/active_model/type/boolean.rb#37
+  # source://activemodel//lib/active_model/type/boolean.rb#39
   def cast_value(value); end
 end
 
-# source://activemodel//lib/active_model/type/boolean.rb#13
+# source://activemodel//lib/active_model/type/boolean.rb#15
 ActiveModel::Type::Boolean::FALSE_VALUES = T.let(T.unsafe(nil), Set)
 
+# = Active Model \Date \Type
+#
 # Attribute type for date representation. It is registered under the
 # +:date+ key.
 #
@@ -4034,38 +4042,40 @@ ActiveModel::Type::Boolean::FALSE_VALUES = T.let(T.unsafe(nil), Set)
 # String values are parsed using the ISO 8601 date format. Any other values
 # are cast using their +to_date+ method, if it exists.
 #
-# source://activemodel//lib/active_model/type/date.rb#24
+# source://activemodel//lib/active_model/type/date.rb#26
 class ActiveModel::Type::Date < ::ActiveModel::Type::Value
   include ::ActiveModel::Type::Helpers::Timezone
   include ::ActiveModel::Type::Helpers::AcceptsMultiparameterTime::InstanceMethods
 
-  # source://activemodel//lib/active_model/type/date.rb#28
+  # source://activemodel//lib/active_model/type/date.rb#30
   def type; end
 
-  # source://activemodel//lib/active_model/type/date.rb#32
+  # source://activemodel//lib/active_model/type/date.rb#34
   def type_cast_for_schema(value); end
 
   private
 
-  # source://activemodel//lib/active_model/type/date.rb#37
+  # source://activemodel//lib/active_model/type/date.rb#39
   def cast_value(value); end
 
-  # source://activemodel//lib/active_model/type/date.rb#55
+  # source://activemodel//lib/active_model/type/date.rb#57
   def fallback_string_to_date(string); end
 
-  # source://activemodel//lib/active_model/type/date.rb#49
+  # source://activemodel//lib/active_model/type/date.rb#51
   def fast_string_to_date(string); end
 
-  # source://activemodel//lib/active_model/type/date.rb#64
+  # source://activemodel//lib/active_model/type/date.rb#66
   def new_date(year, mon, mday); end
 
-  # source://activemodel//lib/active_model/type/date.rb#70
+  # source://activemodel//lib/active_model/type/date.rb#72
   def value_from_multiparameter_assignment(*_arg0); end
 end
 
-# source://activemodel//lib/active_model/type/date.rb#48
+# source://activemodel//lib/active_model/type/date.rb#50
 ActiveModel::Type::Date::ISO_DATE = T.let(T.unsafe(nil), Regexp)
 
+# = Active Model \DateTime \Type
+#
 # Attribute type to represent dates and times. It is registered under the
 # +:datetime+ key.
 #
@@ -4102,33 +4112,35 @@ ActiveModel::Type::Date::ISO_DATE = T.let(T.unsafe(nil), Regexp)
 #     attribute :start, :datetime, precision: 4
 #   end
 #
-# source://activemodel//lib/active_model/type/date_time.rb#40
+# source://activemodel//lib/active_model/type/date_time.rb#42
 class ActiveModel::Type::DateTime < ::ActiveModel::Type::Value
   include ::ActiveModel::Type::Helpers::Timezone
   include ::ActiveModel::Type::Helpers::AcceptsMultiparameterTime::InstanceMethods
   include ::ActiveModel::Type::Helpers::TimeValue
 
-  # source://activemodel//lib/active_model/type/date_time.rb#47
+  # source://activemodel//lib/active_model/type/date_time.rb#49
   def type; end
 
   private
 
-  # source://activemodel//lib/active_model/type/date_time.rb#52
+  # source://activemodel//lib/active_model/type/date_time.rb#54
   def cast_value(value); end
 
-  # source://activemodel//lib/active_model/type/date_time.rb#65
+  # source://activemodel//lib/active_model/type/date_time.rb#67
   def fallback_string_to_time(string); end
 
   # '0.123456' -> 123456
   # '1.123456' -> 123456
   #
-  # source://activemodel//lib/active_model/type/date_time.rb#61
+  # source://activemodel//lib/active_model/type/date_time.rb#63
   def microseconds(time); end
 
-  # source://activemodel//lib/active_model/type/date_time.rb#77
+  # source://activemodel//lib/active_model/type/date_time.rb#79
   def value_from_multiparameter_assignment(values_hash); end
 end
 
+# = Active Model \Decimal \Type
+#
 # Attribute type for decimal, high-precision floating point numeric
 # representation. It is registered under the +:decimal+ key.
 #
@@ -4166,34 +4178,36 @@ end
 #     attribute :weight, :decimal, precision: 24
 #   end
 #
-# source://activemodel//lib/active_model/type/decimal.rb#43
+# source://activemodel//lib/active_model/type/decimal.rb#45
 class ActiveModel::Type::Decimal < ::ActiveModel::Type::Value
   include ::ActiveModel::Type::Helpers::Numeric
 
-  # source://activemodel//lib/active_model/type/decimal.rb#47
+  # source://activemodel//lib/active_model/type/decimal.rb#49
   def type; end
 
-  # source://activemodel//lib/active_model/type/decimal.rb#51
+  # source://activemodel//lib/active_model/type/decimal.rb#53
   def type_cast_for_schema(value); end
 
   private
 
-  # source://activemodel//lib/active_model/type/decimal.rb#96
+  # source://activemodel//lib/active_model/type/decimal.rb#98
   def apply_scale(value); end
 
-  # source://activemodel//lib/active_model/type/decimal.rb#56
+  # source://activemodel//lib/active_model/type/decimal.rb#58
   def cast_value(value); end
 
-  # source://activemodel//lib/active_model/type/decimal.rb#80
+  # source://activemodel//lib/active_model/type/decimal.rb#82
   def convert_float_to_big_decimal(value); end
 
-  # source://activemodel//lib/active_model/type/decimal.rb#88
+  # source://activemodel//lib/active_model/type/decimal.rb#90
   def float_precision; end
 end
 
-# source://activemodel//lib/active_model/type/decimal.rb#45
+# source://activemodel//lib/active_model/type/decimal.rb#47
 ActiveModel::Type::Decimal::BIGDECIMAL_PRECISION = T.let(T.unsafe(nil), Integer)
 
+# = Active Model \Float \Type
+#
 # Attribute type for floating point numeric values. It is registered under
 # the +:float+ key.
 #
@@ -4222,19 +4236,19 @@ ActiveModel::Type::Decimal::BIGDECIMAL_PRECISION = T.let(T.unsafe(nil), Integer)
 #   bag.weight = "NaN"
 #   bag.weight # => Float::NAN
 #
-# source://activemodel//lib/active_model/type/float.rb#34
+# source://activemodel//lib/active_model/type/float.rb#36
 class ActiveModel::Type::Float < ::ActiveModel::Type::Value
   include ::ActiveModel::Type::Helpers::Numeric
 
-  # source://activemodel//lib/active_model/type/float.rb#37
+  # source://activemodel//lib/active_model/type/float.rb#39
   def type; end
 
-  # source://activemodel//lib/active_model/type/float.rb#41
+  # source://activemodel//lib/active_model/type/float.rb#43
   def type_cast_for_schema(value); end
 
   private
 
-  # source://activemodel//lib/active_model/type/float.rb#51
+  # source://activemodel//lib/active_model/type/float.rb#53
   def cast_value(value); end
 end
 
@@ -4361,6 +4375,8 @@ module ActiveModel::Type::Helpers::Timezone
   def is_utc?; end
 end
 
+# = Active Model \ImmutableString \Type
+#
 # Attribute type to represent immutable strings. It casts incoming values to
 # frozen strings.
 #
@@ -4392,28 +4408,30 @@ end
 #
 #   person.active # => "aye"
 #
-# source://activemodel//lib/active_model/type/immutable_string.rb#35
+# source://activemodel//lib/active_model/type/immutable_string.rb#37
 class ActiveModel::Type::ImmutableString < ::ActiveModel::Type::Value
   # @return [ImmutableString] a new instance of ImmutableString
   #
-  # source://activemodel//lib/active_model/type/immutable_string.rb#36
+  # source://activemodel//lib/active_model/type/immutable_string.rb#38
   def initialize(**args); end
 
-  # source://activemodel//lib/active_model/type/immutable_string.rb#46
+  # source://activemodel//lib/active_model/type/immutable_string.rb#48
   def serialize(value); end
 
-  # source://activemodel//lib/active_model/type/immutable_string.rb#55
+  # source://activemodel//lib/active_model/type/immutable_string.rb#57
   def serialize_cast_value(value); end
 
-  # source://activemodel//lib/active_model/type/immutable_string.rb#42
+  # source://activemodel//lib/active_model/type/immutable_string.rb#44
   def type; end
 
   private
 
-  # source://activemodel//lib/active_model/type/immutable_string.rb#60
+  # source://activemodel//lib/active_model/type/immutable_string.rb#62
   def cast_value(value); end
 end
 
+# = Active Model \Integer \Type
+#
 # Attribute type for integer representation. This type is registered under
 # the +:integer+ key.
 #
@@ -4452,64 +4470,64 @@ end
 #     attribute :age, :integer, limit: 6
 #   end
 #
-# source://activemodel//lib/active_model/type/integer.rb#42
+# source://activemodel//lib/active_model/type/integer.rb#44
 class ActiveModel::Type::Integer < ::ActiveModel::Type::Value
   include ::ActiveModel::Type::Helpers::Numeric
 
   # @return [Integer] a new instance of Integer
   #
-  # source://activemodel//lib/active_model/type/integer.rb#49
+  # source://activemodel//lib/active_model/type/integer.rb#51
   def initialize(**_arg0); end
 
-  # source://activemodel//lib/active_model/type/integer.rb#58
+  # source://activemodel//lib/active_model/type/integer.rb#60
   def deserialize(value); end
 
   # @return [Boolean]
   #
-  # source://activemodel//lib/active_model/type/integer.rb#72
+  # source://activemodel//lib/active_model/type/integer.rb#74
   def serializable?(value); end
 
-  # source://activemodel//lib/active_model/type/integer.rb#63
+  # source://activemodel//lib/active_model/type/integer.rb#65
   def serialize(value); end
 
-  # source://activemodel//lib/active_model/type/integer.rb#68
+  # source://activemodel//lib/active_model/type/integer.rb#70
   def serialize_cast_value(value); end
 
-  # source://activemodel//lib/active_model/type/integer.rb#54
+  # source://activemodel//lib/active_model/type/integer.rb#56
   def type; end
 
   private
 
-  # source://activemodel//lib/active_model/type/integer.rb#106
+  # source://activemodel//lib/active_model/type/integer.rb#108
   def _limit; end
 
-  # source://activemodel//lib/active_model/type/integer.rb#87
+  # source://activemodel//lib/active_model/type/integer.rb#89
   def cast_value(value); end
 
-  # source://activemodel//lib/active_model/type/integer.rb#91
+  # source://activemodel//lib/active_model/type/integer.rb#93
   def ensure_in_range(value); end
 
   # @return [Boolean]
   #
-  # source://activemodel//lib/active_model/type/integer.rb#83
+  # source://activemodel//lib/active_model/type/integer.rb#85
   def in_range?(value); end
 
-  # source://activemodel//lib/active_model/type/integer.rb#98
+  # source://activemodel//lib/active_model/type/integer.rb#100
   def max_value; end
 
-  # source://activemodel//lib/active_model/type/integer.rb#102
+  # source://activemodel//lib/active_model/type/integer.rb#104
   def min_value; end
 
   # Returns the value of attribute range.
   #
-  # source://activemodel//lib/active_model/type/integer.rb#81
+  # source://activemodel//lib/active_model/type/integer.rb#83
   def range; end
 end
 
 # Column storage size in bytes.
 # 4 bytes means an integer as opposed to smallint etc.
 #
-# source://activemodel//lib/active_model/type/integer.rb#47
+# source://activemodel//lib/active_model/type/integer.rb#49
 ActiveModel::Type::Integer::DEFAULT_LIMIT = T.let(T.unsafe(nil), Integer)
 
 # source://activemodel//lib/active_model/type/registry.rb#5
@@ -4574,6 +4592,8 @@ module ActiveModel::Type::SerializeCastValue::DefaultImplementation
   def serialize_cast_value(value); end
 end
 
+# = Active Model \String \Type
+#
 # Attribute type for strings. It is registered under the +:string+ key.
 #
 # This class is a specialization of ActiveModel::Type::ImmutableString. It
@@ -4581,22 +4601,24 @@ end
 # However, it accounts for mutable strings, so dirty tracking can properly
 # check if a string has changed.
 #
-# source://activemodel//lib/active_model/type/string.rb#13
+# source://activemodel//lib/active_model/type/string.rb#15
 class ActiveModel::Type::String < ::ActiveModel::Type::ImmutableString
   # @return [Boolean]
   #
-  # source://activemodel//lib/active_model/type/string.rb#14
+  # source://activemodel//lib/active_model/type/string.rb#16
   def changed_in_place?(raw_old_value, new_value); end
 
-  # source://activemodel//lib/active_model/type/string.rb#20
+  # source://activemodel//lib/active_model/type/string.rb#22
   def to_immutable_string; end
 
   private
 
-  # source://activemodel//lib/active_model/type/string.rb#31
+  # source://activemodel//lib/active_model/type/string.rb#33
   def cast_value(value); end
 end
 
+# = Active Model \Time \Type
+#
 # Attribute type for time of day representation. It is registered under the
 # +:time+ key.
 #
@@ -4629,28 +4651,30 @@ end
 #     attribute :start, :time, precision: 4
 #   end
 #
-# source://activemodel//lib/active_model/type/time.rb#36
+# source://activemodel//lib/active_model/type/time.rb#38
 class ActiveModel::Type::Time < ::ActiveModel::Type::Value
   include ::ActiveModel::Type::Helpers::Timezone
   include ::ActiveModel::Type::Helpers::AcceptsMultiparameterTime::InstanceMethods
   include ::ActiveModel::Type::Helpers::TimeValue
 
-  # source://activemodel//lib/active_model/type/time.rb#43
+  # source://activemodel//lib/active_model/type/time.rb#45
   def type; end
 
-  # source://activemodel//lib/active_model/type/time.rb#47
+  # source://activemodel//lib/active_model/type/time.rb#49
   def user_input_in_time_zone(value); end
 
   private
 
-  # source://activemodel//lib/active_model/type/time.rb#67
+  # source://activemodel//lib/active_model/type/time.rb#69
   def cast_value(value); end
 end
 
+# = Active Model \Value \Type
+#
 # The base class for all attribute types. This class also serves as the
 # default type for attributes that do not specify a type.
 #
-# source://activemodel//lib/active_model/type/value.rb#7
+# source://activemodel//lib/active_model/type/value.rb#9
 class ActiveModel::Type::Value
   include ::ActiveModel::Type::SerializeCastValue
   include ::ActiveModel::Type::SerializeCastValue::DefaultImplementation
@@ -4663,18 +4687,18 @@ class ActiveModel::Type::Value
   #
   # @return [Value] a new instance of Value
   #
-  # source://activemodel//lib/active_model/type/value.rb#15
+  # source://activemodel//lib/active_model/type/value.rb#17
   def initialize(precision: T.unsafe(nil), limit: T.unsafe(nil), scale: T.unsafe(nil)); end
 
-  # source://activemodel//lib/active_model/type/value.rb#119
+  # source://activemodel//lib/active_model/type/value.rb#121
   def ==(other); end
 
   # @raise [NoMethodError]
   #
-  # source://activemodel//lib/active_model/type/value.rb#138
+  # source://activemodel//lib/active_model/type/value.rb#140
   def as_json(*_arg0); end
 
-  # source://activemodel//lib/active_model/type/value.rb#131
+  # source://activemodel//lib/active_model/type/value.rb#133
   def assert_valid_value(_); end
 
   # These predicates are not documented, as I need to look further into
@@ -4682,7 +4706,7 @@ class ActiveModel::Type::Value
   #
   # @return [Boolean]
   #
-  # source://activemodel//lib/active_model/type/value.rb#75
+  # source://activemodel//lib/active_model/type/value.rb#77
   def binary?; end
 
   # Type casts a value from user input (e.g. from a setter). This value may
@@ -4696,7 +4720,7 @@ class ActiveModel::Type::Value
   #
   # +value+ The raw input, as provided to the attribute setter.
   #
-  # source://activemodel//lib/active_model/type/value.rb#55
+  # source://activemodel//lib/active_model/type/value.rb#57
   def cast(value); end
 
   # Determines whether a value has changed for dirty checking. +old_value+
@@ -4705,7 +4729,7 @@ class ActiveModel::Type::Value
   #
   # @return [Boolean]
   #
-  # source://activemodel//lib/active_model/type/value.rb#82
+  # source://activemodel//lib/active_model/type/value.rb#84
   def changed?(old_value, new_value, _new_value_before_type_cast); end
 
   # Determines whether the mutable value has been modified since it was
@@ -4728,7 +4752,7 @@ class ActiveModel::Type::Value
   #
   # @return [Boolean]
   #
-  # source://activemodel//lib/active_model/type/value.rb#103
+  # source://activemodel//lib/active_model/type/value.rb#105
   def changed_in_place?(raw_old_value, new_value); end
 
   # Converts a value from database input to the appropriate ruby type. The
@@ -4738,41 +4762,41 @@ class ActiveModel::Type::Value
   #
   # +value+ The raw input, as provided from the database.
   #
-  # source://activemodel//lib/active_model/type/value.rb#41
+  # source://activemodel//lib/active_model/type/value.rb#43
   def deserialize(value); end
 
-  # source://activemodel//lib/active_model/type/value.rb#119
+  # source://activemodel//lib/active_model/type/value.rb#121
   def eql?(other); end
 
   # @return [Boolean]
   #
-  # source://activemodel//lib/active_model/type/value.rb#111
+  # source://activemodel//lib/active_model/type/value.rb#113
   def force_equality?(_value); end
 
-  # source://activemodel//lib/active_model/type/value.rb#127
+  # source://activemodel//lib/active_model/type/value.rb#129
   def hash; end
 
-  # source://activemodel//lib/active_model/type/value.rb#134
+  # source://activemodel//lib/active_model/type/value.rb#136
   def immutable_value(value); end
 
   # Returns the value of attribute limit.
   #
-  # source://activemodel//lib/active_model/type/value.rb#9
+  # source://activemodel//lib/active_model/type/value.rb#11
   def limit; end
 
   # @yield [value]
   #
-  # source://activemodel//lib/active_model/type/value.rb#115
+  # source://activemodel//lib/active_model/type/value.rb#117
   def map(value); end
 
   # Returns the value of attribute precision.
   #
-  # source://activemodel//lib/active_model/type/value.rb#9
+  # source://activemodel//lib/active_model/type/value.rb#11
   def precision; end
 
   # Returns the value of attribute scale.
   #
-  # source://activemodel//lib/active_model/type/value.rb#9
+  # source://activemodel//lib/active_model/type/value.rb#11
   def scale; end
 
   # Returns true if this type can convert +value+ to a type that is usable
@@ -4782,7 +4806,7 @@ class ActiveModel::Type::Value
   #
   # @return [Boolean]
   #
-  # source://activemodel//lib/active_model/type/value.rb#26
+  # source://activemodel//lib/active_model/type/value.rb#28
   def serializable?(value); end
 
   # Casts a value from the ruby type to a type that the database knows how
@@ -4790,24 +4814,24 @@ class ActiveModel::Type::Value
   # +String+, +Numeric+, +Date+, +Time+, +Symbol+, +true+, +false+, or
   # +nil+.
   #
-  # source://activemodel//lib/active_model/type/value.rb#63
+  # source://activemodel//lib/active_model/type/value.rb#65
   def serialize(value); end
 
   # Returns the unique type name as a Symbol. Subclasses should override
   # this method.
   #
-  # source://activemodel//lib/active_model/type/value.rb#32
+  # source://activemodel//lib/active_model/type/value.rb#34
   def type; end
 
   # Type casts a value for schema dumping. This method is private, as we are
   # hoping to remove it entirely.
   #
-  # source://activemodel//lib/active_model/type/value.rb#69
+  # source://activemodel//lib/active_model/type/value.rb#71
   def type_cast_for_schema(value); end
 
   # @return [Boolean]
   #
-  # source://activemodel//lib/active_model/type/value.rb#107
+  # source://activemodel//lib/active_model/type/value.rb#109
   def value_constructed_by_mass_assignment?(_value); end
 
   private
@@ -4816,7 +4840,7 @@ class ActiveModel::Type::Value
   # behavior for user and database inputs. Called by Value#cast for
   # values except +nil+.
   #
-  # source://activemodel//lib/active_model/type/value.rb#146
+  # source://activemodel//lib/active_model/type/value.rb#148
   def cast_value(value); end
 end
 
