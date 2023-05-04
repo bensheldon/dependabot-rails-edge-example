@@ -24,13 +24,13 @@ module Selenium::WebDriver
     # @overload for
     # @overload for
     # @return [Driver]
+    # @see Selenium::WebDriver::Remote::Driver
+    # @see Selenium::WebDriver::Firefox::Driver
+    # @see Selenium::WebDriver::IE::Driver
     # @see Selenium::WebDriver::Edge::Driver
     # @see Selenium::WebDriver::Chrome::Driver
     # @see Selenium::WebDriver::Safari::Driver
     # @see Selenium::WebDriver::Support::AbstractEventListener
-    # @see Selenium::WebDriver::Remote::Driver
-    # @see Selenium::WebDriver::Firefox::Driver
-    # @see Selenium::WebDriver::IE::Driver
     #
     # source://selenium-webdriver//lib/selenium/webdriver.rb#87
     def for(*args); end
@@ -1245,15 +1245,15 @@ class Selenium::WebDriver::DevTools
 
   private
 
-  # source://selenium-webdriver//lib/selenium/webdriver/devtools.rb#81
+  # source://selenium-webdriver//lib/selenium/webdriver/devtools.rb#91
   def error_message(error); end
 
   # @return [Boolean]
   #
-  # source://selenium-webdriver//lib/selenium/webdriver/devtools.rb#67
+  # source://selenium-webdriver//lib/selenium/webdriver/devtools.rb#77
   def respond_to_missing?(method, *_args); end
 
-  # source://selenium-webdriver//lib/selenium/webdriver/devtools.rb#74
+  # source://selenium-webdriver//lib/selenium/webdriver/devtools.rb#84
   def start_session; end
 end
 
@@ -6417,13 +6417,14 @@ class Selenium::WebDriver::Remote::Driver < ::Selenium::WebDriver::Driver
   def devtools_url; end
 
   # @api private
+  # @raise [Error::WebDriverError]
   #
   # source://selenium-webdriver//lib/selenium/webdriver/remote/driver.rb#47
   def devtools_version; end
 
   # @api private
   #
-  # source://selenium-webdriver//lib/selenium/webdriver/remote/driver.rb#52
+  # source://selenium-webdriver//lib/selenium/webdriver/remote/driver.rb#54
   def process_options(options, capabilities); end
 end
 
@@ -8050,19 +8051,19 @@ module Selenium::WebDriver::WheelActions
   # If the origin is an element, and the element is not in the viewport, the bottom of the element will first
   #   be scrolled to the bottom of the viewport.
   #
-  # @example Scroll from element by a specified amount with an offset
-  #   el = driver.find_element(id: "some_id")
-  #   origin = WheelActions::ScrollOrigin.element(el, 10, 10)
-  #   driver.action.scroll_from(origin, 100, 200).perform
   # @example Scroll from element by a specified amount
   #   el = driver.find_element(id: "some_id")
   #   origin = WheelActions::ScrollOrigin.element(el)
   #   driver.action.scroll_from(origin, 0, 200).perform
+  # @example Scroll from element by a specified amount with an offset
+  #   el = driver.find_element(id: "some_id")
+  #   origin = WheelActions::ScrollOrigin.element(el, 10, 10)
+  #   driver.action.scroll_from(origin, 100, 200).perform
   # @example Scroll viewport by a specified amount with an offset
   #   origin = WheelActions::ScrollOrigin.viewport(10, 10)
   #   driver.action.scroll_from(origin, 0, 200).perform
-  # @param delta_x [Integer] Distance along X axis to scroll using the wheel. A negative value scrolls left.
   # @param scroll_origin [ScrollOrigin] Where scroll originates (viewport or element center) plus provided offsets.
+  # @param delta_x [Integer] Distance along X axis to scroll using the wheel. A negative value scrolls left.
   # @param delta_y [Integer] Distance along Y axis to scroll using the wheel. A negative value scrolls up.
   # @raise [Error::MoveTargetOutOfBoundsError] If the origin with offset is outside the viewport.
   # @return [Selenium::WebDriver::WheelActions] A self reference.
